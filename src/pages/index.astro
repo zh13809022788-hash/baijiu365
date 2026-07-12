@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GuideCard from '../components/GuideCard.astro';
+
+const title = 'Baijiu365 — A Practical Guide to Chinese Baijiu';
+const description = 'Learn what baijiu tastes like, how to choose a bottle, how to drink it, and how to avoid common buying mistakes.';
+---
+<BaseLayout title={title} description={description} type="WebSite">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Chinese spirits, explained clearly</p>
+        <h1>Baijiu365</h1>
+        <p class="lede">A practical field guide to Chinese baijiu: flavor, aroma types, buying choices, drinking etiquette, and the mistakes that confuse first-time drinkers.</p>
+        <div class="actions">
+          <a class="button" href="/baijiu-101/">Start with Baijiu 101</a>
+          <a class="button secondary" href="/best-baijiu-for-beginners/">Choose a first bottle</a>
+        </div>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <div class="bottle"></div>
+        <div class="glass"></div>
+        <div class="grain"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2>Start Here</h2>
+      <div class="grid">
+        <GuideCard href="/baijiu-101/" title="What Is Baijiu?" text="A direct explanation of China's most important spirit, without turning it into vague cultural fog." />
+        <GuideCard href="/types-of-baijiu/" title="Types of Baijiu" text="Understand sauce, strong, light, and rice aroma through flavor, production, and use cases." />
+        <GuideCard href="/best-baijiu-for-beginners/" title="Best Baijiu for Beginners" text="How to choose a first bottle based on tolerance, occasion, aroma type, and budget." />
+        <GuideCard href="/how-to-drink-baijiu/" title="How to Drink Baijiu" text="Serving temperature, glassware, banquet etiquette, sipping, toasting, and food pairing." />
+        <GuideCard href="/baijiu-vs-vodka/" title="Baijiu vs Vodka" text="Why both can be clear and strong, yet taste, smell, and behave completely differently." />
+        <GuideCard href="/brands/maotai/" title="Maotai Guide" text="What Maotai is, why it is expensive, and what beginners should know before buying." />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
