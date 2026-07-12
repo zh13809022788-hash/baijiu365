@@ -2,18 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import GuideCard from '../components/GuideCard.astro';
 
-const title = 'Baijiu365 — A Practical Guide to Chinese Baijiu';
-const description = 'Learn what baijiu tastes like, how to choose a bottle, how to drink it, and how to avoid common buying mistakes.';
+const title = 'Baijiu365 - Practical Baijiu Guide for Global Drinkers';
+const description = 'A practical English guide to Chinese baijiu: aroma types, buying choices, drinking etiquette, Maotai risks, flavor, and beginner-friendly bottles.';
 ---
 <BaseLayout title={title} description={description} type="WebSite">
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow">Chinese spirits, explained clearly</p>
+        <p class="eyebrow">Independent Chinese spirits guide</p>
         <h1>Baijiu365</h1>
-        <p class="lede">A practical field guide to Chinese baijiu: flavor, aroma types, buying choices, drinking etiquette, and the mistakes that confuse first-time drinkers.</p>
+        <p class="lede">A practical field guide for people who need to understand baijiu before they drink it, buy it, gift it, serve it, or explain it to someone else.</p>
         <div class="actions">
-          <a class="button" href="/baijiu-101/">Start with Baijiu 101</a>
+          <a class="button" href="/baijiu-101/">Start Here</a>
           <a class="button secondary" href="/best-baijiu-for-beginners/">Choose a first bottle</a>
         </div>
       </div>
@@ -27,14 +27,35 @@ const description = 'Learn what baijiu tastes like, how to choose a bottle, how 
 
   <section class="section">
     <div class="wrap">
-      <h2>Start Here</h2>
+      <h2>Use The Site By Decision</h2>
       <div class="grid">
-        <GuideCard href="/baijiu-101/" title="What Is Baijiu?" text="A direct explanation of China's most important spirit, without turning it into vague cultural fog." />
-        <GuideCard href="/types-of-baijiu/" title="Types of Baijiu" text="Understand sauce, strong, light, and rice aroma through flavor, production, and use cases." />
-        <GuideCard href="/best-baijiu-for-beginners/" title="Best Baijiu for Beginners" text="How to choose a first bottle based on tolerance, occasion, aroma type, and budget." />
-        <GuideCard href="/how-to-drink-baijiu/" title="How to Drink Baijiu" text="Serving temperature, glassware, banquet etiquette, sipping, toasting, and food pairing." />
-        <GuideCard href="/baijiu-vs-vodka/" title="Baijiu vs Vodka" text="Why both can be clear and strong, yet taste, smell, and behave completely differently." />
-        <GuideCard href="/brands/maotai/" title="Maotai Guide" text="What Maotai is, why it is expensive, and what beginners should know before buying." />
+        <GuideCard href="/baijiu-101/" title="I Need the Basics" text="What baijiu is, why it is not vodka, how aroma types work, and why one bad banquet glass should not define the category." />
+        <GuideCard href="/types-of-baijiu/" title="I Need to Understand Flavor" text="Compare sauce, strong, light, and rice aroma by taste, intensity, beginner difficulty, and best use case." />
+        <GuideCard href="/best-baijiu-for-beginners/" title="I Need a First Bottle" text="Pick a bottle by occasion, aroma type, alcohol strength, budget, and buying channel instead of prestige alone." />
+        <GuideCard href="/how-to-buy-baijiu-outside-china/" title="I Am Buying Overseas" text="What to check before buying baijiu outside China, from importer labels to suspicious gift boxes and marketplace listings." />
+        <GuideCard href="/how-to-spot-fake-maotai/" title="I Am Worried About Fake Maotai" text="A risk-first guide to counterfeits, refilled bottles, development products, vintage claims, and price signals." />
+        <GuideCard href="/baijiu-flavor-wheel/" title="I Want Better Tasting Language" text="A simple flavor framework for describing grain, fruit, fermentation, savory notes, texture, heat, and finish." />
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="decision-box">
+        <h2>What Makes This Different</h2>
+        <p>Baijiu365 is not trying to sound like a trade association before earning that authority. The first job is simpler: give global readers practical judgment. That means clear flavor language, buying risks, occasion-based advice, and honest limits where real tasting data or verified product information is still needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <h2>Core Reading Path</h2>
+      <div class="pathway">
+        <a href="/baijiu-101/">1. Learn what baijiu is before comparing brands</a>
+        <a href="/types-of-baijiu/">2. Use aroma type to predict flavor and intensity</a>
+        <a href="/best-baijiu-for-beginners/">3. Choose a first bottle by use case, not status</a>
+        <a href="/how-to-drink-baijiu/">4. Serve it with food, small pours, and realistic pacing</a>
       </div>
     </div>
   </section>

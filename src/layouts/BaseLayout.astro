@@ -8,7 +8,8 @@ interface Props {
 }
 
 const { title, description, type = 'Article' } = Astro.props;
-const canonical = new URL(Astro.url.pathname, 'https://insidebaijiu.com').toString();
+const siteUrl = 'https://baijiu365.com';
+const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 ---
 <!doctype html>
 <html lang="en">
@@ -18,15 +19,23 @@ const canonical = new URL(Astro.url.pathname, 'https://insidebaijiu.com').toStri
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content="Baijiu365" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type === 'WebSite' ? 'website' : 'article'} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
     <SeoJsonLd type={type} title={title} description={description} url={canonical} />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/" aria-label="Inside Baijiu home">Inside Baijiu</a>
+      <a class="brand" href="/" aria-label="Baijiu365 home">Baijiu365</a>
       <nav aria-label="Primary navigation">
-        <a href="/baijiu-101/">101</a>
+        <a href="/baijiu-101/">Basics</a>
         <a href="/types-of-baijiu/">Types</a>
         <a href="/best-baijiu-for-beginners/">Beginners</a>
+        <a href="/how-to-buy-baijiu-outside-china/">Buying</a>
+        <a href="/how-to-spot-fake-maotai/">Fake Maotai</a>
         <a href="/brands/maotai/">Maotai</a>
         <a href="/glossary/">Glossary</a>
         <a href="/about/">About</a>
@@ -36,7 +45,15 @@ const canonical = new URL(Astro.url.pathname, 'https://insidebaijiu.com').toStri
       <slot />
     </main>
     <footer class="site-footer">
-      <p>Inside Baijiu is an independent field guide to Chinese baijiu for curious drinkers, hosts, collectors, and bartenders.</p>
+      <div class="footer-inner">
+        <p>Baijiu365 is an independent field guide to Chinese baijiu for curious drinkers, hosts, collectors, and bartenders.</p>
+        <nav aria-label="Footer navigation">
+          <a href="/baijiu-101/">Basics</a>
+          <a href="/types-of-baijiu/">Aroma types</a>
+          <a href="/best-baijiu-for-beginners/">Beginner buying</a>
+          <a href="/glossary/">Glossary</a>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>
@@ -296,6 +313,25 @@ const canonical = new URL(Astro.url.pathname, 'https://insidebaijiu.com').toStri
     text-decoration: none;
   }
 
+  .pathway {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .pathway a,
+  .next-links a {
+    display: block;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--red);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
   .article-header {
     padding: clamp(48px, 8vw, 88px) clamp(18px, 4vw, 56px) 26px;
     border-bottom: 1px solid var(--line);
@@ -333,6 +369,74 @@ const canonical = new URL(Astro.url.pathname, 'https://insidebaijiu.com').toStri
     background: #fff;
   }
 
+  .decision-box {
+    margin: 28px 0;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  .decision-box h2,
+  .decision-box h3 {
+    margin-top: 0;
+  }
+
+  .table-wrap {
+    margin: 24px 0;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 620px;
+    font-size: 15px;
+  }
+
+  th,
+  td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--ink);
+    background: #f5efe4;
+  }
+
+  tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .faq {
+    margin-top: 42px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+  }
+
+  .faq h2 {
+    margin-top: 0;
+  }
+
+  .faq h3 {
+    margin-top: 24px;
+  }
+
+  .next-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+
   .site-footer {
     padding: 28px clamp(18px, 4vw, 56px);
     border-top: 1px solid var(--line);
@@ -340,9 +444,18 @@ const canonical = new URL(Astro.url.pathname, 'https://insidebaijiu.com').toStri
     background: #f5efe4;
   }
 
-  .site-footer p {
+  .footer-inner {
     width: min(1120px, 100%);
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .site-footer p {
+    margin: 0;
+    max-width: 620px;
   }
 
   @media (max-width: 860px) {
@@ -356,5 +469,7 @@ const canonical = new URL(Astro.url.pathname, 'https://insidebaijiu.com').toStri
     .glass { right: 18%; width: 92px; height: 116px; }
     .grain { right: 4%; width: 210px; }
     .grid { grid-template-columns: 1fr; }
+    .pathway, .next-links { grid-template-columns: 1fr; }
+    .footer-inner { align-items: flex-start; flex-direction: column; }
   }
 </style>

@@ -2,6 +2,8 @@
 
 ## Sprint 1: MVP Foundation
 
+Status: complete.
+
 Goal: create a credible English static site that can be previewed locally and later deployed to Cloudflare Pages.
 
 Deliverables:
@@ -26,17 +28,20 @@ Success criteria:
 
 ## Sprint 2: Content Credibility
 
+Status: first pass complete; source-backed examples remain.
+
 Goal: make the site feel useful and differentiated.
 
 Deliverables:
 
-- Expand to 12 core guides
-- Add flavor framework
-- Add beginner bottle selection framework
-- Add fake/premium baijiu risk guide
-- Add FAQ blocks to core pages
-- Add JSON-LD where appropriate
+- Expand to 12 core guides: first pass complete
+- Add flavor framework: first pass complete
+- Add beginner bottle selection framework: first pass complete
+- Add fake/premium baijiu risk guide: first pass complete
+- Add FAQ blocks to core pages: partial
+- Add JSON-LD/metadata where appropriate: partial
 - Add source notes / editorial disclosure where useful
+- Add real product examples only after sourcing or sample data is available
 
 ## Sprint 3: Publishing and Indexing
 
@@ -51,6 +56,8 @@ Deliverables:
 - Basic analytics
 - First technical SEO pass
 - Initial internal linking pass
+- Inspect live Search Console coverage after deployment
+- Confirm sitemap index discovers all guide URLs on production
 
 ## Sprint 4: WORKBUDDY Input Loop
 
@@ -74,3 +81,5 @@ Deliverables:
 - Newsletter capture
 - Affiliate/supplier disclosure framework
 - Multi-language expansion
+- Real bottle photography and label-reading examples
+- City/restaurant context collaborations with ChinaTripBox where editorially natural

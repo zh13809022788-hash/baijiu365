@@ -1,4 +1,4 @@
-# Project Brief: Inside Baijiu
+# Project Brief: Baijiu365
 
 ## Domain
 
@@ -10,7 +10,6 @@ Baijiu365
 
 Editorial/product name options still usable in copy:
 
-- Inside Baijiu
 - Baijiu Field Guide
 - The Baijiu Guide
 - Baijiu Advocate
@@ -24,7 +23,7 @@ A practical, independent English-language guide to Chinese baijiu for overseas d
 
 English-language baijiu content is thin, repetitive, or overly promotional. Many pages explain that baijiu is a Chinese spirit, but few help a reader understand what it tastes like, how to choose a bottle, how to drink it, how not to get fooled, and why it matters in real social settings.
 
-Inside Baijiu should become a useful guide, not a generic encyclopedia.
+Baijiu365 should become a useful guide, not a generic encyclopedia.
 
 ## Audience
 

@@ -2,14 +2,15 @@
 
 ## In Progress
 
-- Establish project documentation and collaboration structure.
+- Sprint 2 content credibility: add verified examples where source material exists.
 
 ## Next
 
-- Check Codex CLI availability.
-- Complete Astro MVP pages.
-- Run build verification.
-- Update development log with implementation decisions.
+- Verify live deployment/domain after Hermes deploys.
+- Submit sitemap in Google Search Console after deployment.
+- Add real product examples, photos, or label screenshots for buying-risk pages.
+- Expand Maotai and beginner pages with sourced brand/channel facts.
+- Add FAQ blocks to `types-of-baijiu` and `best-baijiu-for-beginners`.
 
 ## Sprint 1 Development Tasks
 
@@ -29,6 +30,9 @@
 - `/baijiu-101/`
 - `/types-of-baijiu/`
 - `/best-baijiu-for-beginners/`
+- `/how-to-buy-baijiu-outside-china/`
+- `/how-to-spot-fake-maotai/`
+- `/baijiu-flavor-wheel/`
 - `/how-to-drink-baijiu/`
 - `/baijiu-vs-vodka/`
 - `/brands/maotai/`
@@ -39,9 +43,16 @@
 
 - Run `npm install` if needed.
 - Run `npm run build`.
-- Start local preview/dev server.
-- Inspect the homepage and at least three pages.
+- Inspect generated sitemap and routes.
 - Record issues and fixes in `docs/DEVELOPMENT_LOG.md`.
+
+## Completed On 2026-07-12
+
+- Reviewed existing uncommitted Hermes edits and kept the useful Baijiu365 domain/brand cleanup.
+- Added new guide pages for overseas buying, fake Maotai risk, and tasting vocabulary.
+- Improved homepage pathways, footer links, article tables, next-step links, and SEO metadata.
+- Updated development documentation for the first-pass upgrade.
+- Verified `npm run build` after the first-pass upgrade; Astro generated 12 static routes plus sitemap.
 
 ## WORKBUDDY Input Requests
 
