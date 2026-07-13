@@ -3,17 +3,6 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import fs from 'fs';
 import path from 'path';
 
-const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
-const allFiles = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
-const allVarieties = allFiles.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
-
-const regionGroups = {};
-for (const v of allVarieties) {
-  const key = v.region.toLowerCase();
-  if (!regionGroups[key]) regionGroups[key] = { label: v.region, items: [] };
-  regionGroups[key].items.push(v);
-}
-
 const regionDescriptions = {
   guizhou: 'Guizhou Province is the heartland of sauce-aroma baijiu. The Chishui River valley, particularly Maotai Town, provides a unique microbial terroir considered essential for sauce-aroma production.',
   sichuan: 'Sichuan Province produces more baijiu than any other region in China. Known for strong-aroma baijiu fermented in aged mud pits, with distinct sub-regions like Luzhou and Yibin.',
@@ -26,6 +15,15 @@ const regionDescriptions = {
 };
 
 export function getStaticPaths() {
+  const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
+  const allFiles = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
+  const allVarieties = allFiles.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
+  const regionGroups = {};
+  for (const v of allVarieties) {
+    const key = v.region.toLowerCase();
+    if (!regionGroups[key]) regionGroups[key] = { label: v.region, items: [] };
+    regionGroups[key].items.push(v);
+  }
   return Object.entries(regionGroups).map(([key, { label, items }]) => ({
     params: { region: key },
     props: { label, items }

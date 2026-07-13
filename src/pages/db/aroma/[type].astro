@@ -3,16 +3,6 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import fs from 'fs';
 import path from 'path';
 
-const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
-const allFiles = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
-const allVarieties = allFiles.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
-
-const aromaGroups = {};
-for (const v of allVarieties) {
-  if (!aromaGroups[v.aroma_type]) aromaGroups[v.aroma_type] = [];
-  aromaGroups[v.aroma_type].push(v);
-}
-
 const aromaLabels = {
   sauce: 'Sauce Aroma', strong: 'Strong Aroma', light: 'Light Aroma',
   phoenix: 'Phoenix Aroma', herbal: 'Herbal Aroma', mixed: 'Mixed Aroma',
@@ -30,6 +20,14 @@ const aromaDescriptions = {
 };
 
 export function getStaticPaths() {
+  const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
+  const allFiles = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
+  const allVarieties = allFiles.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
+  const aromaGroups = {};
+  for (const v of allVarieties) {
+    if (!aromaGroups[v.aroma_type]) aromaGroups[v.aroma_type] = [];
+    aromaGroups[v.aroma_type].push(v);
+  }
   return Object.keys(aromaGroups).map(type => ({
     params: { type },
     props: { varieties: aromaGroups[type] }

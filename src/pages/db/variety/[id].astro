@@ -3,20 +3,18 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import fs from 'fs';
 import path from 'path';
 
-// Load all varieties for related links
-const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
-const allFiles = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
-const allVarieties = allFiles.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
-const varietyMap = Object.fromEntries(allVarieties.map(v => [v.id, v]));
-
 export function getStaticPaths() {
+  const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
+  const allFiles = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
+  const allVarieties = allFiles.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
+  const varietyMap = Object.fromEntries(allVarieties.map(v => [v.id, v]));
   return allVarieties.map(v => ({
     params: { id: v.id },
-    props: { data: v }
+    props: { data: v, varietyMap }
   }));
 }
 
-const { data: v } = Astro.props;
+const { data: v, varietyMap } = Astro.props;
 
 const aromaLabels = {
   sauce: 'Sauce Aroma', strong: 'Strong Aroma', light: 'Light Aroma',
