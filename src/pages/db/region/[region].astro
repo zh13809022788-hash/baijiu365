@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import fs from 'fs';
+import path from 'path';
+
+const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
+const allFiles = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
+const allVarieties = allFiles.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
+
+const regionGroups = {};
+for (const v of allVarieties) {
+  const key = v.region.toLowerCase();
+  if (!regionGroups[key]) regionGroups[key] = { label: v.region, items: [] };
+  regionGroups[key].items.push(v);
+}
+
+const regionDescriptions = {
+  guizhou: 'Guizhou Province is the heartland of sauce-aroma baijiu. The Chishui River valley, particularly Maotai Town, provides a unique microbial terroir considered essential for sauce-aroma production.',
+  sichuan: 'Sichuan Province produces more baijiu than any other region in China. Known for strong-aroma baijiu fermented in aged mud pits, with distinct sub-regions like Luzhou and Yibin.',
+  shanxi: 'Shanxi Province is the birthplace of light-aroma baijiu. The clean, grain-forward style originated here with Fenjiu, dating back over 1,500 years.',
+  beijing: 'Beijing is home to erguotou-style light-aroma baijiu, a working-class staple. Niulanshan and Hongxing are the dominant brands.',
+  jiangsu: 'Jiangsu Province produces strong-aroma baijiu with a softer, sweeter profile than Sichuan. Yanghe is the flagship brand.',
+  anhui: 'Anhui Province has a long strong-aroma tradition. Gujinggong is the most famous brand, using ancient well water in production.',
+  shaanxi: 'Shaanxi Province is the sole producer of phoenix-aroma baijiu, a hybrid style unique to the region. Xifeng is the defining brand.',
+  hunan: 'Hunan Province is home to fuyu-aroma (mixed aroma) baijiu. Jiugui is the primary producer, using a composite fermentation approach.',
+};
+
+export function getStaticPaths() {
+  return Object.entries(regionGroups).map(([key, { label, items }]) => ({
+    params: { region: key },
+    props: { label, items }
+  }));
+}
+
+const { label, items } = Astro.props;
+const regionKey = Astro.params.region;
+const description = regionDescriptions[regionKey] || '';
+
+const title = `${label} Baijiu — ${items.length} Varieties | Baijiu365`;
+const metaDesc = `Baijiu from ${label}: ${items.length} varieties with GB/T standards, ABV, tasting notes. ${description.slice(0, 100)}`;
+const keywords = [`${label} baijiu`, `${label} chinese liquor`, ...items.map(v => v.name)];
+---
+
+<BaseLayout title={title} description={metaDesc} keywords={keywords} type="WebSite">
+  <section class="article-header">
+    <div class="wrap">
+      <p class="eyebrow"><a href="/db/">Database</a> &rsaquo; Producing Region</p>
+      <h1>{label}</h1>
+      <p class="lede">{items.length} {items.length === 1 ? 'variety' : 'varieties'} &middot; {description}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Variety</th><th>Aroma</th><th>ABV</th><th>GB/T</th><th>Tier</th></tr>
+          </thead>
+          <tbody>
+            {items.map(v => (
+              <tr>
+                <td><a href={`/db/variety/${v.id}/`}><strong>{v.name}</strong> ({v.name_cn})</a></td>
+                <td><a href={`/db/aroma/${v.aroma_type}/`}>{v.aroma_type}</a></td>
+                <td>{v.abv_range}</td>
+                <td>{v.gbt_standard}</td>
+                <td>{v.tier}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="variety-cards">
+        {items.map(v => (
+          <a class="vcard" href={`/db/variety/${v.id}/`}>
+            <h3>{v.name} <span class="cn">{v.name_cn}</span></h3>
+            <p class="vcard-meta">{v.aroma_type} &middot; {v.abv_range} &middot; {v.gbt_standard}</p>
+            {v.production?.raw_materials && <p class="vcard-ingredients">Ingredients: {v.production.raw_materials.join(', ')}</p>}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .variety-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .vcard {
+    display: block;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .vcard:hover { border-color: var(--red); }
+  .vcard h3 { font-size: 18px; margin: 0 0 6px; }
+  .vcard .cn { color: var(--muted); font-size: 15px; }
+  .vcard-meta { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+  .vcard-ingredients { font-size: 14px; color: var(--muted); margin: 0; }
+  @media (max-width: 860px) { .variety-cards { grid-template-columns: 1fr; } }
+</style>

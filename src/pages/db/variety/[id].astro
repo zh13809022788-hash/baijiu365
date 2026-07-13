@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import fs from 'fs';
+import path from 'path';
+
+// Load all varieties for related links
+const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
+const allFiles = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
+const allVarieties = allFiles.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
+const varietyMap = Object.fromEntries(allVarieties.map(v => [v.id, v]));
+
+export function getStaticPaths() {
+  return allVarieties.map(v => ({
+    params: { id: v.id },
+    props: { data: v }
+  }));
+}
+
+const { data: v } = Astro.props;
+
+const aromaLabels = {
+  sauce: 'Sauce Aroma', strong: 'Strong Aroma', light: 'Light Aroma',
+  phoenix: 'Phoenix Aroma', herbal: 'Herbal Aroma', mixed: 'Mixed Aroma',
+  rice: 'Rice Aroma', sesame: 'Sesame Aroma', fuyu: 'Fuyu Aroma',
+  te: 'Te Aroma', chi: 'Chi Aroma', la: 'La Aroma',
+};
+
+const title = v.seo?.meta_title || `${v.name} (${v.name_cn}) — Baijiu Parameters | Baijiu365`;
+const description = v.seo?.meta_description || `${v.name} baijiu: ${v.aroma_type} aroma, ${v.abv_range} ABV, ${v.gbt_standard}, from ${v.region}. Complete parameter card with tasting notes and buying guide.`;
+const keywords = v.seo?.keywords || [v.name, v.name_cn, `${v.aroma_type} baijiu`, v.gbt_standard];
+
+// Schema.org structured data
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": `${v.name} (${v.name_cn})`,
+  "category": "Baijiu",
+  "description": description,
+  "brand": {
+    "@type": "Brand",
+    "name": v.brand?.name || v.name
+  },
+  "additionalProperty": [
+    { "@type": "PropertyValue", "name": "Aroma Type", "value": aromaLabels[v.aroma_type] || v.aroma_type },
+    { "@type": "PropertyValue", "name": "ABV", "value": v.abv_range },
+    { "@type": "PropertyValue", "name": "GB/T Standard", "value": v.gbt_standard },
+    { "@type": "PropertyValue", "name": "Region", "value": v.region },
+    { "@type": "PropertyValue", "name": "Tier", "value": v.tier },
+    { "@type": "PropertyValue", "name": "Raw Materials", "value": v.production?.raw_materials?.join(', ') }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} keywords={keywords} type="Article">
+  <section class="article-header">
+    <div class="wrap">
+      <p class="eyebrow">
+        <a href="/db/">Database</a> &rsaquo;
+        <a href={`/db/aroma/${v.aroma_type}/`}>{aromaLabels[v.aroma_type] || v.aroma_type}</a> &rsaquo;
+        <a href={`/db/region/${v.region.toLowerCase()}/`}>{v.region}</a>
+      </p>
+      <h1>{v.name}</h1>
+      <p class="lede">{v.name_cn} &middot; {v.brand?.name || ''}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap db-layout">
+
+      <!-- Parameter Card (sidebar) -->
+      <aside class="param-card">
+        <h2>Parameters</h2>
+        <dl>
+          <div><dt>Aroma Type</dt><dd><a href={`/db/aroma/${v.aroma_type}/`}>{aromaLabels[v.aroma_type] || v.aroma_type}</a></dd></div>
+          <div><dt>ABV</dt><dd>{v.abv_range}</dd></div>
+          <div><dt>GB/T Standard</dt><dd>{v.gbt_standard}</dd></div>
+          <div><dt>Region</dt><dd><a href={`/db/region/${v.region.toLowerCase()}/`}>{v.region}</a></dd></div>
+          <div><dt>Tier</dt><dd>{v.tier}</dd></div>
+          <div><dt>Beginner Friendly</dt><dd>{v.beginner_friendly ? 'Yes' : 'No'}</dd></div>
+          {v.price_range_usd && (
+            <div><dt>Price (USD)</dt><dd>${v.price_range_usd.min} - ${v.price_range_usd.max}</dd></div>
+          )}
+        </dl>
+        {v.brand?.website && <p class="official-link"><a href={v.brand.website} rel="nofollow noopener">Official website &rarr;</a></p>}
+      </aside>
+
+      <!-- Main content -->
+      <div class="db-content">
+
+        <!-- Core Products -->
+        {v.core_products && v.core_products.length > 0 && (
+          <div class="data-block">
+            <h2>Core Products</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Product</th><th>ABV</th><th>Volume</th><th>MSRP (CNY)</th><th>Flagship</th></tr></thead>
+                <tbody>
+                  {v.core_products.map(p => (
+                    <tr>
+                      <td><strong>{p.name}</strong><br/><span class="cn">{p.name_cn}</span></td>
+                      <td>{p.abv}</td>
+                      <td>{p.volume_ml}ml</td>
+                      <td>{p.msrp_cny ? `¥${p.msrp_cny}` : '—'}</td>
+                      <td>{p.is_flagship ? '★' : ''}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            {v.core_products.map(p => p.description && <p class="product-desc">{p.name}: {p.description}</p>)}
+          </div>
+        )}
+
+        <!-- Production -->
+        {v.production && (
+          <div class="data-block">
+            <h2>Production Method</h2>
+            <div class="data-grid">
+              <div><h3>Raw Materials</h3><p>{v.production.raw_materials?.join(', ')}</p></div>
+              <div><h3>Qu Type</h3><p>{v.production.qu_type}</p></div>
+              <div><h3>Fermentation</h3><p>{v.production.fermentation}</p></div>
+              <div><h3>Distillation</h3><p>{v.production.distillation}</p></div>
+              <div><h3>Aging</h3><p>{v.production.aging}</p></div>
+            </div>
+            {v.production.notable_techniques && v.production.notable_techniques.length > 0 && (
+              <ul class="tech-list">
+                {v.production.notable_techniques.map(t => <li>{t}</li>)}
+              </ul>
+            )}
+          </div>
+        )}
+
+        <!-- Tasting Notes -->
+        {v.tasting_notes && (
+          <div class="data-block">
+            <h2>Tasting Notes</h2>
+            <div class="data-grid">
+              {v.tasting_notes.appearance && <div><h3>Appearance</h3><p>{v.tasting_notes.appearance}</p></div>}
+              {v.tasting_notes.nose && <div><h3>Nose</h3><p>{v.tasting_notes.nose}</p></div>}
+              {v.tasting_notes.palate && <div><h3>Palate</h3><p>{v.tasting_notes.palate}</p></div>}
+              {v.tasting_notes.finish && <div><h3>Finish</h3><p>{v.tasting_notes.finish}</p></div>}
+            </div>
+            {v.tasting_notes.overall_impression && (
+              <div class="callout"><strong>Overall:</strong> {v.tasting_notes.overall_impression}</div>
+            )}
+          </div>
+        )}
+
+        <!-- Food Pairings -->
+        {v.food_pairings && v.food_pairings.length > 0 && (
+          <div class="data-block">
+            <h2>Food Pairings</h2>
+            <div class="pairing-grid">
+              {v.food_pairings.map(fp => (
+                <div class="pairing-card">
+                  <h3>{fp.cuisine}</h3>
+                  <p class="dishes">{fp.dishes?.join(', ')}</p>
+                  <p class="why">{fp.why_it_works}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Comparable Spirits -->
+        {v.comparable_spirits && v.comparable_spirits.length > 0 && (
+          <div class="data-block">
+            <h2>Comparable Spirits</h2>
+            <ul class="compare-list">
+              {v.comparable_spirits.map(cs => <li><strong>{cs.spirit}</strong> — {cs.reason}</li>)}
+            </ul>
+          </div>
+        )}
+
+        <!-- Buying Guide -->
+        {v.buying_guide && (
+          <div class="data-block">
+            <h2>Buying Guide</h2>
+            {v.buying_guide.where_to_buy_global && <p><strong>Where to buy (global):</strong> {v.buying_guide.where_to_buy_global}</p>}
+            {v.buying_guide.where_to_buy_cn && <p><strong>Where to buy (China):</strong> {v.buying_guide.where_to_buy_cn}</p>}
+            {v.buying_guide.what_to_look_for && <p><strong>What to look for:</strong> {v.buying_guide.what_to_look_for}</p>}
+            {v.buying_guide.counterfeit_risks && <div class="callout warning"><strong>Counterfeit risk:</strong> {v.buying_guide.counterfeit_risks}</div>}
+            {v.buying_guide.value_picks && v.buying_guide.value_picks.length > 0 && (
+              <p><strong>Value picks:</strong> {v.buying_guide.value_picks.join('; ')}</p>
+            )}
+            {v.buying_guide.splurge_picks && v.buying_guide.splurge_picks.length > 0 && (
+              <p><strong>Splurge picks:</strong> {v.buying_guide.splurge_picks.join('; ')}</p>
+            )}
+          </div>
+        )}
+
+        <!-- Beginner Notes -->
+        {v.beginner_notes && (
+          <div class="data-block">
+            <h2>For Beginners</h2>
+            <p>{v.beginner_notes}</p>
+          </div>
+        )}
+
+        <!-- History -->
+        {v.history && (
+          <div class="data-block">
+            <h2>Background</h2>
+            <p>{v.history}</p>
+          </div>
+        )}
+
+        <!-- FAQ -->
+        {v.faq && v.faq.length > 0 && (
+          <div class="data-block faq">
+            <h2>FAQ</h2>
+            {v.faq.map(item => (
+              <div>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <!-- Sources -->
+        {v.sources && v.sources.length > 0 && (
+          <div class="data-block sources">
+            <h2>Sources</h2>
+            <ul>
+              {v.sources.map(s => <li><a href={s.url} rel="nofollow noopener">{s.label}</a></li>)}
+            </ul>
+          </div>
+        )}
+
+        <!-- Related -->
+        {v.related_varieties && v.related_varieties.length > 0 && (
+          <div class="next-links">
+            {v.related_varieties.map(rid => {
+              const rv = varietyMap[rid];
+              return rv ? <a href={`/db/variety/${rid}/`}>{rv.name} ({rv.name_cn})</a> : null;
+            })}
+          </div>
+        )}
+
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>
+
+<style>
+  .db-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+  }
+
+  .param-card {
+    position: sticky;
+    top: 88px;
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+  }
+  .param-card h2 { font-size: 16px; margin: 0 0 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .param-card dl { margin: 0; }
+  .param-card dl > div { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .param-card dl > div:last-child { border-bottom: 0; }
+  .param-card dt { color: var(--muted); font-size: 13px; }
+  .param-card dd { margin: 0; font-weight: 700; font-size: 14px; text-align: right; }
+  .param-card dd a { color: var(--red); text-decoration: none; }
+  .official-link { margin: 16px 0 0; font-size: 14px; }
+  .official-link a { color: var(--red); }
+
+  .db-content { min-width: 0; }
+
+  .data-block { margin-bottom: 40px; }
+  .data-block h2 { font-size: 24px; margin: 0 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .data-grid > div { padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+  .data-grid h3 { font-size: 14px; margin: 0 0 6px; text-transform: uppercase; color: var(--muted); }
+  .data-grid p { margin: 0; font-size: 15px; }
+
+  .tech-list { margin: 16px 0 0; padding-left: 20px; }
+  .tech-list li { margin-bottom: 8px; color: var(--muted); }
+
+  .pairing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .pairing-card { padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+  .pairing-card h3 { font-size: 16px; margin: 0 0 4px; }
+  .pairing-card .dishes { font-weight: 700; margin: 0 0 6px; }
+  .pairing-card .why { color: var(--muted); font-size: 14px; margin: 0; }
+
+  .compare-list { padding-left: 20px; }
+  .compare-list li { margin-bottom: 10px; color: var(--muted); }
+
+  .callout.warning { border-left-color: var(--gold); }
+
+  .product-desc { font-size: 14px; color: var(--muted); margin: 6px 0; }
+  .cn { color: var(--muted); font-size: 13px; }
+
+  .sources ul { padding-left: 20px; }
+  .sources a { color: var(--red); }
+
+  .faq h3 { font-size: 17px; }
+
+  @media (max-width: 860px) {
+    .db-layout { grid-template-columns: 1fr; }
+    .param-card { position: static; }
+    .data-grid, .pairing-grid { grid-template-columns: 1fr; }
+  }
+</style>

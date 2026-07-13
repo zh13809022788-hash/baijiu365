@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import fs from 'fs';
+import path from 'path';
+
+const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
+const allFiles = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
+const allVarieties = allFiles.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
+
+const aromaGroups = {};
+for (const v of allVarieties) {
+  if (!aromaGroups[v.aroma_type]) aromaGroups[v.aroma_type] = [];
+  aromaGroups[v.aroma_type].push(v);
+}
+
+const aromaLabels = {
+  sauce: 'Sauce Aroma', strong: 'Strong Aroma', light: 'Light Aroma',
+  phoenix: 'Phoenix Aroma', herbal: 'Herbal Aroma', mixed: 'Mixed Aroma',
+  rice: 'Rice Aroma', sesame: 'Sesame Aroma', fuyu: 'Fuyu Aroma',
+  te: 'Te Aroma', chi: 'Chi Aroma', la: 'La Aroma',
+};
+
+const aromaDescriptions = {
+  sauce: 'Savory, complex, umami-driven. The most intense and polarizing baijiu style, made famous by Maotai. Production involves multiple fermentation cycles over a full year.',
+  strong: 'Fruity, cellar-influenced, rich. The most widely consumed baijiu style in China. Fermented in mud pits, producing ethyl hexanoate-driven aromas.',
+  light: 'Clean, grain-forward, approachable. The easiest entry point for new baijiu drinkers. Fermented in ceramic jars, lighter body and shorter finish.',
+  phoenix: 'Unique to Shaanxi. A hybrid style with both strong and light characteristics, with a distinctive sweet-sour finish.',
+  herbal: 'Medicinal herbs infused during production. Rare and acquired taste, with Dongjiu as the primary example.',
+  mixed: 'Fuyu-aroma style from Hunan. Combines multiple fermentation techniques for a layered, complex profile.',
+};
+
+export function getStaticPaths() {
+  return Object.keys(aromaGroups).map(type => ({
+    params: { type },
+    props: { varieties: aromaGroups[type] }
+  }));
+}
+
+const { varieties } = Astro.props;
+const label = aromaLabels[Astro.params.type] || Astro.params.type;
+const description = aromaDescriptions[Astro.params.type] || '';
+
+const title = `${label} Baijiu — ${varieties.length} Varieties | Baijiu365`;
+const metaDesc = `${label} baijiu database: ${varieties.length} varieties with GB/T standards, ABV, tasting notes, and buying guides. ${description.slice(0, 100)}`;
+const keywords = [`${Astro.params.type} aroma baijiu`, `${label.toLowerCase()}`, ...varieties.map(v => v.name)];
+---
+
+<BaseLayout title={title} description={metaDesc} keywords={keywords} type="WebSite">
+  <section class="article-header">
+    <div class="wrap">
+      <p class="eyebrow"><a href="/db/">Database</a> &rsaquo; Aroma Type</p>
+      <h1>{label}</h1>
+      <p class="lede">{varieties.length} {varieties.length === 1 ? 'variety' : 'varieties'} &middot; {description}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Variety</th><th>ABV</th><th>GB/T</th><th>Region</th><th>Tier</th><th>Beginner</th></tr>
+          </thead>
+          <tbody>
+            {varieties.map(v => (
+              <tr>
+                <td><a href={`/db/variety/${v.id}/`}><strong>{v.name}</strong> ({v.name_cn})</a></td>
+                <td>{v.abv_range}</td>
+                <td>{v.gbt_standard}</td>
+                <td><a href={`/db/region/${v.region.toLowerCase()}/`}>{v.region}</a></td>
+                <td>{v.tier}</td>
+                <td>{v.beginner_friendly ? 'Yes' : 'No'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="variety-cards">
+        {varieties.map(v => (
+          <a class="vcard" href={`/db/variety/${v.id}/`}>
+            <h3>{v.name} <span class="cn">{v.name_cn}</span></h3>
+            <p class="vcard-meta">{v.abv_range} &middot; {v.gbt_standard} &middot; {v.region}</p>
+            {v.tasting_notes?.nose && <p class="vcard-nose">{v.tasting_notes.nose.slice(0, 140)}{v.tasting_notes.nose.length > 140 ? '…' : ''}</p>}
+            {v.beginner_friendly ? <span class="badge ok">Beginner friendly</span> : <span class="badge">Acquired taste</span>}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .variety-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .vcard {
+    display: block;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .vcard:hover { border-color: var(--red); }
+  .vcard h3 { font-size: 18px; margin: 0 0 6px; }
+  .vcard .cn { color: var(--muted); font-size: 15px; }
+  .vcard-meta { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+  .vcard-nose { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    background: #f5efe4;
+    color: var(--muted);
+  }
+  .badge.ok { background: #e8f0e0; color: var(--green); }
+  @media (max-width: 860px) { .variety-cards { grid-template-columns: 1fr; } }
+</style>
