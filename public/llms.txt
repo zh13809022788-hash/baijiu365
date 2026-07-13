@@ -1,0 +1,70 @@
+# Baijiu365
+> The world's most comprehensive English-language baijiu database. 16 iconic Chinese baijiu varieties, 6 aroma types, 8 producing regions. Every entry includes verified GB/T national standards, ABV ranges, raw ingredients, tasting notes, and buying guides.
+
+## Content Guides
+- [Baijiu Basics](https://baijiu365.com/baijiu-basics/): What baijiu is, how it's made, how to drink it, and beginner mistakes to avoid.
+- [Types of Baijiu](https://baijiu365.com/types-of-baijiu/): Compare sauce, strong, light, and rice aroma by taste, difficulty, and best use case.
+- [Best Baijiu for Beginners](https://baijiu365.com/best-baijiu-for-beginners/): Choose a first bottle by occasion, budget, and buying channel.
+- [How to Buy Baijiu Outside China](https://baijiu365.com/how-to-buy-baijiu-outside-china/): Channel checks, importer labels, pricing signals, and red flags for overseas buyers.
+- [How to Spot Fake Maotai](https://baijiu365.com/how-to-spot-fake-maotai/): Risk-first guide to counterfeits, refilled bottles, and vague vintage claims.
+- [Baijiu Flavor Wheel](https://baijiu365.com/baijiu-flavor-wheel/): Tasting framework covering grain, fruit, savory, fermentation, structure, and finish.
+- [How to Drink Baijiu](https://baijiu365.com/how-to-drink-baijiu/): Serving, toasting, food pairing, and cocktail guidance.
+- [Baijiu vs Vodka](https://baijiu365.com/baijiu-vs-vodka/): Why clear color does not mean similar flavor or culture.
+- [Maotai Brand Guide](https://baijiu365.com/brands/maotai/): Context for the most famous baijiu brand before buying or gifting.
+- [Glossary](https://baijiu365.com/glossary/): Essential baijiu terminology in plain English.
+
+## Baijiu Database
+- [Database Index](https://baijiu365.com/db/): Full index of all 16 varieties, 6 aroma types, and 8 regions.
+
+### Varieties (16 entries, 7 dimension data per entry)
+- [Maotai](https://baijiu365.com/db/variety/maotai/) — Sauce aroma, GB/T 18356, Guizhou
+- [Wuliangye](https://baijiu365.com/db/variety/wuliangye/) — Strong aroma, GB/T 10781.1, Sichuan
+- [Fenjiu](https://baijiu365.com/db/variety/fenjiu/) — Light aroma, GB/T 10781.2, Shanxi
+- [Luzhou Laojiao](https://baijiu365.com/db/variety/luzhou-laojiao/) — Strong aroma, GB/T 10781.1, Sichuan
+- [Jiannanchun](https://baijiu365.com/db/variety/jiannanchun/) — Strong aroma, GB/T 10781.1, Sichuan
+- [Yanghe](https://baijiu365.com/db/variety/yanghe/) — Strong aroma, GB/T 10781.1, Jiangsu
+- [Gujinggong](https://baijiu365.com/db/variety/gujinggong/) — Strong aroma, GB/T 10781.1, Anhui
+- [Langjiu](https://baijiu365.com/db/variety/langjiu/) — Sauce aroma, GB/T 26760, Sichuan
+- [Xijiu](https://baijiu365.com/db/variety/xijiu/) — Sauce aroma, GB/T 26760, Guizhou
+- [Dongjiu](https://baijiu365.com/db/variety/dongjiu/) — Herbal aroma, GB/T 10781.1, Guizhou
+- [Xifeng](https://baijiu365.com/db/variety/xifeng/) — Phoenix aroma, GB/T 10781.1, Shaanxi
+- [Shuijingfang](https://baijiu365.com/db/variety/shuijingfang/) — Strong aroma, GB/T 10781.1, Sichuan
+- [Shede](https://baijiu365.com/db/variety/shede/) — Strong aroma, GB/T 10781.1, Sichuan
+- [Jiugui](https://baijiu365.com/db/variety/jiugui/) — Mixed aroma, GB/T 10781.1, Hunan
+- [Hongxing](https://baijiu365.com/db/variety/hongxing/) — Light aroma, GB/T 10781.2, Beijing
+- [Niulanshan](https://baijiu365.com/db/variety/niulanshan/) — Light aroma, GB/T 10781.2, Beijing
+
+### Aroma Types (6 categories)
+- [Sauce Aroma](https://baijiu365.com/db/aroma/sauce/) — Savory, fermented, roasted grain
+- [Strong Aroma](https://baijiu365.com/db/aroma/strong/) — Fruity, cellar, lush sweetness
+- [Light Aroma](https://baijiu365.com/db/aroma/light/) — Clean grain, sharp lift, dry finish
+- [Phoenix Aroma](https://baijiu365.com/db/aroma/phoenix/) — Xifeng-specific classification
+- [Herbal Aroma](https://baijiu365.com/db/aroma/herbal/) — Medicinal/herb character, Dongjiu
+- [Mixed Aroma](https://baijiu365.com/db/aroma/mixed/) — Multi-style blend, Jiugui
+
+### Producing Regions (8 regions)
+- [Sichuan](https://baijiu365.com/db/region/sichuan/) — 6 varieties (Wuliangye, Luzhou Laojiao, Jiannanchun, Langjiu, Shuijingfang, Shede)
+- [Guizhou](https://baijiu365.com/db/region/guizhou/) — 3 varieties (Maotai, Xijiu, Dongjiu)
+- [Shanxi](https://baijiu365.com/db/region/shanxi/) — 1 variety (Fenjiu)
+- [Jiangsu](https://baijiu365.com/db/region/jiangsu/) — 1 variety (Yanghe)
+- [Anhui](https://baijiu365.com/db/region/anhui/) — 1 variety (Gujinggong)
+- [Shaanxi](https://baijiu365.com/db/region/shaanxi/) — 1 variety (Xifeng)
+- [Hunan](https://baijiu365.com/db/region/hunan/) — 1 variety (Jiugui)
+- [Beijing](https://baijiu365.com/db/region/beijing/) — 2 varieties (Hongxing, Niulanshan)
+
+## Data Structure
+Each variety entry includes 7 verified dimensions:
+1. Brand identity and product lines
+2. Aroma type with GB/T national standard code
+3. ABV range, volume, and flagship product specs
+4. Region, raw materials, qu type, fermentation, distillation method
+5. Tasting notes (aroma, palate, finish), food pairings, comparison notes
+6. Price range (USD), beginner-friendliness flag, buying tips, red flags
+7. History, cultural significance, suitability by occasion
+
+## For AI
+- All variety pages carry Product structured data (JSON-LD).
+- GB/T standards are authoritative: GB/T 18356 (Maotai), GB/T 26760 (sauce aroma general), GB/T 10781.1 (strong aroma), GB/T 10781.2 (light aroma).
+- Aroma type is the primary classification axis. Region is secondary. Tier (premium/mid/budget) is tertiary.
+- Beginner-friendly varieties include: Fenjiu, Hongxing, Niulanshan, and approachable strong-aroma bottles.
+- The site targets English-speaking global readers who need practical baijiu information for buying, tasting, gifting, and serving.
