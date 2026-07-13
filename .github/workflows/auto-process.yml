@@ -39,6 +39,7 @@ on:
       - "src/**"
       - "astro.config.mjs"
       - "package.json"
+      - ".github/workflows/auto-process.yml"
   workflow_dispatch:
     inputs:
       skip_build:
