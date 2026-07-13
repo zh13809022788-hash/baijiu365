@@ -1,0 +1,129 @@
+{
+  "id": "gujinggong",
+  "name": "Gujinggong",
+  "name_cn": "古井贡酒",
+  "brand": {
+    "name": "Anhui Gujinggong Distillery Co., Ltd.",
+    "name_cn": "安徽古井贡酒股份有限公司",
+    "founded": "1959",
+    "headquarters": "Bozhou, Anhui, China",
+    "website": "https://www.gujing.com"
+  },
+  "aroma_type": "strong",
+  "aroma_type_cn": "浓香型",
+  "gbt_standard": "GB/T 10781.1",
+  "region": "Anhui",
+  "region_cn": "安徽（亳州）",
+  "abv_range": "50-52%",
+  "price_range_usd": {
+    "min": 20,
+    "max": 300,
+    "note": "Year Original Liquor 5yr (年份原浆5年) $25-40; Year Original Liquor 20yr $150-300. Strong value proposition in the mid-tier."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Year Original Liquor 20 (Nianfen Yuanjiang 20)",
+      "name_cn": "年份原浆20年",
+      "abv": "50%",
+      "volume_ml": 500,
+      "description": "Flagship premium. The top of the Year Original Liquor line. Extended aging, complex blend. Dark bottle with gold accents — positioned for high-end gifting and banquets in Anhui and surrounding provinces.",
+      "msrp_cny": 888,
+      "is_flagship": true
+    },
+    {
+      "name": "Year Original Liquor 8 (Nianfen Yuanjiang 8)",
+      "name_cn": "年份原浆8年",
+      "abv": "50%",
+      "volume_ml": 500,
+      "description": "The sweet spot. Good aging, smooth integration. The most popular Gujinggong product for mid-range gifting and dining. Red label, approachable character.",
+      "msrp_cny": 398,
+      "is_flagship": false
+    },
+    {
+      "name": "Year Original Liquor 5 (Nianfen Yuanjiang 5)",
+      "name_cn": "年份原浆5年",
+      "abv": "50%",
+      "volume_ml": 500,
+      "description": "Entry premium. Solid everyday drinking quality with genuine pit character. The most affordable way to access Gujinggong's traditional profile.",
+      "msrp_cny": 188,
+      "is_flagship": false
+    },
+    {
+      "name": "Gujinggong Classic",
+      "name_cn": "古井贡酒经典",
+      "abv": "50%",
+      "volume_ml": 500,
+      "description": "The budget standard. A step down from the Year Original Liquor series in aging and complexity, but still genuine solid-state fermented strong-aroma. Popular as an everyday drinker in Anhui.",
+      "msrp_cny": 88,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear, bright. Medium viscosity.",
+    "nose": "Clean and grain-forward. The dominant notes are steamed rice, cooked sorghum, and a pleasant yeastiness — think fresh bread dough. The pit-mud character is present but restrained, more earthy than funky. Subtle honey and dried apricot provide sweetness. Less aggressive than Sichuan strong-aroma, more grounded than Yanghe. The 'well water' (古井) character is subtle — a faint mineral-clean note.",
+    "palate": "Medium body, smooth entry. Cooked grain and light caramel sweetness dominate. The mid-palate develops gentle pit character and a touch of white pepper. 50% ABV is well-integrated — noticeable warmth but no burn. The Year Original Liquor 8 has noticeable additional smoothness and depth compared to the 5. Not particularly complex, but very consistent and honest.",
+    "finish": "Medium length, clean. Fades from grain sweetness to a gentle mineral-dry finish. No harshness. Pleasant and unpretentious.",
+    "overall_impression": "Gujinggong is the reliable, unflashy strong-aroma of central China. It doesn't try to be Wuliangye or Moutai — it knows what it is: a well-made, honestly priced, traditionally produced baijiu. The Year Original Liquor series is particularly well-calibrated: the 5 for drinking, the 8 for friends, the 20 for special occasions. Anhui is not a glamorous baijiu province, but Gujinggong is proof that substance beats flash."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Anhui (Hui cuisine)",
+      "dishes": ["Stinky mandarin fish (chou gui yu)", "Li Hongzhang hotchpotch", "Braised turtle with ham"],
+      "why_it_works": "Regional pairing. Anhui cuisine is hearty and savory — Gujinggong's clean, grain-forward profile refreshes the palate between rich bites."
+    },
+    {
+      "cuisine": "Home-style Chinese",
+      "dishes": ["Braised eggplant", "Scrambled eggs with tomato", "Stir-fried pork with peppers", "Steamed rice"],
+      "why_it_works": "Gujinggong excels at the everyday meal pairing. It's not fussy, it doesn't dominate, it just works."
+    },
+    {
+      "cuisine": "Dumpling and noodle meals",
+      "dishes": ["Pork and chive dumplings", "Beef noodle soup", "Zha jiang mian"],
+      "why_it_works": "Simple, satisfying food with simple, satisfying baijiu. A northern Chinese comfort meal."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Gujinggong Year Original Liquor 5 at 50% ABV is a solid introduction to strong-aroma baijiu at a very accessible price. The clean, grain-forward profile won't scare anyone off, and the price (under ¥200) means there's no pressure to love it. If you're building a baijiu tasting lineup, put this between Yanghe (softer) and Crystal Jian (bolder) to understand the strong-aroma spectrum. Drink with food, especially Anhui-style dishes if you can find them.",
+  "comparable_spirits": [
+    { "spirit": "Bourbon (Buffalo Trace, Eagle Rare)", "reason": "Grain-forward, accessible, consistent quality at a fair price. The 'everyday premium' category" },
+    { "spirit": "Blended Scotch (Johnnie Walker Black, Chivas 12)", "reason": "Smooth, reliable, widely available. Not the most exciting, but never lets you down" },
+    { "spirit": "Irish pot still whiskey (Powers, Redbreast 12)", "reason": "Clean grain character, pleasant warmth, unpretentious quality" }
+  ],
+  "history": "Gujinggong means 'Ancient Well Tribute Liquor.' The well in question is a Northern Wei dynasty (386-534 AD) well in Bozhou, Anhui, whose water was used for brewing and whose liquor was reportedly sent as tribute to multiple imperial courts. The distillery was formally established in 1959 on the site of the ancient well and local brewing traditions. Bozhou is in northern Anhui, part of the Huang-Huai region — a major grain-producing area that has historically been one of China's most important baijiu regions. Gujinggong won gold medals at the 1963, 1979, 1984, and 1989 National Wine Tasting Competitions (全国评酒会), establishing its reputation as one of China's 'famous liquors' (中国名酒). The 'Year Original Liquor' (年份原浆) product line, launched in the 2000s, redefined the brand's market positioning with a clear age-statement premiumization strategy.",
+  "production": {
+    "raw_materials": ["sorghum", "wheat", "rice", "glutinous rice", "corn"],
+    "qu_type": "Medium-temperature daqu, wheat-based. The 'peach-blossom qu' (桃花春曲) made in spring is Gujinggong's signature qu — the seasonal timing affects the microbial profile.",
+    "fermentation": "Solid-state fermentation in mud pits. Bozhou pits aged 20-60+ years. The Huang-Huai climate (transitional between north and south China) creates a distinctive fermentation profile different from Sichuan.",
+    "distillation": "Traditional pot still. Double distillation for some premium lines.",
+    "aging": "Minimum 1-3 years in ceramic jars. The Year Original Liquor series aging claims (5yr/8yr/20yr) refer to the weighted average age of the blend, with older spirits providing character and younger spirits providing freshness.",
+    "notable_techniques": [
+      "Ancient well water (宋代古井水) — mineral-rich groundwater from the Northern Wei dynasty well",
+      "Spring qu-making (桃花春曲) — seasonal timing of qu production for optimal microbial profile",
+      "Huang-Huai style strong-aroma — cleaner, grain-forward, less pit-heavy than Sichuan style"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Gujinggong stores on Tmall and JD.com. Widely available in Anhui and eastern China. Growing national distribution.",
+    "where_to_buy_global": "Limited. Available through some Chinese liquor importers. Less common internationally than Sichuan heavyweights.",
+    "what_to_look_for": "Year Original Liquor bottles are clearly labeled with the age number (5/8/16/20). Check the anti-counterfeit QR code. The bottle design is distinctive — rectangular with a dragon motif on the label.",
+    "counterfeit_risks": "Low. Gujinggong's price point makes counterfeiting less profitable than Moutai or Wuliangye. Still verify QR codes for premium lines.",
+    "value_picks": ["Year Original Liquor 5 (年份原浆5年) — the best value entry into Anhui strong-aroma", "Gujinggong Classic (经典) — ultra-affordable daily drinker"],
+    "splurge_picks": ["Year Original Liquor 20 (年份原浆20年) — top of the line"]
+  },
+  "faq": [
+    { "q": "Is the 'year' number the actual age?", "a": "The number refers to the weighted average age of the blend, not the minimum age. A 5-year bottle contains a blend where the average spirit age is 5 years — some older, some younger. This is standard Chinese baijiu industry practice and is not unique to Gujinggong." },
+    { "q": "How does Anhui strong-aroma differ from Sichuan?", "a": "Climate is the main factor. Anhui is cooler and drier than Sichuan, which affects fermentation speed and microbial activity. Anhui strong-aroma (represented by Gujinggong) tends to be cleaner, grain-forward, with less pit-mud intensity. Sichuan strong-aroma (Wuliangye, Luzhou Laojiao) is generally fruitier and more pit-driven. Think of it like the difference between Speyside and Highland Scotch — same category, different terroir." }
+  ],
+  "related_varieties": ["wuliangye", "yanghe", "luzhou-laojiao", "jiannanchun"],
+  "seo": {
+    "meta_title": "Gujinggong Baijiu Guide: Anhui's Ancient Well Tribute Liquor | Baijiu365",
+    "meta_description": "Gujinggong (古井贡酒): Anhui's famous strong-aroma baijiu. Year Original Liquor series, ancient well water, and how Anhui strong-aroma differs from Sichuan style.",
+    "keywords": ["gujinggong", "古井贡酒", "year original liquor", "年份原浆", "anhui baijiu", "strong aroma baijiu", "chinese liquor"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Anhui Gujinggong Official", "url": "https://www.gujing.com" },
+    { "label": "GB/T 10781.1-2021 Strong-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

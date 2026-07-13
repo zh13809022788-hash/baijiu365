@@ -1,0 +1,138 @@
+{
+  "id": "langjiu",
+  "name": "Langjiu",
+  "name_cn": "郎酒",
+  "brand": {
+    "name": "Sichuan Langjiu Group Co., Ltd.",
+    "name_cn": "四川郎酒集团有限责任公司",
+    "founded": "1903",
+    "headquarters": "Erlang Town, Gulin County, Luzhou, Sichuan, China",
+    "website": "https://www.langjiu.cn"
+  },
+  "aroma_type": "sauce",
+  "aroma_type_cn": "酱香型",
+  "gbt_standard": "GB/T 26760",
+  "region": "Sichuan",
+  "region_cn": "四川（泸州古蔺）",
+  "abv_range": "53%",
+  "price_range_usd": {
+    "min": 60,
+    "max": 800,
+    "note": "Honghua Lang (红花郎) 10yr typically $60-100; Qinghua Lang (青花郎) 20yr $200-400; limited editions and vintage bottles may exceed $800."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Qinghua Lang 20",
+      "name_cn": "青花郎20",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Flagship product. Aged minimum 20 years, stored in the Tianbao Cave (天宝洞) — a natural karst cave used for aging. The porcelain bottle is hand-painted with blue underglaze.",
+      "msrp_cny": 1499,
+      "is_flagship": true
+    },
+    {
+      "name": "Honghua Lang 15",
+      "name_cn": "红花郎15",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Mid-premium tier. Aged 15 years. Iconic red packaging — the go-to baijiu for Chinese weddings and banquets. Smoother and more approachable than Qinghua Lang.",
+      "msrp_cny": 698,
+      "is_flagship": false
+    },
+    {
+      "name": "Honghua Lang 10",
+      "name_cn": "红花郎10",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Entry premium. Aged 10 years. The most accessible Langjiu product. Widely available and often the first sauce-aroma baijiu people try outside of Moutai.",
+      "msrp_cny": 418,
+      "is_flagship": false
+    },
+    {
+      "name": "Langjiu 1898",
+      "name_cn": "老郎酒1898",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Heritage line referencing the brand's founding year. Mid-tier everyday drinking baijiu with classic sauce-aroma profile.",
+      "msrp_cny": 238,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear and bright, faint golden tinge from aging. Good viscosity — legs cling to the glass.",
+    "nose": "Soy sauce and roasted nuts upfront, then dried mushroom, toasted sesame, and dark caramel. Compared to Moutai, Langjiu has a slightly sharper, more overtly fruity edge — think overripe plum and dried cherry. The cave-aging in Tianbao Dong adds a subtle mineral-earth note.",
+    "palate": "Full body but lighter on entry than Moutai. Opens with roasted grain and fermented bean, then layers of dark fruit (plum, date) emerge. Medium umami. The 53% alcohol is well-contained — warmer than Moutai but less aggressive. Qinghua Lang 20 has more structure and length than the Honghua lines.",
+    "finish": "Medium-long, fading from savory to a lingering sweetness. Some returning spice — cinnamon and clove. Honghua Lang finishes shorter and sweeter, Qinghua Lang lingers longer with more savory complexity.",
+    "overall_impression": "The most credible alternative to Moutai. Langjiu shares the same Chishui River terroir but deliberately differentiates itself: more fruit-forward, slightly softer, less umami-dominant. If Moutai is an Islay single malt, Langjiu is a Highland — still complex, but more approachable."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Sichuan and Chongqing",
+      "dishes": ["Chongqing hot pot", "Boiled fish in chili oil (shui zhu yu)", "Dan dan noodles"],
+      "why_it_works": "The local connection — Langjiu is from Sichuan. The baijiu's fruitiness plays well against Sichuan pepper's numbing heat."
+    },
+    {
+      "cuisine": "Banquet and celebration",
+      "dishes": ["Peking duck", "Braised pork belly (hong shao rou)", "Whole steamed fish"],
+      "why_it_works": "Red-label Honghua Lang is the default Chinese wedding baijiu for a reason — it pairs with rich banquet dishes without overwhelming them."
+    },
+    {
+      "cuisine": "BBQ and grilled meats",
+      "dishes": ["Cumin lamb skewers", "Char siu (Cantonese BBQ pork)", "Korean BBQ"],
+      "why_it_works": "The roasted-nut and caramel notes in Langjiu match the char and sweetness of grilled meats."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Langjiu — specifically Honghua Lang 10 — is one of the best entry points into sauce-aroma baijiu for beginners. It's less intense and less expensive than Moutai, with a rounder, fruitier profile. If you've tried light-aroma and want to explore sauce-aroma, start here. Drink at room temperature in small pours (15-20ml). Let it sit in the glass for 2-3 minutes before your first sip — the alcohol needs a moment to relax. Pair with food, don't drink it solo.",
+  "comparable_spirits": [
+    { "spirit": "Highland single malt (Macallan 12, Glenmorangie)", "reason": "Sweeter, fruit-forward, approachable — similar positioning relative to the more aggressive Moutai/Islay comparison" },
+    { "spirit": "Aged rum (El Dorado 15, Appleton 12)", "reason": "Dark fruit, caramel, toasted notes — the sweetness profile aligns with Langjiu's style" },
+    { "spirit": "Cognac (VSOP tier)", "reason": "Smooth, rounded, with dried fruit and a gentle warming finish" }
+  ],
+  "history": "Langjiu's origins trace to 1903 and the Xu family distillery in Erlang Town, on the Sichuan side of the Chishui River. The modern Langjiu Group was formed in 1956 as a state-owned enterprise. Its geography is its defining story: Erlang Town sits directly across the Chishui River from Moutai's Maotai Town — the two are literally within sight of each other, sharing the same river water, climate, and microbial terroir. For decades, Langjiu positioned itself as 'the other sauce-aroma on the Chishui River.' A key differentiator is Langjiu's natural cave aging: the Tianbao Cave (天宝洞) and Dibao Cave (地宝洞) are karst formations discovered in the 1970s, now used as natural cellars. The constant temperature (19-21°C) and humidity (85-90%) in these caves is considered optimal for aging sauce-aroma baijiu. In 2001, Langjiu was designated a 'China Time-Honored Brand' (中华老字号). In recent years it has pursued an aggressive premiumization strategy, positioning Qinghua Lang as a direct competitor to Moutai's Flying Fairy.",
+  "production": {
+    "raw_materials": ["sorghum (local Sichuan red variety)", "wheat"],
+    "qu_type": "High-temperature daqu (小麦高温大曲), fermented at 60-65°C",
+    "fermentation": "Solid-state fermentation in stone-lined pits. Seven-round cycle over one year, with each round producing a different character base spirit.",
+    "distillation": "Traditional pot still distillation. Each round's distillate is collected separately and graded.",
+    "aging": "Minimum 3 years for base spirits, with premium lines aged 10-20+ years. The signature step is cave aging — base spirits are transferred into large ceramic jars and stored in the Tianbao and Dibao natural caves, where constant temperature and humidity facilitate slow, even maturation. This cave system holds over 10,000 ceramic jars.",
+    "notable_techniques": [
+      "Four-high, two-long process (四高两长): high-temperature koji-making, high-temperature stacking fermentation, high-temperature distillation, high-temperature aging; long production cycle and long aging period",
+      "Natural cave aging in Tianbao Dong — one of the largest natural liquor cellars in the world",
+      "Same Chishui River water source and microbial terroir as Moutai, but Sichuan-side expression"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Langjiu flagship stores on Tmall and JD.com. Major liquor chains (1919, Jiuxian). Large supermarkets. Duty-free shops at major Chinese airports. Widely available — much easier to find at retail price than Moutai.",
+    "where_to_buy_global": "Specialty Chinese liquor importers. Select high-end spirits retailers in major cities (US, UK, Australia). Online: Drizly (select US markets), The Whisky Exchange (UK). Availability is good compared to Moutai — Honghua Lang 10 is often the most accessible sauce-aroma baijiu outside China.",
+    "what_to_look_for": "Check the anti-counterfeit QR code on the box (scan with WeChat). Honghua Lang has a distinctive red packaging with gold calligraphy. Qinghua Lang comes in a hand-painted blue-and-white porcelain bottle — the blue underglaze pattern should be crisp and detailed. The bottle cap should have an intact security seal ring.",
+    "counterfeit_risks": "Moderate. Less counterfeited than Moutai due to lower resale markup, but fakes exist for Qinghua Lang and premium Honghua Lang lines. Buy from authorized retailers. The QR code is the most reliable verification method. Be especially cautious with Qinghua Lang 20 at prices significantly below MSRP.",
+    "value_picks": [
+      "Honghua Lang 10 (红花郎10) — best entry point into sauce-aroma at a fair price",
+      "Langjiu 1898 (老郎酒1898) — everyday drinking, classic profile without the premium markup"
+    ],
+    "splurge_picks": [
+      "Qinghua Lang 20 (青花郎20) — the flagship, cave-aged, direct Moutai competitor",
+      "Langjiu vintage/commemorative bottles — some 30-year and zodiac editions appreciate over time"
+    ]
+  },
+  "faq": [
+    { "q": "Is Langjiu a cheaper Moutai?", "a": "No — and that framing does both brands a disservice. Langjiu shares the same river and the same sauce-aroma heritage, but it's deliberately different: fruitier, softer on entry, with a distinctive cave-aged character. It's not a knockoff; it's a parallel tradition from the other side of the Chishui River. Think of it like comparing two great Burgundy producers from neighboring villages — same broad category, different expression." },
+    { "q": "What's the difference between Honghua Lang and Qinghua Lang?", "a": "Honghua Lang (红=red) is the accessible line, aged 10-15 years, designed for drinking and celebration. Qinghua Lang (青=blue) is the premium line, aged 20+ years in the Tianbao cave, positioned as a collector-grade spirit and direct Moutai competitor. Honghua = buy for a wedding. Qinghua = buy for a milestone." },
+    { "q": "Does cave aging really make a difference?", "a": "The science is sound: natural caves provide stable temperature (19-21°C) and high humidity (85-90%) year-round, which allows for very gradual, even maturation with less evaporation than above-ground storage. The mineral-rich cave environment may also contribute subtle character, though this is harder to prove. The Tianbao system is genuinely unique at this scale — it's not marketing fluff." },
+    { "q": "Honghua Lang 10 vs 15 — which should I buy?", "a": "The 10 is more vibrant and fruit-forward. The 15 is smoother, more integrated, with deeper savory notes. If you're new to sauce-aroma, start with the 10. If you already know you like the style, the 15 is worth the step up." }
+  ],
+  "related_varieties": ["maotai", "xijiu", "wuliangye", "luzhou-laojiao"],
+  "seo": {
+    "meta_title": "Langjiu Baijiu Guide: Qinghua Lang vs Honghua Lang | Baijiu365",
+    "meta_description": "Everything about Langjiu (郎酒): the other sauce-aroma baijiu from the Chishui River. How it compares to Moutai, Qinghua vs Honghua, cave aging in Tianbao Dong, and whether it's a better entry point for beginners.",
+    "keywords": ["langjiu", "郎酒", "qinghua lang", "青花郎", "honghua lang", "红花郎", "sauce aroma baijiu", "tianbao cave", "langjiu vs moutai", "chinese liquor guide"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Sichuan Langjiu Group Official", "url": "https://www.langjiu.cn" },
+    { "label": "GB/T 26760-2011 Sauce-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/gnoc/queryItemInfoPlat?projectId=131350" },
+    { "label": "DB5105/T 79-2025 Geographical Indication: Langjiu (Sauce-aroma)", "url": "https://std.samr.gov.cn/search/orgOthers?q=郎酒" }
+  ]
+}

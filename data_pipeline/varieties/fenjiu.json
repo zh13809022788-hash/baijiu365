@@ -1,0 +1,140 @@
+{
+  "id": "fenjiu",
+  "name": "Fenjiu",
+  "name_cn": "汾酒",
+  "brand": {
+    "name": "Shanxi Xinghuacun Fenjiu Distillery Co., Ltd.",
+    "name_cn": "山西杏花村汾酒厂股份有限公司",
+    "founded": "1949",
+    "headquarters": "Xinghuacun, Fenyang, Shanxi, China",
+    "website": "https://www.fenjiu.com.cn"
+  },
+  "aroma_type": "light",
+  "aroma_type_cn": "清香型",
+  "gbt_standard": "GB/T 10781.2",
+  "region": "Shanxi",
+  "region_cn": "山西（汾阳杏花村）",
+  "abv_range": "53% (standard), 42%, 48%",
+  "price_range_usd": {
+    "min": 15,
+    "max": 500,
+    "note": "Yellow-cap Fenjiu (黄盖玻汾) $15-25; Qinghua Fenjiu 20yr $60-100; Qinghua Fenjiu 30yr $150-250; vintage editions up to $500."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Qinghua Fenjiu 30",
+      "name_cn": "青花汾酒30年",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Flagship ultra-premium. Blue-and-white porcelain bottle (青花 = blue-and-white ware). 30-year aged blend. The definitive premium light-aroma — clean, elegant, complex.",
+      "msrp_cny": 999,
+      "is_flagship": true
+    },
+    {
+      "name": "Qinghua Fenjiu 20",
+      "name_cn": "青花汾酒20年",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "The sweet spot. 20-year aged. Most popular premium Fenjiu. Beautiful blue-and-white porcelain bottle. The benchmark for what premium light-aroma can achieve.",
+      "msrp_cny": 558,
+      "is_flagship": false
+    },
+    {
+      "name": "Lao Baifen 10",
+      "name_cn": "老白汾酒10年",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Mid-tier aged. Traditional Fenjiu profile with moderate aging. Brown ceramic jar (坛装). Popular for family gatherings and everyday premium drinking.",
+      "msrp_cny": 198,
+      "is_flagship": false
+    },
+    {
+      "name": "Yellow-cap Fenjiu (Huang Gai)",
+      "name_cn": "黄盖玻汾",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "The legend. Yellow cap, clear glass bottle. The most famous value baijiu in China — universally loved by enthusiasts and everyday drinkers alike. Clean, crisp, unbeatable at the price. The baijiu you order by the case.",
+      "msrp_cny": 58,
+      "is_flagship": false
+    },
+    {
+      "name": "Red-cap Fenjiu (Hong Gai)",
+      "name_cn": "红盖玻汾",
+      "abv": "42%",
+      "volume_ml": 500,
+      "description": "Lower-ABV variant of the classic. Red cap. Smoother, more approachable. Popular among drinkers who find 53% too intense.",
+      "msrp_cny": 48,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Crystal clear, water-white. Light body, thin legs.",
+    "nose": "Clean, bright, and immediately appealing. Green apple, pear, and fresh melon lead. A distinct floral quality — jasmine, osmanthus, and a hint of rose. No pit-mud funk, no umami, no heavy grain. Just clean fruit and flowers. Compared to strong or sauce-aroma, the nose is almost delicate — but it rewards attention with subtle layers of white peach and honeydew. The Qinghua line has deeper floral complexity and a faint vanilla note from extended aging.",
+    "palate": "Light-medium body. Crisp entry — clean sweetness (pear, melon, honey) followed by a gentle warmth. The 53% alcohol is present but not aggressive — light-aroma doesn't have the heavy body to cushion high proof, so the alcohol is more noticeable than in strong-aroma at the same ABV. Mid-palate: more fruit, a touch of grain, a faint white pepper. Clean and linear — no surprises, but every element is precisely where it should be.",
+    "finish": "Medium-short, crisp. The fruit sweetness fades quickly, leaving a clean warmth and a faint floral aftertaste. Very refreshing — this is the baijiu equivalent of a palate cleanser.",
+    "overall_impression": "Fenjiu is the baijiu for people who think they don't like baijiu. The clean, fruit-forward profile has none of the challenging funk of sauce or strong-aroma. It's the most Western-palate-friendly of the major baijiu categories. Yellow-cap at ¥50-60 is arguably the single best value in all of spirits — a genuinely complex, traditionally produced product at a price that's almost absurd. Qinghua Fenjiu 20 in its blue-and-white porcelain bottle is both a beautiful object and a genuinely premium spirit."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Shanxi (Jin cuisine)",
+      "dishes": ["Shanxi knife-cut noodles (dao xiao mian)", "Vinegar-braised pork", "Cat's ear noodles (mao er duo)", "Shanxi aged vinegar dishes"],
+      "why_it_works": "Regional pairing at its finest. Fenjiu and Shanxi aged vinegar are the province's two great culinary contributions — they complement each other beautifully."
+    },
+    {
+      "cuisine": "Light seafood and salads",
+      "dishes": ["Steamed white fish", "Cold tofu with century egg", "Cucumber salad", "Chilled jellyfish"],
+      "why_it_works": "Fenjiu's clean, crisp profile is one of the few baijius that genuinely works with light, cold dishes. It doesn't overwhelm delicate flavors."
+    },
+    {
+      "cuisine": "Dim sum",
+      "dishes": ["Har gow", "Siu mai", "Rice noodle rolls", "Egg tarts"],
+      "why_it_works": "The floral-fruity character pairs beautifully with the subtle flavors of dim sum. The lower-ABV Red-cap variant is perfect for a long yum cha session."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Yellow-cap Fenjiu (黄盖玻汾) is, without exaggeration, the best entry point into baijiu for anyone. It's ¥50-60 — cheaper than a mediocre cocktail at a bar. It's clean, fruity, and floral — nothing challenging or funky. It's 53% ABV, so it's a real spirit, not watered-down training wheels. Buy a bottle. Pour 15ml in a small glass. Let it sit for 1 minute. Smell it — green apple and flowers. Sip it — clean, warm, refreshing. If you don't enjoy this, you genuinely don't enjoy baijiu. If you do enjoy it, you've just found the gateway to an entire world of Chinese spirits.",
+  "comparable_spirits": [
+    { "spirit": "Blanco tequila (Fortaleza, G4, Cascahuin)", "reason": "Clean, crisp, agave-fruit character with a clean finish. Fenjiu is to baijiu what high-quality blanco is to tequila — the purest expression of the raw material" },
+    { "spirit": "London Dry gin (Tanqueray, Beefeater)", "reason": "Clean, botanical, crisp — designed to refresh rather than challenge. Fenjiu occupies the same 'clean spirit' niche" },
+    { "spirit": "Poire Williams eau-de-vie", "reason": "Pure fruit expression, clean distillation, elegant finish. The pear-apple character in Fenjiu has a direct parallel in fruit brandies" }
+  ],
+  "history": "Fenjiu is arguably the oldest continuously produced spirit brand in the world. Distilling in Xinghuacun (Apricot Blossom Village), Shanxi, can be traced back over 1,500 years to the Northern and Southern dynasties (420-589 AD). The Tang dynasty poet Du Mu famously wrote about Xinghuacun's liquor in his poem 'Qingming' (清明), making it perhaps the most literary baijiu in existence. For most of Chinese history, Fenjiu's style — light, clean, sorghum-based — was the dominant baijiu style. The modern strong-aroma dominance (70%+ of production) is a relatively recent phenomenon, driven by Sichuan's aggressive industrialization in the 20th century. Fenjiu's clean fermentation in ceramic jars (not mud pits) is the oldest baijiu production method and the ancestor of all other styles. In 1915, Fenjiu won a gold medal at the Panama-Pacific International Exposition in San Francisco. In 1949, it was served at the founding ceremony of the People's Republic of China. Today, Fenjiu is experiencing a renaissance as younger drinkers rediscover clean, approachable light-aroma.",
+  "production": {
+    "raw_materials": ["sorghum (100%)", "barley", "peas (for qu, not mash)"],
+    "qu_type": "Low-temperature daqu (低温大曲), made from barley and peas. The low temperature preserves delicate floral and fruity aromas. Fenjiu's qu formulation includes peas, which is unusual — most baijiu qu is purely wheat or barley.",
+    "fermentation": "Solid-state fermentation in ceramic jars (陶缸), NOT mud pits. This is the defining difference between light-aroma and strong-aroma: no pit mud = no pit aroma. The ceramic jars are buried in the ground for temperature control but the spirit never contacts mud. The fermentation cycle is short (28 days) compared to strong-aroma (60-90 days), preserving freshness and fruit character.",
+    "distillation": "Traditional pot still. Clean, precise distillation emphasizing the fruit and floral esters.",
+    "aging": "Minimum 1 year in ceramic jars for standard products, 10-30 years for Qinghua line. Light-aroma ages differently from strong-aroma — without pit mud compounds, aging develops more delicate oxidative notes (dried fruit, vanilla) rather than earthy complexity.",
+    "notable_techniques": [
+      "Clean fermentation in ceramic jars (地缸发酵) — the oldest baijiu method, no pit mud contact",
+      "Pea-containing daqu (豌豆大曲) — contributes distinctive floral character",
+      "\"清蒸二次清\" process — steamed and distilled twice for purity, the signature of light-aroma production"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Fenjiu stores on Tmall and JD.com. Widely available nationwide. Yellow-cap is ubiquitous — you can find it at almost any supermarket or liquor store in China.",
+    "where_to_buy_global": "Good international distribution for a Chinese baijiu. Available through Chinese liquor importers, Asian grocery stores. Yellow-cap is inexpensive enough that importers can stock it without huge investment — often available at $15-20/bottle.",
+    "what_to_look_for": "Yellow-cap: simple clear glass bottle, yellow metal cap, red '汾酒' label. Qinghua: blue-and-white porcelain bottle (青花). Lao Baifen: brown ceramic jar. Verify anti-counterfeit QR codes. Yellow-cap at ¥58 is rarely counterfeited — the margins aren't worth it.",
+    "counterfeit_risks": "Very low for Yellow-cap and Red-cap (budget products). Low to moderate for Qinghua line. The distinctive blue-and-white porcelain bottles are hard to fake. Standard QR code verification is sufficient.",
+    "value_picks": ["Yellow-cap Fenjiu (黄盖玻汾) — the greatest value in spirits. Buy a case. ¥58/bottle.", "Lao Baifen 10 (老白汾酒10年) — step up with noticeable aging for ¥198"],
+    "splurge_picks": ["Qinghua Fenjiu 20 (青花汾酒20年) — premium quality, beautiful artifact", "Qinghua Fenjiu 30 (青花汾酒30年) — top of the line, extended aging"]
+  },
+  "faq": [
+    { "q": "Is Yellow-cap Fenjiu really as good as everyone says?", "a": "Yes. For ¥50-60, you get a 53% ABV spirit made from 100% sorghum using traditional solid-state fermentation, aged in ceramic jars, from a distillery with 1,500 years of history. In any other spirit category, a product with these specs would cost 5-10x more. The fact that it also tastes genuinely good — clean, fruity, floral — makes it the undisputed value champion of the spirits world." },
+    { "q": "What makes light-aroma different from strong-aroma?", "a": "Three things: 1) Fermentation in ceramic jars (not mud pits) = no pit-mud funk. 2) Low-temperature qu (not medium/high) = more floral, less savory character. 3) Shorter fermentation (28 days vs 60-90) = fresher, fruit-forward profile. Light-aroma is the clean, elegant, floral style. Strong-aroma is the rich, fruity, earthy style. Sauce-aroma is the savory, complex, funky style." },
+    { "q": "Fenjiu vs vodka — aren't they the same?", "a": "No. Vodka is distilled to near-neutral (95%+ ABV) and filtered to remove character. Fenjiu is distilled to around 65-70% ABV, preserving the grain and fermentation character. If vodka is a blank canvas, Fenjiu is a watercolor — light but with deliberate, visible brushstrokes. The fruit and floral notes in Fenjiu would be considered flaws in vodka. They're the whole point of Fenjiu." },
+    { "q": "Can I use Fenjiu in cocktails?", "a": "Yes — and it's probably the best baijiu for cocktails. The clean, fruity profile integrates well with citrus, herbal, and sweet components. Yellow-cap makes an excellent Baijiu Sour, Baijiu Collins, or Baijiu Martini variation. Red-cap (42%) works well in longer drinks. Don't use Qinghua for cocktails — that's a sipping spirit." }
+  ],
+  "related_varieties": ["niulanshan", "hongxing", "wuliangye", "maotai"],
+  "seo": {
+    "meta_title": "Fenjiu Baijiu Guide: China's Oldest Spirit & Best Value | Baijiu365",
+    "meta_description": "Fenjiu (汾酒): 1,500-year history, the cleanest baijiu style. Yellow-cap review, Qinghua Fenjiu 20/30, and why light-aroma is the best entry point for beginners.",
+    "keywords": ["fenjiu", "汾酒", "yellow cap fenjiu", "黄盖玻汾", "qinghua fenjiu", "青花汾酒", "light aroma baijiu", "xinghuacun", "chinese liquor guide"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Shanxi Xinghuacun Fenjiu Official", "url": "https://www.fenjiu.com.cn" },
+    { "label": "GB/T 10781.2-2022 Light-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "niulanshan",
+  "name": "Niulanshan",
+  "name_cn": "牛栏山",
+  "brand": {
+    "name": "Beijing Niulanshan Distillery Co., Ltd. (Shunxin Agriculture)",
+    "name_cn": "北京牛栏山酒厂（顺鑫农业）",
+    "founded": "1952",
+    "headquarters": "Niulanshan Town, Shunyi District, Beijing, China",
+    "website": "https://www.niulanshan.com.cn"
+  },
+  "aroma_type": "light",
+  "aroma_type_cn": "清香型",
+  "gbt_standard": "GB/T 10781.2",
+  "region": "Beijing",
+  "region_cn": "北京（顺义牛栏山镇）",
+  "abv_range": "42-56%",
+  "price_range_usd": {
+    "min": 3,
+    "max": 30,
+    "note": "Chenniang Bai (陈酿白) $3-5; Bainian Niulanshan (百年牛栏山) $10-20; premium editions $20-30."
+  },
+  "tier": "entry",
+  "core_products": [
+    {
+      "name": "Niulanshan Chenniang Bai",
+      "name_cn": "牛栏山陈酿白酒",
+      "abv": "42%",
+      "volume_ml": 500,
+      "description": "The volume king. Best-selling baijiu in China by units sold — over 800 million bottles annually. Gentle 42% ABV, sweet-smooth profile, everyday drinking at the lowest accessible price. The baijiu of the masses.",
+      "msrp_cny": 18,
+      "is_flagship": true
+    },
+    {
+      "name": "Bainian Niulanshan (Century)",
+      "name_cn": "百年牛栏山",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Premium tier within the Niulanshan brand. Higher ABV, better base spirit, longer aging. The upgrade pick for everyday drinkers who want something a little nicer without leaving the brand.",
+      "msrp_cny": 88,
+      "is_flagship": false
+    },
+    {
+      "name": "Niulanshan Erguotou",
+      "name_cn": "牛栏山二锅头",
+      "abv": "56%",
+      "volume_ml": 500,
+      "description": "The traditional Erguotou — higher proof, more intense. The working-class classic. Green bottle, no pretension. Popular in Beijing's hutong neighborhoods.",
+      "msrp_cny": 15,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear, water-white. Light body.",
+    "nose": "Simple but clean. Light grain sweetness, a touch of cooked sorghum, and a faint fruity note — apple, maybe pear. No offensive notes, but no complexity either. The 42% ABV means the alcohol is barely noticeable on the nose. Bainian has slightly more depth; Erguotou has more alcohol presence.",
+    "palate": "Light body, smooth entry. Sweet grain and a gentle warmth. At 42% ABV (Chenniang), the alcohol is restrained — this is designed for easy drinking, not contemplation. The 56% Erguotou variant hits harder and has more character. Not a lot going on flavor-wise, but nothing offensive either.",
+    "finish": "Short, clean, slightly sweet. No harshness. No complexity. Just a clean exit.",
+    "overall_impression": "Niulanshan Chenniang Bai is not a connoisseur's baijiu. It's a people's baijiu. 800 million bottles a year means something — it's cheap, it's reliable, it's consistent, and it gets the job done. Comparing it to Fenjiu is missing the point; comparing it to Moutai is absurd. This is the baijiu equivalent of a cold beer after work — not for analyzing, for enjoying."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Beijing street food",
+      "dishes": ["Beijing zhajiang noodles", "Lamb skewers", "Jianbing (savory crepe)", "Luzhu huoshao (braised pork offal soup)"],
+      "why_it_works": "Beijing baijiu, Beijing food. The working-class pairing that's been happening in hutong neighborhoods for decades."
+    },
+    {
+      "cuisine": "Hot pot (casual)",
+      "dishes": ["Beijing-style mutton hot pot (shuan yang rou)", "Various dipping meats and vegetables"],
+      "why_it_works": "The 42% Chenniang is perfect for long hot pot sessions — enough alcohol to cut through oil but not enough to end the night early."
+    },
+    {
+      "cuisine": "Everyday home cooking",
+      "dishes": ["Scrambled eggs and tomatoes", "Stir-fried cabbage", "Braised pork belly with soy sauce"],
+      "why_it_works": "This is what Niulanshan is made for — the working family dinner. Unpretentious pairing for unpretentious food."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Niulanshan Chenniang Bai at 42% ABV is the gentlest possible introduction to baijiu. It's cheap enough to buy without thinking (¥18), low enough in alcohol to drink without pain, and clean enough in flavor to not scare anyone. It won't teach you much about baijiu complexity, but it will teach you that baijiu can be an easy, everyday drink — not just a formal banquet ritual. If Fenjiu Yellow-cap is the best quality value, Niulanshan Chenniang is the best accessibility value.",
+  "comparable_spirits": [
+    { "spirit": "Budget blended Scotch (Famous Grouse, Grant's)", "reason": "The everyday pour. Not for analyzing, for enjoying. Reliable, accessible, gets the job done." },
+    { "spirit": "Bottom-shelf bourbon (Evan Williams, Benchmark)", "reason": "Cheap, straightforward, good-enough quality. The go-to for mixing and casual drinking." },
+    { "spirit": "Soju (Chamisul, Chum Churum)", "reason": "Smooth, low-ABV, designed for session drinking with food. Niulanshan Chennian at 42% fills a similar niche." }
+  ],
+  "history": "Niulanshan (Ox-Horn Mountain) distillery was established in 1952 in Niulanshan Town, Shunyi District, on the northeastern outskirts of Beijing. The name comes from a local hill shaped like an ox horn. Like Hongxing, Niulanshan is a Beijing Erguotou producer — a style characterized by double distillation with only the middle cut ('second pot head') collected. For most of its history, Niulanshan was a regional Beijing brand competing with Hongxing. In the 2000s, under parent company Shunxin Agriculture, Niulanshan made a strategic pivot to national mass-market distribution. The Chenniang Bai (陈酿白酒) product at 42% ABV was the breakthrough — smoother and more accessible than traditional 56% Erguotou, priced for the mass market. The strategy worked spectacularly: Niulanshan is now the best-selling baijiu brand in China by bottle volume, with over 800 million bottles sold annually. It is the everyman's baijiu — on tables from Beijing street stalls to rural village banquets across China.",
+  "production": {
+    "raw_materials": ["sorghum", "wheat", "rice", "glutinous rice", "corn"],
+    "qu_type": "Low-temperature daqu (低温大曲). Note: some Niulanshan products use a combination of daqu (traditional) and fuqu (bran qu, more efficient) methods. Chenniang Bai uses a portion of liquid-state fermentation for cost efficiency — it's a blended approach rather than purely traditional.",
+    "fermentation": "Combination of solid-state (traditional) and liquid-state (efficient) fermentation. The liquid-state component reduces cost and increases consistency. This is one reason for the low price — it's not 100% traditional solid-state like Fenjiu.",
+    "distillation": "Continuous column still for liquid-state portion; pot still for solid-state portion. Blended before aging.",
+    "aging": "Short aging — 6-12 months. The Chenniang (aged) name is relative to unaged spirit, not to long-aged baijius.",
+    "notable_techniques": [
+      "Mass-market production methodology — combination of traditional and modern techniques to achieve cost and consistency at scale",
+      "Liu Lihe (潮白河) water source — the river that flows through Niulanshan town",
+      "800M+ bottles/year scale — the largest baijiu production volume in China"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Ubiquitous. Available at virtually every supermarket, convenience store, and liquor shop in China. The Chenniang Bai is one of the most widely distributed consumer products in the country.",
+    "where_to_buy_global": "Available at Chinese grocery stores and Asian markets worldwide. Often the cheapest baijiu available internationally — $5-8/bottle.",
+    "what_to_look_for": "Chenniang Bai: simple clear bottle with red/white label. Erguotou: green bottle. At ¥15-18, counterfeiting is barely worth the effort. Standard packaging recognition is sufficient.",
+    "counterfeit_risks": "Very low. The profit margins on a ¥15 bottle of baijiu don't justify counterfeiting. Buy from any legitimate retailer.",
+    "value_picks": ["Chenniang Bai (陈酿白酒) — ¥18. It's the best-selling baijiu in China for a reason.", "Niulanshan Erguotou (牛栏山二锅头) — traditional high-proof for ¥15"],
+    "splurge_picks": ["Bainian Niulanshan (百年牛栏山) — premium tier, ¥88"]
+  },
+  "faq": [
+    { "q": "Is Niulanshan 'real' baijiu?", "a": "It depends on your definition. Chennian Bai uses a combination of solid-state (traditional) and liquid-state (modern) fermentation — it's not 100% traditional like Fenjiu or Wuliangye. For purists, this makes it a blended product rather than pure solid-state baijiu. For the 800 million bottles sold annually, it's real enough. Check the label: products labeled GB/T 10781.2 are solid-state; some Niulanshan products use GB/T 20822 (blended)." },
+    { "q": "Niulanshan vs Hongxing — what's the difference?", "a": "Both are Beijing Erguotou producers, but they've diverged: Hongxing has leaned into heritage and tradition (especially with its premium blue-bottle line), while Niulanshan has gone for volume and accessibility (42% Chenniang Bai). Hongxing is Beijing pride. Niulanshan is China's everyday baijiu." },
+    { "q": "Why is it so cheap?", "a": "Scale (800M+ bottles/year), efficiency (liquid-state fermentation for cost reduction), short aging, and minimal marketing. Niulanshan is the Toyota Corolla of baijiu — engineered for reliability and affordability, not luxury." }
+  ],
+  "related_varieties": ["hongxing", "fenjiu", "yanghe"],
+  "seo": {
+    "meta_title": "Niulanshan Baijiu Guide: China's Best-Selling Spirit | Baijiu365",
+    "meta_description": "Niulanshan (牛栏山): the baijiu that sells 800 million bottles a year. Chenniang Bai review, Beijing Erguotou tradition, and why it's the everyman's Chinese spirit.",
+    "keywords": ["niulanshan", "牛栏山", "chennian bai", "陈酿白酒", "erguotou", "二锅头", "beijing baijiu", "best selling baijiu", "chinese liquor"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Beijing Niulanshan Distillery", "url": "https://www.niulanshan.com.cn" },
+    { "label": "GB/T 10781.2-2022 Light-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

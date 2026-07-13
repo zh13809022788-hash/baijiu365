@@ -4,12 +4,33 @@ import SeoJsonLd from '../components/SeoJsonLd.astro';
 interface Props {
   title: string;
   description: string;
+  keywords?: string[];
   type?: 'WebSite' | 'Article' | 'AboutPage';
+  canonicalPath?: string;
+  noindex?: boolean;
+  image?: string;
+  datePublished?: string;
+  dateModified?: string;
+  authorName?: string;
+  authorUrl?: string;
 }
 
-const { title, description, type = 'Article' } = Astro.props;
+const {
+  title,
+  description,
+  keywords,
+  type = 'Article',
+  canonicalPath,
+  noindex = false,
+  image,
+  datePublished,
+  dateModified,
+  authorName,
+  authorUrl,
+} = Astro.props;
 const siteUrl = 'https://baijiu365.com';
-const canonical = new URL(Astro.url.pathname, siteUrl).toString();
+const canonical = new URL(canonicalPath ?? Astro.url.pathname, siteUrl).toString();
+const socialImage = image ?? 'https://baijiu365.com/images/baijiu-field-guide.png';
 ---
 <!doctype html>
 <html lang="en">
@@ -18,26 +39,42 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {keywords && keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="Baijiu365 RSS" href="/rss.xml" />
     <meta property="og:site_name" content="Baijiu365" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content={type === 'WebSite' ? 'website' : 'article'} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
     <meta name="twitter:card" content="summary" />
-    <SeoJsonLd type={type} title={title} description={description} url={canonical} />
+    <SeoJsonLd
+      type={type}
+      title={title}
+      description={description}
+      url={canonical}
+      image={socialImage}
+      datePublished={datePublished}
+      dateModified={dateModified}
+      authorName={authorName}
+      authorUrl={authorUrl}
+    />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Baijiu365 home">Baijiu365</a>
       <nav aria-label="Primary navigation">
-        <a href="/baijiu-101/">Basics</a>
+        <a href="/baijiu-basics/">Basics</a>
         <a href="/types-of-baijiu/">Types</a>
         <a href="/best-baijiu-for-beginners/">Beginners</a>
         <a href="/how-to-buy-baijiu-outside-china/">Buying</a>
         <a href="/how-to-spot-fake-maotai/">Fake Maotai</a>
         <a href="/brands/maotai/">Maotai</a>
         <a href="/glossary/">Glossary</a>
+        <a href="/db/variety/maotai/">Database</a>
+        <a href="/editorial-team/">Team</a>
         <a href="/about/">About</a>
       </nav>
     </header>
@@ -48,10 +85,15 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
       <div class="footer-inner">
         <p>Baijiu365 is an independent field guide to Chinese baijiu for curious drinkers, hosts, collectors, and bartenders.</p>
         <nav aria-label="Footer navigation">
-          <a href="/baijiu-101/">Basics</a>
+          <a href="/baijiu-basics/">Basics</a>
           <a href="/types-of-baijiu/">Aroma types</a>
           <a href="/best-baijiu-for-beginners/">Beginner buying</a>
           <a href="/glossary/">Glossary</a>
+          <a href="/editorial-policy/">Editorial policy</a>
+          <a href="/affiliate-disclosure/">Affiliate disclosure</a>
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/contact/">Contact</a>
         </nav>
       </div>
     </footer>
@@ -147,8 +189,7 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     padding: clamp(32px, 6vw, 72px) clamp(18px, 4vw, 56px) 42px;
     background:
       linear-gradient(110deg, rgba(32, 29, 26, 0.9) 0%, rgba(32, 29, 26, 0.75) 43%, rgba(32, 29, 26, 0.2) 100%),
-      radial-gradient(circle at 72% 30%, rgba(185, 130, 43, 0.38), transparent 28%),
-      linear-gradient(135deg, #37231f 0%, #7a2d25 35%, #d8b36d 70%, #f7f0df 100%);
+      linear-gradient(135deg, #37231f 0%, #7a2d25 46%, #d8b36d 100%);
     color: #fffdf8;
     overflow: hidden;
   }
@@ -230,64 +271,19 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     color: #fffdf8;
   }
 
-  .visual {
-    position: relative;
-    min-height: 420px;
+  .hero-media {
+    align-self: stretch;
+    min-height: 430px;
   }
 
-  .bottle {
-    position: absolute;
-    left: 28%;
-    bottom: 18px;
-    width: 150px;
-    height: 360px;
-    border-radius: 56px 56px 18px 18px;
-    background: linear-gradient(90deg, #eee0c4, #fff7e6 45%, #c8aa72);
-    box-shadow: var(--shadow);
-  }
-
-  .bottle::before {
-    content: "";
-    position: absolute;
-    top: -70px;
-    left: 45px;
-    width: 60px;
-    height: 90px;
-    border-radius: 18px 18px 4px 4px;
-    background: linear-gradient(90deg, #e7d1a5, #fff3d4 45%, #b58b42);
-  }
-
-  .bottle::after {
-    content: "";
-    position: absolute;
-    inset: 110px 26px auto;
-    height: 88px;
-    border: 1px solid rgba(128, 67, 37, 0.3);
-    background: rgba(255, 253, 248, 0.76);
-  }
-
-  .glass {
-    position: absolute;
-    right: 14%;
-    bottom: 30px;
-    width: 116px;
-    height: 150px;
-    border: 5px solid rgba(255, 253, 248, 0.84);
-    border-top: 2px solid rgba(255, 253, 248, 0.72);
-    border-radius: 10px 10px 28px 28px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 245, 216, 0.48));
-  }
-
-  .grain {
-    position: absolute;
-    right: 5%;
-    bottom: 0;
-    width: 250px;
-    height: 84px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #deb86c 0 4px, transparent 5px) 0 0 / 20px 18px;
-    opacity: 0.92;
-    transform: rotate(-8deg);
+  .hero-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 253, 248, 0.28);
+    border-radius: 8px;
+    box-shadow: 0 24px 60px rgba(20, 14, 12, 0.28);
   }
 
   .grid {
@@ -311,6 +307,23 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     color: var(--red);
     font-weight: 700;
     text-decoration: none;
+  }
+
+  .profile-list {
+    display: grid;
+    gap: 18px;
+  }
+
+  .profile-card {
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+  }
+
+  .profile-card h2 {
+    margin-top: 0;
+    font-size: 30px;
   }
 
   .pathway {
@@ -375,6 +388,72 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     border: 1px solid var(--line);
     border-radius: 8px;
     background: #fff;
+  }
+
+  .feature-band,
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1fr);
+    gap: clamp(24px, 6vw, 72px);
+    align-items: start;
+    padding: clamp(28px, 5vw, 48px) 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .feature-band .eyebrow,
+  .split .eyebrow {
+    color: var(--red);
+  }
+
+  .feature-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .feature-list a {
+    display: block;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .feature-list a:hover {
+    border-color: rgba(167, 47, 36, 0.55);
+    color: var(--red);
+  }
+
+  .feature-list.compact a {
+    min-height: 62px;
+  }
+
+  .split p {
+    color: var(--muted);
+    font-size: 18px;
+  }
+
+  .trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .trust-strip span,
+  .trust-strip a {
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    text-decoration: none;
   }
 
   .decision-box h2,
@@ -463,12 +542,10 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     nav { justify-content: flex-start; }
     .hero { min-height: auto; }
     .hero-inner { grid-template-columns: 1fr; }
-    .visual { min-height: 260px; }
-    .bottle { left: 12%; height: 240px; width: 104px; }
-    .bottle::before { left: 31px; width: 42px; height: 68px; top: -52px; }
-    .glass { right: 18%; width: 92px; height: 116px; }
-    .grain { right: 4%; width: 210px; }
+    .hero-media { min-height: 260px; }
+    .hero-media img { min-height: 260px; }
     .grid { grid-template-columns: 1fr; }
+    .feature-band, .split { grid-template-columns: 1fr; }
     .pathway, .next-links { grid-template-columns: 1fr; }
     .footer-inner { align-items: flex-start; flex-direction: column; }
   }

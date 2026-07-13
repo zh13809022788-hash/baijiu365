@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://baijiu365.com/data_pipeline/schemas/baijiu-variety.schema.json",
+  "title": "Baijiu Variety",
+  "description": "Structured data for a baijiu variety or brand, used as the single source of truth for all content rendering.",
+  "type": "object",
+  "required": ["id", "name", "name_cn", "aroma_type", "region", "abv_range", "gbt_standard"],
+  "$comment": "7-field iron rule: 品牌(name) / 酒款名(name_cn) / 香型(aroma_type) / 度数(abv_range) / GB/T(gbt_standard) / 原料(production.raw_materials) / 产区(region). Schema validation enforces top 7; validator script checks raw_materials depth.",
+  "properties": {
+    "id": { "type": "string", "description": "Unique slug-like identifier, e.g. maotai, wuliangye" },
+    "name": { "type": "string", "description": "English display name" },
+    "name_cn": { "type": "string", "description": "Chinese name, e.g. 茅台" },
+    "brand": {
+      "type": "object",
+      "description": "Parent brand/distillery",
+      "properties": {
+        "name": { "type": "string" },
+        "name_cn": { "type": "string" },
+        "founded": { "type": "string" },
+        "headquarters": { "type": "string" },
+        "website": { "type": "string", "format": "uri" }
+      }
+    },
+    "aroma_type": {
+      "type": "string",
+      "enum": ["sauce", "strong", "light", "rice", "mixed", "phoenix", "sesame", "chi", "laobaigan", "herbal", "fuyu", "te"],
+      "description": "Primary aroma category"
+    },
+    "aroma_type_cn": { "type": "string", "description": "Chinese aroma name, e.g. 酱香型" },
+    "gbt_standard": {
+      "type": "string",
+      "description": "Chinese national standard GB/T number, e.g. GB/T 18356 for Moutai. REQUIRED for authority signal to Google. Must be a valid GB/T reference."
+    },
+    "region": { "type": "string", "description": "Province or city, e.g. Guizhou" },
+    "region_cn": { "type": "string" },
+    "abv_range": { "type": "string", "description": "Typical ABV range, e.g. 50-53%" },
+    "price_range_usd": {
+      "type": "object",
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "note": { "type": "string", "description": "Context about price, e.g. 'USD pricing outside China can vary widely'" }
+      }
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["entry", "mid", "premium", "ultra-premium", "collectible"],
+      "description": "Price/quality tier"
+    },
+    "core_products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "name_cn": { "type": "string" },
+          "abv": { "type": "string" },
+          "volume_ml": { "type": "number" },
+          "description": { "type": "string" },
+          "msrp_cny": { "type": "number" },
+          "is_flagship": { "type": "boolean" }
+        }
+      }
+    },
+    "tasting_notes": {
+      "type": "object",
+      "properties": {
+        "appearance": { "type": "string" },
+        "nose": { "type": "string" },
+        "palate": { "type": "string" },
+        "finish": { "type": "string" },
+        "overall_impression": { "type": "string" }
+      }
+    },
+    "food_pairings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "cuisine": { "type": "string" },
+          "dishes": { "type": "array", "items": { "type": "string" } },
+          "why_it_works": { "type": "string" }
+        }
+      }
+    },
+    "beginner_friendly": { "type": "boolean" },
+    "beginner_notes": { "type": "string" },
+    "comparable_spirits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "spirit": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "history": { "type": "string", "description": "Production and cultural history" },
+    "production": {
+      "type": "object",
+      "properties": {
+        "raw_materials": { "type": "array", "items": { "type": "string" } },
+        "qu_type": { "type": "string" },
+        "fermentation": { "type": "string" },
+        "distillation": { "type": "string" },
+        "aging": { "type": "string" },
+        "notable_techniques": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "buying_guide": {
+      "type": "object",
+      "properties": {
+        "where_to_buy_cn": { "type": "string" },
+        "where_to_buy_global": { "type": "string" },
+        "what_to_look_for": { "type": "string" },
+        "counterfeit_risks": { "type": "string" },
+        "value_picks": { "type": "array", "items": { "type": "string" } },
+        "splurge_picks": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "faq": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "q": { "type": "string" },
+          "a": { "type": "string" }
+        }
+      }
+    },
+    "related_varieties": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "IDs of related baijiu varieties for internal linking"
+    },
+    "seo": {
+      "type": "object",
+      "properties": {
+        "meta_title": { "type": "string" },
+        "meta_description": { "type": "string" },
+        "keywords": { "type": "array", "items": { "type": "string" } },
+        "og_image": { "type": "string", "format": "uri" }
+      }
+    },
+    "updated_at": { "type": "string", "format": "date" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "id": "luzhou-laojiao",
+  "name": "Luzhou Laojiao",
+  "name_cn": "泸州老窖",
+  "brand": {
+    "name": "Luzhou Laojiao Co., Ltd.",
+    "name_cn": "泸州老窖股份有限公司",
+    "founded": "1573",
+    "headquarters": "Luzhou, Sichuan, China",
+    "website": "https://www.lzlj.com"
+  },
+  "aroma_type": "strong",
+  "aroma_type_cn": "浓香型",
+  "gbt_standard": "GB/T 10781.1",
+  "region": "Sichuan",
+  "region_cn": "四川（泸州）",
+  "abv_range": "52% (standard), 38% (low-ABV)",
+  "price_range_usd": {
+    "min": 30,
+    "max": 800,
+    "note": "Te Qu (特曲) $30-60; Guo Jiao 1573 (国窖1573) $200-500. The flagship is the benchmark for single-grain strong-aroma."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Guo Jiao 1573",
+      "name_cn": "国窖1573",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Flagship ultra-premium product. Made exclusively from pits that have been in continuous use since 1573 (Ming dynasty Wanli era). The definitive single-grain strong-aroma baijiu. Named a National Key Cultural Relic site.",
+      "msrp_cny": 1399,
+      "is_flagship": true
+    },
+    {
+      "name": "Te Qu (Special Liquor)",
+      "name_cn": "特曲",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "The classic. 'Te Qu' means 'Special Extract' — historically the highest grade of Luzhou Laojiao. Made from older pits (30+ years). The benchmark value pick in premium strong-aroma.",
+      "msrp_cny": 328,
+      "is_flagship": false
+    },
+    {
+      "name": "Tou Qu (First Extract)",
+      "name_cn": "头曲",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Mid-tier product from younger pits. Lighter, more accessible, everyday drinking quality. Popular in Sichuan as a daily pour.",
+      "msrp_cny": 128,
+      "is_flagship": false
+    },
+    {
+      "name": "Er Qu (Second Extract)",
+      "name_cn": "二曲",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Entry-level. Made from the youngest pits. Clean and straightforward. Often used for cooking and casual drinking.",
+      "msrp_cny": 48,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear and bright, no color. Medium viscosity.",
+    "nose": "Dominated by the pit-mud aroma (窖香) — this is the defining characteristic of single-grain Luzhou style. Earthy, cellar-like, with notes of aged wood, mushroom, and a distinct cheesy-parmesan funk. Behind the pit character: green apple, pear, and a clean grain sweetness. More restrained than Wuliangye's tropical fruit bomb, more focused. The Guo Jiao 1573 has a deeper, more complex pit aroma — richer, older wood, truffle notes. Te Qu is brighter, with more fruit and less funk.",
+    "palate": "Medium-full body. Opens with sweet grain and green fruit (apple, pear), then the pit character arrives — earthy, savory, with a distinct umami note reminiscent of aged cheese. The 52% alcohol provides warmth without aggression. Cleaner and more linear than Wuliangye — fewer moving parts, but each part is precisely defined. Guo Jiao 1573 has exceptional integration; Te Qu is slightly rougher but more characterful.",
+    "finish": "Medium-long. The pit aroma lingers longest — earthy, woody, faintly sweet. Clean exit with no harshness. Guo Jiao 1573 finishes longer and more elegantly.",
+    "overall_impression": "If Wuliangye is the symphony orchestra of strong-aroma, Luzhou Laojiao is the soloist — a single voice, perfectly controlled. The pit-mud character is the star, and everything else supports it. For drinkers who love funk (natural wine fans, Islay whisky drinkers), Luzhou Laojiao's pit aroma is addictive. Guo Jiao 1573 is one of the most distinctive spirits in the world — there is literally nothing else that tastes like it."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Sichuan home-style",
+      "dishes": ["Fish-fragrant eggplant (yu xiang qie zi)", "Boiled beef in chili oil (shui zhu niu rou)", "Dry-fried green beans (gan bian si ji dou)"],
+      "why_it_works": "The local pairing. Luzhou Laojiao is made for Sichuan food — the pit aroma stands up to heavy spice, and the clean finish refreshes the palate."
+    },
+    {
+      "cuisine": "Aged cheese and charcuterie",
+      "dishes": ["Aged Comte", "Parmigiano-Reggiano", "Prosciutto", "Salami"],
+      "why_it_works": "The pit-mud funk in Luzhou Laojiao has surprising affinity with aged cheese. The umami-parmesan notes in the baijiu mirror the cheese's savory character. An unexpected but excellent cross-cultural pairing."
+    },
+    {
+      "cuisine": "Braised and stewed dishes",
+      "dishes": ["Red-braised pork belly", "Lion's head meatballs", "Braised oxtail"],
+      "why_it_works": "Rich, slow-cooked meats match the depth and earthiness of the baijiu. The alcohol cuts through fat."
+    }
+  ],
+  "beginner_friendly": false,
+  "beginner_notes": "Luzhou Laojiao Te Qu is affordable enough to take a risk on, but the pit-mud aroma is polarizing. If you enjoy funky, earthy flavors (blue cheese, mushrooms, truffle), you may connect immediately. If those notes are off-putting, start with Wuliangye or Yanghe instead. The Te Qu is the right entry point — Guo Jiao 1573 is wasted on an untrained palate. Pour small (15ml), let it breathe, and pair with Sichuan food for the best introduction.",
+  "comparable_spirits": [
+    { "spirit": "Islay single malt (Laphroaig 10, Ardbeg 10)", "reason": "Both have a distinctive polarizing funk — peat smoke for Islay, pit mud for Luzhou. If you love one, you'll probably appreciate the other" },
+    { "spirit": "Agricole rhum (Rhum JM, Clement)", "reason": "Earthy, vegetal, terroir-driven — both express the character of their raw material environment intensely" },
+    { "spirit": "Funky natural wine (Jura Chardonnay, Loire Chenin)", "reason": "The oxidative, nutty, slightly cheesy notes in natural wine have a clear parallel in Luzhou's pit aroma" }
+  ],
+  "history": "Luzhou Laojiao is the oldest continuously operating baijiu distillery in China. The '1573' in its flagship product refers to the Wanli era of the Ming dynasty, when the distillery's oldest fermentation pits were built. These pits have been in continuous use for over 440 years — the microbial ecosystems in the pit walls and floors have evolved uninterrupted for centuries. In 1996, the old pits were declared a National Key Cultural Relic Protection Site (全国重点文物保护单位) — the only baijiu production facility to receive this designation. The 'Laojiao' (老窖) in the name means 'old pit' — it is both the brand name and the literal production method. The company was formally incorporated in 1950 and listed on the Shenzhen Stock Exchange in 1994. Luzhou Laojiao is credited with establishing the 'Luzhou-style' strong-aroma tradition, which became the dominant style of baijiu in China, accounting for over 70% of all baijiu produced.",
+  "production": {
+    "raw_materials": ["sorghum (100%, single-grain)"],
+    "qu_type": "Medium-temperature daqu (中温大曲), wheat-based",
+    "fermentation": "Solid-state fermentation in mud pits (泥窖) — the defining technique. The pit walls and floor are lined with a special clay mixture that hosts complex microbial communities. Pits are continuously reused — never emptied or cleaned — allowing microbial populations to evolve over centuries. The oldest pits (1573) contain unique bacterial and fungal strains found nowhere else.",
+    "distillation": "Traditional pot still. Single-grain mash is steamed and distilled. The spirit is collected in three grades: Te Qu (top), Tou Qu (middle), Er Qu (base). Grading is determined by the age of the pit, the distillation cut, and the blender's assessment.",
+    "aging": "Minimum 1-3 years in ceramic jars. Guo Jiao 1573 uses spirits aged 5+ years from the oldest pits. The pit itself provides the primary aging character — ceramic jar aging refines and integrates.",
+    "notable_techniques": [
+      "Single-grain sorghum mash (纯粮固态) — rare among strong-aroma, most use multi-grain like Wuliangye",
+      "Ming dynasty pit fermentation (明代老窖池) — 440+ year continuous microbial ecosystem",
+      "Pit mud renewal (窖泥养护) — the pit walls are periodically 'fed' with nutrient-rich slurry to maintain microbial health without disrupting continuity",
+      "San Qu grading system (特曲/头曲/二曲) — the oldest and most established baijiu grading system in China"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Luzhou Laojiao stores on Tmall and JD.com. Major liquor chains. Widely available across China. In Sichuan, Te Qu is essentially a staple commodity — available everywhere.",
+    "where_to_buy_global": "Available through Chinese liquor importers. Guo Jiao 1573 has good distribution in major international markets. Te Qu is less common but findable. The Whisky Exchange (UK) and select Total Wine locations (US) carry it.",
+    "what_to_look_for": "Guo Jiao 1573 has a distinctive red-and-gold box with the '1573' logo prominently displayed. The bottle should have a secure seal and anti-counterfeit QR code. Te Qu comes in a red-labeled bottle with white stripe. Be aware of grade — 特曲 (Te Qu) and 头曲 (Tou Qu) labels can look similar.",
+    "counterfeit_risks": "Moderate for Guo Jiao 1573 (premium price point attracts counterfeiters), low for Te Qu and below. Verify QR codes. Buy from authorized retailers. Be wary of deeply discounted Guo Jiao 1573 — genuine product doesn't go on deep sale.",
+    "value_picks": ["Te Qu (特曲) — the best value in premium strong-aroma, period. 30-year pit character at an everyday price."],
+    "splurge_picks": ["Guo Jiao 1573 (国窖1573) — 440-year pit character. One of the most distinctive spirits in the world.", "Guo Jiao 1573 vintage editions — limited releases from specific aged spirits"]
+  },
+  "faq": [
+    { "q": "What makes 'old pit' fermentation different?", "a": "A baijiu fermentation pit is not just a container — it's a living ecosystem. The clay walls host bacteria (Clostridium, Bacillus), yeasts (Saccharomyces, Pichia), and molds that produce the esters, acids, and flavor compounds characteristic of strong-aroma baijiu. Old pits have more diverse and stable microbial communities, which produce more complex spirits. A new pit takes about 20-30 years to develop a meaningful microbial character. The 1573 pits have been continuously fed and maintained since the Ming dynasty — their microbial fingerprint is literally irreplaceable." },
+    { "q": "Te Qu vs Guo Jiao 1573 — how much difference is there?", "a": "Significant. Te Qu is made from younger pits (30+ years) and is brighter, fruitier, with a lighter pit character. Guo Jiao 1573 uses only the 1573-era pits and older spirit stock — the pit aroma is deeper, more complex, with layers of aged wood, truffle, and leather. Price ratio is roughly 4:1. Quality ratio is probably closer to 2:1. Te Qu is the smarter buy for drinking; Guo Jiao 1573 is for the experience." },
+    { "q": "Why single grain instead of five grains?", "a": "It's a philosophical choice. Single-grain (sorghum only) produces a purer expression of pit character — the grain is a canvas, not a co-star. Multi-grain (Wuliangye style) creates more fruit and sweetness but dilutes the pit aroma. Neither is better; they're different styles. Luzhou Laojiao is about the pit. Wuliangye is about the grain blend." },
+    { "q": "Can you visit the 1573 pits?", "a": "Yes. The Luzhou Laojiao distillery in Luzhou city offers tours that include the Ming dynasty pit complex. The pits themselves are viewable through glass. The site is a designated National Key Cultural Relic. You'll smell the pit aroma long before you see the pits — it's unmistakable." }
+  ],
+  "related_varieties": ["wuliangye", "jiannanchun", "yanghe", "maotai"],
+  "seo": {
+    "meta_title": "Luzhou Laojiao Guide: 1573 Pits & Single-Grain Strong-Aroma | Baijiu365",
+    "meta_description": "Luzhou Laojiao (泸州老窖): the oldest baijiu distillery. 440-year Ming dynasty pits, Guo Jiao 1573 vs Te Qu, and why the pit-mud aroma is like Islay peat for baijiu.",
+    "keywords": ["luzhou laojiao", "泸州老窖", "guo jiao 1573", "国窖1573", "te qu", "特曲", "strong aroma baijiu", "old pit fermentation", "chinese liquor"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Luzhou Laojiao Official", "url": "https://www.lzlj.com" },
+    { "label": "GB/T 10781.1-2021 Strong-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

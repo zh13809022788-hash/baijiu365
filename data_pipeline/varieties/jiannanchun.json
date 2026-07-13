@@ -1,0 +1,121 @@
+{
+  "id": "jiannanchun",
+  "name": "Jiannanchun",
+  "name_cn": "剑南春",
+  "brand": {
+    "name": "Sichuan Jiannanchun Group Co., Ltd.",
+    "name_cn": "四川剑南春集团有限责任公司",
+    "founded": "1951",
+    "headquarters": "Mianzhu, Deyang, Sichuan, China",
+    "website": "https://www.jnc.com.cn"
+  },
+  "aroma_type": "strong",
+  "aroma_type_cn": "浓香型",
+  "gbt_standard": "GB/T 10781.1",
+  "region": "Sichuan",
+  "region_cn": "四川（绵竹）",
+  "abv_range": "52% (standard), 46%, 38%",
+  "price_range_usd": {
+    "min": 50,
+    "max": 400,
+    "note": "Crystal Jian (水晶剑) $60-80; premium/vintage editions $150-400. Often called the best value in premium strong-aroma."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Crystal Jian (Shuijing Jian)",
+      "name_cn": "水晶剑",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "The icon. Crystal-clear bottle with an internal glass sculpture of bamboo (Mianzhu's signature product). The benchmark for mid-premium strong-aroma — widely considered the best quality-to-price ratio in the category. Bold, complex, unmistakable.",
+      "msrp_cny": 489,
+      "is_flagship": true
+    },
+    {
+      "name": "Zhencang Jian (Collector's)",
+      "name_cn": "珍藏级剑南春",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Premium tier. Longer-aged base spirits, smoother integration. Darker bottle, more refined presentation. Positioned between Crystal Jian and the top-tier vintage editions.",
+      "msrp_cny": 799,
+      "is_flagship": false
+    },
+    {
+      "name": "Dongfang Hong 1949",
+      "name_cn": "东方红1949",
+      "abv": "46%",
+      "volume_ml": 500,
+      "description": "Ultra-premium line referencing the founding year of the PRC. Lower ABV, extremely smooth. Collectible packaging. Primarily a gifting product.",
+      "msrp_cny": 1299,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Crystal clear. Medium viscosity with well-defined legs.",
+    "nose": "Bold and assertive — this is Sichuan strong-aroma at its most unapologetic. Fermented grain, overripe pear, and a distinct nutty character (roasted almond, chestnut) form the foundation. The pit-mud note is present but more restrained than Luzhou Laojiao — earthier than Yanghe, cleaner than Luzhou. A subtle floral lift (osmanthus) adds elegance. Some tasters note a faint licorice/anise undertone.",
+    "palate": "Full-bodied with immediate intensity. The entry is warmly alcoholic — Crystal Jian announces itself. Sweet grain, roasted nuts, and dried fruit (date, raisin) dominate the mid-palate. The pit character provides depth without taking over. Strong structure — this is baijiu that demands attention. The 52% ABV is fully present but cushioned by substantial body.",
+    "finish": "Long and warming. The roasted nut character lingers longest, joined by a returning grain sweetness and gentle pepper. Cleaner finish than Luzhou Laojiao, more substantial than Yanghe. Satisfying and complete.",
+    "overall_impression": "Crystal Jian is the baijiu enthusiast's strong-aroma. It balances the fruit-sweetness of Wuliangye, the clean drinkability of Yanghe, and a hint of the pit funk of Luzhou Laojiao — without committing fully to any extreme. For people who already know they like baijiu and want the definitive mid-premium strong-aroma experience, this is the one. The bamboo glass sculpture inside the bottle is a nice touch — a nod to Mianzhu's famous bamboo craft."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Sichuan (Chengdu style)",
+      "dishes": ["Kung pao chicken", "Mapo tofu", "Dan dan noodles", "Husband and wife lung slices (fu qi fei pian)"],
+      "why_it_works": "Mianzhu is 80km from Chengdu. This is the local pairing — the baijiu and the food grew up together."
+    },
+    {
+      "cuisine": "Hearty northern Chinese",
+      "dishes": ["Dongbei-style braised pork ribs", "Cumin lamb", "Beijing zhajiang noodles", "Dumplings"],
+      "why_it_works": "Crystal Jian's assertive character holds up to heavy, savory northern dishes. The alcohol provides welcome heat and refreshment."
+    },
+    {
+      "cuisine": "Grilled and barbecued meats",
+      "dishes": ["Chinese BBQ lamb skewers (yang rou chuan)", "Grilled fish with cumin and chili", "Korean BBQ"],
+      "why_it_works": "The roasted nut character in Jiannanchun creates a natural bridge to smoky, char-grilled flavors."
+    }
+  ],
+  "beginner_friendly": false,
+  "beginner_notes": "Crystal Jian is not for beginners — the 52% ABV hits hard and the flavor profile is assertive. If you're new to baijiu, start with Yanghe or Fenjiu first, then come back. If you already know you like strong spirits (cask-strength whisky, overproof rum), Jiannanchun will feel familiar. Pour small (10-15ml), let it sit 2-3 minutes, and have food ready. The first sip will be a shock. The second sip will be an education. The third sip will make you a convert.",
+  "comparable_spirits": [
+    { "spirit": "Cask-strength bourbon (Booker's, Stagg Jr.)", "reason": "High-proof, bold, assertive — made for people who already know they like strong spirits" },
+    { "spirit": "Navy-strength gin (Plymouth Navy, Hayman's Royal Dock)", "reason": "Intense, structured, botanical complexity with substantial heat" },
+    { "spirit": "Aged Calvados (Domfrontais, Pays d'Auge)", "reason": "Apple-pear fruit character, nutty oxidation notes, warming finish — surprisingly parallel flavor profile" }
+  ],
+  "history": "Jiannanchun's name means 'Sword-South Spring' — a reference to its origin in Mianzhu ('Cotton-Bamboo'), a city north of Chengdu famous for bamboo and sword-making. The distillery can trace its lineage to the Tang dynasty (7th-10th centuries), when 'Jiannan Shaochun' (剑南烧春) was recorded as a tribute wine to the Tang imperial court. The modern corporation was established in 1951 from local distilleries. In the 1980s-90s, Jiannanchun was considered part of the 'Big Three' of Sichuan strong-aroma alongside Wuliangye and Luzhou Laojiao. It has maintained a reputation for quality at accessible prices — Crystal Jian is widely regarded as the best sub-¥500 baijiu in China. The 2008 Sichuan earthquake severely damaged Mianzhu, including Jiannanchun's facilities, but the distillery rebuilt and recovered. Unlike many competitors, Jiannanchun has remained relatively resistant to the premiumization and speculation that has inflated Wuliangye and Moutai prices — it remains a drinker's baijiu rather than an investor's asset.",
+  "production": {
+    "raw_materials": ["sorghum", "rice", "glutinous rice", "wheat", "corn"],
+    "qu_type": "Medium-temperature daqu (中温大曲), wheat-based. Jiannanchun's qu formulation is one of its most closely guarded secrets.",
+    "fermentation": "Solid-state fermentation in mud pits. Pits aged 30-100+ years. The Mianzhu terroir — water from the Longmen Mountains, local climate, unique microbial environment — contributes distinctive character.",
+    "distillation": "Traditional pot still distillation. The base spirits from different pit ages and distillation rounds are separated and graded.",
+    "aging": "Minimum 3 years in ceramic jars. Crystal Jian uses a blend of 3-8 year spirits. Zhencang Jian uses 5-15 year spirits.",
+    "notable_techniques": [
+      "Mianzhu terroir — water from Longmen Mountain springs, local climate (cooler than Yibin/Luzhou due to higher elevation)",
+      "Traditional Tang dynasty heritage production methods (唐代宫廷御酒传统)",
+      "Five-grain formula similar to Wuliangye but with different proportions and qu specifications"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Jiannanchun stores on Tmall and JD.com. Major liquor chains. Widely available in Sichuan and across China. Crystal Jian is a standard item at most decent liquor stores.",
+    "where_to_buy_global": "Available through Chinese liquor importers. Less common than Wuliangye or Yanghe internationally. Check specialty Asian liquor retailers.",
+    "what_to_look_for": "Crystal Jian has an unmistakable bottle — clear glass with an internal glass bamboo sculpture. Check the anti-counterfeit QR code. The label should be crisp with the distinctive 'Jiannanchun' calligraphy in gold. The bottle cap should have an intact seal.",
+    "counterfeit_risks": "Low to moderate. Crystal Jian's distinctive internal sculpture makes the bottle harder to convincingly fake. However, refilled genuine bottles do exist. Verify QR code. Buy from authorized retailers.",
+    "value_picks": ["Crystal Jian (水晶剑) — widely considered the best value in premium baijiu, period. Buy this. You won't regret it."],
+    "splurge_picks": ["Zhencang Jian (珍藏级) — smoother, more refined Crystal Jian", "Dongfang Hong 1949 (东方红) — ultra-premium, primarily for gifting"]
+  },
+  "faq": [
+    { "q": "Is Crystal Jian really the best value in baijiu?", "a": "Among Chinese spirits enthusiasts, this is close to consensus. At ¥400-500, Crystal Jian delivers a complexity and intensity comparable to baijius costing 3-4x more. It's the 'if you only buy one strong-aroma in your life' choice for many connoisseurs. The caveat: it's assertive and high-proof — not for everyone." },
+    { "q": "Jiannanchun vs Wuliangye — which should I buy?", "a": "At the Crystal Jian vs Puwu level, Crystal Jian is about 1/3 the price for arguably comparable quality. Wuliangye is fruitier, more approachable, more prestigious. Jiannanchun is bolder, nuttier, and a better value. If you're drinking: Jiannanchun. If you're gifting: Wuliangye. If you want both: buy Crystal Jian to drink and save the Wuliangye for guests." },
+    { "q": "What's with the bamboo in the bottle?", "a": "Mianzhu (绵竹) literally means 'Cotton-Bamboo' — the city has been famous for bamboo craft for centuries. The glass bamboo sculpture inside Crystal Jian bottles is a tribute to this heritage. It's purely decorative and doesn't affect the liquid." }
+  ],
+  "related_varieties": ["wuliangye", "luzhou-laojiao", "yanghe", "gujinggong", "shede"],
+  "seo": {
+    "meta_title": "Jiannanchun Crystal Jian Guide: Best Value Strong-Aroma | Baijiu365",
+    "meta_description": "Jiannanchun (剑南春) Crystal Jian: the baijiu enthusiast's strong-aroma. Tang dynasty heritage, best value in premium baijiu, and why the bamboo bottle is iconic.",
+    "keywords": ["jiannanchun", "剑南春", "crystal jian", "水晶剑", "strong aroma baijiu", "sichuan baijiu", "best value baijiu", "chinese liquor"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Jiannanchun Official", "url": "https://www.jnc.com.cn" },
+    { "label": "GB/T 10781.1-2021 Strong-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "id": "xijiu",
+  "name": "Xijiu",
+  "name_cn": "习酒",
+  "brand": {
+    "name": "Guizhou Xijiu Co., Ltd. (Kweichow Moutai Group)",
+    "name_cn": "贵州习酒股份有限公司（茅台集团）",
+    "founded": "1952",
+    "headquarters": "Xijiu Town, Xishui County, Zunyi, Guizhou, China",
+    "website": "https://www.gzxijiu.com"
+  },
+  "aroma_type": "sauce",
+  "aroma_type_cn": "酱香型",
+  "gbt_standard": "GB/T 26760",
+  "region": "Guizhou",
+  "region_cn": "贵州（遵义习水）",
+  "abv_range": "53%",
+  "price_range_usd": {
+    "min": 30,
+    "max": 600,
+    "note": "Jiaocang 1988 (窖藏1988) typically $80-150; Junpin Xijiu (君品习酒) $200-400; lower-tier products from $30. Much more accessible than Moutai at comparable quality levels."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Junpin Xijiu",
+      "name_cn": "君品习酒",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Flagship ultra-premium product. The name means 'Gentleman's Xijiu' — positioned for high-end gifting and banquets. Complex, elegant sauce-aroma with extended aging. Dark navy and gold packaging.",
+      "msrp_cny": 1498,
+      "is_flagship": true
+    },
+    {
+      "name": "Jiaocang 1988",
+      "name_cn": "窖藏1988",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "The hero product. Named for the year 1988 when Xijiu won a national quality award. The benchmark mid-premium sauce-aroma — widely considered the best value in its class. Smooth, balanced, with classic Guizhou sauce character.",
+      "msrp_cny": 898,
+      "is_flagship": false
+    },
+    {
+      "name": "Jiaocang 1998",
+      "name_cn": "窖藏1998",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "More accessible variant of the Jiaocang line. Lighter body, younger base spirit. Designed for everyday drinking and casual gatherings.",
+      "msrp_cny": 398,
+      "is_flagship": false
+    },
+    {
+      "name": "Silver Xijiu",
+      "name_cn": "银质习酒",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Entry-level sauce-aroma from the Xijiu stable. Clean, straightforward profile. The most affordable way to taste the Xijiu style. Popular as a daily drinker in Guizhou.",
+      "msrp_cny": 168,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Crystal clear, very faint straw color. Medium legs — lighter body than Moutai or Langjiu.",
+    "nose": "Elegant and restrained compared to Moutai. Soy sauce and toasted grain form the base, but the dominant notes are floral — osmanthus, dried chrysanthemum — with a subtle honey sweetness. Less overtly funky than Moutai, more polished. Junpin has a deeper roasted-coffee undertone; Jiaocang 1988 is brighter and more floral.",
+    "palate": "Medium body, notably smooth entry. The first impression is sweetness — caramel, honey, and cooked fruit — before the savory sauce-aroma character asserts itself. Less umami punch than Moutai, more balanced. The texture is silky rather than oily. Jiaocang 1988 is remarkably well-integrated for its price point; nothing sticks out or burns.",
+    "finish": "Medium length, clean. Fades from savory grain to a gentle sweetness. Doesn't have Moutai's 60-second persistence, but also doesn't have Moutai's challenging intensity. Junpin Xijiu finishes longer and with more spice — white pepper and anise.",
+    "overall_impression": "Xijiu occupies the 'elegant sauce-aroma' niche. It's the dinner-party baijiu — complex enough to be interesting, smooth enough to not dominate the table. If Moutai is a statement, Xijiu is a conversation. The Jiaocang 1988 in particular represents the best quality-to-price ratio in premium sauce-aroma."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Guizhou",
+      "dishes": ["Sour fish soup (suan tang yu)", "Guizhou-style spicy chicken (la zi ji)", "Smoked tofu with chili"],
+      "why_it_works": "Regional pairing from the same province. The baijiu's floral elegance contrasts and cleanses the sour-spicy Guizhou palate."
+    },
+    {
+      "cuisine": "Cantonese",
+      "dishes": ["White-cut chicken", "Steamed fish with ginger and scallion", "Roast goose"],
+      "why_it_works": "Xijiu's smoothness and floral notes complement rather than overpower delicate Cantonese flavors. One of the few sauce-aroma baijius that works with lighter cuisines."
+    },
+    {
+      "cuisine": "Light appetizers",
+      "dishes": ["Cold cucumber salad", "Smoked fish (xun yu)", "Salted edamame"],
+      "why_it_works": "The clean finish allows appetizer flavors to come through. Xijiu doesn't demand heavy food the way Moutai does."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Xijiu — especially Jiaocang 1988 — is arguably the most beginner-friendly sauce-aroma baijiu at the premium tier. It's smoother, less funky, and more floral than both Moutai and Langjiu. If you've tried light-aroma baijiu (Fenjiu, Erguotou) and want to explore sauce-aroma, Xijiu is the gentlest bridge. Start with Jiaocang 1998 or Silver Xijiu if you want to minimize financial risk. Serve room temperature, small glass (15ml). Let it breathe 1-2 minutes. This is one of the few sauce-aroma baijius that's genuinely pleasant to drink without food, though it's still better with company and a meal.",
+  "comparable_spirits": [
+    { "spirit": "Speyside single malt (Glenlivet 18, Balvenie DoubleWood)", "reason": "Floral, honeyed, smooth — the 'elegant' end of the spectrum. Xijiu plays the same role in sauce-aroma that Speyside plays in Scotch" },
+    { "spirit": "Japanese whisky (Hibiki Harmony, Yamazaki 12)", "reason": "Polished, balanced, designed for broad appeal without sacrificing complexity" },
+    { "spirit": "XO Cognac (Remy Martin, Martell)", "reason": "Smooth entry, floral-fruity mid-palate, clean finish — the 'dinner party' spirit archetype" }
+  ],
+  "history": "Xijiu was founded in 1952 in Xishui County, Guizhou — about 50km northwest of Maotai Town along the Chishui River. For most of its history it operated independently, producing sauce-aroma baijiu using traditional Guizhou methods. In 1998, it was acquired by Kweichow Moutai Group, becoming Moutai's sister brand. Despite the corporate relationship, Xijiu has maintained a distinct identity — positioned as a more accessible, elegant alternative to the flagship Moutai products. The 1988 designation on the Jiaocang line refers to the year Xijiu won the National Quality Award (国家质量奖), which established its reputation beyond Guizhou. In 2022, Xijiu was restructured as a joint-stock company and separated from Moutai Group's direct control, though Moutai retains significant ownership. Its sales have grown rapidly in recent years, making it one of the top-selling sauce-aroma brands in China.",
+  "production": {
+    "raw_materials": ["sorghum (Guizhou red variety)", "wheat"],
+    "qu_type": "High-temperature daqu (小麦高温大曲), following Guizhou sauce-aroma tradition",
+    "fermentation": "Solid-state fermentation in stone pits using the traditional '12987' process: 1-year cycle, 2 feedings of grain, 9 steamings, 8 fermentations, 7 distillations. Each round produces a distinct base spirit character.",
+    "distillation": "Traditional pot still distillation. The seven rounds are collected separately, with the 3rd, 4th, and 5th rounds generally yielding the highest quality spirit.",
+    "aging": "Base spirits aged minimum 3 years in ceramic jars. Jiaocang 1988 uses a blend of 5-8 year old spirits. Junpin Xijiu uses older stock (8-15 years). Aging takes place in above-ground warehouses, not caves — Xijiu follows the Moutai approach of controlled-ventilation warehouse aging.",
+    "notable_techniques": [
+      "Full '12987' Guizhou sauce-aroma process (1-2-9-8-7)",
+      "Blending philosophy emphasizes balance and elegance over intensity — a deliberate stylistic choice different from Moutai",
+      "Shares the Chishui River watershed ecosystem with Moutai and Langjiu, but operates at a lower elevation with slightly different microclimate"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Xijiu flagship stores on Tmall and JD.com. Major liquor chains. Widely available in Guizhou province at retail. Increasingly distributed nationally through Moutai Group's sales network.",
+    "where_to_buy_global": "Growing but still limited. Available through Chinese liquor specialists in the US, Canada, and Australia. Less common than Langjiu outside China but distribution is expanding. Check specialty Asian liquor importers.",
+    "what_to_look_for": "Verify the anti-counterfeit QR code. Jiaocang 1988 has a distinctive dark green/gold box. The bottle should have clear, sharp printing and an intact seal. Xijiu's branding has been updated multiple times — check the official website for current packaging. The 'Jiaocang 1988' text on the box should be crisp and metallic, not printed flat.",
+    "counterfeit_risks": "Low to moderate. Xijiu is less counterfeited than Moutai or even Langjiu due to lower unit prices. Jiaocang 1988 is the most commonly faked product in the Xijiu line — verify the QR code. Be wary of unusually cheap 'bulk deal' offers online.",
+    "value_picks": [
+      "Jiaocang 1988 (窖藏1988) — the best value in premium sauce-aroma, widely acknowledged as punching above its price",
+      "Silver Xijiu (银质习酒) — cheapest entry into proper Guizhou sauce-aroma, good for cocktails and daily drinking"
+    ],
+    "splurge_picks": [
+      "Junpin Xijiu (君品习酒) — flagship, comparable to Moutai Flying Fairy in quality but more elegant and less expensive",
+      "Jiaocang vintage/special editions — limited runs with extended aging"
+    ]
+  },
+  "faq": [
+    { "q": "Is Xijiu just a cheaper version of Moutai?", "a": "No. Same parent company, same province, but different product philosophy. Xijiu is deliberately more approachable — smoother entry, more floral, less aggressively funky. It's not Moutai-lite; it's a different expression of Guizhou sauce-aroma, like how different chateaux in Bordeaux produce different wines from the same region." },
+    { "q": "Which is better for a gift: Junpin Xijiu or Moutai Prince?", "a": "Junpin Xijiu generally carries more prestige — it's Xijiu's flagship and the packaging is more impressive. Moutai Prince has the Moutai name recognition. For a gift to someone who knows baijiu, Junpin Xijiu often impresses more because it shows you know about the category beyond just the Moutai brand name." },
+    { "q": "How does Jiaocang 1988 compare to Honghua Lang 15?", "a": "They're direct competitors at a similar price point. Jiaocang 1988 is smoother, more floral, more elegant. Honghua Lang 15 is richer, fruitier, with more cave-aged character. Choose Xijiu if you prefer finesse; choose Langjiu if you prefer boldness. Neither is objectively better — they're stylistic choices." },
+    { "q": "Can you drink Xijiu in cocktails?", "a": "Silver Xijiu and Jiaocang 1998 work surprisingly well in stirred cocktails — try a baijiu Old Fashioned or a baijiu Manhattan variation. The floral notes integrate nicely with vermouth and bitters. Don't waste Junpin or Jiaocang 1988 in cocktails — those are for sipping." }
+  ],
+  "related_varieties": ["maotai", "langjiu", "guotai", "zhenjiu"],
+  "seo": {
+    "meta_title": "Xijiu Baijiu Guide: Junpin vs Jiaocang 1988 | Baijiu365",
+    "meta_description": "Xijiu (习酒): Moutai's sister brand and Guizhou's most elegant sauce-aroma baijiu. Jiaocang 1988 review, Junpin Xijiu vs Moutai, food pairings, and buying guide.",
+    "keywords": ["xijiu", "习酒", "jiaocang 1988", "窖藏1988", "junpin xijiu", "君品习酒", "sauce aroma baijiu", "guizhou baijiu", "moutai sister brand", "chinese liquor"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Guizhou Xijiu Official", "url": "https://www.gzxijiu.com" },
+    { "label": "GB/T 26760 Sauce-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/gnoc/queryItemInfoPlat?projectId=131350" },
+    { "label": "Xijiu Co. on China National Standards Platform", "url": "https://std.samr.gov.cn/search/orgOthers?q=习酒" }
+  ]
+}

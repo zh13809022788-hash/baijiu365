@@ -1,0 +1,121 @@
+{
+  "id": "hongxing",
+  "name": "Hongxing Erguotou",
+  "name_cn": "红星二锅头",
+  "brand": {
+    "name": "Beijing Hongxing Co., Ltd.",
+    "name_cn": "北京红星股份有限公司",
+    "founded": "1949",
+    "headquarters": "Huairou District, Beijing, China",
+    "website": "https://www.hongxingerguotou.com"
+  },
+  "aroma_type": "light",
+  "aroma_type_cn": "清香型",
+  "gbt_standard": "GB/T 10781.2",
+  "region": "Beijing",
+  "region_cn": "北京（怀柔）",
+  "abv_range": "43-56%",
+  "price_range_usd": {
+    "min": 3,
+    "max": 40,
+    "note": "Classic 56% Erguotou $3-5; Blue Bottle Erguotou 8yr $15-25; premium editions $25-40."
+  },
+  "tier": "entry",
+  "core_products": [
+    {
+      "name": "Hongxing Erguotou 56% (Classic Green Bottle)",
+      "name_cn": "红星二锅头56度（经典绿瓶）",
+      "abv": "56%",
+      "volume_ml": 500,
+      "description": "The original. Green bottle, red star. The definitive Beijing Erguotou — the baijiu of factory workers, taxi drivers, and old Beijing hutong culture. High-proof, no pretension, pure tradition.",
+      "msrp_cny": 18,
+      "is_flagship": true
+    },
+    {
+      "name": "Hongxing Blue Bottle 8yr",
+      "name_cn": "红星蓝瓶八年陈酿",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "The premium pivot. Blue bottle, aged 8 years. Smoother, more refined — Hongxing's attempt to move beyond the 'cheap working-class booze' image while maintaining Erguotou authenticity. Popular among younger Beijing drinkers.",
+      "msrp_cny": 68,
+      "is_flagship": false
+    },
+    {
+      "name": "Hongxing Erguotou 43% (White Bottle)",
+      "name_cn": "红星二锅头43度（白瓶）",
+      "abv": "43%",
+      "volume_ml": 500,
+      "description": "Lower-ABV variant. Gentler, more accessible. Popular among drinkers who want the Hongxing brand without the 56% intensity.",
+      "msrp_cny": 15,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear, water-white. Light body.",
+    "nose": "Sharp and direct. The 56% alcohol announces itself immediately — there's no subtlety here. Behind the ethanol: clean grain, a touch of sorghum sweetness, faint apple. Simple, honest, no pretense. The blue bottle 8yr is noticeably smoother and more floral.",
+    "palate": "The 56% variant is intense — this is not an easy sipper. Clean grain sweetness up front, then the alcohol hits hard and fast. Mid-palate: more grain, a warming heat that fills the chest. The 8yr blue bottle is substantially smoother — still assertive but more integrated. The 43% variant is the gentlest option, closer to Niulanshan's Chenniang profile.",
+    "finish": "Short, warm, and clean. The alcohol heat gradually fades. No lingering complexity, but no off-notes either.",
+    "overall_impression": "The 56% Classic is not a baijiu for contemplation — it's a baijiu for drinking. It's the spirit equivalent of a black coffee at a construction site diner: strong, honest, and exactly what it claims to be. The blue bottle series shows that Erguotou can also be refined, but the green bottle is the heart of the brand — and the heart of old Beijing."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Old Beijing classics",
+      "dishes": ["Zhajiang noodles", "Beijing-style hot pot (shuan yang rou)", "Braised pork offal soup (lu zhu)", "Fried sauce noodles"],
+      "why_it_works": "The definitive Beijing dinner. Green-bottle Erguotou and a bowl of zhajiang mian — this is the taste of Beijing's working-class soul."
+    },
+    {
+      "cuisine": "Northern Chinese barbecue",
+      "dishes": ["Cumin lamb skewers (yang rou chuan)", "Grilled chicken wings", "Grilled馒头 (mantou buns)"],
+      "why_it_works": "The 56% ABV cuts through fatty grilled meat like nothing else. The classic street-side BBQ + Erguotou combo is a Beijing institution."
+    },
+    {
+      "cuisine": "Preserved and fermented foods",
+      "dishes": ["Century egg", "Fermented tofu (fu ru)", "Pickled vegetables", "Salted duck egg"],
+      "why_it_works": "The clean intensity of Erguotou stands up to the pungent funk of preserved and fermented Chinese foods — a surprisingly harmonious pairing."
+    }
+  ],
+  "beginner_friendly": false,
+  "beginner_notes": "Classic 56% Hongxing Erguotou is NOT for beginners. It's high-proof, intense, and unforgiving. If you're new to baijiu, start with the 43% white bottle or — much better — the Blue Bottle 8yr at 53%. The 56% green bottle is for when you've built some tolerance and want to understand what Beijing's working class has been drinking for generations. Pour small (10ml), sip slowly, and have food. Do not shoot it." ,
+  "comparable_spirits": [
+    { "spirit": "Overproof white rum (Wray & Nephew, Rum Fire)", "reason": "High-proof, unaged, intense, working-class heritage. The 'honest spirit' category" },
+    { "spirit": "Cask-strength bourbon (Booker's, rare breed)", "reason": "High proof, direct, no dilution or pretense. For drinkers who want the spirit at its most intense" },
+    { "spirit": "Bottled-in-bond rye (Rittenhouse, Old Overholt Bonded)", "reason": "American working-class spirit heritage, similar proof (50%+), similar 'no bullshit' ethos" }
+  ],
+  "history": "Hongxing ('Red Star') was founded in 1949 — the same year as the People's Republic of China — as Beijing's first state-owned distillery. It was created specifically to produce Erguotou (二锅头), a uniquely Beijing style of baijiu characterized by double distillation where only the middle cut ('second pot head,' hence the name) is collected. The Hongxing brand was charged with making affordable, high-quality baijiu for the working people of the new China — its tagline was '让老百姓喝上正宗二锅头' (Let the common people drink authentic Erguotou). For decades, Hongxing was the Erguotou in Beijing. The green bottle with the red star became an icon of Beijing working-class culture — featured in films, novels, and folk songs. In the 2000s, Hongxing faced intense competition from Niulanshan's national expansion and began its own pivot: preserving the classic green-bottle Erguotou while launching premium lines (blue bottle aged series) to attract younger, more affluent drinkers. The red star on the label is not a political statement — it's the brand's name and heritage, unchanged since 1949.",
+  "production": {
+    "raw_materials": ["sorghum (100%)"],
+    "qu_type": "Low-temperature daqu (低温大曲), wheat and barley-based. Following traditional Beijing Erguotou specifications.",
+    "fermentation": "Solid-state fermentation in ceramic jars (following Beijing light-aroma tradition, not mud pits).",
+    "distillation": "The defining technique — Erguotou (二锅头) distillation: the mash is distilled twice, and only the middle cut from the second distillation is collected. The 'head' (first cut, high in methanol) and 'tail' (last cut, high in fusel oils) are discarded or redistilled. This produces a cleaner, purer spirit — essentially the same principle as the 'heart cut' in premium whisky or brandy production. It was a Beijing-specific innovation that became the standard for affordable, clean baijiu.",
+    "aging": "Classic green bottle: minimal aging (several months). Blue bottle 8yr: 8 years in ceramic jars.",
+    "notable_techniques": [
+      "Erguotou distillation (掐头去尾取中间) — double distillation, middle cut only. The technique that defines the category.",
+      "1949 founding heritage — the original PRC-era state distillery, unchanged brand identity for 75+ years",
+      "Single-grain sorghum mash — pure, clean expression"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Ubiquitous in Beijing — available at every corner store, supermarket, and restaurant. Widely available nationally. The green bottle is one of the most recognized consumer products in China.",
+    "where_to_buy_global": "Available at Chinese grocery stores and Asian markets. International distribution is good for the brand's size — it's a recognizable Beijing icon that tourists often seek out.",
+    "what_to_look_for": "Green bottle = 56% classic. White bottle = 43% milder. Blue bottle = 8yr aged premium. The red star (红星) logo is unmistakable. Counterfeit protection is minimal for the classic line (it's ¥18). Blue bottle has QR code verification.",
+    "counterfeit_risks": "Very low for green/white bottle. Low for blue bottle. The price points don't justify sophisticated counterfeiting. Standard precautions for premium lines.",
+    "value_picks": ["Classic Green Bottle 56% (经典绿瓶) — ¥18. Buy it for the experience and the history.", "Blue Bottle 8yr (蓝瓶八年) — ¥68 for a genuinely good aged Erguotou"],
+    "splurge_picks": ["Blue Bottle 8yr or higher aged editions — the only Erguotou that genuinely justifies the 'splurge' category"]
+  },
+  "faq": [
+    { "q": "What does Erguotou mean?", "a": "Erguotou (二锅头) literally means 'second pot head.' It refers to the distillation technique: the fermented mash is distilled twice (two pots), and only the middle cut (head) from the second pot is collected. The first cut (high in methanol) and last cut (high in fusel oils) are discarded. It's essentially a quality-control technique — ensuring a cleaner, purer spirit. It was developed in Beijing and became the city's signature baijiu style." },
+    { "q": "Is Hongxing better than Niulanshan?", "a": "Depends what you want. Hongxing is the original, more traditional, higher proof (56% vs 42%), and has a stronger brand heritage as 'the Erguotou of the people.' Niulanshan has gone for volume and accessibility with its 42% Chenniang Bai. Hongxing's Blue Bottle 8yr is arguably a better premium product than Niulanshan's premium offerings. For tradition: Hongxing. For easy drinking: Niulanshan." },
+    { "q": "Why is the green bottle so iconic?", "a": "Because it hasn't changed in 75 years. The simple green glass bottle, red star logo, and cheap price have been constants through Mao's China, the reform era, and the modern boom. It's one of the few products in China that looks and costs essentially the same as it did when your grandparents were young. That kind of continuity is rare and valuable." }
+  ],
+  "related_varieties": ["niulanshan", "fenjiu", "yanghe"],
+  "seo": {
+    "meta_title": "Hongxing Erguotou Guide: Beijing's Iconic Working-Class Baijiu | Baijiu365",
+    "meta_description": "Hongxing Erguotou (红星二锅头): Beijing's 75-year-old working-class icon. Green bottle review, what Erguotou means, and why 56% clean baijiu still matters.",
+    "keywords": ["hongxing", "红星二锅头", "erguotou", "二锅头", "beijing baijiu", "green bottle baijiu", "chinese liquor", "hongxing er guo tou"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Beijing Hongxing Official", "url": "https://www.hongxingerguotou.com" },
+    { "label": "GB/T 10781.2-2022 Light-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

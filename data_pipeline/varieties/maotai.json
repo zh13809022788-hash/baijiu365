@@ -1,0 +1,122 @@
+{
+  "id": "maotai",
+  "name": "Moutai",
+  "name_cn": "茅台",
+  "brand": {
+    "name": "Kweichow Moutai Group",
+    "name_cn": "贵州茅台集团",
+    "founded": "1951",
+    "headquarters": "Maotai Town, Renhuai, Guizhou",
+    "website": "https://www.moutaichina.com"
+  },
+  "aroma_type": "sauce",
+  "aroma_type_cn": "酱香型",
+  "gbt_standard": "GB/T 18356",
+  "region": "Guizhou",
+  "region_cn": "贵州",
+  "abv_range": "53%",
+  "price_range_usd": {
+    "min": 150,
+    "max": 5000,
+    "note": "Flying Fairy 500ml typically $350-500 outside China; limited editions and vintage bottles can exceed $5000 at auction"
+  },
+  "tier": "ultra-premium",
+  "core_products": [
+    {
+      "name": "Flying Fairy (Feitian)",
+      "name_cn": "飞天茅台",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "The iconic standard bottle. White porcelain with red ribbon. The benchmark for sauce-aroma baijiu globally.",
+      "msrp_cny": 1499,
+      "is_flagship": true
+    },
+    {
+      "name": "Prince (Moutai Wangzi)",
+      "name_cn": "茅台王子酒",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "More accessible entry point into the Moutai family. Still sauce-aroma but less complex and intense.",
+      "msrp_cny": 300,
+      "is_flagship": false
+    },
+    {
+      "name": "Zhenpin (Rare Treasure)",
+      "name_cn": "珍品茅台",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Higher-grade blend with longer aging. Darker box, gift-tier positioning.",
+      "msrp_cny": 2500,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear, water-white, with visible legs when swirled. No artificial coloring.",
+    "nose": "Savory and complex — fermented soy, roasted peanut, dark mushroom, dried Chinese date (jujube), subtle caramel, hint of sandalwood. The aroma is assertive and fills the glass immediately.",
+    "palate": "Full-bodied and warming. Savory entry with fermented bean paste, roasted grain, dried plum, faint cocoa, and a distinctive umami layer. The alcohol (53%) is present but integrated — it provides structure without burning.",
+    "finish": "Very long, evolving from savory to a lingering sweetness with returning grain and herb notes. Can persist for 60+ seconds.",
+    "overall_impression": "Not an easy-drinking spirit. Demands attention and rewards slow sipping. More comparable to a complex Islay whisky or aged funky rum than to vodka or light spirits."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Sichuan",
+      "dishes": ["Mapo tofu", "Kung pao chicken", "Twice-cooked pork"],
+      "why_it_works": "The baijiu's savory depth matches the numbing-spicy intensity of Sichuan food; the alcohol cuts through heavy oil."
+    },
+    {
+      "cuisine": "Guizhou",
+      "dishes": ["Sour fish soup (suan tang yu)", "Smoked meats", "Chili-dipped tofu"],
+      "why_it_works": "Regional pairing: same terroir logic. Guizhou sourness and smoke echo the fermented notes in Moutai."
+    },
+    {
+      "cuisine": "Banquet / cold dishes",
+      "dishes": ["Drunken chicken", "Century egg", "Smoked fish"],
+      "why_it_works": "Cold appetizers let the baijiu's complexity lead without competing heat."
+    }
+  ],
+  "beginner_friendly": false,
+  "beginner_notes": "Moutai is a terrible first baijiu for most drinkers. Its intensity, price, and cultural weight create expectations that a first tasting rarely satisfies. If you've never tasted baijiu before, start with a light-aroma or approachable strong-aroma bottle. Come back to Moutai after you have 5-10 baijiu tastings under your belt. If you enjoy mezcal, peated Scotch, or funky Jamaican rum, you may connect with Moutai faster than most beginners.",
+  "comparable_spirits": [
+    { "spirit": "Islay single malt (Ardbeg, Laphroaig)", "reason": "Shares an assertive, savory, acquired-taste quality that divides drinkers" },
+    { "spirit": "Aged Jamaican rum (Hampden, Long Pond)", "reason": "High-ester funk, fermented fruit notes, long finish, similar proof" },
+    { "spirit": "Mezcal (esp. clay-pot distilled)", "reason": "Smoky, earthy, savory — appeals to the same kind of palate" }
+  ],
+  "history": "Moutai's origins trace to the Qing dynasty (1700s), but the modern operation was consolidated in 1951 from three local distilleries. It became China's de facto state banquet spirit after Premier Zhou Enlai served it to Richard Nixon in 1972. Today Moutai is both a drink and a financial asset — bottles are hoarded as investments, and the distillery's market cap exceeds Diageo's. The town of Maotai sits on the Chishui River, whose local water, climate, and microbial environment are considered essential to the spirit's character.",
+  "production": {
+    "raw_materials": ["sorghum (local red variety)", "wheat"],
+    "qu_type": "High-temperature daqu (made from wheat, fermented at 60-70°C)",
+    "fermentation": "Solid-state fermentation in stone pits, multiple cycles over one year",
+    "distillation": "Traditional pot still distillation, collected in multiple fractions",
+    "aging": "Minimum 3 years in ceramic jars, then blended across vintages. Flying Fairy is typically a blend of 3-5 year old spirits with older stock.",
+    "notable_techniques": [
+      "Nine steamings, eight fermentations, seven extractions (九蒸八酵七取酒)",
+      "Each production cycle spans a full calendar year",
+      "The Chishui River microclimate and local microbial terroir are considered irreplicable"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Moutai stores, major liquor chains (1919, Jiuxian), large supermarkets. Online: Tmall Moutai flagship, JD.com Moutai official. Expect queues and lotteries for Flying Fairy at MSRP.",
+    "where_to_buy_global": "Specialty Chinese liquor importers, high-end spirits retailers (Total Wine, The Whisky Exchange in UK), some duty-free shops. Online: Drizly (US), Master of Malt (UK) — availability varies by state/province.",
+    "what_to_look_for": "Verify the NFC anti-counterfeit chip on the cap (scan with Moutai app). Check the holographic seal on the box. The bottle should have clean, sharp printing — blurry text is a red flag. Buy from authorized retailers only; never from street markets or unverified online sellers.",
+    "counterfeit_risks": "Very high. Moutai is the most counterfeited baijiu in the world. Common fakes: refilled genuine bottles, lookalike packaging, diluted product. The NFC chip is your best friend — if it doesn't scan or links to a suspicious domain, walk away. Never buy Moutai in China as a tourist from someone who 'knows a guy.'",
+    "value_picks": ["Moutai Prince (Wangzi) — 70% of the experience at 20% of the price"],
+    "splurge_picks": ["Flying Fairy vintage bottles (2015 and older fetch premiums)", "Zhenpin (Rare Treasure) grade"]
+  },
+  "faq": [
+    { "q": "Is Moutai worth the price?", "a": "As a drink: only if you genuinely enjoy intense sauce-aroma spirits. As a status/gift object in Chinese business culture: yes, its symbolic value exceeds its liquid value. As an investment: historically, limited editions have appreciated, but the market is speculative." },
+    { "q": "Can you drink Moutai in cocktails?", "a": "You can, but it's usually a waste. Its complexity is lost in most mixers, and at $350+/bottle there are much better cocktail baijius. Use light-aroma or rice-aroma baijiu for cocktails instead." },
+    { "q": "What's the difference between Flying Fairy and other Moutai products?", "a": "Flying Fairy is the standard premium product. Prince is a more accessible line. Zhenpin uses higher-grade base spirit. Vintage/special editions (生肖, collector series) are marketing and investment products — the liquid may not differ dramatically." },
+    { "q": "How should I serve Moutai?", "a": "Room temperature in small glasses (10-30ml pours). Do not chill or add ice — cold mutes the aroma. Pair with food, not alone. Sip, don't shoot." }
+  ],
+  "related_varieties": ["xifeng", "dongjiu", "jiugui", "luzhou-laojiao"],
+  "seo": {
+    "meta_title": "Moutai Baijiu Guide: Taste, Price, Buying Tips | Baijiu365",
+    "meta_description": "What beginners should know about Moutai: why it's expensive, what it really tastes like, how to avoid fakes, and whether it's the right first baijiu for you.",
+    "keywords": ["moutai", "maotai", "茅台", "flying fairy baijiu", "sauce aroma baijiu", "kweichow moutai", "feitian", "chinese liquor", "baijiu buying guide"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Kweichow Moutai Official", "url": "https://www.moutaichina.com" },
+    { "label": "Moutai Museum (Maotai Town)", "url": "https://www.chinadaily.com.cn/a/201905/29/WS5cedf4e0a3104842260be8a6.html" }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "shuijingfang",
+  "name": "Shuijingfang",
+  "name_cn": "水井坊",
+  "brand": {
+    "name": "Sichuan Shuijingfang Co., Ltd. (Diageo)",
+    "name_cn": "四川水井坊股份有限公司（帝亚吉欧旗下）",
+    "founded": "2000",
+    "headquarters": "Chengdu, Sichuan, China",
+    "website": "https://www.swellfun.com"
+  },
+  "aroma_type": "strong",
+  "aroma_type_cn": "浓香型",
+  "gbt_standard": "GB/T 10781.1",
+  "region": "Sichuan",
+  "region_cn": "四川（成都）",
+  "abv_range": "52-54%",
+  "price_range_usd": {
+    "min": 80,
+    "max": 600,
+    "note": "Jing Tai (井台) $80-120; Diancang (典藏) $120-200; limited editions and collector bottles $200-600."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Jing Tai (Well Platform)",
+      "name_cn": "水井坊·井台",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "The standard-bearer. Named after the archaeological 'well platform' discovered at the distillery site. Six-sided bottle representing the six sides of the ancient well. Elegant, balanced, positioned as the modern face of ancient Chengdu distilling.",
+      "msrp_cny": 598,
+      "is_flagship": true
+    },
+    {
+      "name": "Diancang (Master Collection)",
+      "name_cn": "水井坊·典藏",
+      "abv": "53%",
+      "volume_ml": 500,
+      "description": "Ultra-premium tier. Longer-aged, more complex. The collector's Shuijingfang. Wooden gift box, more substantial bottle. Positioned for high-end gifting.",
+      "msrp_cny": 1399,
+      "is_flagship": false
+    },
+    {
+      "name": "Zhen Niang No.8",
+      "name_cn": "水井坊·臻酿八号",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "More accessible everyday premium tier. Slightly lighter profile, lower price point. Good entry into the Shuijingfang brand.",
+      "msrp_cny": 388,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Crystal clear. Medium viscosity.",
+    "nose": "Elegant and polished. The pit-mud character is present but refined — clean earth, old wood, a hint of mushroom. Behind the pit notes: ripe pear, honey, and a delicate floral lift. More restrained than Luzhou Laojiao, more traditional than Yanghe. Very well-balanced — nothing dominates.",
+    "palate": "Medium-full body, smooth entry. Sweet grain and honey open, followed by gentle pit character and a touch of white pepper. The 52% ABV is expertly integrated — warmth without edge. The texture is notably silky compared to other Sichuan strong-aromas. Diancang has deeper complexity and a longer development; Jing Tai is more direct and immediately enjoyable.",
+    "finish": "Medium-long, clean. The pit notes fade gently, leaving a lingering honey sweetness and faint mineral character. Elegant exit — no harshness.",
+    "overall_impression": "Shuijingfang is the most internationalized Chinese baijiu brand, and it shows in the product. The flavor profile is carefully calibrated for broad appeal — authentic Sichuan strong-aroma character, but polished and refined for unfamiliar palates. If Wuliangye is the crowd-pleaser and Luzhou Laojiao is the funk-lover's choice, Shuijingfang is the diplomat — presentable, likeable, unlikely to offend anyone. The 600-year-old distillery site story is genuine and compelling, though the brand itself is only 25 years old."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Chengdu upscale",
+      "dishes": ["Kung pao shrimp", "Tea-smoked duck", "Dry-braised sea cucumber", "Steamed fish in superior soy"],
+      "why_it_works": "Born in Chengdu. Shuijingfang's refined profile pairs perfectly with the city's equally refined high-end Sichuan cuisine."
+    },
+    {
+      "cuisine": "International/Western",
+      "dishes": ["Pan-seared duck breast", "Grilled lamb chops", "Aged ribeye", "Mushroom risotto"],
+      "why_it_works": "As Diageo's baijiu brand, Shuijingfang was designed to work with international cuisine. The balanced profile genuinely pairs well with Western fine dining — one of the few baijius where this works consistently."
+    },
+    {
+      "cuisine": "Cheese course",
+      "dishes": ["Brie", "Aged Gouda", "Manchego"],
+      "why_it_works": "The refined pit character creates an interesting affinity with the nutty, crystalline notes of aged cheese. A genuinely compelling cheese pairing that surprises people."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Shuijingfang Jing Tai is a strong candidate for a Western spirits drinker's first baijiu. The Diageo ownership means it was literally designed with international palates in mind. The 600-year-old distillery site story provides a compelling narrative hook ('this baijiu is made on the same site where they've been distilling since the Ming dynasty'). Serve neat in a small glass. The first sip will still be a shock if you're new to spirits above 40%, but it's one of the gentlest introductions to the category.",
+  "comparable_spirits": [
+    { "spirit": "Single malt from international distillers (Nikka Coffey Malt, Kavalan)", "reason": "Traditional technique executed with international polish and broad palate appeal" },
+    { "spirit": "XO Cognac from major houses (Hennessy, Martell)", "reason": "Smooth, refined, designed for universal appeal while maintaining category authenticity" },
+    { "spirit": "Diageo's international portfolio strategy (Don Julio 1942, Johnnie Walker Blue)", "reason": "Same parent company, same approach: premium packaging, accessible flavor, compelling heritage story" }
+  ],
+  "history": "Shuijingfang ('Water Well Workshop') is named after the archaeological discovery that defines the brand. In 1998, during a renovation at the Quanxing (全兴) distillery in central Chengdu, workers uncovered the remains of a complete baijiu distillery dating to the Ming dynasty (1368-1644) — including fermentation pits, a well, distillation equipment, and storage areas. It was the oldest, most complete ancient distillery site ever found in China. Rather than simply preserving the site as a museum, the company created a new premium brand — Shuijingfang — built on the heritage of the 600-year-old site. In 2006, the site was declared a National Key Cultural Relic. In 2011, Diageo (the world's largest spirits company) acquired a controlling stake in Shuijingfang, making it the first foreign-owned Chinese baijiu brand. This ownership has shaped Shuijingfang's positioning as the most internationally accessible baijiu, with distribution through Diageo's global network and a flavor profile calibrated for global palates.",
+  "production": {
+    "raw_materials": ["sorghum", "wheat", "rice", "glutinous rice", "corn"],
+    "qu_type": "Medium-temperature daqu, wheat-based. Diageo's quality control protocols have been integrated into qu production for consistency.",
+    "fermentation": "Solid-state fermentation in mud pits, including some of the 600-year-old Ming dynasty pits. The urban Chengdu location (distillery is in the city center) creates a unique microclimate influencing fermentation character.",
+    "distillation": "Traditional pot still. Diageo has introduced precision monitoring and standardization while preserving traditional techniques.",
+    "aging": "Minimum 3 years in ceramic jars. Diageo's influence has brought more systematic blending and quality control.",
+    "notable_techniques": [
+      "Ming dynasty pit fermentation (明代古窖) — 600+ year continuous use, National Key Cultural Relic",
+      "International quality control integration under Diageo ownership",
+      "Urban terroir — the distillery's central Chengdu location affects microclimate and microbial environment"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Shuijingfang stores on Tmall and JD.com. Major liquor chains. The Chengdu distillery has a visitor center with a retail shop and museum showing the Ming dynasty site.",
+    "where_to_buy_global": "Best international distribution of any baijiu brand through Diageo's global network. Available at premium spirits retailers in major cities worldwide. Also available through Diageo's travel retail (duty-free) network at international airports.",
+    "what_to_look_for": "The distinctive hexagonal bottle (six sides representing the ancient well) is the key identifier. Anti-counterfeit QR code. Diageo packaging quality — the box and label should feel premium, with clean printing and quality materials. Diancang comes in a wooden gift box.",
+    "counterfeit_risks": "Low. Diageo's anti-counterfeit systems are among the best in the spirits world. The distinctive bottle design is harder to convincingly fake than standard round bottles. Still verify QR codes.",
+    "value_picks": ["Zhen Niang No.8 (臻酿八号) — entry into the Shuijingfang brand at a reasonable price", "Jing Tai (井台) — the standard, worth the step up from No.8"],
+    "splurge_picks": ["Diancang (典藏) — collector-grade, longer aged", "Limited editions — Shuijingfang produces artist collaborations and commemorative bottles that can appreciate"]
+  },
+  "faq": [
+    { "q": "Does Diageo ownership mean it's not 'real' baijiu?", "a": "It's 100% real baijiu, produced using traditional solid-state fermentation in Ming dynasty pits in Chengdu. Diageo's involvement is primarily in quality control, international distribution, and marketing. The production process has been modernized and standardized but not westernized. Think of it like Japanese whisky — international ownership doesn't invalidate the tradition." },
+    { "q": "Can I visit the Ming dynasty distillery site?", "a": "Yes. The Shuijingfang Museum (水井坊博物馆) in central Chengdu is built around the archaeological site. You can see the original Ming dynasty pits, well, and equipment. The museum also has a tasting room and retail shop. It's one of the most accessible and informative baijiu tourism experiences in China." },
+    { "q": "Why is it more expensive than other Sichuan strong-aromas?", "a": "Several factors: 1) Diageo's premiumization strategy positions Shuijingfang as a luxury brand, 2) production capacity is limited by the physical constraints of the urban distillery site, 3) international distribution and marketing add cost, 4) the Ming dynasty heritage commands a premium. Whether it's 'worth it' depends on whether you value the heritage, packaging, and international accessibility." }
+  ],
+  "related_varieties": ["wuliangye", "luzhou-laojiao", "jiannanchun", "maotai"],
+  "seo": {
+    "meta_title": "Shuijingfang Baijiu Guide: Diageo's 600-Year-Old Distillery | Baijiu365",
+    "meta_description": "Shuijingfang (水井坊): the most international Chinese baijiu. Ming dynasty distillery site, Diageo ownership, Jing Tai vs Diancang, and why it's the best entry point for Western spirits drinkers.",
+    "keywords": ["shuijingfang", "水井坊", "swellfun", "diageo baijiu", "ming dynasty distillery", "strong aroma baijiu", "chengdu baijiu", "chinese liquor"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Shuijingfang Official (Diageo)", "url": "https://www.swellfun.com" },
+    { "label": "GB/T 10781.1-2021 Strong-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

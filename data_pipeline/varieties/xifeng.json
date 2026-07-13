@@ -1,0 +1,101 @@
+{
+  "id": "xifeng",
+  "name": "Xifeng",
+  "name_cn": "西凤酒",
+  "brand": {
+    "name": "Shaanxi Xifeng Liquor Co., Ltd.",
+    "name_cn": "陕西西凤酒股份有限公司",
+    "founded": "1956",
+    "headquarters": "Fengxiang County, Baoji, Shaanxi, China",
+    "website": "https://www.xifengjiu.com"
+  },
+  "aroma_type": "phoenix",
+  "aroma_type_cn": "凤香型",
+  "gbt_standard": "GB/T 14867",
+  "region": "Shaanxi",
+  "region_cn": "陕西（宝鸡凤翔）",
+  "abv_range": "45-55%",
+  "price_range_usd": {
+    "min": 10,
+    "max": 200,
+    "note": "Classic Green Xifeng $10-20; Red Xifeng $20-40; premium editions $50-200."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Hong Xifeng (Red)",
+      "name_cn": "红西凤",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Flagship premium. The definitive phoenix-aroma experience. Red packaging, elegant presentation. Balanced between light-aroma cleanliness and strong-aroma richness — the phoenix-aroma sweet spot.",
+      "msrp_cny": 498,
+      "is_flagship": true
+    },
+    {
+      "name": "Classic Green Xifeng",
+      "name_cn": "经典绿瓶西凤",
+      "abv": "55%",
+      "volume_ml": 500,
+      "description": "The standard. Green bottle, iconic. High-proof, traditional phoenix character. What old-school Shaanxi drinkers order by the bottle.",
+      "msrp_cny": 68,
+      "is_flagship": false
+    },
+    {
+      "name": "Xifeng 6-Year",
+      "name_cn": "六年西凤",
+      "abv": "45%",
+      "volume_ml": 500,
+      "description": "Moderate aging, lower ABV. Smoother, more approachable. Good entry point into phoenix-aroma.",
+      "msrp_cny": 168,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear, bright. Medium viscosity.",
+    "nose": "Unique — sits between light-aroma and strong-aroma. Floral and fruity (pear, apple, honey) like light-aroma, but with an earthy, grain-rich undertone that hints at strong-aroma. The defining note is a distinctive nutty-honey character — think almond honey — that's not found in other aromas. The fermentation in mud-lined pits (unique to phoenix-aroma) provides subtle earth without the funk of Sichuan strong-aroma.",
+    "palate": "Medium body. Sweet honey and fruit open, followed by roasted grain and a gentle warming spice. The phoenix-aroma balance is apparent — cleaner than strong-aroma, richer than light-aroma. 55% ABV in the classic green bottle brings substantial heat; the Red Xifeng at 52% is more integrated.",
+    "finish": "Medium length. Honey sweetness and clean grain linger. Gentle warmth. No harshness.",
+    "overall_impression": "Xifeng occupies a genuine middle ground in the baijiu aroma spectrum. It's not 'strong-aroma from Shaanxi' — it's its own thing, with a legitimate national standard (GB/T 14867) to prove it. The phoenix-aroma is cleverly designed to appeal to both light and strong drinkers, while being distinctly Shaanxi."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Shaanxi (Qin cuisine)",
+      "dishes": ["Biang biang noodles", "Rou jia mo (Chinese burger)", "Yangrou paomo (lamb soup with bread)", "Cold skin noodles (liang pi)"],
+      "why_it_works": "Regional pairing. Shaanxi food is hearty, wheat-based, and bold — Xifeng's balanced profile matches perfectly."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Xifeng 6-Year at 45% is approachable. The phoenix-aroma profile is clean enough for beginners but distinctive enough to be interesting.",
+  "comparable_spirits": [{"spirit": "Irish single pot still whiskey", "reason": "Balanced between light and rich, with a distinctive regional character"}],
+  "history": "Xifeng's lineage traces to the Shang dynasty (1600-1046 BC) — Fengxiang county was a capital of the Zhou dynasty, and the region's distilling tradition is among China's oldest. The modern distillery was established in 1956. Xifeng was recognized as one of China's 'Four Famous Liquors' (四大名酒) at the first national competition in 1952. The phoenix-aroma (凤香型) is one of the few single-brand aroma categories — Xifeng essentially IS the category.",
+  "production": {
+    "raw_materials": ["sorghum (100%)", "barley", "wheat", "peas (for qu)"],
+    "qu_type": "Medium-temperature daqu, barley-wheat-pea blend.",
+    "fermentation": "Solid-state fermentation in mud-lined pits — a hybrid approach. The pits are lined with mud but renewed annually (unlike Sichuan pits which are never cleaned). This creates a lighter pit character than strong-aroma.",
+    "distillation": "Traditional pot still.",
+    "aging": "Aged in special 'wine seas' (酒海) — large wicker baskets lined with layers of mulberry paper, egg white, and animal blood, sealed with beeswax. This unique aging vessel gives Xifeng its distinctive nutty-honey character.",
+    "notable_techniques": ["'Wine sea' aging (酒海陈藏) — wicker basket aging vessels unique to Xifeng", "Annual pit mud renewal — cleaner profile than Sichuan strong-aroma"]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Xifeng stores on Tmall/JD. Widely available in Shaanxi and northwest China.",
+    "where_to_buy_global": "Limited. Specialty Chinese liquor importers.",
+    "what_to_look_for": "Green bottle = classic. Red box = premium. Anti-counterfeit QR code.",
+    "counterfeit_risks": "Low.",
+    "value_picks": ["Classic Green (绿瓶) — authentic phoenix-aroma at a fair price"],
+    "splurge_picks": ["Red Xifeng (红西凤) — flagship"]
+  },
+  "faq": [
+    { "q": "What is phoenix-aroma?", "a": "A hybrid between light and strong. It uses mud-lined pits (like strong) but cleans them annually (unlike strong). It ages in unique 'wine sea' vessels. The result: cleaner than strong, richer than light, with a distinctive honey-nut character." }
+  ],
+  "related_varieties": ["fenjiu", "wuliangye"],
+  "seo": {
+    "meta_title": "Xifeng Baijiu Guide: China's Phoenix-Aroma | Baijiu365",
+    "meta_description": "Xifeng (西凤酒): the only phoenix-aroma baijiu. Wine-sea aging, 3,000-year heritage, and what makes phoenix-aroma different from light and strong.",
+    "keywords": ["xifeng", "西凤酒", "phoenix aroma baijiu", "凤香型", "shaanxi baijiu", "chinese liquor"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Xifeng Official", "url": "https://www.xifengjiu.com" },
+    { "label": "GB/T 14867 Phoenix-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

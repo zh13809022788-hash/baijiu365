@@ -1,0 +1,92 @@
+{
+  "id": "dongjiu",
+  "name": "Dongjiu",
+  "name_cn": "董酒",
+  "brand": {
+    "name": "Guizhou Dongjiu Co., Ltd.",
+    "name_cn": "贵州董酒股份有限公司",
+    "founded": "1957",
+    "headquarters": "Zunyi, Guizhou, China",
+    "website": "https://www.dongjiu.com"
+  },
+  "aroma_type": "herbal",
+  "aroma_type_cn": "董香型",
+  "gbt_standard": "DB52/T 550",
+  "region": "Guizhou",
+  "region_cn": "贵州（遵义）",
+  "abv_range": "54% (standard), 46%",
+  "price_range_usd": {
+    "min": 20,
+    "max": 150,
+    "note": "Classic Dongjiu $20-40; premium aged editions $60-150."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Guomi Dongjiu (National Secret)",
+      "name_cn": "国密董酒",
+      "abv": "54%",
+      "volume_ml": 500,
+      "description": "Flagship. 'National Secret' — the recipe and production process were classified as state secrets in 1983. The definitive herbal-aroma baijiu. Over 130 herbs and botanicals in the qu.",
+      "msrp_cny": 398,
+      "is_flagship": true
+    },
+    {
+      "name": "Zhencang Dongjiu (Collection)",
+      "name_cn": "珍藏董酒",
+      "abv": "54%",
+      "volume_ml": 500,
+      "description": "Premium aged variant. Longer aging, more integration of the herbal notes.",
+      "msrp_cny": 688,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear, bright. Medium body.",
+    "nose": "Completely unique — unlike any other baijiu. The 130+ herbs in the qu create a medicinal-aromatic profile: angelica root, licorice, clove, sandalwood, and a distinct Chinese medicine shop character. Behind the herbs: fermented grain, dried fruit, and a faint floral lift. It's complex and polarizing — some people smell medicine, others smell treasure.",
+    "palate": "Full body. Sweet and herbal simultaneously — the medicinal notes are present but balanced by grain sweetness. Warming, complex, with layers of spice and botanical character. 54% ABV brings substantial heat.",
+    "finish": "Long, warming, herbal. The botanical character lingers pleasantly.",
+    "overall_impression": "Dongjiu is the most distinctive baijiu in China — there is literally nothing else like it. The state secret recipe means production details are classified, which adds mystique. Love it or hate it — there's no middle ground."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Guizhou",
+      "dishes": ["Sour fish soup", "Smoked meats", "Spicy chicken"],
+      "why_it_works": "The herbal profile complements Guizhou's sour-spicy cuisine."
+    }
+  ],
+  "beginner_friendly": false,
+  "beginner_notes": "Dongjiu is NOT for beginners. It's the most polarizing baijiu in China. The herbal-medicinal profile is strong and unusual. If you enjoy amaro, fernet, or Chartreuse, you'll likely connect. If those sound awful, approach with caution.",
+  "comparable_spirits": [{"spirit": "Chartreuse (Green VEP)", "reason": "130+ herbs, complex botanical profile, medicinal character. The closest Western spirit to Dongjiu."}],
+  "history": "Dongjiu's recipe traces to the early 20th century in Zunyi, Guizhou, combining traditional baijiu fermentation with Chinese herbal medicine. In 1983, the recipe and production process were classified as Chinese state secrets (国家机密) — one of only a handful of consumer products to receive this designation. The 'Dong' aroma type was formally recognized as the 10th official Chinese baijiu aroma category.",
+  "production": {
+    "raw_materials": ["sorghum", "wheat", "rice", "130+ herbs and botanicals (classified)"],
+    "qu_type": "Herbal daqu (药曲) — the defining technique. Over 130 herbs and botanicals incorporated into both the small and large qu. The exact recipe is a state secret.",
+    "fermentation": "Double-qu, double-fermentation process (双曲双窖): both small qu (小曲) and large qu (大曲) are used in sequence, fermented in separate pits.",
+    "distillation": "Traditional pot still.",
+    "aging": "Minimum 3 years in ceramic jars.",
+    "notable_techniques": ["130+ herb daqu (百草曲) — state secret recipe", "Double-qu double-fermentation (双曲双窖工艺)", "Classified national secret production method since 1983"]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Dongjiu stores on Tmall/JD. Less widely distributed than major brands.",
+    "where_to_buy_global": "Very limited. Specialty Chinese liquor importers.",
+    "what_to_look_for": "Anti-counterfeit QR code. Guomi label.",
+    "counterfeit_risks": "Very low.",
+    "value_picks": ["Guomi Dongjiu (国密董酒) — the definitive experience"],
+    "splurge_picks": ["Zhencang Dongjiu (珍藏董酒) — longer aged"]
+  },
+  "faq": [
+    { "q": "Is the recipe really a state secret?", "a": "Yes. In 1983, the State Science and Technology Commission and the State Economic Commission classified Dongjiu's recipe and production process as state secrets. This is genuine — the exact herb list and proportions are not publicly available." }
+  ],
+  "related_varieties": ["maotai", "langjiu", "xijiu"],
+  "seo": {
+    "meta_title": "Dongjiu Guide: China's State-Secret Herbal Baijiu | Baijiu365",
+    "meta_description": "Dongjiu (董酒): the only state-secret baijiu recipe. 130+ herbs, classified production since 1983, and the most distinctive flavor in Chinese spirits.",
+    "keywords": ["dongjiu", "董酒", "herbal baijiu", "guomi dongjiu", "国密董酒", "chinese liquor", "state secret baijiu"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Dongjiu Official", "url": "https://www.dongjiu.com" },
+    { "label": "GB/T 20824 Sesame-aroma Baijiu National Standard (adjacent category, Dongjiu uses similar framework)", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

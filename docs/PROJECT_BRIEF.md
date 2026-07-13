@@ -66,7 +66,7 @@ The site should include:
 The first public version should include:
 
 - Homepage
-- Baijiu 101
+- Baijiu Basics
 - Types of Baijiu
 - Best Baijiu for Beginners
 - How to Drink Baijiu

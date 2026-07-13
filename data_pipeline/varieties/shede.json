@@ -1,0 +1,119 @@
+{
+  "id": "shede",
+  "name": "Shede",
+  "name_cn": "舍得",
+  "brand": {
+    "name": "Shede Spirits Co., Ltd.",
+    "name_cn": "舍得酒业股份有限公司",
+    "founded": "1940",
+    "headquarters": "Shehong, Suining, Sichuan, China",
+    "website": "https://www.shede.com.cn"
+  },
+  "aroma_type": "strong",
+  "aroma_type_cn": "浓香型",
+  "gbt_standard": "GB/T 10781.1",
+  "region": "Sichuan",
+  "region_cn": "四川（遂宁射洪）",
+  "abv_range": "52%",
+  "price_range_usd": {
+    "min": 50,
+    "max": 300,
+    "note": "Pinwei Shede (品味舍得) $60-90; Zhihui Shede (智慧舍得) $100-200. Strong quality-to-price ratio."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Zhihui Shede (Wisdom Shede)",
+      "name_cn": "智慧舍得",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Flagship. 'Zhihui' means 'Wisdom' — the name fits Shede's philosophical branding. Extended aging, complex blend from older pit spirits. The definitive expression of Shede's style.",
+      "msrp_cny": 798,
+      "is_flagship": true
+    },
+    {
+      "name": "Pinwei Shede (Taste Shede)",
+      "name_cn": "品味舍得",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "The hero product. 'Pinwei' means 'Taste' — the philosophy is that you should take time to truly taste and appreciate. Balanced, elegant, with genuine aged complexity. Widely considered excellent value.",
+      "msrp_cny": 498,
+      "is_flagship": false
+    },
+    {
+      "name": "Shede Classic",
+      "name_cn": "舍得经典",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Entry-level Shede. Clean, straightforward strong-aroma. Good daily drinking quality.",
+      "msrp_cny": 198,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear, bright. Medium viscosity with slow, defined legs.",
+    "nose": "Harmonious and integrated. The pit character is present — earthy, old wood — but it's woven seamlessly into the grain and fruit notes rather than dominating. Honeyed cereal, baked apple, and a subtle floral layer create a warm, inviting profile. Not as explosively fruity as Wuliangye, not as funky as Luzhou Laojiao. The balance is the point.",
+    "palate": "Medium-full body, notably smooth entry. The 'shede' philosophy seems to extend to the liquid — this is a baijiu that rewards slow, mindful drinking. Sweet grain, dried fruit (apricot, date), and light caramel. The pit character provides depth on the mid-palate without becoming earthy. 52% ABV is well-managed — warmth without fire.",
+    "finish": "Medium-long, clean, gradually fading from sweet grain to a gentle mineral dryness. Pleasant lingering warmth.",
+    "overall_impression": "Shede is the thinking person's strong-aroma. The name ('willingness to give up' — the Buddhist/Taoist concept of letting go to gain) is not just marketing; it's reflected in a product that rewards patience and attention. Among Sichuan strong-aromas, Shede occupies a unique niche: traditional enough to satisfy purists, refined enough to appeal to newcomers. Pinwei Shede at ¥500 is one of the best value propositions in premium baijiu."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Sichuan fish dishes",
+      "dishes": ["Boiled fish in chili oil (shui zhu yu)", "Pickled vegetable fish (suan cai yu)", "Dry-braised fish fillet"],
+      "why_it_works": "Shede's balanced profile doesn't compete with the complex flavors of Sichuan fish dishes. The alcohol provides palate-clearing refreshment."
+    },
+    {
+      "cuisine": "Hot pot",
+      "dishes": ["Chongqing spicy hot pot (with various meats and vegetables)"],
+      "why_it_works": "Hot pot is a marathon, not a sprint — Shede's smooth, balanced character works perfectly for extended drinking sessions where aggressive spirits would become fatiguing."
+    },
+    {
+      "cuisine": "Vegetable-forward dishes",
+      "dishes": ["Stir-fried seasonal greens", "Eggplant in garlic sauce", "Dry-fried green beans"],
+      "why_it_works": "Shede is one of the few strong-aroma baijius that genuinely works with lighter dishes. The clean finish doesn't overpower vegetables."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Shede Pinwei is an underrated entry point for baijiu curious drinkers. It's smooth enough to not intimidate, complex enough to be interesting, and priced accessibly. The philosophical branding ('the wisdom of letting go') gives you something to talk about while drinking. Serve neat, small pours, with food. If you've tried Yanghe and want something with more traditional Sichuan character but still approachable, Shede is the logical next step.",
+  "comparable_spirits": [
+    { "spirit": "Single malt from independent bottlers (Compass Box, Signatory)", "reason": "Thoughtful blending, transparent quality, rewards attention — designed for drinkers who want to engage with what's in the glass" },
+    { "spirit": "Aged Japanese shochu (rice, barley)", "reason": "Clean, balanced, subtle complexity — similar drinking philosophy of mindful appreciation" },
+    { "spirit": "Reposado tequila (Fortaleza, Siete Leguas)", "reason": "Smooth, balanced with a clear terroir expression — agave is to reposado what pit mud is to Shede" }
+  ],
+  "history": "Shede's corporate predecessor, Tuopai (沱牌), was founded in 1940 in Shehong County, Sichuan. Tuopai was one of China's largest baijiu producers by volume, known for affordable, mass-market strong-aroma. In 2001, the company launched the 'Shede' premium brand, named after the Chinese philosophical concept of '舍得' — the wisdom of knowing what to give up in order to gain. The brand identity draws on traditional Chinese philosophy (Buddhism, Taoism, Confucianism) to position itself as a baijiu for thoughtful, cultured drinkers. In recent years, Shede has pivoted aggressively to the premium tier, reducing volume and increasing quality. The company rebranded from 'Tuopai Shede' to simply 'Shede Spirits' in 2020, signaling the strategic shift away from mass-market production. Shede is now one of the fastest-growing premium baijiu brands in China, particularly popular among younger, educated urban consumers who appreciate the philosophical branding and accessible premium quality.",
+  "production": {
+    "raw_materials": ["sorghum", "wheat", "rice", "glutinous rice", "corn"],
+    "qu_type": "Medium-temperature daqu, wheat-based.",
+    "fermentation": "Solid-state fermentation in mud pits. Pits aged 20-80+ years. Shehong's terroir — near the Fujiang River, part of the broader Sichuan basin baijiu belt — contributes distinctive regional character.",
+    "distillation": "Traditional pot still distillation.",
+    "aging": "Minimum 3 years in ceramic jars. Shede has one of the largest aged spirit inventories in China — a legacy of Tuopai's mass-production era that now provides a deep reserve of older spirits for the premium Shede blends.",
+    "notable_techniques": [
+      "Large aged spirit inventory — Shede benefits from decades of Tuopai production, giving them older base spirits than many competitors",
+      "Shehong terroir — part of the Sichuan 'Golden Triangle' of baijiu production alongside Yibin (Wuliangye) and Luzhou (Luzhou Laojiao)"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Shede stores on Tmall and JD.com. Major liquor chains. Growing national distribution following the brand's premium pivot.",
+    "where_to_buy_global": "Limited but growing. Available through some Chinese liquor importers. International distribution is expanding as the brand gains recognition.",
+    "what_to_look_for": "Shede bottles feature distinctive Chinese calligraphy and minimalist design. Verify anti-counterfeit QR code. The packaging emphasizes the philosophical branding — the character 舍得 is prominently featured.",
+    "counterfeit_risks": "Low. Shede's mid-tier price point and relatively recent premium-market entry make it a less attractive target for counterfeiters. Standard precautions apply.",
+    "value_picks": ["Pinwei Shede (品味舍得) — excellent quality-to-price ratio, the one to buy", "Shede Classic (舍得经典) — solid everyday drinking at a very fair price"],
+    "splurge_picks": ["Zhihui Shede (智慧舍得) — flagship quality, extended aging"]
+  },
+  "faq": [
+    { "q": "What does 'Shede' actually mean?", "a": "It's a Chinese philosophical concept combining 舍 (to give up/let go) and 得 (to gain/receive). The idea is that wisdom lies in knowing what to give up to achieve something greater. It draws from Buddhist, Taoist, and Confucian thought. Applying it to baijiu: give up quantity (mass production) to gain quality (premium craft). Give up rushing to gain the experience of mindful tasting. It's surprisingly effective as a brand concept." },
+    { "q": "Is Shede related to Tuopai?", "a": "Yes — same company, different brands. Tuopai was the original mass-market product. Shede was launched as the premium brand. In 2020, the company renamed itself from Tuopai Shede to Shede Spirits, signaling that premium is now the priority. Tuopai still exists as a budget product line, but Shede is the strategic focus." }
+  ],
+  "related_varieties": ["wuliangye", "luzhou-laojiao", "jiannanchun", "shuijingfang", "yanghe"],
+  "seo": {
+    "meta_title": "Shede Baijiu Guide: The Philosophy of Letting Go in a Bottle | Baijiu365",
+    "meta_description": "Shede (舍得): the thinking person's Sichuan strong-aroma. Pinwei Shede review, the meaning of '舍得' philosophy, and why it's one of the best value premium baijius.",
+    "keywords": ["shede", "舍得", "shede baijiu", "pinwei shede", "品味舍得", "strong aroma baijiu", "sichuan baijiu", "chinese liquor philosophy"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Shede Spirits Official", "url": "https://www.shede.com.cn" },
+    { "label": "GB/T 10781.1-2021 Strong-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

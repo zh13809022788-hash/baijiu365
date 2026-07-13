@@ -1,0 +1,901 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-07-13T22:17:33.032769",
+  "glossary_terms": {
+    "sauce-aroma": {
+      "term": "Sauce Aroma",
+      "term_cn": "酱香型",
+      "definition": "A savory, complex aroma style with fermented soybean, umami, and roasted grain notes.",
+      "linked_varieties": [
+        "maotai",
+        "langjiu",
+        "xijiu"
+      ],
+      "target_aroma_page": "/db/aroma/sauce/"
+    },
+    "strong-aroma": {
+      "term": "Strong Aroma",
+      "term_cn": "浓香型",
+      "definition": "Rich, fruity, cellar-influenced style, China's most common baijiu category.",
+      "linked_varieties": [
+        "wuliangye",
+        "luzhou-laojiao",
+        "yanghe",
+        "jiannanchun",
+        "gujinggong",
+        "shuijingfang",
+        "shede"
+      ],
+      "target_aroma_page": "/db/aroma/strong/"
+    },
+    "light-aroma": {
+      "term": "Light Aroma",
+      "term_cn": "清香型",
+      "definition": "Clean, grain-forward style with floral and light fruit notes.",
+      "linked_varieties": [
+        "fenjiu",
+        "niulanshan",
+        "hongxing"
+      ],
+      "target_aroma_page": "/db/aroma/light/"
+    },
+    "phoenix-aroma": {
+      "term": "Phoenix Aroma",
+      "term_cn": "凤香型",
+      "definition": "Unique Shaanxi style combining elements of light and strong aroma techniques.",
+      "linked_varieties": [
+        "xifeng"
+      ],
+      "target_aroma_page": "/db/aroma/phoenix/"
+    },
+    "herbal-aroma": {
+      "term": "Herbal Aroma (Dong)",
+      "term_cn": "董香型",
+      "definition": "Distinctive style incorporating traditional Chinese medicinal herbs in the fermentation process.",
+      "linked_varieties": [
+        "dongjiu"
+      ],
+      "target_aroma_page": "/db/aroma/herbal/"
+    },
+    "mixed-aroma": {
+      "term": "Mixed Aroma (Fuyu)",
+      "term_cn": "馥郁香型",
+      "definition": "Complex style combining characteristics of sauce, strong, and light aroma.",
+      "linked_varieties": [
+        "jiugui"
+      ],
+      "target_aroma_page": "/db/aroma/mixed/"
+    },
+    "qu": {
+      "term": "Qu",
+      "term_cn": "酒曲",
+      "definition": "Fermentation starter made with grains and microbes, crucial to baijiu aroma formation.",
+      "linked_varieties": [],
+      "target_page": "/glossary/#qu"
+    },
+    "gbt-standard": {
+      "term": "GB/T Standard",
+      "term_cn": "国家标准",
+      "definition": "Chinese national standard codes that classify baijiu production methods and quality grades.",
+      "linked_varieties": [],
+      "target_page": "/glossary/#gbt"
+    },
+    "guizhou": {
+      "term": "Guizhou",
+      "term_cn": "贵州产区",
+      "definition": "Home to Maotai and the core sauce aroma production region along the Chishui River.",
+      "linked_varieties": [
+        "maotai",
+        "xijiu"
+      ],
+      "target_page": "/db/region/guizhou/"
+    },
+    "sichuan": {
+      "term": "Sichuan",
+      "term_cn": "四川产区",
+      "definition": "China's largest baijiu producing province, home to strong aroma giants and Langjiu.",
+      "linked_varieties": [
+        "wuliangye",
+        "luzhou-laojiao",
+        "jiannanchun",
+        "shuijingfang",
+        "shede",
+        "langjiu"
+      ],
+      "target_page": "/db/region/sichuan/"
+    }
+  },
+  "variety_glossary_links": {
+    "dongjiu": {
+      "name_cn": "董酒",
+      "aroma_type": "herbal",
+      "region": "Guizhou",
+      "db_path": "/db/variety/dongjiu/",
+      "related_terms": [
+        {
+          "term_id": "herbal-aroma",
+          "term": "Herbal Aroma (Dong)",
+          "term_cn": "董香型"
+        },
+        {
+          "term_id": "guizhou",
+          "term": "Guizhou",
+          "term_cn": "贵州产区"
+        }
+      ]
+    },
+    "fenjiu": {
+      "name_cn": "汾酒",
+      "aroma_type": "light",
+      "region": "Shanxi",
+      "db_path": "/db/variety/fenjiu/",
+      "related_terms": [
+        {
+          "term_id": "light-aroma",
+          "term": "Light Aroma",
+          "term_cn": "清香型"
+        }
+      ]
+    },
+    "gujinggong": {
+      "name_cn": "古井贡酒",
+      "aroma_type": "strong",
+      "region": "Anhui",
+      "db_path": "/db/variety/gujinggong/",
+      "related_terms": [
+        {
+          "term_id": "strong-aroma",
+          "term": "Strong Aroma",
+          "term_cn": "浓香型"
+        }
+      ]
+    },
+    "hongxing": {
+      "name_cn": "红星二锅头",
+      "aroma_type": "light",
+      "region": "Beijing",
+      "db_path": "/db/variety/hongxing/",
+      "related_terms": [
+        {
+          "term_id": "light-aroma",
+          "term": "Light Aroma",
+          "term_cn": "清香型"
+        }
+      ]
+    },
+    "jiannanchun": {
+      "name_cn": "剑南春",
+      "aroma_type": "strong",
+      "region": "Sichuan",
+      "db_path": "/db/variety/jiannanchun/",
+      "related_terms": [
+        {
+          "term_id": "strong-aroma",
+          "term": "Strong Aroma",
+          "term_cn": "浓香型"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        }
+      ]
+    },
+    "jiugui": {
+      "name_cn": "酒鬼酒",
+      "aroma_type": "mixed",
+      "region": "Hunan",
+      "db_path": "/db/variety/jiugui/",
+      "related_terms": [
+        {
+          "term_id": "mixed-aroma",
+          "term": "Mixed Aroma (Fuyu)",
+          "term_cn": "馥郁香型"
+        }
+      ]
+    },
+    "langjiu": {
+      "name_cn": "郎酒",
+      "aroma_type": "sauce",
+      "region": "Sichuan",
+      "db_path": "/db/variety/langjiu/",
+      "related_terms": [
+        {
+          "term_id": "sauce-aroma",
+          "term": "Sauce Aroma",
+          "term_cn": "酱香型"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        }
+      ]
+    },
+    "luzhou-laojiao": {
+      "name_cn": "泸州老窖",
+      "aroma_type": "strong",
+      "region": "Sichuan",
+      "db_path": "/db/variety/luzhou-laojiao/",
+      "related_terms": [
+        {
+          "term_id": "strong-aroma",
+          "term": "Strong Aroma",
+          "term_cn": "浓香型"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        }
+      ]
+    },
+    "maotai": {
+      "name_cn": "茅台",
+      "aroma_type": "sauce",
+      "region": "Guizhou",
+      "db_path": "/db/variety/maotai/",
+      "related_terms": [
+        {
+          "term_id": "sauce-aroma",
+          "term": "Sauce Aroma",
+          "term_cn": "酱香型"
+        },
+        {
+          "term_id": "guizhou",
+          "term": "Guizhou",
+          "term_cn": "贵州产区"
+        },
+        {
+          "term_id": "guizhou",
+          "term": "Guizhou",
+          "term_cn": "贵州产区"
+        }
+      ]
+    },
+    "niulanshan": {
+      "name_cn": "牛栏山",
+      "aroma_type": "light",
+      "region": "Beijing",
+      "db_path": "/db/variety/niulanshan/",
+      "related_terms": [
+        {
+          "term_id": "light-aroma",
+          "term": "Light Aroma",
+          "term_cn": "清香型"
+        }
+      ]
+    },
+    "shede": {
+      "name_cn": "舍得",
+      "aroma_type": "strong",
+      "region": "Sichuan",
+      "db_path": "/db/variety/shede/",
+      "related_terms": [
+        {
+          "term_id": "strong-aroma",
+          "term": "Strong Aroma",
+          "term_cn": "浓香型"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        }
+      ]
+    },
+    "shuijingfang": {
+      "name_cn": "水井坊",
+      "aroma_type": "strong",
+      "region": "Sichuan",
+      "db_path": "/db/variety/shuijingfang/",
+      "related_terms": [
+        {
+          "term_id": "strong-aroma",
+          "term": "Strong Aroma",
+          "term_cn": "浓香型"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        }
+      ]
+    },
+    "wuliangye": {
+      "name_cn": "五粮液",
+      "aroma_type": "strong",
+      "region": "Sichuan",
+      "db_path": "/db/variety/wuliangye/",
+      "related_terms": [
+        {
+          "term_id": "strong-aroma",
+          "term": "Strong Aroma",
+          "term_cn": "浓香型"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        },
+        {
+          "term_id": "sichuan",
+          "term": "Sichuan",
+          "term_cn": "四川产区"
+        }
+      ]
+    },
+    "xifeng": {
+      "name_cn": "西凤酒",
+      "aroma_type": "phoenix",
+      "region": "Shaanxi",
+      "db_path": "/db/variety/xifeng/",
+      "related_terms": [
+        {
+          "term_id": "phoenix-aroma",
+          "term": "Phoenix Aroma",
+          "term_cn": "凤香型"
+        }
+      ]
+    },
+    "xijiu": {
+      "name_cn": "习酒",
+      "aroma_type": "sauce",
+      "region": "Guizhou",
+      "db_path": "/db/variety/xijiu/",
+      "related_terms": [
+        {
+          "term_id": "sauce-aroma",
+          "term": "Sauce Aroma",
+          "term_cn": "酱香型"
+        },
+        {
+          "term_id": "guizhou",
+          "term": "Guizhou",
+          "term_cn": "贵州产区"
+        },
+        {
+          "term_id": "guizhou",
+          "term": "Guizhou",
+          "term_cn": "贵州产区"
+        }
+      ]
+    },
+    "yanghe": {
+      "name_cn": "洋河",
+      "aroma_type": "strong",
+      "region": "Jiangsu",
+      "db_path": "/db/variety/yanghe/",
+      "related_terms": [
+        {
+          "term_id": "strong-aroma",
+          "term": "Strong Aroma",
+          "term_cn": "浓香型"
+        }
+      ]
+    }
+  },
+  "three_click_paths": {
+    "sauce-aroma": [
+      {
+        "variety_id": "maotai",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/sauce/",
+            "title": "Sauce Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/maotai/",
+            "title": "茅台 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "langjiu",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/sauce/",
+            "title": "Sauce Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/langjiu/",
+            "title": "郎酒 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "xijiu",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/sauce/",
+            "title": "Sauce Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/xijiu/",
+            "title": "习酒 数据卡片"
+          }
+        ]
+      }
+    ],
+    "strong-aroma": [
+      {
+        "variety_id": "wuliangye",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/strong/",
+            "title": "Strong Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/wuliangye/",
+            "title": "五粮液 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "luzhou-laojiao",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/strong/",
+            "title": "Strong Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/luzhou-laojiao/",
+            "title": "泸州老窖 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "yanghe",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/strong/",
+            "title": "Strong Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/yanghe/",
+            "title": "洋河 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "jiannanchun",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/strong/",
+            "title": "Strong Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/jiannanchun/",
+            "title": "剑南春 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "gujinggong",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/strong/",
+            "title": "Strong Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/gujinggong/",
+            "title": "古井贡酒 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "shuijingfang",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/strong/",
+            "title": "Strong Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/shuijingfang/",
+            "title": "水井坊 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "shede",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/strong/",
+            "title": "Strong Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/shede/",
+            "title": "舍得 数据卡片"
+          }
+        ]
+      }
+    ],
+    "light-aroma": [
+      {
+        "variety_id": "fenjiu",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/light/",
+            "title": "Light Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/fenjiu/",
+            "title": "汾酒 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "niulanshan",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/light/",
+            "title": "Light Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/niulanshan/",
+            "title": "牛栏山 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "hongxing",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/light/",
+            "title": "Light Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/hongxing/",
+            "title": "红星二锅头 数据卡片"
+          }
+        ]
+      }
+    ],
+    "phoenix-aroma": [
+      {
+        "variety_id": "xifeng",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/phoenix/",
+            "title": "Phoenix Aroma 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/xifeng/",
+            "title": "西凤酒 数据卡片"
+          }
+        ]
+      }
+    ],
+    "herbal-aroma": [
+      {
+        "variety_id": "dongjiu",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/herbal/",
+            "title": "Herbal Aroma (Dong) 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/dongjiu/",
+            "title": "董酒 数据卡片"
+          }
+        ]
+      }
+    ],
+    "mixed-aroma": [
+      {
+        "variety_id": "jiugui",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/aroma/mixed/",
+            "title": "Mixed Aroma (Fuyu) 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/jiugui/",
+            "title": "酒鬼酒 数据卡片"
+          }
+        ]
+      }
+    ],
+    "guizhou": [
+      {
+        "variety_id": "maotai",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/region/guizhou/",
+            "title": "Guizhou 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/maotai/",
+            "title": "茅台 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "xijiu",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/region/guizhou/",
+            "title": "Guizhou 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/xijiu/",
+            "title": "习酒 数据卡片"
+          }
+        ]
+      }
+    ],
+    "sichuan": [
+      {
+        "variety_id": "wuliangye",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/region/sichuan/",
+            "title": "Sichuan 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/wuliangye/",
+            "title": "五粮液 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "luzhou-laojiao",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/region/sichuan/",
+            "title": "Sichuan 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/luzhou-laojiao/",
+            "title": "泸州老窖 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "jiannanchun",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/region/sichuan/",
+            "title": "Sichuan 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/jiannanchun/",
+            "title": "剑南春 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "shuijingfang",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/region/sichuan/",
+            "title": "Sichuan 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/shuijingfang/",
+            "title": "水井坊 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "shede",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/region/sichuan/",
+            "title": "Sichuan 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/shede/",
+            "title": "舍得 数据卡片"
+          }
+        ]
+      },
+      {
+        "variety_id": "langjiu",
+        "path": [
+          {
+            "click": 1,
+            "page": "/glossary/",
+            "title": "Glossary"
+          },
+          {
+            "click": 2,
+            "page": "/db/region/sichuan/",
+            "title": "Sichuan 聚合页"
+          },
+          {
+            "click": 3,
+            "page": "/db/variety/langjiu/",
+            "title": "郎酒 数据卡片"
+          }
+        ]
+      }
+    ]
+  }
+}

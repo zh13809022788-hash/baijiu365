@@ -4,20 +4,65 @@ interface Props {
   title: string;
   description: string;
   url: string;
+  image?: string;
+  datePublished?: string;
+  dateModified?: string;
+  authorName?: string;
+  authorUrl?: string;
 }
 
-const { type = 'Article', title, description, url } = Astro.props;
-const jsonLd = {
+const {
+  type = 'Article',
+  title,
+  description,
+  url,
+  image = 'https://baijiu365.com/images/baijiu-field-guide.png',
+  datePublished = '2026-07-13T08:00:00+08:00',
+  dateModified = '2026-07-13T09:00:00+08:00',
+  authorName = 'Baijiu365 Editorial Team',
+  authorUrl = 'https://baijiu365.com/editorial-team/',
+} = Astro.props;
+
+const organization = {
+  '@type': 'Organization',
+  name: 'Baijiu365',
+  url: 'https://baijiu365.com/',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://baijiu365.com/logo.png',
+  },
+};
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image,
+  datePublished,
+  dateModified,
+  author: {
+    '@type': 'Person',
+    name: authorName,
+    url: authorUrl,
+  },
+  publisher: organization,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': url,
+  },
+};
+
+const pageJsonLd = {
   '@context': 'https://schema.org',
   '@type': type,
   name: title,
   headline: title,
   description,
   url,
-  publisher: {
-    '@type': 'Organization',
-    name: 'Baijiu365',
-  },
+  publisher: organization,
 };
+
+const jsonLd = type === 'Article' ? articleJsonLd : pageJsonLd;
 ---
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

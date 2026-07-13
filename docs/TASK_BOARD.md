@@ -2,15 +2,18 @@
 
 ## In Progress
 
-- Sprint 2 content credibility: add verified examples where source material exists.
+- Website rebuild mode: deepen core articles and replace placeholder trust profiles with verified public editor identities before submission.
 
 ## Next
 
 - Verify live deployment/domain after Hermes deploys.
 - Submit sitemap in Google Search Console after deployment.
+- Expand About, Contact, Privacy, Terms, Editorial Policy, Affiliate Disclosure, and Editorial Team from starter pages into fuller final trust pages before AdSense application.
+- Replace placeholder editorial roles with approved real editor names and social profile links.
 - Add real product examples, photos, or label screenshots for buying-risk pages.
 - Expand Maotai and beginner pages with sourced brand/channel facts.
 - Add FAQ blocks to `types-of-baijiu` and `best-baijiu-for-beginners`.
+- Add internal links and decision boxes where `npm run check:content` reports warnings.
 
 ## Sprint 1 Development Tasks
 
@@ -27,7 +30,7 @@
 
 ### Content Pages
 
-- `/baijiu-101/`
+- `/baijiu-basics/`
 - `/types-of-baijiu/`
 - `/best-baijiu-for-beginners/`
 - `/how-to-buy-baijiu-outside-china/`
@@ -53,6 +56,16 @@
 - Improved homepage pathways, footer links, article tables, next-step links, and SEO metadata.
 - Updated development documentation for the first-pass upgrade.
 - Verified `npm run build` after the first-pass upgrade; Astro generated 12 static routes plus sitemap.
+
+## Completed On 2026-07-13
+
+- Finished `/baijiu-101/` to `/baijiu-basics/` cleanup with a noindex compatibility page and canonical support.
+- Added `/rss.xml`, `/llms.txt`, RSS discovery metadata, and `scripts/check-content-quality.mjs`.
+- Upgraded homepage scanning with field-guide imagery, flavor map links, buying-risk links, and trust signals.
+- Added starter Contact, Privacy, Terms, Editorial Policy, and Disclosure pages.
+- Verified `npm.cmd run build`; Astro generated 18 static routes plus sitemap.
+- Completed rebuild-mode P0 fixes: Article JSON-LD template, generated logo asset, canonical brand scan over public templates, explicit `404.html`, and Markdown-compliant `llms.txt`.
+- Completed starter P1 trust work: `/editorial-team/`, `/author/editorial-team/`, `/affiliate-disclosure/`, and footer trust links.
 
 ## WORKBUDDY Input Requests
 

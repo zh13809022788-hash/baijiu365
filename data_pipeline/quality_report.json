@@ -1,0 +1,357 @@
+{
+  "audit_type": "quality_accumulation_period",
+  "generated_at": "2026-07-13T22:17:33.033370",
+  "project": "Baijiu365",
+  "audit_period": "Week 1 — Quality Accumulation",
+  "overall_status": "PASS",
+  "soft_404_scan": {
+    "total_pages": 22,
+    "soft_404_candidates": [],
+    "valid_pages": [
+      "index.html",
+      "about/index.html",
+      "affiliate-disclosure/index.html",
+      "baijiu-basics/index.html",
+      "baijiu-flavor-wheel/index.html",
+      "baijiu-vs-vodka/index.html",
+      "best-baijiu-for-beginners/index.html",
+      "brands/maotai/index.html",
+      "contact/index.html",
+      "editorial-policy/index.html",
+      "editorial-team/index.html",
+      "glossary/index.html",
+      "how-to-buy-baijiu-outside-china/index.html",
+      "how-to-drink-baijiu/index.html",
+      "how-to-spot-fake-maotai/index.html",
+      "privacy/index.html",
+      "terms/index.html",
+      "types-of-baijiu/index.html"
+    ],
+    "broken_internal_links": [],
+    "missing_404_targets": [],
+    "legacy_pages_detected": [
+      {
+        "path": "baijiu-vs-vodka/index.html",
+        "legacy_type": "blog",
+        "action": "Replace with /db/ data card or redirect to 404"
+      },
+      {
+        "path": "brands/maotai/index.html",
+        "legacy_type": "brand",
+        "action": "Replace with /db/ data card or redirect to 404"
+      },
+      {
+        "path": "how-to-buy-baijiu-outside-china/index.html",
+        "legacy_type": "blog",
+        "action": "Replace with /db/ data card or redirect to 404"
+      },
+      {
+        "path": "how-to-drink-baijiu/index.html",
+        "legacy_type": "blog",
+        "action": "Replace with /db/ data card or redirect to 404"
+      },
+      {
+        "path": "how-to-spot-fake-maotai/index.html",
+        "legacy_type": "blog",
+        "action": "Replace with /db/ data card or redirect to 404"
+      }
+    ],
+    "has_404_page": true
+  },
+  "data_completeness": {
+    "total_varieties": 16,
+    "complete": [
+      {
+        "id": "dongjiu",
+        "name_cn": "董酒",
+        "aroma_type": "herbal",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "fenjiu",
+        "name_cn": "汾酒",
+        "aroma_type": "light",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "gujinggong",
+        "name_cn": "古井贡酒",
+        "aroma_type": "strong",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "hongxing",
+        "name_cn": "红星二锅头",
+        "aroma_type": "light",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "jiannanchun",
+        "name_cn": "剑南春",
+        "aroma_type": "strong",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "jiugui",
+        "name_cn": "酒鬼酒",
+        "aroma_type": "mixed",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "langjiu",
+        "name_cn": "郎酒",
+        "aroma_type": "sauce",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "luzhou-laojiao",
+        "name_cn": "泸州老窖",
+        "aroma_type": "strong",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "maotai",
+        "name_cn": "茅台",
+        "aroma_type": "sauce",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "niulanshan",
+        "name_cn": "牛栏山",
+        "aroma_type": "light",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "shede",
+        "name_cn": "舍得",
+        "aroma_type": "strong",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "shuijingfang",
+        "name_cn": "水井坊",
+        "aroma_type": "strong",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "wuliangye",
+        "name_cn": "五粮液",
+        "aroma_type": "strong",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "xifeng",
+        "name_cn": "西凤酒",
+        "aroma_type": "phoenix",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "xijiu",
+        "name_cn": "习酒",
+        "aroma_type": "sauce",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      },
+      {
+        "id": "yanghe",
+        "name_cn": "洋河",
+        "aroma_type": "strong",
+        "dimensions": {
+          "brand": "OK",
+          "aroma": "OK",
+          "specs": "OK",
+          "origin": "OK",
+          "tasting": "OK",
+          "buying": "OK",
+          "context": "OK"
+        },
+        "draft_status": "published"
+      }
+    ],
+    "draft": [],
+    "dimension_summary": {
+      "brand": {
+        "ok": 16,
+        "total": 16,
+        "rate": 100.0
+      },
+      "aroma": {
+        "ok": 16,
+        "total": 16,
+        "rate": 100.0
+      },
+      "specs": {
+        "ok": 16,
+        "total": 16,
+        "rate": 100.0
+      },
+      "origin": {
+        "ok": 16,
+        "total": 16,
+        "rate": 100.0
+      },
+      "tasting": {
+        "ok": 16,
+        "total": 16,
+        "rate": 100.0
+      },
+      "buying": {
+        "ok": 16,
+        "total": 16,
+        "rate": 100.0
+      },
+      "context": {
+        "ok": 16,
+        "total": 16,
+        "rate": 100.0
+      }
+    },
+    "complete_count": 16,
+    "draft_count": 0,
+    "completeness_rate": 100.0
+  },
+  "internal_linking": {
+    "total_varieties": 16,
+    "reachable_in_3_clicks": 16,
+    "unreachable": [],
+    "reachability_rate": 100.0
+  },
+  "link_graph_saved": "D:\\白酒独立站\\data_pipeline\\link_graph.json",
+  "action_items": [
+    "Replace 5 legacy blog/brand pages with /db/ data cards"
+  ]
+}

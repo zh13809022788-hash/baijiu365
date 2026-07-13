@@ -1,0 +1,131 @@
+{
+  "id": "wuliangye",
+  "name": "Wuliangye",
+  "name_cn": "五粮液",
+  "brand": {
+    "name": "Wuliangye Yibin Co., Ltd.",
+    "name_cn": "宜宾五粮液股份有限公司",
+    "founded": "1952",
+    "headquarters": "Yibin, Sichuan, China",
+    "website": "https://www.wuliangye.com.cn"
+  },
+  "aroma_type": "strong",
+  "aroma_type_cn": "浓香型",
+  "gbt_standard": "GB/T 10781.1",
+  "region": "Sichuan",
+  "region_cn": "四川（宜宾）",
+  "abv_range": "52% (standard), 39% (low-ABV variant)",
+  "price_range_usd": {
+    "min": 120,
+    "max": 3000,
+    "note": "Puwu 8th-gen 500ml typically $150-250; limited editions and vintage bottles can exceed $3000."
+  },
+  "tier": "ultra-premium",
+  "core_products": [
+    {
+      "name": "Puwu (8th Generation)",
+      "name_cn": "普五第八代",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "The standard-bearer. 'Puwu' means 'General Wuliangye' — the classic multi-grain strong-aroma baijiu that defines the category. Crystal-clear bottle, iconic red-and-gold label.",
+      "msrp_cny": 1499,
+      "is_flagship": true
+    },
+    {
+      "name": "1618",
+      "name_cn": "五粮液1618",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Premium variant using a specific pit mud formula from the Ming dynasty (1618). Smoother and more aromatic than Puwu, with a distinctive porcelain bottle.",
+      "msrp_cny": 1699,
+      "is_flagship": false
+    },
+    {
+      "name": "Jiao Zui (交杯酒)",
+      "name_cn": "交杯牌五粮液",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Heritage line resurrected in recent years. Uses the original 1960s recipe with older pit mud. More traditional, funkier profile than modern Puwu. Connoisseur's choice.",
+      "msrp_cny": 1899,
+      "is_flagship": false
+    },
+    {
+      "name": "Wuliangye 39%",
+      "name_cn": "39度五粮液",
+      "abv": "39%",
+      "volume_ml": 500,
+      "description": "Low-ABV variant designed for broader appeal. Lighter body, gentler burn. Popular in regions where high-proof spirits are less common.",
+      "msrp_cny": 899,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Crystal clear, water-white. Noticeable viscosity — thick legs that run slowly down the glass.",
+    "nose": "Explosive and multi-layered. Ripe banana, pineapple, and peach lead — the multi-grain mash bill creates a distinctly fruity profile absent in single-grain strong-aroma. Behind the fruit: toasted grain, honey, and a faint anise note. The pit-mud character (窖香) is pronounced — an earthy, almost cheesy richness that's the signature of old fermentation pits.",
+    "palate": "Full-bodied and rich. The entry is sweet — honey, caramelized fruit — then rapidly expands into warm grain and spice. The 52% alcohol provides substantial heat but is balanced by the sweetness. Layers unfold: candied citrus, roasted nuts, white pepper, a returning earthy-musty pit character. More immediately gratifying than Moutai, less introspective.",
+    "finish": "Long, warming, slightly sweet. Banana and honey persist with a gentle pepper tingle. Cleaner finish than sauce-aroma — no lingering umami, just warmth and fruit.",
+    "overall_impression": "Wuliangye is the crowd-pleaser of ultra-premium baijiu. Where Moutai challenges, Wuliangye charms. The five-grain formula creates a broader, more immediately enjoyable flavor spectrum. In a blind tasting with Western spirits drinkers, Wuliangye typically wins over Moutai on first impression. The 1618 variant dials up the refinement; the Jiao Zui variant dials up the tradition."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Sichuan banquet",
+      "dishes": ["Twice-cooked pork", "Kung pao chicken", "Mapo tofu", "Cold Sichuan noodles"],
+      "why_it_works": "Made in Yibin, the heart of Sichuan. The baijiu's fruity-sweet profile complements and tames Sichuan spice. A classic local pairing."
+    },
+    {
+      "cuisine": "Cantonese seafood",
+      "dishes": ["Steamed grouper", "Lobster with ginger and scallion", "Abalone in oyster sauce"],
+      "why_it_works": "The clean, fruity finish of Wuliangye doesn't overpower delicate seafood. 52% ABV cuts through rich sauces."
+    },
+    {
+      "cuisine": "Roasted meats",
+      "dishes": ["Cantonese roast duck", "Crispy pork belly", "Char siu"],
+      "why_it_works": "The banana-pineapple esters in Wuliangye create an unexpected but excellent pairing with caramelized, roasted meat."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "If you can only try one Chinese baijiu in your life, Wuliangye Puwu is arguably the best choice. It's complex enough to be interesting, fruity enough to be immediately enjoyable, and prestigious enough to be a genuine experience. Serve room temperature in a small glass (15-20ml). Let it sit 1-2 minutes. The first sip will be hot — that's normal. The second sip is where you'll taste the fruit. By the third sip, you'll understand why this is China's #2 baijiu brand.",
+  "comparable_spirits": [
+    { "spirit": "Highland single malt (Glenmorangie Nectar d'Or, Balvenie 14 Caribbean Cask)", "reason": "Fruit-forward, honeyed, broadly appealing — the 'easy to love' category of premium spirits" },
+    { "spirit": "Aged Armagnac (Delord 25, Darroze)", "reason": "Rich, fruity, earthy, with a rustic complexity beneath the sweetness" },
+    { "spirit": "Bourbon (Blanton's, EH Taylor Small Batch)", "reason": "Sweet grain character, vanilla-caramel notes, warming finish — similar comfort-spirit appeal" }
+  ],
+  "history": "Wuliangye's name means 'Five-Grain Liquid' — a reference to its unique mash bill of sorghum, rice, glutinous rice, wheat, and corn. The distillery traces its lineage to the Ming dynasty (1368-1644), though the modern corporation was formed in 1952 from eight historic Yibin distilleries. Yibin sits at the confluence of the Jinsha and Min rivers (forming the Yangtze), and the local water, climate, and centuries-old fermentation pit mud are considered essential to the product. Wuliangye was China's most valuable liquor brand through much of the 1990s and 2000s before being overtaken by Moutai's investment-bubble pricing. It remains the definitive strong-aroma baijiu — if Moutai is the king of sauce, Wuliangye is the emperor of strong. The old pits at the Yibin distillery, some dating to the Ming dynasty, contain microbial ecosystems that cannot be replicated.",
+  "production": {
+    "raw_materials": ["sorghum (36%)", "rice (22%)", "glutinous rice (18%)", "wheat (16%)", "corn (8%)"],
+    "qu_type": "Medium-high temperature daqu (中高温大曲), made from wheat",
+    "fermentation": "Solid-state fermentation in mud pits (泥窖). The pit mud is the critical variable — old pits (老窖) contain complex microbial communities accumulated over decades and centuries. Fermentation cycle is approximately 60-90 days per batch.",
+    "distillation": "Traditional pot still distillation. The multi-grain mash is steamed and distilled in layers, with the heart cut collected separately.",
+    "aging": "Minimum 3 years in ceramic jars. Premium lines age 5-10+ years. Blending across vintages and pit locations is the master blender's art — a single bottle of Puwu may contain spirits from dozens of different pits and years.",
+    "notable_techniques": [
+      "Five-grain formula (五粮配方) — the defining technique. Each grain contributes different flavor compounds: sorghum for structure, rice for cleanliness, glutinous rice for sweetness, wheat for body, corn for aroma",
+      "Old pit fermentation (老窖发酵) — pits aged 30-600+ years develop unique microbial terroir",
+      "Run-accumulation blending (跑窖法) — base spirits from different pits are blended continuously across production cycles"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Wuliangye flagship stores on Tmall and JD.com. Major liquor chains nationwide. Widely available — much easier to find at retail price than Moutai. Airport duty-free shops carry standard and travel-exclusive editions.",
+    "where_to_buy_global": "Well-distributed internationally. Available at Chinese liquor specialists, high-end spirits retailers (Total Wine in US), and major e-commerce platforms. One of the most accessible Chinese baijius outside China.",
+    "what_to_look_for": "Verify the anti-counterfeit QR code and holographic seal. Genuine Puwu has a distinctive crystal bottle with a red cap featuring the Wuliangye logo in raised lettering. The label printing should be sharp with metallic gold elements. The bottle cap ring should be intact.",
+    "counterfeit_risks": "High — Wuliangye is the second-most counterfeited baijiu after Moutai. Common fakes: refilled genuine bottles, lookalike packaging, diluted product. Buy from authorized retailers. The QR code and holographic seal are your primary verification tools. Be especially skeptical of 'too good to be true' prices — Puwu below ¥900 is almost certainly fake.",
+    "value_picks": ["Puwu 8th-gen — the standard. Don't overthink it, this is the one to buy."],
+    "splurge_picks": ["1618 — smoother and more refined", "Jiao Zui (交杯酒) — traditional recipe, the connoisseur's Wuliangye", "Vintage/commemorative editions — some 50-year and zodiac editions appreciate"]
+  },
+  "faq": [
+    { "q": "Wuliangye vs Moutai — which is better?", "a": "Wrong question. They're different categories: Moutai is sauce-aroma (savory, umami, challenging), Wuliangye is strong-aroma (fruity, sweet, crowd-pleasing). Wuliangye wins on first impression with most drinkers. Moutai wins on depth and complexity for experienced tasters. They're the Coke vs Pepsi of Chinese baijiu — both excellent, different profiles, strong partisans." },
+    { "q": "What do the five grains actually do?", "a": "Sorghum provides the structural backbone and most of the alcohol. Rice adds a clean, neutral base. Glutinous rice contributes sweetness and body. Wheat adds aromatic complexity (via the daqu starter). Corn adds a distinctive fruity ester profile — those banana and pineapple notes are largely corn-derived. Remove any one grain and the profile noticeably changes." },
+    { "q": "Is Puwu 8th-gen different from older versions?", "a": "Each 'generation' of Puwu represents a packaging update and a subtle recipe refinement. The 8th gen (launched 2019) is generally considered slightly smoother and more aromatic than the 7th. Purists sometimes prefer older generations for their more rustic character. For 99% of drinkers, the differences between generations are subtle to imperceptible." },
+    { "q": "Does the pit age actually matter?", "a": "Yes — and it's measurable. Old pit mud contains complex microbial ecosystems (bacteria, yeasts, molds) that develop over decades. These microbes produce esters, acids, and other flavor compounds that cannot be replicated in new pits. A 100-year-old pit produces noticeably more complex spirit than a 10-year-old pit. This is the single most important variable in strong-aroma baijiu quality." }
+  ],
+  "related_varieties": ["luzhou-laojiao", "jiannanchun", "yanghe", "maotai"],
+  "seo": {
+    "meta_title": "Wuliangye Baijiu Guide: Five-Grain Strong-Aroma | Baijiu365",
+    "meta_description": "Wuliangye (五粮液): China's definitive strong-aroma baijiu. Five-grain formula, pit-mud fermentation, Puwu vs 1618 comparison, and why it's the best first baijiu for beginners.",
+    "keywords": ["wuliangye", "五粮液", "strong aroma baijiu", "puwu", "普五", "wuliangye 1618", "five grain baijiu", "chinese liquor", "baijiu guide"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Wuliangye Official", "url": "https://www.wuliangye.com.cn" },
+    { "label": "GB/T 10781.1-2021 Strong-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

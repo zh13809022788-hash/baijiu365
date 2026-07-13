@@ -1,0 +1,101 @@
+{
+  "id": "jiugui",
+  "name": "Jiugui",
+  "name_cn": "酒鬼酒",
+  "brand": {
+    "name": "Jiugui Liquor Co., Ltd.",
+    "name_cn": "酒鬼酒股份有限公司",
+    "founded": "1956",
+    "headquarters": "Jishou, Xiangxi, Hunan, China",
+    "website": "https://www.jiugui.com"
+  },
+  "aroma_type": "mixed",
+  "aroma_type_cn": "馥郁香型",
+  "gbt_standard": "GB/T 10781.11",
+  "region": "Hunan",
+  "region_cn": "湖南（湘西吉首）",
+  "abv_range": "52-54%",
+  "price_range_usd": {
+    "min": 30,
+    "max": 300,
+    "note": "Classic Jiugui $30-50; Neican (内参) $150-300."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Neican Jiugui",
+      "name_cn": "内参酒鬼酒",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Flagship ultra-premium. 'Neican' means 'Internal Reference' — originally produced only for internal government use. The most complex expression of fuyu-aroma. Unique pottery bottle shaped like a tied sack.",
+      "msrp_cny": 1499,
+      "is_flagship": true
+    },
+    {
+      "name": "Classic Jiugui (Zitan)",
+      "name_cn": "经典酒鬼酒（紫坛）",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "The standard. Purple packaging. The iconic bag-shaped pottery bottle designed by artist Huang Yongyu. Fuyu-aroma in its most accessible form.",
+      "msrp_cny": 398,
+      "is_flagship": false
+    },
+    {
+      "name": "Hongtan Jiugui (Red Jar)",
+      "name_cn": "红坛酒鬼酒",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Red packaging, younger blend. More affordable entry into the Jiugui brand.",
+      "msrp_cny": 268,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear, bright. Medium viscosity.",
+    "nose": "Fuyu-aroma (馥郁香) literally means 'rich fragrance' — and it delivers. The nose combines elements of three aroma types: the clean fruit of light-aroma, the pit-mud funk of strong-aroma, and the savory complexity of sauce-aroma. Honey, baked apple, almond, and a subtle earthy depth. Unique and layered.",
+    "palate": "Medium-full body. Opens sweet (honey, fruit), develops savory depth (roasted grain, faint umami), and finishes with gentle pit character. The three-aroma fusion is real — each sip cycles through light, strong, and sauce elements.",
+    "finish": "Medium-long, layered. Sweetness, then savory, then a clean warmth. Complex and satisfying.",
+    "overall_impression": "Jiugui is the baijiu for people who can't choose between aroma types. It genuinely synthesizes elements of light, strong, and sauce into a coherent whole. The bag-shaped bottle by Huang Yongyu is one of the most distinctive and collectible packages in spirits."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Hunan (Xiang cuisine)",
+      "dishes": ["Chairman Mao's red-braised pork", "Chopped chili fish head", "Dry-pot cauliflower", "Spicy crayfish"],
+      "why_it_works": "Hunan cuisine is famously spicy — Jiugui's complex profile stands up to the heat while its sweetness provides relief."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Jiugui is the 'Goldilocks' baijiu — not too light, not too strong, not too funky. It's a genuine third-way option that synthesizes the best of all aromas. Good for intermediate drinkers exploring beyond their first baijiu.",
+  "comparable_spirits": [{"spirit": "Blended malt Scotch (Johnnie Walker Green)", "reason": "Layered complexity combining elements of different regional styles into a coherent whole"}],
+  "history": "Jiugui ('Drunkard') was founded in 1956 in Jishou, deep in the Xiangxi (Western Hunan) mountains — a region known for its ethnic Miao and Tujia minority cultures. The brand's breakthrough came in the 1980s when artist Huang Yongyu (黄永玉), a Xiangxi native, designed the iconic sack-shaped pottery bottle — one of the most recognizable packages in Chinese consumer goods. The fuyu-aroma (馥郁香型) — a deliberate fusion of light, strong, and sauce techniques — was formally recognized as China's 11th official baijiu aroma category in 2005, with Jiugui as the sole representative.",
+  "production": {
+    "raw_materials": ["sorghum", "wheat", "rice", "glutinous rice", "corn"],
+    "qu_type": "Combination: low-temperature daqu (light-aroma method) AND high-temperature daqu (sauce-aroma method) used in sequence.",
+    "fermentation": "Hybrid: ceramic jar fermentation (light-aroma clean method) followed by mud pit fermentation (strong-aroma method). This sequential dual-fermentation is the core of fuyu-aroma — it deliberately combines techniques from three aroma categories.",
+    "distillation": "Traditional pot still.",
+    "aging": "Minimum 3 years in ceramic jars. The fusion character develops during aging as light, strong, and sauce elements integrate.",
+    "notable_techniques": ["Sequential dual-fermentation (清蒸清烧+泥窖发酵)", "Dual-qu system (低温+高温大曲)", "Unique Wuling Mountain terroir (武陵山区)"]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Jiugui stores on Tmall/JD. More available in Hunan and central China than elsewhere.",
+    "where_to_buy_global": "Limited. Specialty Chinese liquor importers. The distinctive bottle makes it a collector's item.",
+    "what_to_look_for": "The iconic sack-shaped pottery bottle. Anti-counterfeit QR code.",
+    "counterfeit_risks": "Low.",
+    "value_picks": ["Classic Jiugui Zitan (紫坛) — standard fuyu-aroma at fair price"],
+    "splurge_picks": ["Neican Jiugui (内参) — flagship, formerly government-only"]
+  },
+  "faq": [
+    { "q": "What is fuyu-aroma?", "a": "Fuyu (馥郁) means 'rich/layered fragrance.' It's a deliberate fusion: light-aroma's clean fermentation + strong-aroma's pit technique + sauce-aroma's high-temperature daqu. The result is a baijiu that genuinely tastes like a synthesis of all three major styles." }
+  ],
+  "related_varieties": ["maotai", "wuliangye", "fenjiu"],
+  "seo": {
+    "meta_title": "Jiugui Baijiu Guide: China's Fuyu-Aroma Fusion | Baijiu365",
+    "meta_description": "Jiugui (酒鬼酒): the baijiu that fuses light, strong, and sauce aromas. Iconic bag-shaped bottle by Huang Yongyu, fuyu-aroma, and Hunan's most distinctive spirit.",
+    "keywords": ["jiugui", "酒鬼酒", "fuyu aroma", "馥郁香型", "hunan baijiu", "neican", "chinese liquor"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Jiugui Official", "url": "https://www.jiugui.com" },
+    { "label": "GB/T 10781.11-2021 Fuyu-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

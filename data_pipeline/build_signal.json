@@ -1,0 +1,104 @@
+{
+  "$schema": "https://baijiu365.com/data_pipeline/schemas/build_signal.schema.json",
+  "version": "1.0.0",
+  "last_validated": "2026-07-13T21:25:31.164326",
+  "validation_status": "PASS",
+  "validation_errors": 0,
+  "validation_warnings": 0,
+  "build_requested": false,
+  "build_reason": "New regions detected: Shanxi, Anhui, Beijing, Hunan, Beijing, Shaanxi, Jiangsu",
+  "data_summary": {
+    "total_varieties": 16,
+    "total_in_index": 16,
+    "aroma_types": [
+      "herbal",
+      "light",
+      "mixed",
+      "phoenix",
+      "sauce",
+      "strong"
+    ],
+    "regions": [
+      "Anhui",
+      "Beijing",
+      "Guizhou",
+      "Hunan",
+      "Jiangsu",
+      "Shaanxi",
+      "Shanxi",
+      "Sichuan"
+    ],
+    "files_validated": [
+      "dongjiu",
+      "fenjiu",
+      "gujinggong",
+      "hongxing",
+      "jiannanchun",
+      "jiugui",
+      "langjiu",
+      "luzhou-laojiao",
+      "maotai",
+      "niulanshan",
+      "shede",
+      "shuijingfang",
+      "wuliangye",
+      "xifeng",
+      "xijiu",
+      "yanghe"
+    ],
+    "files_missing": []
+  },
+  "region_update": {
+    "needed": true,
+    "new_regions": [
+      "Shanxi",
+      "Anhui",
+      "Beijing",
+      "Hunan",
+      "Beijing",
+      "Shaanxi",
+      "Jiangsu"
+    ],
+    "action": "Codex must update 首页产区索引卡片",
+    "current_known_regions": [
+      "anhui",
+      "beijing",
+      "guizhou",
+      "hunan",
+      "jiangsu",
+      "shaanxi",
+      "shanxi",
+      "sichuan"
+    ]
+  },
+  "content_type_updates": {
+    "aroma_types_added": [
+      "herbal",
+      "light",
+      "mixed",
+      "phoenix",
+      "sauce",
+      "strong"
+    ],
+    "aroma_types_removed": [],
+    "action": "If new aroma types were added, verify filter pages still work"
+  },
+  "build_instructions": {
+    "astro_build": true,
+    "sitemap_regenerate": true,
+    "rss_update": true,
+    "internal_links_check": true,
+    "homepage_region_card_update": true,
+    "notes": "Run 'npm run build' after all missing variety JSON files are created and validation passes."
+  },
+  "known_regions": [
+    "anhui",
+    "beijing",
+    "guizhou",
+    "hunan",
+    "jiangsu",
+    "shaanxi",
+    "shanxi",
+    "sichuan"
+  ]
+}

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Editorial Team - Baijiu365';
+const description = 'Meet the editorial team behind Baijiu365 and how our baijiu guides are reviewed.';
+---
+<BaseLayout title={title} description={description} type="AboutPage">
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">People</p>
+      <h1>Editorial Team</h1>
+      <p class="lede">Baijiu365 is edited by people who care about clear tasting language, buying risk, and honest limits.</p>
+    </div>
+  </header>
+  <section class="content">
+    <article>
+      <div class="decision-box">
+        <h2>Trust note</h2>
+        <p>We do not invent critic credentials, awards, or bottle authentication authority. Public social profiles will be linked here only after the person has approved a verified profile.</p>
+      </div>
+      <section class="profile-list">
+        <article class="profile-card">
+          <h2>Baijiu365 Editorial Team</h2>
+          <p><strong>Role:</strong> Site editing, guide structure, buying-risk review, and English-language clarity.</p>
+          <p>The editorial desk maintains the core baijiu explainers, updates policy pages, and tracks corrections across the site.</p>
+          <p><a href="/author/editorial-team/">Author profile</a> · <a href="/editorial-policy/">Editorial policy</a></p>
+        </article>
+        <article class="profile-card">
+          <h2>China Spirits Research Editor</h2>
+          <p><strong>Role:</strong> Research support for aroma types, banquet context, retail risk, and Chinese spirits terminology.</p>
+          <p>This role is used for research-backed edits where the site needs Chinese market context but does not yet have a named public contributor.</p>
+          <p><a href="/contact/">Submit a correction</a> · <a href="/affiliate-disclosure/">Disclosure</a></p>
+        </article>
+      </section>
+    </article>
+  </section>
+</BaseLayout>

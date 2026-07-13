@@ -1,0 +1,140 @@
+{
+  "id": "yanghe",
+  "name": "Yanghe",
+  "name_cn": "洋河",
+  "brand": {
+    "name": "Jiangsu Yanghe Distillery Co., Ltd.",
+    "name_cn": "江苏洋河酒厂股份有限公司",
+    "founded": "1949",
+    "headquarters": "Suqian, Jiangsu, China",
+    "website": "https://www.chinayanghe.com"
+  },
+  "aroma_type": "strong",
+  "aroma_type_cn": "浓香型",
+  "gbt_standard": "GB/T 10781.1",
+  "region": "Jiangsu",
+  "region_cn": "江苏（宿迁）",
+  "abv_range": "40.8-52%",
+  "price_range_usd": {
+    "min": 30,
+    "max": 500,
+    "note": "Hai Zhi Lan (海之蓝) $30-50; Tian Zhi Lan (天之蓝) $60-100; Meng Zhi Lan M3/M6/M9 $100-500."
+  },
+  "tier": "premium",
+  "core_products": [
+    {
+      "name": "Meng Zhi Lan M9",
+      "name_cn": "梦之蓝M9",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Flagship ultra-premium. The top of the Dream Blue line. Complex, elegant, with extended aging. Dark blue gradient bottle — the most prestigious Yanghe product for gifting.",
+      "msrp_cny": 1999,
+      "is_flagship": true
+    },
+    {
+      "name": "Meng Zhi Lan M6+",
+      "name_cn": "梦之蓝M6+",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Best-selling premium Dream Blue. The sweet spot in the Yanghe lineup — premium enough to gift, accessible enough to drink regularly. Smooth, elegant, the epitome of Yanghe's 'soft' style.",
+      "msrp_cny": 899,
+      "is_flagship": false
+    },
+    {
+      "name": "Meng Zhi Lan M3",
+      "name_cn": "梦之蓝M3",
+      "abv": "52%",
+      "volume_ml": 500,
+      "description": "Entry Dream Blue. Lighter, more approachable. The most affordable way to access the Dream Blue tier. Popular at business dinners and weddings.",
+      "msrp_cny": 598,
+      "is_flagship": false
+    },
+    {
+      "name": "Tian Zhi Lan",
+      "name_cn": "天之蓝",
+      "abv": "42-52%",
+      "volume_ml": 500,
+      "description": "Mid-tier 'Sky Blue.' The workhorse of the Yanghe lineup. Widely consumed across eastern China. Smooth, easy-drinking, available in both high and low ABV.",
+      "msrp_cny": 298,
+      "is_flagship": false
+    },
+    {
+      "name": "Hai Zhi Lan",
+      "name_cn": "海之蓝",
+      "abv": "42%",
+      "volume_ml": 500,
+      "description": "Entry-level 'Sea Blue.' The volume leader. Accessible pricing, recognizable blue bottle. The default baijiu at countless Chinese restaurants and family gatherings.",
+      "msrp_cny": 158,
+      "is_flagship": false
+    }
+  ],
+  "tasting_notes": {
+    "appearance": "Clear, bright. Medium-light legs.",
+    "nose": "Restrained and elegant — the opposite of aggressive. Floral notes (osmanthus, jasmine) lead, supported by honeydew melon, pear, and a subtle grain sweetness. Very little pit-mud character — Yanghe deliberately minimizes the earthy funk that defines Sichuan strong-aroma. Clean, pretty, almost perfume-like. Meng Zhi Lan has deeper floral complexity; Hai Zhi Lan is simpler but still clean.",
+    "palate": "The 'soft' (绵柔) character is immediately apparent. Smooth entry with almost no alcohol burn — this is Yanghe's party trick. Honey, melon, and light floral notes dominate. Medium-light body. Clean and polished throughout. Lacks the weight and complexity of Sichuan strong-aroma, but makes up for it with drinkability. Goes down dangerously easy at 40.8-42%.",
+    "finish": "Short-to-medium. Clean exit with lingering floral sweetness. No harshness, no burn. The finish is shorter than Wuliangye or Luzhou Laojiao — Yanghe is designed for session drinking, not meditation.",
+    "overall_impression": "Yanghe makes the most approachable strong-aroma baijiu in China. Its 'soft' (绵柔) style was a deliberate market innovation — recognizing that most consumers don't want intense pit-mud funk or burning alcohol. The Dream Blue branding and gradient blue bottles are marketing genius — instantly recognizable at any Chinese banquet. Purists sometimes dismiss Yanghe as 'baijiu for people who don't like baijiu,' but that's missing the point. It's an entry point that has brought millions of drinkers into the category."
+  },
+  "food_pairings": [
+    {
+      "cuisine": "Jiangsu/Zhejiang (Huaiyang)",
+      "dishes": ["Lion's head meatballs", "Squirrel-shaped mandarin fish", "Braised tofu with crab roe", "Nanjing salted duck"],
+      "why_it_works": "Regional pairing at its best. Yanghe's soft, floral character complements the subtle, umami-driven flavors of Huaiyang cuisine without overwhelming them."
+    },
+    {
+      "cuisine": "Seafood",
+      "dishes": ["Steamed scallops with garlic vermicelli", "Salt and pepper shrimp", "Whole steamed sea bass"],
+      "why_it_works": "Yanghe is one of the few baijius that genuinely works with seafood. The clean, floral profile doesn't clash with delicate marine flavors."
+    },
+    {
+      "cuisine": "Light appetizers and dim sum",
+      "dishes": ["Xiaolongbao", "Har gow", "Cold cucumber with garlic", "Tea-smoked eggs"],
+      "why_it_works": "The low ABV variants (40.8%) work well for extended dim sum lunches where you want to drink without getting destroyed."
+    }
+  ],
+  "beginner_friendly": true,
+  "beginner_notes": "Yanghe Hai Zhi Lan or Tian Zhi Lan at 40.8-42% ABV is arguably the best possible introduction to Chinese baijiu for a complete beginner. It's smooth, floral, and low enough in alcohol to sip without shock. It won't prepare you for the intensity of Moutai or the funk of Luzhou Laojiao, but it will convince you that baijiu can be genuinely pleasant. Start here, then graduate to stronger stuff. The blue bottle hierarchy (sea → sky → dream) is easy to navigate — just follow your budget.",
+  "comparable_spirits": [
+    { "spirit": "Japanese whisky (Hibiki Harmony, Toki)", "reason": "Smooth, floral, designed for broad appeal and easy drinking. Yanghe plays the same role in baijiu that Japanese whisky plays in the whisky world" },
+    { "spirit": "Irish whiskey (Jameson, Redbreast 12)", "reason": "Light, approachable, gentle on the palate. The 'easy drinking' option in its category" },
+    { "spirit": "Vodka (Belvedere, Grey Goose)", "reason": "Clean, neutral profile with minimal burn. Yanghe is what happens when you take vodka's smoothness and add floral complexity" }
+  ],
+  "history": "Yanghe's distilling history dates to the Sui and Tang dynasties (7th-10th centuries), with the modern distillery established in 1949 in Suqian, northern Jiangsu. For most of its history, Yanghe was a respected but regional brand — strong-aroma baijiu was dominated by Sichuan producers (Wuliangye, Luzhou Laojiao, Jiannanchun). Everything changed in 2003 with the launch of the 'Blue' series (蓝色经典): Hai Zhi Lan (海之蓝), Tian Zhi Lan (天之蓝), and Meng Zhi Lan (梦之蓝). The branding was revolutionary — blue bottles in a category dominated by red and gold, targeting younger, aspirational consumers. But the product innovation was equally important: Yanghe pioneered the 'soft' (绵柔) style of strong-aroma, deliberately reducing the pit-mud character and emphasizing smoothness and approachability. The strategy worked spectacularly. Yanghe went from a regional player to China's third-largest baijiu company by revenue, behind only Moutai and Wuliangye. It is now the dominant baijiu brand in eastern China (Jiangsu, Zhejiang, Shanghai, Anhui).",
+  "production": {
+    "raw_materials": ["sorghum", "rice", "glutinous rice", "wheat", "corn"],
+    "qu_type": "Medium-temperature daqu (中温大曲), wheat-based. Yanghe uses a proprietary qu blend that emphasizes fruity and floral ester production over earthy-funky notes.",
+    "fermentation": "Solid-state fermentation in mud pits. Yanghe uses pits aged 20-80+ years — younger on average than Luzhou or Wuliangye pits. The shorter pit aging is deliberate: it reduces the intense pit-mud character in favor of cleaner grain expression.",
+    "distillation": "Traditional pot still. Low-and-slow distillation protocol that preserves delicate aromatics.",
+    "aging": "Minimum 1-3 years in ceramic jars. Premium lines aged 3-15 years. The 'soft' character is achieved partly through extended post-distillation rest periods where the spirit is allowed to 'relax' before blending.",
+    "notable_techniques": [
+      "Soft-style process (绵柔工艺) — proprietary techniques to reduce harshness: lower-temperature distillation, extended rest periods, specific qu formulations",
+      "Multi-grain blend emphasizing floral esters over pit character",
+      "Blue series branding and tiered product architecture — a marketing innovation that reshaped the entire baijiu industry"
+    ]
+  },
+  "buying_guide": {
+    "where_to_buy_cn": "Official Yanghe stores on Tmall and JD.com. Widely available across China, especially in eastern provinces. Ubiquitous at restaurants, banquet halls, and retail in Jiangsu, Zhejiang, and Shanghai.",
+    "where_to_buy_global": "Decent international distribution. Chinese liquor importers, Asian grocery stores. The blue bottles are recognizable — look for the gradient blue and the '梦/天/海' character on the label. More common in the US and Australia than Europe.",
+    "what_to_look_for": "The blue gradient bottle is the key identifier. Genuine bottles have clean, sharp color transitions with no banding. Anti-counterfeit QR code on the box. Check for intact seal ring. Hai Zhi Lan and Tian Zhi Lan bottles are ubiquitous — you'll know them when you see them.",
+    "counterfeit_risks": "Moderate for Meng Zhi Lan (premium price point), low for Hai/Tian Zhi Lan. The distinctive blue bottles are harder to convincingly fake than standard clear bottles. Always verify QR code for premium lines.",
+    "value_picks": ["Tian Zhi Lan (天之蓝) — the best balance of quality and price. Good enough to gift, cheap enough to drink regularly.", "Hai Zhi Lan (海之蓝) — everyday drinking. The blue bottle that's on every Chinese restaurant table."],
+    "splurge_picks": ["Meng Zhi Lan M6+ (梦之蓝M6+) — the sweet spot. Premium quality without the ultra-premium markup of M9.", "Meng Zhi Lan M9 (梦之蓝M9) — top of the line, for serious gifting and milestone celebrations"]
+  },
+  "faq": [
+    { "q": "What does 'soft' (绵柔) actually mean?", "a": "It's a deliberate production choice. Traditional Sichuan strong-aroma emphasizes the pit-mud character (窖香) — that earthy, funky, cheesy note. Yanghe minimizes this by using younger pits, different qu formulations, lower distillation temperatures, and extended rest periods. The result is a cleaner, smoother, more floral spirit. Critics call it watered-down tradition. Fans call it evolution. The market has spoken: Yanghe is the #3 baijiu brand in China by revenue." },
+    { "q": "Sea vs Sky vs Dream — what's the real difference?", "a": "Base spirit quality and aging time. Hai Zhi Lan uses younger spirits from newer pits, lighter body, simpler profile. Tian Zhi Lan uses mid-aged spirits, more body and complexity. Meng Zhi Lan uses the oldest spirits from the best pits, longest aging, most complexity. The gradient roughly corresponds to a 3x price multiplier between tiers. M3/M6/M9 within Dream Blue follows the same logic with aging time." },
+    { "q": "Is Yanghe 'real' baijiu?", "a": "Yes. It's produced using traditional solid-state fermentation and meets the GB/T 10781.1 standard for strong-aroma baijiu. The 'soft' style is a variation within the category, not a departure from it. Think of it like the difference between a peated Islay whisky and a smooth Speyside — both are Scotch, just different expressions." },
+    { "q": "Why the blue bottles?", "a": "Marketing genius. Before Yanghe's Blue series launched in 2003, Chinese baijiu packaging was universally red and gold. Blue was unprecedented. It signalled modernity, sophistication, and differentiation to a generation of younger consumers. The gradient effect (light to dark blue) created a natural tiering system anyone could understand at a glance. It's one of the most successful packaging innovations in the history of the spirits industry." }
+  ],
+  "related_varieties": ["wuliangye", "luzhou-laojiao", "jiannanchun", "gujinggong"],
+  "seo": {
+    "meta_title": "Yanghe Baijiu Guide: Dream Blue & Soft-style Strong-Aroma | Baijiu365",
+    "meta_description": "Yanghe (洋河): China's 'soft' strong-aroma baijiu. Meng Zhi Lan vs Tian Zhi Lan vs Hai Zhi Lan, why the blue bottle changed Chinese spirits, and why it's the best beginner baijiu.",
+    "keywords": ["yanghe", "洋河", "meng zhi lan", "梦之蓝", "tian zhi lan", "天之蓝", "hai zhi lan", "海之蓝", "soft baijiu", "strong aroma baijiu", "chinese liquor"]
+  },
+  "updated_at": "2026-07-13",
+  "sources": [
+    { "label": "Jiangsu Yanghe Distillery Official", "url": "https://www.chinayanghe.com" },
+    { "label": "GB/T 10781.1-2021 Strong-aroma Baijiu National Standard", "url": "https://std.sacinfo.org.cn/" }
+  ]
+}

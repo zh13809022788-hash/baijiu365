@@ -1,4 +1,4 @@
-# Inside Baijiu
+# Baijiu365
 
 A focused Astro MVP for a practical English-language baijiu guide.
 

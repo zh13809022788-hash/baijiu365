@@ -30,12 +30,21 @@ The project is being reduced from the original broad PDF plan into a focused Ast
 ### 2026-07-13
 
 - Replaced homepage-facing "Baijiu 101" wording with clearer "Start Here" / "Basics" language to reduce template feel for readers.
-- Verified the Astro static build after the copy adjustment: 12 pages generated plus sitemap.
+- Renamed the main beginner guide route from `/baijiu-101/` to `/baijiu-basics/`; kept `/baijiu-101/` as a lightweight old-link page.
+- Added canonical/noindex handling for the old `/baijiu-101/` compatibility page so the main beginner guide resolves to `/baijiu-basics/`.
+- Added `/rss.xml`, `/llms.txt`, RSS discovery metadata, and a local content quality report script.
+- Upgraded the homepage from CSS-only bottle decoration to a generated field-guide image, stronger decision sections, a buying-risk center, and trust signals.
+- Added Contact, Privacy, Terms, Editorial Policy, and Disclosure pages for future indexing and monetization readiness.
+- Verified the Astro static build after the route and UI upgrade: 18 pages generated plus sitemap.
+- Entered rebuild mode for audit fixes: confirmed public templates/config no longer reference Inside Baijiu, expanded Article JSON-LD with author, publisher logo, dates, image, and mainEntityOfPage, added a generated `/logo.png`, and switched the default social/schema image to the existing field-guide image.
+- Added a static Astro `404.astro` so Cloudflare Pages can serve `dist/404.html` for undefined routes instead of treating unknown URLs as homepage content.
+- Added `/editorial-team/`, `/author/editorial-team/`, and `/affiliate-disclosure/`; footer now links Contact, Privacy, Editorial Policy, and Affiliate Disclosure directly.
+- Updated `/llms.txt` output to start with an H1 and use explicit Markdown links.
 
 ## MVP Scope
 
 - Homepage
-- Baijiu 101
+- Baijiu Basics
 - Types of Baijiu
 - Best Baijiu for Beginners
 - How to Buy Baijiu Outside China
@@ -66,9 +75,11 @@ The project is being reduced from the original broad PDF plan into a focused Ast
 
 - 2026-07-12 first-pass upgrade generated 12 static pages plus sitemap and kept the site build-ready, but no deployment was performed.
 - Primary domain set to `baijiu365.com` in Astro config and robots sitemap.
-- MVP static pages created: homepage, Baijiu 101, aroma types, beginner guide, drinking guide, baijiu vs vodka, Maotai guide, glossary, and about page.
+- MVP static pages created: homepage, Baijiu Basics, aroma types, beginner guide, drinking guide, baijiu vs vodka, Maotai guide, glossary, and about page.
 - npm install initially stalled on the default registry, then succeeded after switching this project environment to `https://registry.npmmirror.com`.
 - `npm run build` passed on 2026-07-13 and generated 12 static pages plus sitemap.
+- `npm.cmd run build` passed on 2026-07-13 after the indexing/trust upgrade and generated 18 static pages, including `/rss.xml` and `/llms.txt`.
+- `npm.cmd run build` passed again on 2026-07-13 after rebuild-mode P0/P1 fixes and generated 22 static pages, including `404.html`, `/llms.txt`, `/rss.xml`, logo, and trust pages.
 
 ## Open Questions
 

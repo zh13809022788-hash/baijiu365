@@ -1,0 +1,650 @@
+name: Baijiu365 数据管线
+
+# ============================================================
+# Baijiu365 全自动数据管线 v2.0
+# ============================================================
+# 职责：
+#   1. 定时拉取最新代码，运行数据校验（缓存检查）
+#   2. 已存在的酒款 JSON 数据严禁重新生产
+#   3. 检测到数据缺口 → 调用中转站 API → Hermes 异步补全
+#   4. 检测到新数据 → 校验 → 编排 → 编译 → 部署
+#   5. 编译完成 → 调用中转站 API → Codex 更新首页/产区卡片
+#   6. 质量审计：Soft 404 / 7维度完整性 / 内链可达性
+#   7. 自动提交 build_signal.json + STATUS.md 变更
+#
+# 中转站 API：
+#   用于桥接 GitHub Actions 与本地 Hermes/Codex 实例。
+#   配置方式：GitHub Secrets → RELAY_API_ENDPOINT + RELAY_API_TOKEN
+#   未配置时自动跳过，不影响核心校验/编译流程。
+#
+# 触发条件：
+#   - schedule: 每日北京时间 08:00（UTC 00:00）
+#   - push:     main 分支有提交
+#   - workflow_dispatch: 手动触发
+# ============================================================
+
+on:
+  schedule:
+    # 北京时间每日 08:00 = UTC 00:00
+    - cron: "0 0 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "data_pipeline/varieties/*.json"
+      - "data_pipeline/index.json"
+      - "data_pipeline/schemas/*.json"
+      - "data_pipeline/validate.py"
+      - "data_pipeline/orchestrate.py"
+      - "data_pipeline/quality_audit.py"
+      - "src/**"
+      - "astro.config.mjs"
+      - "package.json"
+  workflow_dispatch:
+    inputs:
+      skip_build:
+        description: "跳过编译，仅运行校验"
+        type: boolean
+        default: false
+      force_rebuild:
+        description: "强制重新编译（忽略缓存）"
+        type: boolean
+        default: false
+
+# 防止并发运行
+concurrency:
+  group: baijiu365-pipeline
+  cancel-in-progress: false
+
+jobs:
+  # ============================================================
+  # 阶段一：数据校验 + 缓存检查
+  # ============================================================
+  validate:
+    name: 数据校验 + 缓存检查
+    runs-on: ubuntu-latest
+    # 中转站 API 环境变量（从 GitHub Secrets 注入）
+    env:
+      RELAY_API_ENDPOINT: ${{ secrets.RELAY_API_ENDPOINT }}
+      RELAY_API_TOKEN: ${{ secrets.RELAY_API_TOKEN }}
+    outputs:
+      validation_status: ${{ steps.validate.outputs.status }}
+      total_varieties: ${{ steps.validate.outputs.total }}
+      missing_count: ${{ steps.validate.outputs.missing }}
+      new_regions: ${{ steps.validate.outputs.new_regions }}
+      cache_hits: ${{ steps.validate.outputs.cache_hits }}
+      cache_misses: ${{ steps.validate.outputs.cache_misses }}
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 缓存 Python 依赖
+        uses: actions/cache@v4
+        id: pip-cache
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ runner.os }}-${{ hashFiles('data_pipeline/validate.py') }}
+          restore-keys: |
+            pip-${{ runner.os }}-
+
+      - name: 安装 Python 依赖
+        run: pip install jsonschema
+
+      # ----------------------------------------------------------
+      # 核心：缓存检查 — 已存在且通过校验的数据，严禁重新生产
+      # ----------------------------------------------------------
+      - name: 缓存检查：扫描已有酒款数据
+        id: cache-check
+        run: |
+          echo "=== 缓存检查：扫描已入库酒款 ==="
+
+          # 统计已存在的 variety JSON 文件
+          EXISTING=$(ls data_pipeline/varieties/*.json 2>/dev/null | wc -l)
+          echo "已存在 JSON 文件数: $EXISTING"
+
+          # 统计 index.json 中的注册酒款
+          INDEX_COUNT=$(python3 -c "
+          import json
+          data = json.load(open('data_pipeline/index.json', 'r', encoding='utf-8'))
+          print(len(data.get('varieties', [])))
+          ")
+          echo "index.json 注册酒款数: $INDEX_COUNT"
+
+          # 检测哪些 index 注册了但没有对应 JSON 文件
+          MISSING=$(python3 -c "
+          import json, os
+          data = json.load(open('data_pipeline/index.json', 'r', encoding='utf-8'))
+          missing = []
+          for v in data.get('varieties', []):
+              path = f'data_pipeline/{v[\"file\"]}'
+              if not os.path.exists(path):
+                  missing.append(v['id'])
+          print(','.join(missing) if missing else 'NONE')
+          ")
+          echo "缺失酒款: $MISSING"
+
+          if [ "$MISSING" = "NONE" ]; then
+            MISSING_COUNT=0
+          else
+            MISSING_COUNT=$(echo "$MISSING" | tr ',' '\n' | wc -l)
+          fi
+
+          echo "cache_hits=$EXISTING" >> $GITHUB_OUTPUT
+          echo "cache_misses=$MISSING_COUNT" >> $GITHUB_OUTPUT
+          echo "missing_ids=$MISSING" >> $GITHUB_OUTPUT
+
+          if [ "$MISSING_COUNT" -gt 0 ]; then
+            echo ""
+            echo "⚠️  以下酒款在 index.json 中注册但缺少数据文件："
+            echo "$MISSING" | tr ',' '\n' | sed 's/^/    - /'
+            echo ""
+            echo "这些酒款需要 Hermes 生产 JSON 数据后才能进入编译。"
+            echo "已存在的 $EXISTING 个酒款数据不会被重新生产。"
+          else
+            echo ""
+            echo "✅ 所有 index.json 注册的酒款均有对应 JSON 数据文件。"
+          fi
+
+      # ----------------------------------------------------------
+      # 中转站 API：触发 Hermes 补全缺失数据
+      # ----------------------------------------------------------
+      - name: 中转站 API — 触发 Hermes 数据补全
+        id: relay-hermes
+        if: steps.cache-check.outputs.cache_misses != '0'
+        run: |
+          MISSING_IDS="${{ steps.cache-check.outputs.missing_ids }}"
+
+          if [ -z "$RELAY_API_ENDPOINT" ]; then
+            echo "⏭️  中转站 API 未配置 (RELAY_API_ENDPOINT 为空)"
+            echo "   缺失酒款: $MISSING_IDS"
+            echo "   待 Hermes 本地处理后 push 即可触发管线。"
+            echo "skipped=true" >> $GITHUB_OUTPUT
+            echo "skipped_reason=RELAY_API_ENDPOINT not configured" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          if [ -z "$RELAY_API_TOKEN" ]; then
+            echo "⏭️  中转站 API Token 未配置 (RELAY_API_TOKEN 为空)"
+            echo "skipped=true" >> $GITHUB_OUTPUT
+            echo "skipped_reason=RELAY_API_TOKEN not configured" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "📡 调用中转站 API 触发 Hermes 数据生产..."
+          echo "   API Endpoint: $RELAY_API_ENDPOINT"
+          echo "   缺失酒款: $MISSING_IDS"
+
+          # 构造请求体：缺失酒款 ID 列表
+          PAYLOAD=$(python3 -c "
+          import json
+          ids = '$MISSING_IDS'.split(',')
+          print(json.dumps({
+              'action': 'produce_varieties',
+              'variety_ids': ids,
+              'source': 'github-actions',
+              'pipeline_run': '${{ github.run_id }}'
+          }))
+          ")
+
+          # 调用中转站 API（超时 30s，异步触发，不等待完成）
+          HTTP_CODE=$(curl -s -o /tmp/relay_response.json -w '%{http_code}' \
+            --max-time 30 \
+            -X POST "$RELAY_API_ENDPOINT/hermes/trigger" \
+            -H "Authorization: Bearer $RELAY_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" 2>/dev/null || echo "000")
+
+          if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "202" ]; then
+            echo "✅ 中转站 API 已接受请求 (HTTP $HTTP_CODE)"
+            echo "   Hermes 将异步生产以下酒款数据：$MISSING_IDS"
+            echo "   Hermes 完成后 push → 自动触发管线重新编译。"
+            echo "triggered=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️  中转站 API 返回 HTTP $HTTP_CODE"
+            echo "   响应: $(cat /tmp/relay_response.json 2>/dev/null || echo 'no response')"
+            echo "   管线将继续处理现有数据，缺失酒款待下次运行补全。"
+            echo "triggered=false" >> $GITHUB_OUTPUT
+          fi
+
+      # ----------------------------------------------------------
+      # 全量数据校验
+      # ----------------------------------------------------------
+      - name: 运行数据校验 (validate.py)
+        id: validate
+        run: |
+          echo "=== 运行全量数据校验 ==="
+
+          # --json 模式输出 JSON 到 stdout，stderr 可能有 pip 警告，单独处理
+          python3 data_pipeline/validate.py --json > /tmp/validation_result.json 2>/tmp/validate_stderr.log
+          VALIDATE_EXIT=$?
+
+          # 解析 JSON 结果
+          STATUS=$(python3 -c "import json; d=json.load(open('/tmp/validation_result.json')); print(d['status'])")
+          TOTAL=$(python3 -c "import json; d=json.load(open('/tmp/validation_result.json')); print(d['total_files'])")
+          ERRORS=$(python3 -c "import json; d=json.load(open('/tmp/validation_result.json')); print(len(d.get('errors',[])))")
+          REGIONS=$(python3 -c "import json; d=json.load(open('/tmp/validation_result.json')); print(','.join(d.get('new_regions',[])) or 'NONE')")
+          MISSING_FROM_INDEX=$(python3 -c "
+          import json
+          d = json.load(open('/tmp/validation_result.json'))
+          total = d.get('total_files', 0)
+          in_index = d.get('total_files_in_index', 0)
+          print(in_index - total)
+          ")
+
+          echo "校验状态: $STATUS"
+          echo "已校验文件: $TOTAL"
+          echo "index 注册数: $(python3 -c "import json; d=json.load(open('/tmp/validation_result.json')); print(d.get('total_files_in_index', 0))")"
+          echo "错误数: $ERRORS"
+          echo "新区检测: $REGIONS"
+
+          echo "status=$STATUS" >> $GITHUB_OUTPUT
+          echo "total=$TOTAL" >> $GITHUB_OUTPUT
+          echo "errors=$ERRORS" >> $GITHUB_OUTPUT
+          echo "missing=$MISSING_FROM_INDEX" >> $GITHUB_OUTPUT
+          echo "new_regions=$REGIONS" >> $GITHUB_OUTPUT
+          echo "cache_hits=${{ steps.cache-check.outputs.cache_hits }}" >> $GITHUB_OUTPUT
+          echo "cache_misses=${{ steps.cache-check.outputs.cache_misses }}" >> $GITHUB_OUTPUT
+
+          # 如果有错误，打印详情
+          if [ "$ERRORS" -gt 0 ]; then
+            echo ""
+            echo "❌ 校验发现 $ERRORS 个错误："
+            python3 -c "
+          import json
+          d = json.load(open('/tmp/validation_result.json'))
+          for e in d.get('errors', []):
+              print(f'    {e}')
+          "
+          else
+            echo ""
+            echo "✅ 校验全部通过，零错误。"
+          fi
+
+          # 缓存核心原则声明
+          echo ""
+          echo "============================================"
+          echo "  缓存策略：已存在数据严禁重新生产"
+          echo "  命中缓存: ${{ steps.cache-check.outputs.cache_hits }} 个酒款保持不变"
+          echo "  数据缺口: ${{ steps.cache-check.outputs.cache_misses }} 个待 Hermes 补全"
+          echo "============================================"
+
+      - name: 上传校验结果
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-result
+          path: /tmp/validation_result.json
+          retention-days: 1
+
+  # ============================================================
+  # 阶段二：编排 + 质量审计（依赖校验通过）
+  # ============================================================
+  orchestrate:
+    name: 编排 + 质量审计
+    runs-on: ubuntu-latest
+    needs: validate
+    if: needs.validate.outputs.validation_status == 'PASS'
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装 Python 依赖
+        run: pip install jsonschema
+
+      # ----------------------------------------------------------
+      # 运行编排器
+      # ----------------------------------------------------------
+      - name: 运行编排器 (orchestrate.py)
+        id: orchestrate
+        run: |
+          echo "=== 运行数据管线编排器 ==="
+
+          python3 data_pipeline/orchestrate.py --ci 2>&1 || true
+
+          # 读取生成的 build_signal.json
+          if [ -f data_pipeline/build_signal.json ]; then
+            BUILD_READY=$(python3 -c "
+          import json
+          d = json.load(open('data_pipeline/build_signal.json', 'r', encoding='utf-8'))
+          print('true' if d.get('build_requested') else 'false')
+          ")
+            echo "build_ready=$BUILD_READY" >> $GITHUB_OUTPUT
+
+            # 打印信号摘要
+            python3 -c "
+          import json
+          d = json.load(open('data_pipeline/build_signal.json', 'r', encoding='utf-8'))
+          ds = d.get('data_summary', {})
+          print(f'  酒款总数: {ds.get(\"total_varieties\", 0)}/{ds.get(\"total_in_index\", 0)}')
+          print(f'  香型覆盖: {ds.get(\"aroma_types\", [])}')
+          print(f'  产区覆盖: {ds.get(\"regions\", [])}')
+          print(f'  构建就绪: {d.get(\"build_requested\")}')
+          print(f'  原因: {d.get(\"build_reason\", \"\")}')
+          "
+          else
+            echo "build_ready=false" >> $GITHUB_OUTPUT
+          fi
+
+      # ----------------------------------------------------------
+      # 质量审计
+      # ----------------------------------------------------------
+      - name: 运行质量审计 (quality_audit.py)
+        id: quality
+        run: |
+          echo "=== 运行质量蓄水审计 ==="
+
+          python3 data_pipeline/quality_audit.py --json 2>&1 || true
+
+          if [ -f data_pipeline/quality_report.json ]; then
+            echo "质量审计报告已生成"
+            python3 -c "
+          import json
+          d = json.load(open('data_pipeline/quality_report.json', 'r', encoding='utf-8'))
+          print(f'  Soft 404:  {d.get(\"soft404\", {}).get(\"candidates\", -1)} 候选')
+          completeness = d.get('completeness', {})
+          print(f'  数据完整性: {completeness.get(\"pass_rate\", \"N/A\")}')
+          links = d.get('links', {})
+          print(f'  内链可达性: {links.get(\"three_click_reach_rate\", \"N/A\")}')
+          "
+          fi
+
+      # ----------------------------------------------------------
+      # 检查是否有变更需要提交
+      # ----------------------------------------------------------
+      - name: 检查文件变更
+        id: git-check
+        run: |
+          git diff --name-only
+          CHANGED=$(git diff --name-only | grep -E '(build_signal\.json|STATUS\.md|quality_report\.json)' || true)
+          if [ -n "$CHANGED" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "变更文件: $CHANGED"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "无管线文件变更"
+          fi
+
+      - name: 提交管线状态变更
+        if: steps.git-check.outputs.has_changes == 'true'
+        run: |
+          git config user.name "Baijiu365 Pipeline Bot"
+          git config user.email "pipeline@baijiu365.com"
+          git add data_pipeline/build_signal.json data_pipeline/quality_report.json STATUS.md
+          git commit -m "pipeline: auto-update build signal & quality report [skip ci]"
+          git push
+
+      - name: 上传构建信号
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-signal
+          path: |
+            data_pipeline/build_signal.json
+            data_pipeline/quality_report.json
+          retention-days: 1
+
+  # ============================================================
+  # 阶段三：Astro 编译 + 部署
+  # ============================================================
+  build-and-deploy:
+    name: 编译 + 部署
+    runs-on: ubuntu-latest
+    needs: orchestrate
+    if: |
+      needs.orchestrate.result == 'success' &&
+      !inputs.skip_build
+    # 中转站 API 环境变量
+    env:
+      RELAY_API_ENDPOINT: ${{ secrets.RELAY_API_ENDPOINT }}
+      RELAY_API_TOKEN: ${{ secrets.RELAY_API_TOKEN }}
+    # 权限：GitHub Pages 部署
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: 安装依赖
+        run: npm ci
+
+      # ----------------------------------------------------------
+      # Astro 编译
+      # ----------------------------------------------------------
+      - name: Astro 编译
+        id: build
+        run: |
+          echo "=== Astro 静态站点编译 ==="
+          npm run build
+          echo "编译完成。产出目录：dist/"
+          ls -la dist/ | head -20
+
+      # ----------------------------------------------------------
+      # 编译后质量检查
+      # ----------------------------------------------------------
+      - name: 编译后 Soft 404 扫描
+        if: success()
+        run: |
+          pip install jsonschema
+          python3 data_pipeline/quality_audit.py --mode soft404 --json 2>&1 || true
+
+      # ----------------------------------------------------------
+      # 部署到 GitHub Pages
+      # ----------------------------------------------------------
+      - name: 配置 GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # ----------------------------------------------------------
+      # 中转站 API：触发 Codex 编译后任务
+      # ----------------------------------------------------------
+      - name: 中转站 API — 触发 Codex 编译后任务
+        id: relay-codex
+        if: success()
+        run: |
+          if [ -z "$RELAY_API_ENDPOINT" ]; then
+            echo "⏭️  中转站 API 未配置，跳过 Codex 触发。"
+            echo "skipped=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          if [ -z "$RELAY_API_TOKEN" ]; then
+            echo "⏭️  中转站 API Token 未配置，跳过 Codex 触发。"
+            echo "skipped=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "📡 调用中转站 API 触发 Codex 编译后任务..."
+          echo "   API Endpoint: $RELAY_API_ENDPOINT"
+          echo "   部署 URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "   新区检测: ${{ needs.validate.outputs.new_regions }}"
+
+          NEW_REGIONS="${{ needs.validate.outputs.new_regions }}"
+          if [ "$NEW_REGIONS" = "NONE" ]; then
+            NEW_REGIONS=""
+          fi
+
+          PAYLOAD=$(python3 -c "
+          import json
+          print(json.dumps({
+              'action': 'post_deploy_tasks',
+              'deploy_url': '${{ steps.deployment.outputs.page_url }}',
+              'new_regions': '$NEW_REGIONS'.split(',') if '$NEW_REGIONS' else [],
+              'total_varieties': ${{ needs.validate.outputs.total_varieties }},
+              'pipeline_run': '${{ github.run_id }}',
+              'tasks': ['update_homepage_regions', 'verify_sitemap', 'schema_injection_check']
+          }))
+          ")
+
+          HTTP_CODE=$(curl -s -o /tmp/codex_response.json -w '%{http_code}' \
+            --max-time 30 \
+            -X POST "$RELAY_API_ENDPOINT/codex/trigger" \
+            -H "Authorization: Bearer $RELAY_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" 2>/dev/null || echo "000")
+
+          if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "202" ]; then
+            echo "✅ 中转站 API 已接受 Codex 任务 (HTTP $HTTP_CODE)"
+            echo "   Codex 将异步执行：首页产区更新、Sitemap 校验、Schema 注入检查。"
+            echo "triggered=true" >> $GITHUB_OUTPUT
+          else
+            echo "⚠️  中转站 API 返回 HTTP $HTTP_CODE"
+            echo "   Codex 任务未触发，请手动执行编译后检查。"
+            echo "triggered=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 部署结果通知 + 生成执行摘要
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << 'SUMMARY_EOF'
+          ## 🍶 Baijiu365 数据管线 — 执行完成
+
+          | 指标 | 值 |
+          |------|-----|
+          | **数据校验** | ${{ needs.validate.outputs.validation_status }} |
+          | **酒款总数** | ${{ needs.validate.outputs.total_varieties }} |
+          | **缓存命中** | ${{ needs.validate.outputs.cache_hits }} 个（已存在，不重新生产） |
+          | **数据缺口** | ${{ needs.validate.outputs.cache_misses }} 个 |
+          | **新区检测** | ${{ needs.validate.outputs.new_regions }} |
+          | **部署 URL** | ${{ steps.deployment.outputs.page_url }} |
+
+          ### 中转站 API
+          > - Hermes 触发: ${{ steps.relay-codex.outputs.skipped == 'true' && '⏭️ 未配置' || '✅ 已触发' }}
+          > - Codex 触发: ${{ steps.relay-codex.outputs.triggered == 'true' && '✅ 已触发' || '⏭️ 未触发' }}
+          > - 未配置时管线正常工作，仅跳过远程 AI 任务触发。
+
+          ### 缓存策略
+          > ⚠️ **已存在的酒款 JSON 数据严禁重新生产。** 仅新入库酒款触发数据处理。
+
+          ### 下一步
+          - 如有数据缺口（cache_misses > 0），需要 Hermes 补全酒款 JSON 数据
+          - 如有新区检测，Codex 会在下次编译时更新首页产区索引
+          SUMMARY_EOF
+
+          echo "============================================"
+          echo "  Baijiu365 数据管线 — 执行完成"
+          echo "============================================"
+          echo "  校验状态:    ${{ needs.validate.outputs.validation_status }}"
+          echo "  酒款总数:    ${{ needs.validate.outputs.total_varieties }}"
+          echo "  缓存命中:    ${{ needs.validate.outputs.cache_hits }} (已存在，不重新生产)"
+          echo "  数据缺口:    ${{ needs.validate.outputs.cache_misses }}"
+          echo "  新区检测:    ${{ needs.validate.outputs.new_regions }}"
+          echo "  部署URL:     ${{ steps.deployment.outputs.page_url }}"
+          echo "============================================"
+
+  # ============================================================
+  # 阶段四（可选）：仅校验模式 — 不编译，用于日常健康检查
+  # ============================================================
+  health-check:
+    name: 日常健康检查
+    runs-on: ubuntu-latest
+    needs: validate
+    if: |
+      always() &&
+      needs.validate.result == 'success' &&
+      inputs.skip_build == true
+
+    steps:
+      - name: 健康检查报告
+        run: |
+          echo "============================================"
+          echo "  Baijiu365 健康检查报告"
+          echo "  (跳过编译，仅运行数据校验)"
+          echo "============================================"
+          echo "  校验状态:    ${{ needs.validate.outputs.validation_status }}"
+          echo "  酒款总数:    ${{ needs.validate.outputs.total_varieties }}"
+          echo "  缓存命中:    ${{ needs.validate.outputs.cache_hits }} (已存在，不重新生产)"
+          echo "  数据缺口:    ${{ needs.validate.outputs.cache_misses }}"
+          echo "  新区检测:    ${{ needs.validate.outputs.new_regions }}"
+          echo "============================================"
+          echo ""
+          if [ "${{ needs.validate.outputs.missing_count }}" != "0" ]; then
+            echo "⚠️  存在数据缺口，请等待 Hermes 补全数据。"
+          else
+            echo "✅ 数据完整，可随时触发编译。"
+          fi
+
+  # ============================================================
+  # 阶段五：最终汇总（始终运行）
+  # ============================================================
+  pipeline-summary:
+    name: 管线执行汇总
+    runs-on: ubuntu-latest
+    needs: [validate, orchestrate, build-and-deploy, health-check]
+    if: always()
+    steps:
+      - name: 生成管线汇总报告
+        run: |
+          cat >> $GITHUB_STEP_SUMMARY << 'SUMMARY_EOF'
+          # 🍶 Baijiu365 管线汇总
+
+          ## 阶段执行状态
+
+          | 阶段 | 状态 |
+          |------|------|
+          SUMMARY_EOF
+
+          # 校验阶段
+          if [ "${{ needs.validate.result }}" = "success" ]; then
+            echo "| ① 数据校验 + 缓存检查 | ✅ 通过 |" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.validate.result }}" = "skipped" ]; then
+            echo "| ① 数据校验 + 缓存检查 | ⏭️ 跳过 |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| ① 数据校验 + 缓存检查 | ❌ 失败 |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # 编排阶段
+          if [ "${{ needs.orchestrate.result }}" = "success" ]; then
+            echo "| ② 编排 + 质量审计 | ✅ 通过 |" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.orchestrate.result }}" = "skipped" ]; then
+            echo "| ② 编排 + 质量审计 | ⏭️ 跳过 |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| ② 编排 + 质量审计 | ⚠️ 未执行 |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # 编译部署阶段
+          if [ "${{ needs.build-and-deploy.result }}" = "success" ]; then
+            echo "| ③ 编译 + 部署 | ✅ 完成 |" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.build-and-deploy.result }}" = "skipped" ]; then
+            echo "| ③ 编译 + 部署 | ⏭️ 跳过 |" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.health-check.result }}" = "success" ]; then
+            echo "| ③ 编译 + 部署 | ⏭️ 跳过 (仅校验模式) |" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "| ③ 编译 + 部署 | ❌ 失败 |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # 最终状态
+          cat >> $GITHUB_STEP_SUMMARY << 'SUMMARY_EOF'
+
+          ---
+
+          ### 💡 缓存策略提醒
+          > **已存在的酒款 JSON 数据严禁重新生产。** 管线仅处理新入库的增量数据。如需强制全量重建，请使用 `workflow_dispatch` 手动触发。
+
+          SUMMARY_EOF

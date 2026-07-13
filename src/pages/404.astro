@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Page Not Found - Baijiu365';
+const description = 'The requested Baijiu365 page could not be found.';
+---
+<BaseLayout title={title} description={description} type="WebSite" noindex={true}>
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">404</p>
+      <h1>Page Not Found</h1>
+      <p class="lede">This URL does not match a published Baijiu365 guide.</p>
+    </div>
+  </header>
+  <section class="content">
+    <article>
+      <div class="decision-box">
+        <h2>Use a real guide instead</h2>
+        <p>Baijiu365 does not redirect unknown URLs to the homepage. Use the links below to continue with a valid page.</p>
+      </div>
+      <div class="next-links">
+        <a href="/baijiu-basics/">Start with Baijiu Basics</a>
+        <a href="/how-to-buy-baijiu-outside-china/">Check buying risks</a>
+      </div>
+    </article>
+  </section>
+</BaseLayout>
