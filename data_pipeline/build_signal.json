@@ -1,12 +1,12 @@
 {
   "$schema": "https://baijiu365.com/data_pipeline/schemas/build_signal.schema.json",
   "version": "1.0.0",
-  "last_validated": "2026-07-13T21:25:31.164326",
+  "last_validated": "2026-07-13T16:34:18.954247",
   "validation_status": "PASS",
   "validation_errors": 0,
   "validation_warnings": 0,
-  "build_requested": false,
-  "build_reason": "New regions detected: Shanxi, Anhui, Beijing, Hunan, Beijing, Shaanxi, Jiangsu",
+  "build_requested": true,
+  "build_reason": "All checks passed. Ready for Codex build.",
   "data_summary": {
     "total_varieties": 16,
     "total_in_index": 16,
@@ -49,17 +49,9 @@
     "files_missing": []
   },
   "region_update": {
-    "needed": true,
-    "new_regions": [
-      "Shanxi",
-      "Anhui",
-      "Beijing",
-      "Hunan",
-      "Beijing",
-      "Shaanxi",
-      "Jiangsu"
-    ],
-    "action": "Codex must update 首页产区索引卡片",
+    "needed": false,
+    "new_regions": [],
+    "action": "No region update needed",
     "current_known_regions": [
       "anhui",
       "beijing",
@@ -88,8 +80,8 @@
     "sitemap_regenerate": true,
     "rss_update": true,
     "internal_links_check": true,
-    "homepage_region_card_update": true,
-    "notes": "Run 'npm run build' after all missing variety JSON files are created and validation passes."
+    "homepage_region_card_update": false,
+    "notes": "All checks passed. Ready to build."
   },
   "known_regions": [
     "anhui",

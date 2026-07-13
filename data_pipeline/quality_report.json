@@ -1,62 +1,17 @@
 {
   "audit_type": "quality_accumulation_period",
-  "generated_at": "2026-07-13T22:17:33.033370",
+  "generated_at": "2026-07-13T16:34:19.081038",
   "project": "Baijiu365",
   "audit_period": "Week 1 — Quality Accumulation",
   "overall_status": "PASS",
   "soft_404_scan": {
-    "total_pages": 22,
+    "total_pages": 0,
     "soft_404_candidates": [],
-    "valid_pages": [
-      "index.html",
-      "about/index.html",
-      "affiliate-disclosure/index.html",
-      "baijiu-basics/index.html",
-      "baijiu-flavor-wheel/index.html",
-      "baijiu-vs-vodka/index.html",
-      "best-baijiu-for-beginners/index.html",
-      "brands/maotai/index.html",
-      "contact/index.html",
-      "editorial-policy/index.html",
-      "editorial-team/index.html",
-      "glossary/index.html",
-      "how-to-buy-baijiu-outside-china/index.html",
-      "how-to-drink-baijiu/index.html",
-      "how-to-spot-fake-maotai/index.html",
-      "privacy/index.html",
-      "terms/index.html",
-      "types-of-baijiu/index.html"
-    ],
+    "valid_pages": [],
     "broken_internal_links": [],
     "missing_404_targets": [],
-    "legacy_pages_detected": [
-      {
-        "path": "baijiu-vs-vodka/index.html",
-        "legacy_type": "blog",
-        "action": "Replace with /db/ data card or redirect to 404"
-      },
-      {
-        "path": "brands/maotai/index.html",
-        "legacy_type": "brand",
-        "action": "Replace with /db/ data card or redirect to 404"
-      },
-      {
-        "path": "how-to-buy-baijiu-outside-china/index.html",
-        "legacy_type": "blog",
-        "action": "Replace with /db/ data card or redirect to 404"
-      },
-      {
-        "path": "how-to-drink-baijiu/index.html",
-        "legacy_type": "blog",
-        "action": "Replace with /db/ data card or redirect to 404"
-      },
-      {
-        "path": "how-to-spot-fake-maotai/index.html",
-        "legacy_type": "blog",
-        "action": "Replace with /db/ data card or redirect to 404"
-      }
-    ],
-    "has_404_page": true
+    "legacy_pages_detected": [],
+    "error": "dist/ directory not found at /home/runner/work/baijiu365/baijiu365/dist. Run 'npm run build' first."
   },
   "data_completeness": {
     "total_varieties": 16,
@@ -350,8 +305,6 @@
     "unreachable": [],
     "reachability_rate": 100.0
   },
-  "link_graph_saved": "D:\\白酒独立站\\data_pipeline\\link_graph.json",
-  "action_items": [
-    "Replace 5 legacy blog/brand pages with /db/ data cards"
-  ]
+  "link_graph_saved": "/home/runner/work/baijiu365/baijiu365/data_pipeline/link_graph.json",
+  "action_items": []
 }
