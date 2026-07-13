@@ -1,0 +1,46 @@
+---
+import { ADSENSE_CLIENT_ID, ADSENSE_SLOTS } from '../config';
+
+interface Props {
+  slot: keyof typeof ADSENSE_SLOTS | string;
+  class?: string;
+}
+
+const { slot, class: className = '' } = Astro.props;
+const slotId = ADSENSE_SLOTS[slot as keyof typeof ADSENSE_SLOTS] ?? '';
+const isActive = ADSENSE_CLIENT_ID.trim() !== '' && slotId.trim() !== '';
+const placeholderClasses = ['ad-slot', className].filter(Boolean).join(' ');
+const activeClasses = ['adsbygoogle', className].filter(Boolean).join(' ');
+---
+
+{isActive ? (
+  <>
+    <ins
+      class={activeClasses}
+      style="display:block"
+      data-ad-client={ADSENSE_CLIENT_ID}
+      data-ad-slot={slotId}
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script is:inline>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </>
+) : (
+  <div class={placeholderClasses} aria-hidden="true">Ad slot (inactive)</div>
+)}
+
+<style>
+  .ad-slot {
+    display: flex;
+    min-height: 120px;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--line, #ddd6cb);
+    border-radius: 8px;
+    color: var(--muted, #695f55);
+    background: rgba(255, 255, 255, 0.42);
+    font-size: 13px;
+  }
+</style>

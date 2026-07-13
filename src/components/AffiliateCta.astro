@@ -1,0 +1,30 @@
+---
+interface Props {
+  placeholder: string;
+  label?: string;
+}
+
+const { placeholder, label = 'View offer' } = Astro.props;
+const isRealLink = /^https?:\/\//i.test(placeholder.trim());
+---
+
+{isRealLink && (
+  <a class="affiliate-cta" href={placeholder} rel="sponsored nofollow">
+    {label}
+  </a>
+)}
+
+<style>
+  .affiliate-cta {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: var(--red, #a72f24);
+    color: #fffdf8;
+    font-weight: 700;
+    text-decoration: none;
+  }
+</style>

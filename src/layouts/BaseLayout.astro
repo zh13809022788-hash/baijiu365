@@ -1,5 +1,6 @@
 ---
 import SeoJsonLd from '../components/SeoJsonLd.astro';
+import { ADSENSE_CLIENT_ID, SITE_URL } from '../config';
 
 interface Props {
   title: string;
@@ -13,6 +14,7 @@ interface Props {
   dateModified?: string;
   authorName?: string;
   authorUrl?: string;
+  jsonLd?: boolean;
 }
 
 const {
@@ -27,10 +29,11 @@ const {
   dateModified,
   authorName,
   authorUrl,
+  jsonLd = true,
 } = Astro.props;
-const siteUrl = 'https://baijiu365.com';
-const canonical = new URL(canonicalPath ?? Astro.url.pathname, siteUrl).toString();
-const socialImage = image ?? 'https://baijiu365.com/images/baijiu-field-guide.png';
+const canonical = new URL(canonicalPath ?? Astro.url.pathname, SITE_URL).toString();
+const socialImage = image ?? new URL('/images/baijiu-field-guide.png', SITE_URL).toString();
+const hasAdsenseClientId = ADSENSE_CLIENT_ID.trim() !== '';
 ---
 <!doctype html>
 <html lang="en">
@@ -50,17 +53,27 @@ const socialImage = image ?? 'https://baijiu365.com/images/baijiu-field-guide.pn
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
     <meta name="twitter:card" content="summary" />
-    <SeoJsonLd
-      type={type}
-      title={title}
-      description={description}
-      url={canonical}
-      image={socialImage}
-      datePublished={datePublished}
-      dateModified={dateModified}
-      authorName={authorName}
-      authorUrl={authorUrl}
-    />
+    {hasAdsenseClientId && <meta name="google-adsense-account" content={ADSENSE_CLIENT_ID} />}
+    {hasAdsenseClientId && (
+      <script
+        async
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
+        crossorigin="anonymous"
+      ></script>
+    )}
+    {jsonLd && (
+      <SeoJsonLd
+        type={type}
+        title={title}
+        description={description}
+        url={canonical}
+        image={socialImage}
+        datePublished={datePublished}
+        dateModified={dateModified}
+        authorName={authorName}
+        authorUrl={authorUrl}
+      />
+    )}
   </head>
   <body>
     <header class="site-header">
