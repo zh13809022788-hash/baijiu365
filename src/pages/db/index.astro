@@ -3,22 +3,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import fs from 'fs';
 import path from 'path';
 
-// Load all variety JSON files
 const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
 const files = fs.readdirSync(varietiesDir).filter(f => f.endsWith('.json'));
-const varieties = files.map(f => {
-  const data = JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8'));
-  return data;
-});
+const varieties = files.map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
+const sortedVarieties = [...varieties].sort((a, b) => a.name.localeCompare(b.name));
 
-// Group by aroma type
 const aromaGroups = {};
 for (const v of varieties) {
   if (!aromaGroups[v.aroma_type]) aromaGroups[v.aroma_type] = [];
   aromaGroups[v.aroma_type].push(v);
 }
 
-// Group by region
 const regionGroups = {};
 for (const v of varieties) {
   if (!regionGroups[v.region]) regionGroups[v.region] = [];
@@ -32,29 +27,54 @@ const aromaLabels = {
   te: 'Te Aroma', chi: 'Chi Aroma', la: 'La Aroma',
 };
 
-const title = 'Baijiu Database — 16 Varieties Across 6 Aroma Types | Baijiu365';
+const tierLabels = {
+  'ultra-premium': 'Ultra Premium',
+  premium: 'Premium',
+  mid: 'Mid-Range',
+  budget: 'Budget',
+};
+
+const featuredIds = ['maotai', 'wuliangye', 'fenjiu'];
+const featured = featuredIds.map(id => varieties.find(v => v.id === id)).filter(Boolean);
+const title = `Baijiu Database - ${varieties.length} Varieties Across ${Object.keys(aromaGroups).length} Aroma Types | Baijiu365`;
 const description = `Complete baijiu parameter database: ${varieties.length} varieties, ${Object.keys(aromaGroups).length} aroma types, ${Object.keys(regionGroups).length} producing regions. Every entry includes GB/T standards, ABV, ingredients, tasting notes, and buying guides.`;
 const keywords = ['baijiu database', 'baijiu varieties', 'baijiu parameters', 'GB/T baijiu standards', 'baijiu comparison'];
 ---
 
 <BaseLayout title={title} description={description} keywords={keywords} type="WebSite">
-  <section class="article-header">
-    <div class="wrap">
-      <p class="eyebrow">Baijiu Parameter Database</p>
-      <h1>Baijiu Database</h1>
-      <p class="lede">{varieties.length} varieties &middot; {Object.keys(aromaGroups).length} aroma types &middot; {Object.keys(regionGroups).length} producing regions &middot; Every entry verified against GB/T national standards.</p>
+  <section class="db-hero">
+    <div class="wrap db-hero-grid">
+      <div>
+        <p class="eyebrow">Baijiu Parameter Database</p>
+        <h1>Baijiu Database</h1>
+        <p class="lede">A structured reference for comparing Chinese baijiu by aroma type, region, GB/T standard, ABV, ingredients, price tier, and practical drinking context.</p>
+        <div class="actions">
+          <a class="button" href="/db/compare/">Compare varieties</a>
+          <a class="button secondary" href="/db/variety/maotai/">Open Maotai profile</a>
+        </div>
+      </div>
+      <div class="db-metrics" aria-label="Database coverage">
+        <span><strong>{varieties.length}</strong>Varieties</span>
+        <span><strong>{Object.keys(aromaGroups).length}</strong>Aroma types</span>
+        <span><strong>{Object.keys(regionGroups).length}</strong>Regions</span>
+        <span><strong>GB/T</strong>Standards</span>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <h2>Browse by Aroma Type</h2>
-      <div class="grid">
-        {Object.entries(aromaGroups).map(([type, items]) => (
-          <a class="card-link" href={`/db/aroma/${type}/`}>
-            <h3>{aromaLabels[type] || type}</h3>
-            <p>{items.length} varieties</p>
-            <span class="card-ids">{items.map(v => v.name_cn).join(' / ')}</span>
+      <div class="section-heading">
+        <h2>Start With A Benchmark</h2>
+        <p>These three profiles anchor the category: prestige sauce aroma, multi-grain strong aroma, and the clean light-aroma gateway.</p>
+      </div>
+      <div class="benchmark-grid">
+        {featured.map(v => (
+          <a class="benchmark-card" href={`/db/variety/${v.id}/`}>
+            <span class="benchmark-tag">{aromaLabels[v.aroma_type] || v.aroma_type}</span>
+            <h3>{v.name}</h3>
+            <p>{v.region} &middot; {v.abv_range} &middot; {v.gbt_standard}</p>
+            <small>{tierLabels[v.tier] || v.tier}</small>
           </a>
         ))}
       </div>
@@ -62,24 +82,45 @@ const keywords = ['baijiu database', 'baijiu varieties', 'baijiu parameters', 'G
   </section>
 
   <section class="section tight">
-    <div class="wrap">
-      <h2>Browse by Producing Region</h2>
-      <div class="region-grid">
-        {Object.entries(regionGroups).map(([region, items]) => (
-          <a class="region-card" href={`/db/region/${region.toLowerCase()}/`}>
-            <h3>{region}</h3>
-            <p>{items.length} {items.length === 1 ? 'variety' : 'varieties'}</p>
-          </a>
-        ))}
+    <div class="wrap db-browser">
+      <div class="browser-panel">
+        <div class="section-heading compact">
+          <h2>Browse By Aroma</h2>
+          <p>Use aroma type to predict intensity, texture, and whether a bottle is likely to feel clean, fruity, savory, or botanical.</p>
+        </div>
+        <div class="aroma-grid">
+          {Object.entries(aromaGroups).map(([type, items]) => (
+            <a class={`aroma-card aroma-${type}`} href={`/db/aroma/${type}/`}>
+              <span>{items.length} varieties</span>
+              <h3>{aromaLabels[type] || type}</h3>
+              <p>{items.map(v => v.name).join(' / ')}</p>
+            </a>
+          ))}
+        </div>
       </div>
+
+      <aside class="region-panel" aria-label="Browse by producing region">
+        <p class="eyebrow">Producing Regions</p>
+        <div class="region-list">
+          {Object.entries(regionGroups).sort(([a], [b]) => a.localeCompare(b)).map(([region, items]) => (
+            <a href={`/db/region/${region.toLowerCase()}/`}>
+              <span>{region}</span>
+              <small>{items.length} {items.length === 1 ? 'variety' : 'varieties'}</small>
+            </a>
+          ))}
+        </div>
+      </aside>
     </div>
   </section>
 
   <section class="section tight">
     <div class="wrap">
-      <h2>All Varieties</h2>
-      <div class="table-wrap">
-        <table>
+      <div class="section-heading">
+        <h2>All Varieties</h2>
+        <p>Scan the full database, then open a profile or send several bottles into the comparison tool.</p>
+      </div>
+      <div class="database-table-wrap">
+        <table class="database-table">
           <thead>
             <tr>
               <th>Variety</th>
@@ -91,14 +132,14 @@ const keywords = ['baijiu database', 'baijiu varieties', 'baijiu parameters', 'G
             </tr>
           </thead>
           <tbody>
-            {varieties.map(v => (
+            {sortedVarieties.map(v => (
               <tr>
-                <td><a href={`/db/variety/${v.id}/`}>{v.name} ({v.name_cn})</a></td>
+                <td><a class="variety-link" href={`/db/variety/${v.id}/`}>{v.name}</a></td>
                 <td><a href={`/db/aroma/${v.aroma_type}/`}>{aromaLabels[v.aroma_type] || v.aroma_type}</a></td>
                 <td>{v.abv_range}</td>
-                <td>{v.gbt_standard}</td>
+                <td><code>{v.gbt_standard}</code></td>
                 <td><a href={`/db/region/${v.region.toLowerCase()}/`}>{v.region}</a></td>
-                <td>{v.tier}</td>
+                <td><span class={`tier-pill tier-${v.tier}`}>{tierLabels[v.tier] || v.tier}</span></td>
               </tr>
             ))}
           </tbody>
@@ -109,41 +150,257 @@ const keywords = ['baijiu database', 'baijiu varieties', 'baijiu parameters', 'G
 </BaseLayout>
 
 <style>
-  .card-link {
-    display: block;
-    padding: 24px;
+  .db-hero {
+    padding: clamp(34px, 5vw, 58px) clamp(18px, 4vw, 44px);
+    background:
+      linear-gradient(90deg, rgba(24, 20, 18, 0.92), rgba(24, 20, 18, 0.74)),
+      url('/images/baijiu-field-guide.png') center / cover no-repeat;
+    color: #fffdf8;
+  }
+
+  .db-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr);
+    gap: clamp(28px, 6vw, 72px);
+    align-items: end;
+  }
+
+  .db-hero h1 {
+    max-width: 760px;
+    font-size: clamp(32px, 4.8vw, 54px);
+  }
+
+  .db-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    border: 1px solid rgba(255, 253, 248, 0.18);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(255, 253, 248, 0.16);
+  }
+
+  .db-metrics span {
+    min-height: 82px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+    background: rgba(24, 20, 18, 0.42);
+    color: rgba(255, 253, 248, 0.76);
+    font-size: 13px;
+  }
+
+  .db-metrics strong {
+    color: #fffdf8;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .benchmark-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .benchmark-card,
+  .aroma-card,
+  .region-list a {
+    border-radius: 8px;
+    text-decoration: none;
+  }
+
+  .benchmark-card {
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px;
+    border: 1px solid var(--line);
+    background: #fff;
+    box-shadow: 0 2px 0 rgba(32, 29, 26, 0.03);
+  }
+
+  .benchmark-card:hover,
+  .aroma-card:hover,
+  .region-list a:hover {
+    border-color: rgba(159, 47, 36, 0.46);
+    box-shadow: var(--shadow);
+  }
+
+  .benchmark-tag,
+  .benchmark-card small,
+  .aroma-card span {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .benchmark-card p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .db-browser {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .browser-panel,
+  .region-panel {
+    padding: clamp(16px, 3vw, 24px);
     border: 1px solid var(--line);
     border-radius: 8px;
-    background: var(--panel);
-    text-decoration: none;
-    color: var(--ink);
-    transition: border-color 0.2s;
+    background: #fff;
   }
-  .card-link:hover { border-color: var(--red); }
-  .card-link h3 { margin: 0 0 6px; font-size: 20px; }
-  .card-link p { margin: 0 0 10px; color: var(--red); font-weight: 700; font-size: 14px; }
-  .card-ids { font-size: 13px; color: var(--muted); }
 
-  .region-grid {
+  .section-heading.compact {
+    align-items: start;
+    margin-bottom: 20px;
+  }
+
+  .section-heading.compact h2 {
+    font-size: clamp(24px, 3vw, 34px);
+  }
+
+  .aroma-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
-  .region-card {
-    display: block;
+
+  .aroma-card {
+    min-height: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--panel);
-    text-decoration: none;
-    color: var(--ink);
-    text-align: center;
+    background: var(--panel-warm);
   }
-  .region-card:hover { border-color: var(--red); }
-  .region-card h3 { margin: 0 0 4px; font-size: 18px; }
-  .region-card p { margin: 0; font-size: 13px; color: var(--muted); }
+
+  .aroma-card h3 {
+    font-size: 20px;
+  }
+
+  .aroma-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .aroma-sauce { background: #fff7ef; }
+  .aroma-strong { background: #fff9df; }
+  .aroma-light { background: #eef8f5; }
+  .aroma-phoenix { background: #f3f4ff; }
+  .aroma-herbal { background: #eef5e9; }
+  .aroma-mixed { background: #f8eff2; }
+
+  .region-panel {
+    position: sticky;
+    top: 88px;
+  }
+
+  .region-panel .eyebrow {
+    color: var(--red);
+  }
+
+  .region-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .region-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    background: #fffaf1;
+  }
+
+  .region-list span {
+    font-weight: 800;
+  }
+
+  .region-list small {
+    color: var(--muted);
+  }
+
+  .database-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 0 rgba(32, 29, 26, 0.03);
+  }
+
+  .database-table {
+    width: 100%;
+    min-width: 820px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .database-table th {
+    padding: 13px 16px;
+    color: var(--muted);
+    background: #f4ead9;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .database-table td {
+    padding: 16px;
+  }
+
+  .database-table a {
+    color: var(--red);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .database-table .variety-link {
+    color: var(--ink);
+    font-size: 16px;
+  }
+
+  .database-table code {
+    padding: 4px 7px;
+    border-radius: 5px;
+    background: #f7f1e7;
+    color: var(--ink);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  }
+
+  .tier-pill {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: #f7f1e7;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .tier-ultra-premium,
+  .tier-premium { background: #fff1c8; color: #7a4d0b; }
+  .tier-mid { background: #e9f1f4; color: #244d5f; }
+  .tier-budget { background: #e8f4df; color: #34572d; }
 
   @media (max-width: 860px) {
-    .region-grid { grid-template-columns: repeat(2, 1fr); }
+    .db-hero-grid,
+    .benchmark-grid,
+    .db-browser,
+    .aroma-grid { grid-template-columns: 1fr; }
+    .region-panel { position: static; }
+    .db-metrics { grid-template-columns: 1fr; }
   }
 </style>

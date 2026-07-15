@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ToolsIndexContent from '../../components/ToolsIndexContent.astro';
+import { toolsHome } from '../../data/toolContent';
+const lang = 'en';
+const home = toolsHome[lang];
+---
+<BaseLayout title={`${home.title} | Baijiu365`} description={home.description} type="WebSite" lang="en">
+  <ToolsIndexContent lang={lang} />
+</BaseLayout>

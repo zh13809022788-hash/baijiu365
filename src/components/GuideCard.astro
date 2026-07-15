@@ -8,7 +8,8 @@ interface Props {
 const { href, title, text } = Astro.props;
 ---
 <article class="card">
+  <div class="card-kicker">Guide</div>
   <h3>{title}</h3>
   <p>{text}</p>
-  <a href={href}>Read guide</a>
+  <a href={href} aria-label={`Read guide: ${title}`}>Read guide <span aria-hidden="true">-></span></a>
 </article>

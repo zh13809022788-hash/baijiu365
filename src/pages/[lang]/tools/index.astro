@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ToolsIndexContent from '../../../components/ToolsIndexContent.astro';
+import { languages, toolsHome, type Lang } from '../../../data/toolContent';
+
+export function getStaticPaths() {
+  return (['zh-hant', 'ja', 'ru'] as Lang[]).map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Lang;
+const home = toolsHome[lang];
+---
+<BaseLayout title={`${home.title} | Baijiu365`} description={home.description} type="WebSite" lang={languages[lang].html}>
+  <ToolsIndexContent lang={lang} />
+</BaseLayout>

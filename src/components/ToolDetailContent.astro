@@ -1,0 +1,201 @@
+---
+import { common, getToolPath, languages, toolContent, type Lang, type ToolSlug } from '../data/toolContent';
+
+interface Props { lang: Lang; slug: ToolSlug }
+const { lang, slug } = Astro.props;
+const tool = toolContent[slug][lang];
+const c = common[lang];
+const widgetText = {
+  bestFor: 'Best for', related: 'Related reading', run: 'Get guidance', fullCompare: 'Open the full comparison table',
+  budget: 'Budget', scenario: 'Scenario', tolerance: 'Alcohol tolerance', channel: 'Buying channel', price: 'Price signal', packaging: 'Packaging claim', age: 'Age claim',
+  descriptors: 'Select tasting signals', standard: 'Choose style', result: 'Result',
+};
+---
+<section class="tool-hero">
+  <div class="wrap tool-hero-grid">
+    <div>
+      <p class="eyebrow"><a href={getToolPath(lang)}>{c.tools}</a> &rsaquo; {tool.eyebrow}</p>
+      <h1>{tool.h1}</h1>
+      <p class="lede">{tool.lede}</p>
+    </div>
+    <div class="language-panel" aria-label="Tool languages">
+      {Object.entries(languages).map(([code, item]) => (
+        <a class={code === lang ? 'active' : ''} href={`${item.prefix}/tools/${slug}/`}>{item.label}</a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section tool-body">
+  <div class="wrap tool-layout">
+    <article class="tool-widget" data-tool={slug}>
+      {slug === 'first-bottle-recommender' && (
+        <form class="tool-form" data-widget="first-bottle">
+          <label>{widgetText.budget}<select name="budget"><option value="low">Under $30</option><option value="mid">$30-100</option><option value="high">$100+</option></select></label>
+          <label>{widgetText.scenario}<select name="scenario"><option value="learn">Learning</option><option value="dinner">Dinner</option><option value="gift">Gift</option></select></label>
+          <label>{widgetText.tolerance}<select name="tolerance"><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option></select></label>
+          <button type="submit">{widgetText.run}</button>
+        </form>
+      )}
+
+      {slug === 'authenticity-risk-checker' && (
+        <form class="tool-form" data-widget="risk">
+          <label>{widgetText.channel}<select name="channel"><option value="official">Official or trusted importer</option><option value="marketplace">Marketplace seller</option><option value="private">Private seller</option></select></label>
+          <label>{widgetText.price}<select name="price"><option value="normal">Normal market range</option><option value="cheap">Much cheaper than market</option><option value="unknown">Cannot verify market price</option></select></label>
+          <label>{widgetText.packaging}<select name="packaging"><option value="plain">Normal current packaging</option><option value="gift">Luxury gift box emphasis</option><option value="odd">Odd label or unclear edition</option></select></label>
+          <label>{widgetText.age}<select name="age"><option value="none">No age claim</option><option value="clear">Clear vintage or batch documentation</option><option value="vague">Vague old bottle claim</option></select></label>
+          <button type="submit">{widgetText.run}</button>
+        </form>
+      )}
+
+      {slug === 'aroma-identifier' && (
+        <form class="tool-form checkbox-form" data-widget="aroma">
+          <fieldset>
+            <legend>{widgetText.descriptors}</legend>
+            <label><input type="checkbox" name="note" value="sauce" /> Soy, roasted grain, savory, fermented</label>
+            <label><input type="checkbox" name="note" value="strong" /> Ripe fruit, pit aroma, rich sweetness</label>
+            <label><input type="checkbox" name="note" value="light" /> Clean grain, pear, floral, crisp</label>
+            <label><input type="checkbox" name="note" value="herbal" /> Herbs, medicine, botanical spice</label>
+            <label><input type="checkbox" name="note" value="rice" /> Rice, light sweetness, soft finish</label>
+          </fieldset>
+          <button type="submit">{widgetText.run}</button>
+        </form>
+      )}
+
+      {slug === 'baijiu-compare' && (
+        <div class="compare-launch">
+          <p>{tool.description}</p>
+          <a class="button dark" href="/db/compare/#maotai,wuliangye">Maotai vs Wuliangye</a>
+          <a class="button outline" href="/db/compare/#fenjiu,hongxing,niulanshan">Fenjiu vs Hongxing vs Niulanshan</a>
+          <a class="button outline" href="/db/compare/">{widgetText.fullCompare}</a>
+        </div>
+      )}
+
+      {slug === 'gbt-standard-lookup' && (
+        <form class="tool-form" data-widget="gbt">
+          <label>{widgetText.standard}<select name="style"><option value="sauce">Sauce aroma</option><option value="strong">Strong aroma</option><option value="light">Light aroma</option><option value="rice">Rice aroma</option><option value="phoenix">Phoenix aroma</option><option value="mixed">Mixed aroma</option></select></label>
+          <button type="submit">{widgetText.run}</button>
+        </form>
+      )}
+
+      <div class="tool-result" aria-live="polite">
+        <p class="result-kicker">{widgetText.result}</p>
+        <h2>{c.result}</h2>
+        <p>{c.note}</p>
+      </div>
+    </article>
+
+    <aside class="tool-sidebar">
+      <section>
+        <h2>{widgetText.bestFor}</h2>
+        <ul>{tool.bestFor.map(item => <li>{item}</li>)}</ul>
+      </section>
+      <section>
+        <h2>{widgetText.related}</h2>
+        <div class="related-list">
+          {tool.related.map(item => <a href={item.href}>{item.label}</a>)}
+        </div>
+      </section>
+    </aside>
+  </div>
+</section>
+
+<script define:vars={{ lang }}>
+  const result = document.querySelector('.tool-result');
+  const copy = {
+    first: {
+      low: 'Start with Fenjiu or another clean light-aroma bottle. Keep the first pour small and drink with food.',
+      mid: 'Look at Fenjiu, Yanghe, Gujinggong, or a moderate strong-aroma bottle before jumping to prestige labels.',
+      high: 'If this is a gift, choose a recognized benchmark. If it is for learning, spend less and taste across styles.'
+    },
+    risk: ['Low visible risk, but still verify importer, seal, batch, and seller return policy.', 'Moderate risk. Ask for more documentation before buying.', 'High risk. Avoid unless provenance is unusually strong.'],
+    aroma: {
+      sauce: 'Most consistent with sauce aroma: savory, roasted, fermented, complex.',
+      strong: 'Most consistent with strong aroma: fruit-rich, rounded, and pit-fermented.',
+      light: 'Most consistent with light aroma: clean, grain-forward, floral, crisp.',
+      herbal: 'Most consistent with herbal aroma: botanical, medicinal, spiced.',
+      rice: 'Most consistent with rice aroma: soft, rice-sweet, lighter body.'
+    },
+    gbt: {
+      sauce: 'GB/T 26760 is commonly associated with sauce-aroma baijiu. Maotai also uses GB/T 18356 as a geographic indication standard.',
+      strong: 'GB/T 10781.1 is the common strong-aroma baijiu standard.',
+      light: 'GB/T 10781.2 is the common light-aroma baijiu standard.',
+      rice: 'GB/T 10781.3 is the common rice-aroma baijiu standard.',
+      phoenix: 'GB/T 14867 is associated with phoenix-aroma baijiu.',
+      mixed: 'Mixed aroma can involve GB/T 23547 or producer-specific standards; inspect the exact label.'
+    }
+  };
+
+  function setResult(title, text) {
+    if (!result) return;
+    result.innerHTML = `<p class="result-kicker">${title}</p><h2>${title}</h2><p>${text}</p>`;
+  }
+
+  document.querySelectorAll('.tool-form').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+
+      if (form.dataset.widget === 'first-bottle') {
+        const budget = data.get('budget');
+        setResult('Recommendation', copy.first[budget] || copy.first.mid);
+      }
+
+      if (form.dataset.widget === 'risk') {
+        let score = 0;
+        if (data.get('channel') === 'marketplace') score += 1;
+        if (data.get('channel') === 'private') score += 2;
+        if (data.get('price') === 'cheap') score += 2;
+        if (data.get('price') === 'unknown') score += 1;
+        if (data.get('packaging') === 'gift') score += 1;
+        if (data.get('packaging') === 'odd') score += 2;
+        if (data.get('age') === 'vague') score += 2;
+        const index = score >= 5 ? 2 : score >= 2 ? 1 : 0;
+        setResult(['Low risk', 'Moderate risk', 'High risk'][index], copy.risk[index]);
+      }
+
+      if (form.dataset.widget === 'aroma') {
+        const notes = data.getAll('note');
+        const winner = notes[0] || 'light';
+        setResult('Likely direction', copy.aroma[winner]);
+      }
+
+      if (form.dataset.widget === 'gbt') {
+        const style = data.get('style') || 'sauce';
+        setResult('GB/T reference', copy.gbt[style]);
+      }
+    });
+  });
+</script>
+
+<style>
+  .tool-hero { padding: clamp(32px, 5vw, 54px) clamp(18px, 4vw, 44px) clamp(24px, 4vw, 36px); border-bottom: 1px solid var(--line); background: #181412; color: #fffdf8; }
+  .tool-hero-grid, .tool-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 0.32fr); gap: clamp(20px, 4vw, 42px); align-items: start; }
+  .tool-hero h1 { max-width: 920px; font-size: clamp(30px, 4.5vw, 52px); }
+  .tool-hero .eyebrow a { color: inherit; text-decoration: none; }
+  .language-panel { display: grid; gap: 8px; }
+  .language-panel a { min-height: 42px; display: flex; align-items: center; padding: 9px 12px; border: 1px solid rgba(255, 253, 248, 0.2); border-radius: 6px; color: rgba(255, 253, 248, 0.78); text-decoration: none; }
+  .language-panel a.active, .language-panel a:hover { background: #fffdf8; color: var(--ink); }
+  .tool-body { padding-top: 34px; }
+  .tool-widget, .tool-sidebar section { border: 1px solid var(--line); border-radius: 8px; background: #fff; box-shadow: 0 2px 0 rgba(32, 29, 26, 0.03); }
+  .tool-widget { overflow: hidden; }
+  .tool-form, .compare-launch { display: grid; gap: 16px; padding: clamp(16px, 3vw, 24px); border-bottom: 1px solid var(--line); }
+  .tool-form label, .tool-form fieldset { display: grid; gap: 8px; margin: 0; color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; }
+  .tool-form select { min-height: 40px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: #fffaf1; color: var(--ink); font: inherit; text-transform: none; }
+  .tool-form button, .button.dark, .button.outline { width: fit-content; min-height: 38px; padding: 10px 16px; border-radius: 6px; font: inherit; font-weight: 900; text-decoration: none; cursor: pointer; }
+  .tool-form button, .button.dark { border: 1px solid var(--ink); background: var(--ink); color: #fffdf8; }
+  .button.outline { border: 1px solid var(--line); background: #fff; color: var(--red); }
+  .checkbox-form fieldset { border: 0; padding: 0; }
+  .checkbox-form label { display: flex; flex-direction: row; align-items: center; min-height: 38px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; background: #fffaf1; color: var(--ink); text-transform: none; }
+  .tool-result { padding: clamp(16px, 3vw, 24px); background: #fffaf1; }
+  .result-kicker { margin: 0 0 8px; color: var(--red); font-size: 12px; font-weight: 900; text-transform: uppercase; }
+  .tool-result h2 { font-size: clamp(22px, 3vw, 32px); }
+  .tool-result p:last-child { color: var(--muted); }
+  .tool-sidebar { display: grid; gap: 16px; }
+  .tool-sidebar section { padding: 20px; }
+  .tool-sidebar h2 { font-size: 22px; }
+  .tool-sidebar li { margin: 8px 0; }
+  .related-list { display: grid; gap: 10px; }
+  .related-list a { padding: 11px 12px; border: 1px solid var(--line); border-radius: 6px; color: var(--red); font-weight: 800; text-decoration: none; }
+  @media (max-width: 860px) { .tool-hero-grid, .tool-layout { grid-template-columns: 1fr; } }
+</style>

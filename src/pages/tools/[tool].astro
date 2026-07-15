@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ToolDetailContent from '../../components/ToolDetailContent.astro';
+import { toolContent, toolSlugs, type ToolSlug } from '../../data/toolContent';
+
+export function getStaticPaths() {
+  return toolSlugs.map((tool) => ({ params: { tool } }));
+}
+
+const lang = 'en';
+const slug = Astro.params.tool as ToolSlug;
+const tool = toolContent[slug][lang];
+---
+<BaseLayout title={`${tool.title} | Baijiu365`} description={tool.description} type="WebSite" lang="en">
+  <ToolDetailContent lang={lang} slug={slug} />
+</BaseLayout>
