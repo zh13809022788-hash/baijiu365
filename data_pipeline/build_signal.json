@@ -1,7 +1,7 @@
 {
   "$schema": "https://baijiu365.com/data_pipeline/schemas/build_signal.schema.json",
   "version": "1.0.0",
-  "last_validated": "2026-09-30T02:30:35.040759",
+  "last_validated": "2026-10-01T02:32:25.154991",
   "validation_status": "PASS",
   "validation_errors": 0,
   "validation_warnings": 0,
