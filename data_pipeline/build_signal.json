@@ -1,10 +1,10 @@
 {
   "$schema": "https://baijiu365.com/data_pipeline/schemas/build_signal.schema.json",
   "version": "1.0.0",
-  "last_validated": "2026-10-11T02:18:56.708816",
+  "last_validated": "2026-10-12T02:43:10.664028",
   "validation_status": "PASS",
   "validation_errors": 0,
-  "validation_warnings": 0,
+  "validation_warnings": 16,
   "build_requested": true,
   "build_reason": "All checks passed. Ready for Codex build.",
   "data_summary": {
