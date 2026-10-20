@@ -1,286 +1,296 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import GuideCard from '../components/GuideCard.astro';
+import fs from 'fs';
+import path from 'path';
 
-const title = 'Baijiu365 - Baijiu Guides, Tools, Regions, and Database';
+const title = 'Baijiu365 — Baijiu Guides, Tools, Regions, and Database';
 const description = 'Baijiu365 is an independent baijiu information and tools site covering aroma types, buying risk, beginner bottles, tasting language, regions, and structured bottle data.';
 const keywords = [
   'baijiu guide', 'Chinese baijiu', 'baijiu aroma types',
   'baijiu buying guide', 'Maotai guide', 'Wuliangye', 'Fenjiu',
   'baijiu for beginners', 'Chinese spirits', 'baijiu database'
 ];
+
+const varietiesDir = path.resolve(process.cwd(), 'data_pipeline/varieties');
+const allVarieties = fs.readdirSync(varietiesDir)
+  .filter(f => f.endsWith('.json'))
+  .map(f => JSON.parse(fs.readFileSync(path.join(varietiesDir, f), 'utf-8')));
+const featuredIds = ['maotai', 'wuliangye', 'fenjiu'];
+const featured = featuredIds.map(id => allVarieties.find(v => v.id === id)).filter(Boolean);
+
+const aromas = [
+  {
+    key: 'sauce', name: 'Sauce Aroma', cn: '酱香', img: '/images/aroma-sauce.webp',
+    text: 'Savory, umami-driven, the most intense style. Multiple fermentation cycles over a full year.',
+  },
+  {
+    key: 'strong', name: 'Strong Aroma', cn: '浓香', img: '/images/aroma-strong.webp',
+    text: 'Fruity, cellar-influenced, the most widely consumed style in China. Aged mud pits.',
+  },
+  {
+    key: 'light', name: 'Light Aroma', cn: '清香', img: '/images/aroma-light.webp',
+    text: 'Clean, grain-forward, the easiest entry point. Ceramic jar fermentation.',
+  },
+  {
+    key: 'phoenix', name: 'Phoenix Aroma', cn: '凤香', img: '/images/aroma-phoenix.webp',
+    text: 'Unique to Shaanxi. A hybrid style with a distinctive sweet-sour finish.',
+  },
+  {
+    key: 'herbal', name: 'Herbal Aroma', cn: '董香', img: '/images/aroma-herbal.webp',
+    text: 'Medicinal herbs in production. Rare and acquired, with Dongjiu as the benchmark.',
+  },
+  {
+    key: 'mixed', name: 'Mixed Aroma', cn: '兼香', img: '/images/aroma-mixed.webp',
+    text: 'Layered complexity from combined fermentation techniques, led by Jiugui.',
+  },
+];
+
+const guides = [
+  {
+    href: '/baijiu-basics/', kicker: 'Start here', title: 'Baijiu Basics',
+    text: 'What baijiu is, why it is not vodka, how aroma types work, and why one bad banquet glass should not define the category.',
+    img: '/images/hero-bottle.webp', alt: 'White porcelain baijiu bottle beside a tasting cup',
+  },
+  {
+    href: '/best-baijiu-for-beginners/', kicker: 'First bottle', title: 'Choose Your First Bottle',
+    text: 'Pick a bottle by occasion, aroma type, alcohol strength, and budget instead of prestige alone.',
+    img: '/images/variety-fenjiu.webp', alt: 'Light-aroma style baijiu bottle',
+  },
+  {
+    href: '/how-to-drink-baijiu/', kicker: 'Serving', title: 'How To Drink It',
+    text: 'Small pours, food pairing, pacing, glassware, banquet etiquette, and ways to avoid turning baijiu into a dare.',
+    img: '/images/craft-tasting.webp', alt: 'Small porcelain baijiu tasting cups on a dark table',
+  },
+  {
+    href: '/how-to-buy-baijiu-outside-china/', kicker: 'Buying', title: 'Buying Outside China',
+    text: 'What to check before buying abroad: importer labels, price signals, gift boxes, and marketplace listings.',
+    img: '/images/og-cover.webp', alt: 'Baijiu bottle and cup in warm light',
+  },
+  {
+    href: '/how-to-spot-fake-maotai/', kicker: 'Risk', title: 'Spot Fake Maotai',
+    text: 'A risk-first guide to counterfeits, refilled bottles, development products, vintage claims, and price signals.',
+    img: '/images/variety-maotai.webp', alt: 'Sauce-aroma style baijiu bottle with red ribbon',
+  },
+  {
+    href: '/baijiu-flavor-wheel/', kicker: 'Tasting', title: 'Name The Flavor',
+    text: 'A tasting vocabulary for grain, fruit, floral, savory, fermented notes, heat, texture, and finish.',
+    img: '/images/aroma-strong.webp', alt: 'Golden baijiu glass with layered amber tones',
+  },
+];
+
+const tools = [
+  { href: '/tools/first-bottle-recommender/', name: 'First Bottle', text: 'Choose a sensible starting bottle', num: 'I' },
+  { href: '/tools/authenticity-risk-checker/', name: 'Risk Checker', text: 'Flag high-price buying risks', num: 'II' },
+  { href: '/tools/aroma-identifier/', name: 'Aroma Identifier', text: 'Match tasting notes to style', num: 'III' },
+  { href: '/tools/gbt-standard-lookup/', name: 'GB/T Lookup', text: 'Read standards on labels', num: 'IV' },
+];
 ---
+
 <BaseLayout title={title} description={description} keywords={keywords} type="WebSite">
-  <section class="news-home">
-    <div class="wrap home-grid">
-      <article class="lead-story">
-        <p class="eyebrow">Field Guide</p>
-        <h1>Baijiu, explained by style, region, bottle, and buying risk.</h1>
-        <p class="lede">A practical reference site for Chinese baijiu: learn the category, compare benchmark bottles, check risky listings, and use tools before you buy or pour.</p>
-        <div class="lead-links">
-          <a href="/baijiu-basics/">Start with baijiu basics</a>
-          <a href="/types-of-baijiu/">Read the aroma guide</a>
-          <a href="/tools/">Open the tools</a>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <video
+        data-autoplay
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/images/hero-pour.webp"
+      >
+        <source src="/video/hero-pour.mp4" type="video/mp4" />
+        <img src="/images/hero-pour.webp" alt="" />
+      </video>
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow">The English-language field guide</p>
+      <h1 class="hero-title">Baijiu, explained by <em>style</em>, region, bottle, and <span class="cn">醇</span> risk.</h1>
+      <p class="lede">A practical reference for Chinese baijiu: learn the category, compare benchmark bottles, check risky listings, and use the tools before you buy or pour.</p>
+      <div class="actions">
+        <a class="button" href="/baijiu-basics/">Start with baijiu basics</a>
+        <a class="button secondary" href="/db/">Explore the database</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>{allVarieties.length}</strong><span>Benchmark varieties</span></div>
+        <div><strong>6</strong><span>Aroma types</span></div>
+        <div><strong>8</strong><span>Producing regions</span></div>
+        <div><strong>GB/T</strong><span>Standard codes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aroma types -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Six aroma types</p>
+          <h2>Read baijiu by style, not by bottle shape.</h2>
         </div>
-      </article>
-
-      <aside class="home-sidebar" aria-label="Essential baijiu tools">
-        <p class="sidebar-title">Tools</p>
-        <a href="/tools/first-bottle-recommender/"><strong>First Bottle</strong><span>Choose a sensible starting bottle</span></a>
-        <a href="/tools/authenticity-risk-checker/"><strong>Risk Checker</strong><span>Flag high-price buying risks</span></a>
-        <a href="/tools/aroma-identifier/"><strong>Aroma Identifier</strong><span>Match tasting notes to style</span></a>
-        <a href="/tools/gbt-standard-lookup/"><strong>GB/T Lookup</strong><span>Read standards on labels</span></a>
-      </aside>
+        <p>Sauce, strong, light, phoenix, herbal, and mixed. Aroma type predicts flavor, intensity, difficulty, and the right bottle for the occasion.</p>
+      </div>
+      <div class="aroma-grid">
+        {aromas.map(a => (
+          <a class="aroma-card reveal" href={`/db/aroma/${a.key}/`}>
+            <img src={a.img} alt={`${a.name} baijiu`} loading="lazy" width="900" height="900" />
+            <div class="aroma-card-body">
+              <p class="kicker">{a.cn} &middot; {a.name.split(' ')[0]}</p>
+              <h3>{a.name}</h3>
+              <p>{a.text}</p>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="section home-band">
-    <div class="wrap four-up">
-      <a href="/baijiu-basics/"><span>Learn</span><strong>Category basics</strong><small>Ingredients, proof, etiquette, and common mistakes.</small></a>
-      <a href="/types-of-baijiu/"><span>Aroma</span><strong>Style map</strong><small>Sauce, strong, light, rice, phoenix, herbal, mixed.</small></a>
-      <a href="/how-to-buy-baijiu-outside-china/"><span>Buying</span><strong>Risk guide</strong><small>Importer labels, pricing, gift boxes, and refill risk.</small></a>
-      <a href="/db/"><span>Database</span><strong>Bottle reference</strong><small>GB/T, ABV, region, raw materials, tasting notes.</small></a>
+  <!-- Craft / cellar -->
+  <section class="section" style="background:linear-gradient(180deg,var(--ink-950),var(--ink-900));">
+    <div class="wrap">
+      <div class="craft-split">
+        <div class="craft-media reveal">
+          <video data-autoplay autoplay muted loop playsinline preload="metadata" poster="/images/craft-aging.webp">
+            <source src="/video/craft-cellar.mp4" type="video/mp4" />
+            <img src="/images/craft-aging.webp" alt="Traditional baijiu aging cellar with clay jars" />
+          </video>
+        </div>
+        <div class="reveal">
+          <p class="eyebrow">From grain to glass</p>
+          <h2>Fermentation is the whole story.</h2>
+          <p class="lede">Baijiu is not distilled vodka. Grain, qu starter, pits, jars, and time create the aroma compounds before the still ever runs. This is why the same base spirit can taste like tropical fruit, roasted grain, or fermented bean paste.</p>
+          <ul class="process-steps">
+            <li>
+              <span class="step-num">1</span>
+              <div><strong>Qu starter</strong><p>Grain is seeded with a solid fermentation starter that supplies the microbes shaping aroma.</p></div>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <div><strong>Pit or jar fermentation</strong><p>Mud pits, stone cellars, or ceramic jars decide which microbes thrive and which aromas dominate.</p></div>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <div><strong>Solid-state distillation</strong><p>Steamed grain is distilled in solid form, concentrating flavor rather than stripping it away.</p></div>
+            </li>
+            <li>
+              <span class="step-num">4</span>
+              <div><strong>Aging and blending</strong><p>Clay jars and years of rest soften heat and round the finish before bottling.</p></div>
+            </li>
+          </ul>
+          <div class="actions">
+            <a class="button" href="/types-of-baijiu/">Read the aroma guide</a>
+            <a class="button secondary" href="/baijiu-vs-vodka/">Baijiu vs vodka</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Guides -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Guides by question</p>
+          <h2>Practical answers, not a brand brochure.</h2>
+        </div>
+        <p>Use these when you have a practical problem: choosing, serving, buying, tasting, or verifying a bottle.</p>
+      </div>
+      <div class="guide-grid">
+        {guides.map(g => (
+          <a class="guide-card-media reveal" href={g.href}>
+            <div class="thumb"><img src={g.img} alt={g.alt} loading="lazy" width="900" height="563" /></div>
+            <div class="body">
+              <p class="kicker">{g.kicker}</p>
+              <h3>{g.title}</h3>
+              <p>{g.text}</p>
+              <span class="more">Read guide <span aria-hidden="true">&rarr;</span></span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Database benchmarks -->
+  <section class="section" style="background:linear-gradient(180deg,var(--ink-900),var(--ink-950));">
+    <div class="wrap">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Baijiu parameter database</p>
+          <h2>Compare baijiu by hard data, not marketing.</h2>
+        </div>
+        <p>{allVarieties.length} varieties across 6 aroma types and 8 producing regions. Every entry includes verified GB/T standard codes, ABV ranges, raw ingredient lists, tasting notes, and price-tiered buying guidance.</p>
+      </div>
+      <div class="variety-grid">
+        {featured.map(v => (
+          <a class="variety-card reveal" href={`/db/variety/${v.id}/`}>
+            <div class="bottle"><img src={`/images/variety-${v.id}.webp`} alt={`${v.name} style bottle`} loading="lazy" width="700" height="875" /></div>
+            <div class="body">
+              <h3>{v.name} <span class="cn">{v.name_cn}</span></h3>
+              <p class="meta">{v.abv_range} &middot; {v.gbt_standard} &middot; {v.region}</p>
+            </div>
+          </a>
+        ))}
+        <a class="variety-card reveal" href="/db/">
+          <div class="bottle" style="display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;padding:24px;">
+              <span style="font-family:var(--serif);font-size:44px;color:var(--gold-300);">{allVarieties.length}</span>
+              <p style="margin:6px 0 0;color:var(--muted-on-dark);font-size:13.5px;">varieties in the database</p>
+              <span class="more" style="margin-top:14px;">Browse all <span aria-hidden="true">&rarr;</span></span>
+            </div>
+          </div>
+          <div class="body">
+            <h3>Full Database</h3>
+            <p class="meta">Aroma &middot; Region &middot; Compare</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote band -->
+  <section class="quote-band">
+    <div class="bg" aria-hidden="true"><img src="/images/region-river.webp" alt="" loading="lazy" width="1600" height="1024" /></div>
+    <div class="wrap">
+      <blockquote class="reveal">
+        <span class="cn">酒是陈的香</span> &mdash; the liquor improves with age, and the region writes the recipe before the cellar does.
+      </blockquote>
+      <cite>Baijiu365 field guide</cite>
+    </div>
+  </section>
+
+  <!-- Tools + CTA -->
   <section class="section tight">
-    <div class="wrap content-layout">
-      <main class="content-main">
-        <div class="section-heading compact-heading">
-          <h2>Guides By Question</h2>
-          <p>Use these when you have a practical problem, not when you want a brand brochure.</p>
+    <div class="wrap">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Decision tools</p>
+          <h2>Use the site by decision.</h2>
         </div>
-        <div class="guide-list">
-          <GuideCard href="/best-baijiu-for-beginners/" title="What should I try first?" text="Bottle guidance by occasion, budget, palate, and alcohol tolerance without pretending prestige equals suitability." />
-          <GuideCard href="/how-to-drink-baijiu/" title="How should I serve it?" text="Small pours, food pairing, pacing, glassware, banquet etiquette, and ways to avoid turning baijiu into a dare." />
-          <GuideCard href="/how-to-spot-fake-maotai/" title="Is this expensive bottle risky?" text="Counterfeit, refill, vintage, development-product, and price signals to check before spending." />
-          <GuideCard href="/baijiu-flavor-wheel/" title="How do I describe the flavor?" text="A tasting vocabulary for grain, fruit, floral, savory, fermented, heat, texture, and finish." />
-          <GuideCard href="/baijiu-vs-vodka/" title="Why is it not vodka?" text="Fermentation character, distillation strength, aroma compounds, serving context, and category intent." />
-        </div>
-      </main>
+        <p>Four small tools for the four questions that come up before a first pour or an overseas order.</p>
+      </div>
+      <div class="tools-strip">
+        {tools.map(t => (
+          <a class="tool-tile reveal" href={t.href}>
+            <span class="num">{t.num}</span>
+            <strong>{t.name}</strong>
+            <span>{t.text}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
 
-      <aside class="content-side">
-        <section class="side-block">
-          <h2>Database Benchmarks</h2>
-          <a href="/db/variety/maotai/"><span>Maotai</span><small>Sauce aroma / Guizhou / GB/T 18356</small></a>
-          <a href="/db/variety/wuliangye/"><span>Wuliangye</span><small>Five-grain strong aroma benchmark</small></a>
-          <a href="/db/variety/fenjiu/"><span>Fenjiu</span><small>Clean light-aroma entry point</small></a>
-          <a href="/db/compare/"><span>Compare profiles</span><small>Put 2 or 3 bottles side by side</small></a>
-        </section>
-
-        <section class="side-block muted-block">
-          <h2>Editorial Position</h2>
-          <p>Baijiu365 treats baijiu as a regional spirit category, not a prestige leaderboard. The useful questions are style, source, serving context, risk, and whether the bottle fits the drinker.</p>
-          <a href="/editorial-policy/">Editorial policy</a>
-        </section>
-      </aside>
+  <section class="cta-band">
+    <div class="wrap">
+      <p class="eyebrow reveal">Independent guide</p>
+      <h2 class="reveal">Style first. Bottle second. Risk always.</h2>
+      <p class="reveal">Baijiu365 treats baijiu as a regional spirit category, not a prestige leaderboard. No paid placements, practical limits stated.</p>
+      <div class="actions reveal">
+        <a class="button" href="/db/">Open the database</a>
+        <a class="button secondary" href="/editorial-policy/">Editorial policy</a>
+      </div>
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .news-home {
-    padding: 30px clamp(18px, 4vw, 44px) 22px;
-    border-bottom: 1px solid var(--line);
-    background: #fffdf8;
-  }
-
-  .home-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.36fr);
-    gap: 28px;
-    align-items: stretch;
-  }
-
-  .lead-story {
-    min-height: 310px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    background:
-      linear-gradient(90deg, rgba(255, 253, 248, 0.98), rgba(255, 253, 248, 0.82)),
-      url('/images/baijiu-field-guide.png') right center / contain no-repeat;
-  }
-
-  .lead-story h1 {
-    max-width: 680px;
-    font-size: clamp(30px, 4.2vw, 46px);
-  }
-
-  .lead-story .lede {
-    max-width: 620px;
-  }
-
-  .lead-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
-  }
-
-  .lead-links a {
-    padding: 7px 10px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: #fff;
-    color: var(--red);
-    font-size: 13px;
-    font-weight: 800;
-    text-decoration: none;
-  }
-
-  .home-sidebar {
-    display: grid;
-    align-content: start;
-    border-top: 3px solid var(--ink);
-  }
-
-  .sidebar-title {
-    margin: 0;
-    padding: 12px 0 8px;
-    color: var(--red);
-    font-size: 11px;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-
-  .home-sidebar a {
-    display: block;
-    padding: 13px 0;
-    border-top: 1px solid var(--line);
-    text-decoration: none;
-  }
-
-  .home-sidebar strong {
-    display: block;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    line-height: 1.15;
-  }
-
-  .home-sidebar span {
-    display: block;
-    margin-top: 4px;
-    color: var(--muted);
-    font-size: 13px;
-  }
-
-  .home-band {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-    background: #f4ead9;
-  }
-
-  .four-up {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1px;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    overflow: hidden;
-    background: var(--line);
-  }
-
-  .four-up a {
-    min-height: 118px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 16px;
-    background: #fffdf8;
-    text-decoration: none;
-  }
-
-  .four-up span {
-    color: var(--red);
-    font-size: 11px;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
-
-  .four-up strong {
-    display: block;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 18px;
-    line-height: 1.12;
-  }
-
-  .four-up small {
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.45;
-  }
-
-  .content-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
-    gap: 28px;
-    align-items: start;
-  }
-
-  .compact-heading h2 {
-    font-size: clamp(22px, 2.4vw, 30px);
-  }
-
-  .guide-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .content-side {
-    display: grid;
-    gap: 16px;
-  }
-
-  .side-block {
-    padding: 18px;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    background: #fffdf8;
-  }
-
-  .side-block h2 {
-    font-size: 21px;
-  }
-
-  .side-block a {
-    display: block;
-    padding: 10px 0;
-    border-top: 1px solid var(--line);
-    text-decoration: none;
-  }
-
-  .side-block span {
-    display: block;
-    color: var(--ink);
-    font-weight: 900;
-  }
-
-  .side-block small,
-  .side-block p {
-    color: var(--muted);
-    font-size: 13px;
-  }
-
-  .muted-block {
-    background: #f6efe4;
-  }
-
-  .muted-block a {
-    color: var(--red);
-    font-weight: 900;
-  }
-
-  @media (max-width: 900px) {
-    .home-grid,
-    .content-layout,
-    .four-up,
-    .guide-list { grid-template-columns: 1fr; }
-    .lead-story { min-height: auto; background: #fffdf8; }
-  }
-</style>

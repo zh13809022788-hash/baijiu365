@@ -10,6 +10,11 @@ const aromaLabels = {
   te: 'Te Aroma', chi: 'Chi Aroma', la: 'La Aroma',
 };
 
+const aromaCn = {
+  sauce: '酱香', strong: '浓香', light: '清香', phoenix: '凤香', herbal: '董香', mixed: '兼香',
+  rice: '米香', sesame: '芝麻香', fuyu: '馥郁香', te: '特香', chi: '豉香', la: '老白干',
+};
+
 const aromaDescriptions = {
   sauce: 'Savory, complex, umami-driven. The most intense and polarizing baijiu style, made famous by Maotai. Production involves multiple fermentation cycles over a full year.',
   strong: 'Fruity, cellar-influenced, rich. The most widely consumed baijiu style in China. Fermented in mud pits, producing ethyl hexanoate-driven aromas.',
@@ -44,17 +49,41 @@ const keywords = [`${Astro.params.type} aroma baijiu`, `${label.toLowerCase()}`,
 ---
 
 <BaseLayout title={title} description={metaDesc} keywords={keywords} type="WebSite">
-  <section class="article-header">
+  <section class="aroma-hero">
+    <div class="aroma-hero-bg" aria-hidden="true">
+      <img src={`/images/aroma-${Astro.params.type}.webp`} alt="" width="900" height="900" />
+    </div>
     <div class="wrap">
       <p class="eyebrow"><a href="/db/">Database</a> &rsaquo; Aroma Type</p>
-      <h1>{label}</h1>
+      <h1>{label} <span class="aroma-cn">{aromaCn[Astro.params.type] || ''}</span></h1>
       <p class="lede">{varieties.length} {varieties.length === 1 ? 'variety' : 'varieties'} &middot; {description}</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="table-wrap">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">In this style</p>
+          <h2>Bottles in the database.</h2>
+        </div>
+        <p>Open a profile for GB/T codes, ABV, tasting notes, price guidance, and buying risk.</p>
+      </div>
+      <div class="variety-grid">
+        {varieties.map(v => (
+          <a class="variety-card reveal" href={`/db/variety/${v.id}/`}>
+            <div class="bottle"><img src={`/images/variety-${v.id}.webp`} alt={`${v.name} style bottle`} loading="lazy" width="700" height="875" /></div>
+            <div class="body">
+              <h3>{v.name} <span class="cn">{v.name_cn}</span></h3>
+              <p class="meta">{v.abv_range} &middot; {v.gbt_standard} &middot; {v.region}</p>
+              {v.tasting_notes?.nose && <p class="meta nose">{v.tasting_notes.nose.slice(0, 120)}{v.tasting_notes.nose.length > 120 ? '…' : ''}</p>}
+              {v.beginner_friendly ? <span class="badge ok">Beginner friendly</span> : <span class="badge">Acquired taste</span>}
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="table-wrap reveal" style="margin-top:32px;">
         <table>
           <thead>
             <tr><th>Variety</th><th>ABV</th><th>GB/T</th><th>Region</th><th>Tier</th><th>Beginner</th></tr>
@@ -64,7 +93,7 @@ const keywords = [`${Astro.params.type} aroma baijiu`, `${label.toLowerCase()}`,
               <tr>
                 <td><a href={`/db/variety/${v.id}/`}><strong>{v.name}</strong> ({v.name_cn})</a></td>
                 <td>{v.abv_range}</td>
-                <td>{v.gbt_standard}</td>
+                <td><code>{v.gbt_standard}</code></td>
                 <td><a href={`/db/region/${v.region.toLowerCase()}/`}>{v.region}</a></td>
                 <td>{v.tier}</td>
                 <td>{v.beginner_friendly ? 'Yes' : 'No'}</td>
@@ -73,50 +102,57 @@ const keywords = [`${Astro.params.type} aroma baijiu`, `${label.toLowerCase()}`,
           </tbody>
         </table>
       </div>
-
-      <div class="variety-cards">
-        {varieties.map(v => (
-          <a class="vcard" href={`/db/variety/${v.id}/`}>
-            <h3>{v.name} <span class="cn">{v.name_cn}</span></h3>
-            <p class="vcard-meta">{v.abv_range} &middot; {v.gbt_standard} &middot; {v.region}</p>
-            {v.tasting_notes?.nose && <p class="vcard-nose">{v.tasting_notes.nose.slice(0, 140)}{v.tasting_notes.nose.length > 140 ? '…' : ''}</p>}
-            {v.beginner_friendly ? <span class="badge ok">Beginner friendly</span> : <span class="badge">Acquired taste</span>}
-          </a>
-        ))}
-      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .variety-cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 32px;
+  .aroma-hero {
+    position: relative;
+    padding: clamp(130px, 17vh, 190px) 0 clamp(44px, 5vw, 64px);
+    overflow: hidden;
+    background: var(--ink-950);
   }
-  .vcard {
-    display: block;
-    padding: 20px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--panel);
-    text-decoration: none;
-    color: var(--ink);
+  .aroma-hero-bg { position: absolute; inset: 0; }
+  .aroma-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.42; }
+  .aroma-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(13, 10, 7, 0.92) 25%, rgba(13, 10, 7, 0.5) 75%, rgba(13, 10, 7, 0.72)),
+      linear-gradient(180deg, rgba(13, 10, 7, 0.55), rgba(13, 10, 7, 0.2) 45%, rgba(13, 10, 7, 0.92));
   }
-  .vcard:hover { border-color: var(--red); }
-  .vcard h3 { font-size: 18px; margin: 0 0 6px; }
-  .vcard .cn { color: var(--muted); font-size: 15px; }
-  .vcard-meta { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
-  .vcard-nose { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
+  .aroma-hero .wrap { position: relative; z-index: 1; }
+  .aroma-hero h1 { max-width: 800px; }
+  .aroma-cn {
+    display: inline-block;
+    margin-left: 12px;
+    font-family: var(--serif-cn);
+    font-size: 0.5em;
+    font-weight: 500;
+    color: var(--gold-400);
+    vertical-align: 0.12em;
+  }
+
+  .nose {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   .badge {
     display: inline-block;
     padding: 3px 10px;
+    border: 1px solid var(--line-dark);
     border-radius: 999px;
     font-size: 12px;
-    background: #f5efe4;
-    color: var(--muted);
+    font-weight: 700;
+    color: var(--muted-on-dark);
+    margin-top: 8px;
   }
-  .badge.ok { background: #e8f0e0; color: var(--green); }
-  @media (max-width: 860px) { .variety-cards { grid-template-columns: 1fr; } }
+  .badge.ok { border-color: rgba(120, 160, 100, 0.4); color: #a8c79a; }
+
+  table code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--gold-300); font-size: 13px; }
 </style>

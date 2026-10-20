@@ -23,6 +23,18 @@ const aromaLabels = {
   te: 'Te Aroma', chi: 'Chi Aroma', la: 'La Aroma',
 };
 
+const aromaCn = {
+  sauce: '酱香', strong: '浓香', light: '清香', phoenix: '凤香', herbal: '董香', mixed: '兼香',
+  rice: '米香', sesame: '芝麻香', fuyu: '馥郁香', te: '特香', chi: '豉香', la: '老白干',
+};
+
+const tierLabels = {
+  'ultra-premium': 'Ultra Premium',
+  premium: 'Premium',
+  mid: 'Mid-Range',
+  budget: 'Budget',
+};
+
 const title = v.seo?.meta_title || `${v.name} (${v.name_cn}) — Baijiu Parameters | Baijiu365`;
 const description = v.seo?.meta_description || `${v.name} baijiu: ${v.aroma_type} aroma, ${v.abv_range} ABV, ${v.gbt_standard}, from ${v.region}. Complete parameter card with tasting notes and buying guide.`;
 const keywords = v.seo?.keywords || [v.name, v.name_cn, `${v.aroma_type} baijiu`, v.gbt_standard];
@@ -50,15 +62,26 @@ const jsonLd = {
 ---
 
 <BaseLayout title={title} description={description} keywords={keywords} type="Article" jsonLd={false}>
-  <section class="article-header">
-    <div class="wrap">
-      <p class="eyebrow">
-        <a href="/db/">Database</a> &rsaquo;
-        <a href={`/db/aroma/${v.aroma_type}/`}>{aromaLabels[v.aroma_type] || v.aroma_type}</a> &rsaquo;
-        <a href={`/db/region/${v.region.toLowerCase()}/`}>{v.region}</a>
-      </p>
-      <h1>{v.name}</h1>
-      <p class="lede">{v.name_cn} &middot; {v.brand?.name || ''}</p>
+  <section class="variety-hero">
+    <div class="variety-hero-bg" aria-hidden="true">
+      <img src={`/images/variety-${v.id}.webp`} alt="" width="700" height="875" />
+    </div>
+    <div class="wrap variety-hero-grid">
+      <div>
+        <p class="eyebrow">
+          <a href="/db/">Database</a> &rsaquo;
+          <a href={`/db/aroma/${v.aroma_type}/`}>{aromaLabels[v.aroma_type] || v.aroma_type}</a> &rsaquo;
+          <a href={`/db/region/${v.region.toLowerCase()}/`}>{v.region}</a>
+        </p>
+        <h1 class="variety-title">{v.name} <span class="variety-cn">{v.name_cn}</span></h1>
+        <p class="lede">{v.brand?.name || ''} &middot; {aromaLabels[v.aroma_type] || v.aroma_type} &middot; {v.abv_range} ABV &middot; {v.gbt_standard}</p>
+        <div class="trust-strip">
+          <a href={`/db/aroma/${v.aroma_type}/`}>{aromaCn[v.aroma_type] || ''} {aromaLabels[v.aroma_type] || v.aroma_type}</a>
+          <a href={`/db/region/${v.region.toLowerCase()}/`}>{v.region}</a>
+          <span class={`tier-pill tier-${v.tier}`}>{tierLabels[v.tier] || v.tier}</span>
+          <span>{v.beginner_friendly ? 'Beginner friendly' : 'Acquired taste'}</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -73,7 +96,7 @@ const jsonLd = {
           <div><dt>ABV</dt><dd>{v.abv_range}</dd></div>
           <div><dt>GB/T Standard</dt><dd>{v.gbt_standard}</dd></div>
           <div><dt>Region</dt><dd><a href={`/db/region/${v.region.toLowerCase()}/`}>{v.region}</a></dd></div>
-          <div><dt>Tier</dt><dd>{v.tier}</dd></div>
+          <div><dt>Tier</dt><dd>{tierLabels[v.tier] || v.tier}</dd></div>
           <div><dt>Beginner Friendly</dt><dd>{v.beginner_friendly ? 'Yes' : 'No'}</dd></div>
           {v.price_range_usd && (
             <div><dt>Price (USD)</dt><dd>${v.price_range_usd.min} - ${v.price_range_usd.max}</dd></div>
@@ -244,74 +267,130 @@ const jsonLd = {
 </BaseLayout>
 
 <style>
+  .variety-hero {
+    position: relative;
+    padding: clamp(130px, 17vh, 190px) 0 clamp(44px, 5vw, 64px);
+    overflow: hidden;
+    background: var(--ink-950);
+  }
+  .variety-hero-bg { position: absolute; inset: 0; }
+  .variety-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 72% 40%;
+    opacity: 0.35;
+    filter: blur(2px);
+  }
+  .variety-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(13, 10, 7, 0.95) 30%, rgba(13, 10, 7, 0.55) 75%, rgba(13, 10, 7, 0.7)),
+      linear-gradient(180deg, rgba(13, 10, 7, 0.55), rgba(13, 10, 7, 0.2) 45%, rgba(13, 10, 7, 0.92));
+  }
+  .variety-hero .wrap { position: relative; z-index: 1; }
+
+  .variety-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.42fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: end;
+  }
+  .variety-title { font-size: clamp(38px, 5.4vw, 66px); }
+  .variety-cn {
+    display: inline-block;
+    margin-left: 10px;
+    font-family: var(--serif-cn);
+    font-size: 0.5em;
+    font-weight: 500;
+    color: var(--gold-400);
+    vertical-align: 0.12em;
+  }
+  .variety-hero-bottle { display: none; }
+
   .db-layout {
     display: grid;
-    grid-template-columns: 280px minmax(0, 1fr);
-    gap: 32px;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 48px);
     align-items: start;
   }
 
   .param-card {
     position: sticky;
-    top: 88px;
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--panel);
+    top: 96px;
+    padding: 26px;
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 12px;
+    background:
+      radial-gradient(400px 200px at 80% 0%, rgba(185, 143, 63, 0.12), transparent 60%),
+      linear-gradient(170deg, var(--ink-800), var(--ink-950));
+    box-shadow: var(--shadow-dark);
   }
-  .param-card h2 { font-size: 16px; margin: 0 0 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .param-card h2 { font-size: 15px; margin: 0 0 18px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--gold-400); font-family: var(--sans); font-weight: 800; }
   .param-card dl { margin: 0; }
-  .param-card dl > div { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .param-card dl > div { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line-dark); }
   .param-card dl > div:last-child { border-bottom: 0; }
-  .param-card dt { color: var(--muted); font-size: 13px; }
-  .param-card dd { margin: 0; font-weight: 700; font-size: 14px; text-align: right; }
-  .param-card dd a { color: var(--red); text-decoration: none; }
-  .official-link { margin: 16px 0 0; font-size: 14px; }
-  .official-link a { color: var(--red); }
+  .param-card dt { color: var(--muted-on-dark); font-size: 13px; }
+  .param-card dd { margin: 0; font-weight: 700; font-size: 14px; text-align: right; color: var(--text-on-dark); }
+  .param-card dd a { color: var(--gold-300); text-decoration: none; }
+  .param-card dd a:hover { text-decoration: underline; }
+  .official-link { margin: 18px 0 0; font-size: 14px; }
+  .official-link a { color: var(--gold-300); }
 
   .db-content { min-width: 0; }
 
-  .data-block { margin-bottom: 40px; }
-  .data-block h2 { font-size: 24px; margin: 0 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+  .data-block { margin-bottom: 48px; }
+  .data-block h2 {
+    font-size: 26px;
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line-dark);
+  }
 
   .data-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: 14px;
   }
-  .data-grid > div { padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
-  .data-grid h3 { font-size: 14px; margin: 0 0 6px; text-transform: uppercase; color: var(--muted); }
-  .data-grid p { margin: 0; font-size: 15px; }
+  .data-grid > div { padding: 18px; border: 1px solid var(--line-dark); border-radius: 10px; background: rgba(255, 253, 247, 0.025); }
+  .data-grid h3 { font-size: 12px; margin: 0 0 8px; text-transform: uppercase; color: var(--gold-400); font-family: var(--sans); font-weight: 800; letter-spacing: 0.1em; }
+  .data-grid p { margin: 0; font-size: 15px; color: rgba(242, 236, 221, 0.85); }
 
-  .tech-list { margin: 16px 0 0; padding-left: 20px; }
-  .tech-list li { margin-bottom: 8px; color: var(--muted); }
+  .tech-list { margin: 18px 0 0; padding-left: 20px; }
+  .tech-list li { margin-bottom: 9px; color: var(--muted-on-dark); }
 
   .pairing-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
   }
-  .pairing-card { padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
-  .pairing-card h3 { font-size: 16px; margin: 0 0 4px; }
-  .pairing-card .dishes { font-weight: 700; margin: 0 0 6px; }
-  .pairing-card .why { color: var(--muted); font-size: 14px; margin: 0; }
+  .pairing-card { padding: 18px; border: 1px solid var(--line-dark); border-radius: 10px; background: rgba(255, 253, 247, 0.025); }
+  .pairing-card h3 { font-size: 17px; margin: 0 0 6px; color: var(--gold-300); }
+  .pairing-card .dishes { font-weight: 700; margin: 0 0 8px; color: var(--text-on-dark); font-size: 14.5px; }
+  .pairing-card .why { color: var(--muted-on-dark); font-size: 14px; margin: 0; }
 
   .compare-list { padding-left: 20px; }
-  .compare-list li { margin-bottom: 10px; color: var(--muted); }
+  .compare-list li { margin-bottom: 11px; color: var(--muted-on-dark); }
 
-  .callout.warning { border-left-color: var(--gold); }
-
-  .product-desc { font-size: 14px; color: var(--muted); margin: 6px 0; }
-  .cn { color: var(--muted); font-size: 13px; }
+  .product-desc { font-size: 14px; color: var(--muted-on-dark); margin: 8px 0; }
+  .cn { color: var(--gold-400); font-family: var(--serif-cn); font-size: 13.5px; }
 
   .sources ul { padding-left: 20px; }
-  .sources a { color: var(--red); }
+  .sources a { color: var(--gold-300); }
 
-  .faq h3 { font-size: 17px; }
+  .faq h3 { font-size: 17px; color: var(--gold-300); }
 
-  @media (max-width: 860px) {
+  .db-content p { color: rgba(242, 236, 221, 0.82); }
+
+  @media (max-width: 1024px) {
     .db-layout { grid-template-columns: 1fr; }
     .param-card { position: static; }
+  }
+  @media (max-width: 860px) {
+    .variety-hero-grid { grid-template-columns: 1fr; }
+    .variety-hero-bg img { opacity: 0.22; }
     .data-grid, .pairing-grid { grid-template-columns: 1fr; }
   }
 </style>

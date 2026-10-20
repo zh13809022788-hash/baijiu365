@@ -27,6 +27,11 @@ const aromaLabels = {
   te: 'Te Aroma', chi: 'Chi Aroma', la: 'La Aroma',
 };
 
+const aromaCn = {
+  sauce: '酱香', strong: '浓香', light: '清香', phoenix: '凤香', herbal: '董香', mixed: '兼香',
+  rice: '米香', sesame: '芝麻香', fuyu: '馥郁香', te: '特香', chi: '豉香', la: '老白干',
+};
+
 const tierLabels = {
   'ultra-premium': 'Ultra Premium',
   premium: 'Premium',
@@ -43,11 +48,12 @@ const keywords = ['baijiu database', 'baijiu varieties', 'baijiu parameters', 'G
 
 <BaseLayout title={title} description={description} keywords={keywords} type="WebSite">
   <section class="db-hero">
+    <div class="db-hero-bg" aria-hidden="true"><img src="/images/hero-bottle.webp" alt="" width="1600" height="1024" /></div>
     <div class="wrap db-hero-grid">
       <div>
-        <p class="eyebrow">Baijiu Parameter Database</p>
+        <p class="eyebrow"><a href="/">Baijiu365</a> &rsaquo; Database</p>
         <h1>Baijiu Database</h1>
-        <p class="lede">A structured reference for comparing Chinese baijiu by aroma type, region, GB/T standard, ABV, ingredients, price tier, and practical drinking context.</p>
+        <p class="lede">A structured reference for comparing Chinese baijiu by aroma type, region, GB/T standard, ABV, ingredients, price tier, and practical drinking context. Hard data, no tasting-room poetry.</p>
         <div class="actions">
           <a class="button" href="/db/compare/">Compare varieties</a>
           <a class="button secondary" href="/db/variety/maotai/">Open Maotai profile</a>
@@ -64,43 +70,54 @@ const keywords = ['baijiu database', 'baijiu varieties', 'baijiu parameters', 'G
 
   <section class="section">
     <div class="wrap">
-      <div class="section-heading">
-        <h2>Start With A Benchmark</h2>
-        <p>These three profiles anchor the category: prestige sauce aroma, multi-grain strong aroma, and the clean light-aroma gateway.</p>
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Start with a benchmark</p>
+          <h2>Three profiles anchor the category.</h2>
+        </div>
+        <p>Prestige sauce aroma, multi-grain strong aroma, and the clean light-aroma gateway. Open a profile or send them into the comparison tool.</p>
       </div>
-      <div class="benchmark-grid">
+      <div class="variety-grid">
         {featured.map(v => (
-          <a class="benchmark-card" href={`/db/variety/${v.id}/`}>
-            <span class="benchmark-tag">{aromaLabels[v.aroma_type] || v.aroma_type}</span>
-            <h3>{v.name}</h3>
-            <p>{v.region} &middot; {v.abv_range} &middot; {v.gbt_standard}</p>
-            <small>{tierLabels[v.tier] || v.tier}</small>
+          <a class="variety-card reveal" href={`/db/variety/${v.id}/`}>
+            <div class="bottle"><img src={`/images/variety-${v.id}.webp`} alt={`${v.name} style bottle`} loading="lazy" width="700" height="875" /></div>
+            <div class="body">
+              <h3>{v.name} <span class="cn">{v.name_cn}</span></h3>
+              <p class="meta">{aromaLabels[v.aroma_type] || v.aroma_type} &middot; {v.abv_range} &middot; {v.gbt_standard}</p>
+              <p class="meta">{v.region} &middot; {tierLabels[v.tier] || v.tier}</p>
+            </div>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section tight">
+  <section class="section" style="background:linear-gradient(180deg,var(--ink-950),var(--ink-900));">
     <div class="wrap db-browser">
       <div class="browser-panel">
-        <div class="section-heading compact">
-          <h2>Browse By Aroma</h2>
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Browse by aroma</p>
+            <h2>Aroma predicts the bottle.</h2>
+          </div>
           <p>Use aroma type to predict intensity, texture, and whether a bottle is likely to feel clean, fruity, savory, or botanical.</p>
         </div>
         <div class="aroma-grid">
           {Object.entries(aromaGroups).map(([type, items]) => (
-            <a class={`aroma-card aroma-${type}`} href={`/db/aroma/${type}/`}>
-              <span>{items.length} varieties</span>
-              <h3>{aromaLabels[type] || type}</h3>
-              <p>{items.map(v => v.name).join(' / ')}</p>
+            <a class="aroma-card reveal" href={`/db/aroma/${type}/`}>
+              <img src={`/images/aroma-${type}.webp`} alt={`${aromaLabels[type] || type} baijiu`} loading="lazy" width="900" height="900" />
+              <div class="aroma-card-body">
+                <p class="kicker">{aromaCn[type] || ''} &middot; {items.length} varieties</p>
+                <h3>{aromaLabels[type] || type}</h3>
+                <p>{items.map(v => v.name).join(' / ')}</p>
+              </div>
             </a>
           ))}
         </div>
       </div>
 
-      <aside class="region-panel" aria-label="Browse by producing region">
-        <p class="eyebrow">Producing Regions</p>
+      <aside class="region-panel reveal" aria-label="Browse by producing region">
+        <p class="eyebrow">Producing regions</p>
         <div class="region-list">
           {Object.entries(regionGroups).sort(([a], [b]) => a.localeCompare(b)).map(([region, items]) => (
             <a href={`/db/region/${region.toLowerCase()}/`}>
@@ -115,11 +132,14 @@ const keywords = ['baijiu database', 'baijiu varieties', 'baijiu parameters', 'G
 
   <section class="section tight">
     <div class="wrap">
-      <div class="section-heading">
-        <h2>All Varieties</h2>
-        <p>Scan the full database, then open a profile or send several bottles into the comparison tool.</p>
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">All varieties</p>
+          <h2>Scan the full database.</h2>
+        </div>
+        <p>Open a profile or send several bottles into the comparison tool.</p>
       </div>
-      <div class="database-table-wrap">
+      <div class="table-wrap reveal">
         <table class="database-table">
           <thead>
             <tr>
@@ -151,256 +171,119 @@ const keywords = ['baijiu database', 'baijiu varieties', 'baijiu parameters', 'G
 
 <style>
   .db-hero {
-    padding: clamp(34px, 5vw, 58px) clamp(18px, 4vw, 44px);
-    background:
-      linear-gradient(90deg, rgba(24, 20, 18, 0.92), rgba(24, 20, 18, 0.74)),
-      url('/images/baijiu-field-guide.png') center / cover no-repeat;
-    color: #fffdf8;
+    position: relative;
+    padding: clamp(130px, 17vh, 190px) 0 clamp(44px, 5vw, 68px);
+    overflow: hidden;
+    background: var(--ink-950);
   }
+  .db-hero-bg { position: absolute; inset: 0; }
+  .db-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 70% 60%; opacity: 0.55; }
+  .db-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(13, 10, 7, 0.94) 20%, rgba(13, 10, 7, 0.55) 70%, rgba(13, 10, 7, 0.75)),
+      linear-gradient(180deg, rgba(13, 10, 7, 0.5), rgba(13, 10, 7, 0.2) 50%, rgba(13, 10, 7, 0.9));
+  }
+  .db-hero .wrap { position: relative; z-index: 1; }
 
   .db-hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr);
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.5fr);
     gap: clamp(28px, 6vw, 72px);
     align-items: end;
   }
-
-  .db-hero h1 {
-    max-width: 760px;
-    font-size: clamp(32px, 4.8vw, 54px);
-  }
+  .db-hero h1 { max-width: 760px; }
 
   .db-metrics {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1px;
-    border: 1px solid rgba(255, 253, 248, 0.18);
-    border-radius: 8px;
+    border: 1px solid var(--line-dark);
+    border-radius: 10px;
     overflow: hidden;
-    background: rgba(255, 253, 248, 0.16);
+    background: var(--line-dark);
   }
-
   .db-metrics span {
-    min-height: 82px;
+    min-height: 96px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 18px;
-    background: rgba(24, 20, 18, 0.42);
-    color: rgba(255, 253, 248, 0.76);
+    background: rgba(13, 10, 7, 0.82);
+    color: var(--muted-on-dark);
     font-size: 13px;
   }
-
   .db-metrics strong {
-    color: #fffdf8;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 28px;
+    color: var(--gold-300);
+    font-family: var(--serif);
+    font-size: 30px;
     line-height: 1;
-  }
-
-  .benchmark-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-  }
-
-  .benchmark-card,
-  .aroma-card,
-  .region-list a {
-    border-radius: 8px;
-    text-decoration: none;
-  }
-
-  .benchmark-card {
-    min-height: 160px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 18px;
-    border: 1px solid var(--line);
-    background: #fff;
-    box-shadow: 0 2px 0 rgba(32, 29, 26, 0.03);
-  }
-
-  .benchmark-card:hover,
-  .aroma-card:hover,
-  .region-list a:hover {
-    border-color: rgba(159, 47, 36, 0.46);
-    box-shadow: var(--shadow);
-  }
-
-  .benchmark-tag,
-  .benchmark-card small,
-  .aroma-card span {
-    color: var(--red);
-    font-size: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-  }
-
-  .benchmark-card p {
-    margin: 0;
-    color: var(--muted);
   }
 
   .db-browser {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(260px, 0.34fr);
-    gap: 24px;
+    gap: clamp(24px, 4vw, 48px);
     align-items: start;
   }
 
-  .browser-panel,
   .region-panel {
-    padding: clamp(16px, 3vw, 24px);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: #fff;
-  }
-
-  .section-heading.compact {
-    align-items: start;
-    margin-bottom: 20px;
-  }
-
-  .section-heading.compact h2 {
-    font-size: clamp(24px, 3vw, 34px);
-  }
-
-  .aroma-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-  }
-
-  .aroma-card {
-    min-height: 132px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    border: 1px solid var(--line);
-    background: var(--panel-warm);
-  }
-
-  .aroma-card h3 {
-    font-size: 20px;
-  }
-
-  .aroma-card p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 14px;
-  }
-
-  .aroma-sauce { background: #fff7ef; }
-  .aroma-strong { background: #fff9df; }
-  .aroma-light { background: #eef8f5; }
-  .aroma-phoenix { background: #f3f4ff; }
-  .aroma-herbal { background: #eef5e9; }
-  .aroma-mixed { background: #f8eff2; }
-
-  .region-panel {
+    padding: 26px;
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    background: linear-gradient(170deg, rgba(211, 172, 104, 0.07), rgba(211, 172, 104, 0.02));
     position: sticky;
-    top: 88px;
+    top: 96px;
   }
-
-  .region-panel .eyebrow {
-    color: var(--red);
-  }
-
-  .region-list {
-    display: grid;
-    gap: 10px;
-  }
-
+  .region-list { display: grid; gap: 2px; margin-top: 16px; }
   .region-list a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    padding: 13px 14px;
-    border: 1px solid var(--line);
-    background: #fffaf1;
-  }
-
-  .region-list span {
-    font-weight: 800;
-  }
-
-  .region-list small {
-    color: var(--muted);
-  }
-
-  .database-table-wrap {
-    overflow-x: auto;
-    border: 1px solid var(--line);
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid transparent;
     border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 2px 0 rgba(32, 29, 26, 0.03);
-  }
-
-  .database-table {
-    width: 100%;
-    min-width: 820px;
-    border-collapse: collapse;
-    font-size: 14px;
-  }
-
-  .database-table th {
-    padding: 13px 16px;
-    color: var(--muted);
-    background: #f4ead9;
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-
-  .database-table td {
-    padding: 16px;
-  }
-
-  .database-table a {
-    color: var(--red);
-    font-weight: 700;
     text-decoration: none;
+    color: var(--text-on-dark);
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: background 0.25s ease, border-color 0.25s ease;
   }
-
-  .database-table .variety-link {
-    color: var(--ink);
-    font-size: 16px;
-  }
+  .region-list a:hover { background: rgba(211, 172, 104, 0.1); border-color: var(--line-dark); }
+  .region-list small { color: var(--muted-on-dark); font-size: 12.5px; font-weight: 500; }
 
   .database-table code {
-    padding: 4px 7px;
-    border-radius: 5px;
-    background: #f7f1e7;
-    color: var(--ink);
-    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+    color: var(--gold-300);
   }
+  .variety-link { font-weight: 700; }
+  .database-table td code { white-space: nowrap; }
 
   .tier-pill {
-    display: inline-flex;
-    align-items: center;
-    min-height: 28px;
-    padding: 4px 9px;
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid var(--line-dark);
     border-radius: 999px;
-    background: #f7f1e7;
-    color: var(--muted);
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 700;
+    color: var(--muted-on-dark);
+    white-space: nowrap;
   }
+  .tier-ultra-premium { border-color: rgba(211, 172, 104, 0.55); color: var(--gold-300); }
+  .tier-premium { border-color: rgba(211, 172, 104, 0.35); color: var(--gold-400); }
 
-  .tier-ultra-premium,
-  .tier-premium { background: #fff1c8; color: #7a4d0b; }
-  .tier-mid { background: #e9f1f4; color: #244d5f; }
-  .tier-budget { background: #e8f4df; color: #34572d; }
-
-  @media (max-width: 860px) {
-    .db-hero-grid,
-    .benchmark-grid,
-    .db-browser,
-    .aroma-grid { grid-template-columns: 1fr; }
+  @media (max-width: 1024px) {
+    .db-browser { grid-template-columns: 1fr; }
     .region-panel { position: static; }
+  }
+  @media (max-width: 860px) {
+    .db-hero-grid { grid-template-columns: 1fr; }
+    .db-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 520px) {
     .db-metrics { grid-template-columns: 1fr; }
   }
 </style>

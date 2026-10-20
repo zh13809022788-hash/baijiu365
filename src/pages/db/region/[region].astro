@@ -40,17 +40,40 @@ const keywords = [`${label} baijiu`, `${label} chinese liquor`, ...items.map(v =
 ---
 
 <BaseLayout title={title} description={metaDesc} keywords={keywords} type="WebSite">
-  <section class="article-header">
+  <section class="region-hero">
+    <div class="region-hero-bg" aria-hidden="true">
+      <img src="/images/region-river.webp" alt="" width="1600" height="1024" />
+    </div>
     <div class="wrap">
       <p class="eyebrow"><a href="/db/">Database</a> &rsaquo; Producing Region</p>
-      <h1>{label}</h1>
+      <h1>{label} <span class="region-cn">产区</span></h1>
       <p class="lede">{items.length} {items.length === 1 ? 'variety' : 'varieties'} &middot; {description}</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="table-wrap">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Distilleries here</p>
+          <h2>From this region.</h2>
+        </div>
+        <p>Open a profile for GB/T codes, ABV, ingredients, tasting notes, and buying guidance.</p>
+      </div>
+      <div class="variety-grid">
+        {items.map(v => (
+          <a class="variety-card reveal" href={`/db/variety/${v.id}/`}>
+            <div class="bottle"><img src={`/images/variety-${v.id}.webp`} alt={`${v.name} style bottle`} loading="lazy" width="700" height="875" /></div>
+            <div class="body">
+              <h3>{v.name} <span class="cn">{v.name_cn}</span></h3>
+              <p class="meta">{v.aroma_type} &middot; {v.abv_range} &middot; {v.gbt_standard}</p>
+              {v.production?.raw_materials && <p class="meta">Ingredients: {v.production.raw_materials.join(', ')}</p>}
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="table-wrap reveal" style="margin-top:32px;">
         <table>
           <thead>
             <tr><th>Variety</th><th>Aroma</th><th>ABV</th><th>GB/T</th><th>Tier</th></tr>
@@ -61,47 +84,46 @@ const keywords = [`${label} baijiu`, `${label} chinese liquor`, ...items.map(v =
                 <td><a href={`/db/variety/${v.id}/`}><strong>{v.name}</strong> ({v.name_cn})</a></td>
                 <td><a href={`/db/aroma/${v.aroma_type}/`}>{v.aroma_type}</a></td>
                 <td>{v.abv_range}</td>
-                <td>{v.gbt_standard}</td>
+                <td><code>{v.gbt_standard}</code></td>
                 <td>{v.tier}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
-      <div class="variety-cards">
-        {items.map(v => (
-          <a class="vcard" href={`/db/variety/${v.id}/`}>
-            <h3>{v.name} <span class="cn">{v.name_cn}</span></h3>
-            <p class="vcard-meta">{v.aroma_type} &middot; {v.abv_range} &middot; {v.gbt_standard}</p>
-            {v.production?.raw_materials && <p class="vcard-ingredients">Ingredients: {v.production.raw_materials.join(', ')}</p>}
-          </a>
-        ))}
-      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .variety-cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 32px;
+  .region-hero {
+    position: relative;
+    padding: clamp(130px, 17vh, 190px) 0 clamp(44px, 5vw, 64px);
+    overflow: hidden;
+    background: var(--ink-950);
   }
-  .vcard {
-    display: block;
-    padding: 20px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: var(--panel);
-    text-decoration: none;
-    color: var(--ink);
+  .region-hero-bg { position: absolute; inset: 0; }
+  .region-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; opacity: 0.4; }
+  .region-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(13, 10, 7, 0.92) 25%, rgba(13, 10, 7, 0.5) 75%, rgba(13, 10, 7, 0.72)),
+      linear-gradient(180deg, rgba(13, 10, 7, 0.55), rgba(13, 10, 7, 0.2) 45%, rgba(13, 10, 7, 0.92));
   }
-  .vcard:hover { border-color: var(--red); }
-  .vcard h3 { font-size: 18px; margin: 0 0 6px; }
-  .vcard .cn { color: var(--muted); font-size: 15px; }
-  .vcard-meta { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
-  .vcard-ingredients { font-size: 14px; color: var(--muted); margin: 0; }
-  @media (max-width: 860px) { .variety-cards { grid-template-columns: 1fr; } }
+  .region-hero .wrap { position: relative; z-index: 1; }
+  .region-hero h1 { max-width: 800px; }
+  .region-cn {
+    display: inline-block;
+    margin-left: 12px;
+    font-family: var(--serif-cn);
+    font-size: 0.4em;
+    font-weight: 500;
+    color: var(--gold-400);
+    vertical-align: 0.2em;
+    letter-spacing: 0.2em;
+  }
+
+  table code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--gold-300); font-size: 13px; }
 </style>
