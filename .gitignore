@@ -5,3 +5,8 @@ dist/
 .DS_Store
 .workbuddy/
 .codex/
+
+# local scratch
+.qa/
+.build-media/
+.build-film/

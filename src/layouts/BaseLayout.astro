@@ -105,6 +105,7 @@ const hasAdsenseClientId = ADSENSE_CLIENT_ID.trim() !== '';
           <a href="/how-to-buy-baijiu-outside-china/">Buying</a>
           <a href="/tools/">Tools</a>
           <a href="/db/">Database</a>
+          <a href="/jinlingnian-30/" class="nav-house">Our Label</a>
           <a href="/glossary/" class="nav-cta">Glossary</a>
         </nav>
         <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
@@ -143,6 +144,7 @@ const hasAdsenseClientId = ADSENSE_CLIENT_ID.trim() !== '';
         </nav>
         <nav class="footer-col" aria-label="Footer navigation: More">
           <h2>More</h2>
+          <a href="/jinlingnian-30/">Jinling Nian 30</a>
           <a href="/tools/">Tools</a>
           <a href="/glossary/">Glossary</a>
           <a href="/about/">About</a>
@@ -187,7 +189,7 @@ const hasAdsenseClientId = ADSENSE_CLIENT_ID.trim() !== '';
             entries.forEach(function (e) {
               if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
             });
-          }, { threshold: 0.12 });
+          }, { threshold: 0, rootMargin: '0px 0px -6% 0px' });
           revealEls.forEach(function (el) { io.observe(el); });
         } else {
           revealEls.forEach(function (el) { el.classList.add('in'); });
@@ -384,6 +386,21 @@ const hasAdsenseClientId = ADSENSE_CLIENT_ID.trim() !== '';
     background: rgba(211, 172, 104, 0.14);
   }
   .primary-nav .nav-cta::after { display: none; }
+
+  .primary-nav .nav-house {
+    color: var(--gold-300);
+    font-weight: 600;
+  }
+  .primary-nav .nav-house::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background: var(--gold-500);
+    box-shadow: 0 0 8px rgba(211, 172, 104, 0.8);
+  }
 
   .nav-toggle {
     display: none;
@@ -1117,6 +1134,76 @@ const hasAdsenseClientId = ADSENSE_CLIENT_ID.trim() !== '';
   .cta-band p { max-width: 560px; margin: 16px auto 0; color: var(--muted-on-dark); }
   .cta-band .actions { justify-content: center; }
 
+  /* ---------- House bottle band ---------- */
+  .house-band {
+    position: relative;
+    padding: clamp(56px, 7vw, 104px) 0;
+    background:
+      radial-gradient(760px 420px at 18% 30%, rgba(185, 143, 63, 0.16), transparent 62%),
+      linear-gradient(180deg, var(--ink-950), #14100b);
+    border-top: 1px solid var(--line-dark);
+    border-bottom: 1px solid var(--line-dark);
+    overflow: hidden;
+  }
+  .house-split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    gap: clamp(28px, 4.5vw, 72px);
+    align-items: center;
+  }
+  .house-media {
+    position: relative;
+    margin: 0;
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #0b0906;
+    box-shadow: 0 32px 70px rgba(0, 0, 0, 0.55);
+  }
+  .house-media img { display: block; width: 100%; height: auto; }
+  .house-media figcaption {
+    padding: 12px 16px;
+    border-top: 1px solid var(--line-dark);
+    color: var(--muted-on-dark);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .house-body h2 { margin: 6px 0 0; font-size: clamp(32px, 4vw, 52px); }
+  .house-cn {
+    margin: 8px 0 0;
+    color: var(--gold-300);
+    font-family: var(--serif-cn);
+    font-size: 14px;
+    letter-spacing: 0.18em;
+  }
+  .house-body .lede { margin-top: 18px; }
+  .house-specs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+    background: var(--line-dark);
+    border: 1px solid var(--line-dark);
+  }
+  .house-specs li {
+    display: grid;
+    gap: 4px;
+    padding: 14px 16px;
+    background: rgba(13, 10, 7, 0.72);
+  }
+  .house-specs span {
+    color: var(--muted-on-dark);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .house-specs strong { color: var(--gold-200, #efdcb4); font-size: 15px; font-weight: 600; }
+  .house-body .actions { margin-top: 26px; }
+
   /* ---------- Responsive ---------- */
   @media (max-width: 1024px) {
     .variety-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1146,9 +1233,11 @@ const hasAdsenseClientId = ADSENSE_CLIENT_ID.trim() !== '';
     .primary-nav .nav-cta { margin-left: 0; text-align: center; justify-content: center; }
 
     .grid, .feature-band, .split, .database-panel, .pathway, .next-links, .footer-inner,
-    .craft-split, .aroma-grid, .guide-grid, .variety-grid, .tools-strip, .section-heading {
+    .craft-split, .aroma-grid, .guide-grid, .variety-grid, .tools-strip, .section-heading,
+    .house-split {
       grid-template-columns: 1fr;
     }
+    .house-media { max-width: 380px; }
     .footer-inner { gap: 32px; }
     .section-heading { align-items: flex-start; flex-direction: column; }
     .database-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }

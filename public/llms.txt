@@ -13,6 +13,9 @@
 - [Maotai Brand Guide](https://baijiu365.com/brands/maotai/): Context for the most famous baijiu brand before buying or gifting.
 - [Glossary](https://baijiu365.com/glossary/): Essential baijiu terminology in plain English.
 
+## House Label
+- [Jinling Nian 30 (金陵年30)](https://baijiu365.com/jinlingnian-30/): Our own label. 52% ABV solid-state strong aroma from Suqian, Jiangsu. Full back-label transcription (product type, raw materials, licence number, GB/T 10781.1 优级), tasting notes, packaging, and trade terms. Disclosed as a house product, not an independent review.
+
 ## Baijiu Database
 - [Database Index](https://baijiu365.com/db/): Full index of all 16 varieties, 6 aroma types, and 8 regions.
 
