@@ -1,22 +1,82 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Affiliate Disclosure - Baijiu365';
-const description = 'Current affiliate, sponsorship, and commercial disclosure for Baijiu365.';
+import { site } from '../data/site';
+const title = 'Disclosure | Baijiu365';
+const description = 'Baijiu365 carries no affiliate links or paid placements. It does publish its own house label, and that relationship is disclosed here.';
 ---
+
 <BaseLayout title={title} description={description}>
-  <header class="article-header"><div class="narrow"><p class="eyebrow">Disclosure</p><h1>Affiliate Disclosure</h1><p class="lede">Baijiu365 should be clear about commercial relationships before they affect content.</p></div></header>
-  <section class="content"><article>
-    <div class="decision-box">
-      <h2>Current status</h2>
-      <p>Baijiu365 does not currently run affiliate links, paid bottle placements, sponsored reviews, sample-driven ratings, or direct alcohol sales.</p>
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">Disclosure</p>
+      <h1>Disclosure</h1>
+      <p class="lede">Two things need to be stated up front: this site takes no money from anyone for a favourable word, and it does publish a bottle of its own.</p>
+      <div class="article-meta">
+        <span>Last updated <b>{site.updated}</b></span>
+        <span>Applies to <b>all pages</b></span>
+      </div>
     </div>
-    <h2>How Future Relationships Will Be Handled</h2>
-    <p>If affiliate links, retailer partnerships, sample bottles, advertising, or sponsorships are introduced later, we will disclose the relationship on this page and on any affected guide.</p>
-    <h2>Editorial Independence</h2>
-    <p>Commercial relationships should not decide whether a bottle, brand, or retailer is described as safe, suitable, beginner-friendly, or worth buying. Buying-risk warnings will remain part of the editorial standard.</p>
-    <div class="next-links">
-      <a href="/editorial-policy/">Editorial policy</a>
-      <a href="/contact/">Contact Baijiu365</a>
-    </div>
-  </article></section>
+  </header>
+
+  <section class="content">
+    <article>
+      <div class="decision-box">
+        <h2>Current status</h2>
+        <p>No affiliate links. No paid placements. No sponsored reviews. No payment for inclusion in the database. No free samples that determine a rating. No direct sale of alcohol. The one commercial interest is the publisher's own label, described below.</p>
+      </div>
+
+      <h2>How the site is paid for</h2>
+      <p>It currently is not. The site is a static build hosted on a free tier, written and maintained by its publisher. That is the honest answer, and it is also the reason there is no incentive to describe any bottle as better than it is.</p>
+
+      <h2>The publisher's own bottle</h2>
+      <p>Baijiu365 publishes <a href="/jinlingnian-30/">Jinling Nian 30</a>, a 52% strong-aroma baijiu made in the Suqian belt of Jiangsu under GB/T 10781.1. This is a direct commercial interest, and it is handled in four specific ways rather than with a disclaimer:</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Where</th><th>How it is treated</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Navigation and homepage</td>
+              <td>Labelled <strong>Our Label</strong>, with a marker, so it is never mistaken for an independent recommendation</td>
+            </tr>
+            <tr>
+              <td>Product page</td>
+              <td>States at the top that it is the publisher's own product; claims limited to the printed back label</td>
+            </tr>
+            <tr>
+              <td>Database and comparisons</td>
+              <td><strong>Excluded entirely.</strong> It does not appear in the sixteen-bottle database, in comparison tables, or in any best-of list</td>
+            </tr>
+            <tr>
+              <td>llms.txt and structured data</td>
+              <td>Marked as a house label rather than an independent review</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The exclusion is the part that matters. A site that ranks its own product against competitors has no useful ranking, so this one does not attempt it.</p>
+
+      <h2>If that changes</h2>
+      <p>Affiliate links, retailer partnerships, advertising or sponsored content may be introduced later. If any of them are:</p>
+      <ul>
+        <li>This page is rewritten before the change goes live, with the date at the top updated.</li>
+        <li>The relationship is disclosed on the affected page itself, at the top, not in a footer.</li>
+        <li>Commercial relationships never decide whether a bottle is described as safe, suitable for beginners, or worth buying.</li>
+        <li>Buying-risk warnings stay in the text even where they concern a partner's product. That is the test of whether a disclosure means anything.</li>
+      </ul>
+
+      <h2>What is never for sale</h2>
+      <p>Not for sale at any price: a favourable tasting note, a place in the database, removal of a counterfeit warning, a “beginner friendly” flag, or a spot in a comparison table. If you are offered any of these by someone claiming to represent this site, they do not.</p>
+
+      <h2>Reporting an undisclosed relationship</h2>
+      <p>If you believe a page here is promoting something without saying so, write to <a href={`mailto:${site.email}`}>{site.email}</a> with the page URL. Undisclosed commercial content is the one kind of error that would undermine everything else on the site, and it will be treated as urgent.</p>
+
+      <div class="next-links">
+        <a href="/editorial-policy/">Editorial policy</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </article>
+  </section>
 </BaseLayout>

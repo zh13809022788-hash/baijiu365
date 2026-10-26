@@ -1,59 +1,175 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Baijiu Flavor Wheel: A Practical Tasting Framework';
-const description = 'A simple baijiu flavor wheel for describing grain, fruit, floral, fermentation, savory, earthy, heat, texture, and finish.';
+const title = 'Baijiu Flavor Wheel: A Vocabulary for Tasting';
+const description = 'A practical baijiu flavour wheel — six aroma types, the flavour families inside each, a descriptor glossary, and a tasting-note template you can actually use.';
+const keywords = ['baijiu flavor wheel', 'baijiu tasting notes', 'baijiu flavour vocabulary', 'how to taste baijiu'];
 ---
-<BaseLayout title={title} description={description}>
+
+<BaseLayout title={title} description={description} keywords={keywords}>
   <header class="article-header">
     <div class="narrow">
       <p class="eyebrow">Tasting Framework</p>
       <h1>Baijiu Flavor Wheel</h1>
-      <p class="lede">Better tasting starts with better words. Baijiu becomes less confusing when you separate aroma, texture, heat, and finish.</p>
+      <p class="lede">Most beginners describe baijiu with one word: strong. A wheel replaces that word with twelve, and once you can name what you are tasting, the category stops being a dare and becomes a map.</p>
+      <div class="article-meta">
+        <span>Reference <b>6 aroma types · 18 families</b></span>
+        <span>Includes <b>tasting template</b></span>
+      </div>
     </div>
   </header>
+
   <section class="content">
     <article>
-      <p>Many beginners describe baijiu with one word: strong. That is understandable, but not very useful. A practical flavor wheel helps you notice whether the strength comes from alcohol heat, dense fermentation, fruity aroma, savory notes, grain character, or a long finish.</p>
+      <figure>
+        <img src="/images/flavor-wheel.svg" alt="Baijiu flavour wheel showing six aroma types — strong, sauce, light, rice, phoenix, herbal — each with three core flavour families" width="760" height="760" />
+        <figcaption>Inner ring: aroma type. Outer ring: the three flavour families that dominate each type. Start at the centre and work outward.</figcaption>
+      </figure>
 
-      <h2>Core Flavor Families</h2>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>Separate what you taste into four channels: <strong>aroma, palate, heat, finish</strong>. Most confusion comes from collapsing them into one verdict.</li>
+          <li>Aroma type determines which flavour families are available. You will not find soy and mushroom in a light aroma, or pear and white flowers in a sauce aroma.</li>
+          <li>"Strong" is not a flavour — it is usually a combination of alcohol heat and aromatic density. Naming which one changes your buying decision.</li>
+          <li>Compare two bottles side by side. One bottle alone teaches you almost nothing.</li>
+          <li>Write three words per bottle, not a score. The words are the skill.</li>
+        </ul>
+      </div>
+
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#how">How to use the wheel</a></li>
+          <li><a href="#families">The seven flavour families</a></li>
+          <li><a href="#profiles">Aroma-type profiles</a></li>
+          <li><a href="#glossary">Descriptor glossary</a></li>
+          <li><a href="#template">The tasting template</a></li>
+          <li><a href="#mistakes">Four tasting mistakes</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="how">How to use the wheel</h2>
+      <p>The wheel is not a scoring system. It is a lookup table for the moment when you smell something and cannot place it. Work from the centre outward:</p>
+      <ol>
+        <li><strong>Identify the aroma type</strong> if you know it. That immediately narrows the outer ring to three families.</li>
+        <li><strong>Pick the dominant family.</strong> Is the first impression fruit? Fermentation? Grain? Roast? You will usually find one family dominates and a second supports it.</li>
+        <li><strong>Drill into a specific word.</strong> "Fruity" becomes pineapple, banana, or dried date. "Fermented" becomes soy, pickle, or yeast. The specific word is what you write down.</li>
+        <li><strong>Then check the other three channels</strong> — palate, heat, finish. A bottle can smell wonderful and finish badly, and that is exactly the kind of thing a note should record.</li>
+      </ol>
+      <p>Two practical notes. First, temperature matters: at room temperature the aromatics are fully available, which is why the wheel does not apply to chilled baijiu. Second, glassware matters more than most people expect — a tulip glass concentrates aroma and will give you two or three more identifiable words than an open cup.</p>
+
+      <h2 id="families">The seven flavour families</h2>
+      <p>These are the buckets that cover almost everything baijiu can smell like. The first six appear on the wheel; the seventh describes structure rather than aroma.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Family</th><th>Possible notes</th><th>Where it often appears</th></tr></thead>
+          <thead><tr><th>Family</th><th>What it means</th><th>Where it comes from</th><th>Typical in</th></tr></thead>
           <tbody>
-            <tr><td>Grain</td><td>Sorghum, steamed grain, wheat, rice, bran, toasted cereal</td><td>Across many styles, especially light aroma</td></tr>
-            <tr><td>Fruit</td><td>Pear, apple, banana, pineapple, dried fruit, overripe fruit</td><td>Often noticeable in strong aroma</td></tr>
-            <tr><td>Floral</td><td>White flowers, honeyed lift, light perfume</td><td>Some lighter or cleaner bottles</td></tr>
-            <tr><td>Fermentation</td><td>Pickle, yogurt, cellar, yeast, aged paste, funky fruit</td><td>Strong and sauce aroma, depending on bottle</td></tr>
-            <tr><td>Savory</td><td>Soy-like depth, roasted nuts, sesame, herbs, umami</td><td>Common in sauce aroma</td></tr>
-            <tr><td>Earth and cellar</td><td>Damp cellar, clay, mushroom, old wood, mineral notes</td><td>Often tied to production environment and aging</td></tr>
-            <tr><td>Structure</td><td>Heat, oiliness, dryness, sweetness, finish length</td><td>All baijiu styles</td></tr>
+            <tr><td>Grain</td><td>Steamed grain, wheat, rice, bran, toasted cereal</td><td>Distillate from the base grain</td><td>All types, most visible in light aroma</td></tr>
+            <tr><td>Fruit</td><td>Pear, apple, banana, pineapple, dried fruit, overripe fruit</td><td>Esters formed during fermentation</td><td>Strong aroma, especially corn-heavy bills</td></tr>
+            <tr><td>Floral</td><td>White flowers, honeyed lift, light perfume</td><td>Higher alcohols and specific esters</td><td>Light and rice aroma</td></tr>
+            <tr><td>Fermentation</td><td>Pickle, yoghurt, cellar, yeast, aged paste, funky fruit</td><td>Microbial action in qu and pit</td><td>Strong and sauce aroma</td></tr>
+            <tr><td>Savory</td><td>Soy, roasted nuts, sesame, mushroom, umami</td><td>Amino acid and sulphur chemistry</td><td>Sauce aroma above all</td></tr>
+            <tr><td>Earth and cellar</td><td>Damp clay, old wood, mushroom, mineral</td><td>Fermentation vessel and ageing environment</td><td>Mud-pit strong aroma, aged bottles</td></tr>
+            <tr><td>Structure</td><td>Heat, oiliness, sweetness, dryness, finish length</td><td>ABV, glycerol, residual sugars, congeners</td><td>Every bottle — this is where quality hides</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The distinction that matters most is between the first six and the seventh. Beginners evaluate aroma and stop. Experienced tasters spend most of their attention on structure, because structure is where the difference between a $20 bottle and a $200 bottle actually lives.</p>
+
+      <h2 id="profiles">Aroma-type profiles</h2>
+      <p>Each aroma type has a characteristic shape: a dominant family, a supporting family, and a structural signature. Learn the shape and you can place a blind bottle within a minute.</p>
+
+      <h3>Strong aroma — 浓香</h3>
+      <p><strong>Shape:</strong> Fruity → Honeyed → Cellar</p>
+      <p>The first impression is usually ripe fruit — pineapple and banana are the classic markers, and they come largely from esters formed during fermentation. Honey follows, then the pit note: a savoury, damp-cellar character that tasters call <em>jiaoxiang</em> (窖香). Structurally, strong aroma is full-bodied with a broad, warm finish. It is the most immediately likeable profile in the category, which is why it dominates the Chinese market.</p>
+      <p><em>Words to use:</em> pineapple, banana, honey, cooked grain, cellar, damp clay, round, warm.</p>
+
+      <h3>Sauce aroma — 酱香</h3>
+      <p><strong>Shape:</strong> Fermented → Roasted → Umami</p>
+      <p>Nothing about sauce aroma is subtle. The first impression is fermented soybean or aged paste; behind it, roasted grain and toasted nuts; underneath everything, an umami depth that tasters describe as mushroom or dried seafood. The finish is the longest in the category, often sixty seconds or more, and it changes on the way — savoury first, then a returning sweetness.</p>
+      <p><em>Words to use:</em> soy, fermented bean paste, roasted grain, dried mushroom, toasted walnut, dried date, sandalwood, long.</p>
+
+      <h3>Light aroma — 清香</h3>
+      <p><strong>Shape:</strong> Grain → Floral → Dry</p>
+      <p>The most legible profile for a palate trained on Western spirits. Steamed rice and wheat lead, a light floral lift sits on top, and the finish is dry and clean rather than lingering. There is almost no cellar or fermentation character, which is precisely the point — light aroma is fermented in earthenware jars isolated from soil, so the microbial influence is deliberately limited.</p>
+      <p><em>Words to use:</em> steamed rice, pear, white flower, wheat, clean, dry, precise.</p>
+
+      <h3>Rice aroma — 米香</h3>
+      <p><strong>Shape:</strong> Rice → Sweet → Gentle</p>
+      <p>Soft and low-intensity by design. The grain character is closer to cooked rice than to distilled spirit, sweetness is present but light, and the whole profile stays gentle from nose to finish. Its weakness is that it disappears next to bold food; its strength is that it never overwhelms a cocktail or a nervous first-time drinker.</p>
+      <p><em>Words to use:</em> rice water, light honey, faint floral, soft, short.</p>
+
+      <h3>Phoenix aroma — 凤香</h3>
+      <p><strong>Shape:</strong> Smoky → Grain → Mineral</p>
+      <p>The outlier of the major types. Xifeng ferments in an earthen pit that is renewed annually, which produces a profile sitting between light and strong: dry, with a faint smoke or tar note, firm grain, and a mineral finish. If you like dry sherry or unpeated Highland whisky, this is the most approachable unusual baijiu.</p>
+      <p><em>Words to use:</em> faint smoke, dry grain, almond, mineral, firm.</p>
+
+      <h3>Herbal / Dong aroma — 董香</h3>
+      <p><strong>Shape:</strong> Herbal → Medicinal → Bitter</p>
+      <p>Dongjiu incorporates over a hundred medicinal herbs into its qu, and the result is unlike anything else in the category: camphor, dried herb, a faint bitterness, and a cooling sensation that some tasters find fascinating and others find medicinal in the pharmaceutical sense. Try it out of curiosity, not as an introduction.</p>
+      <p><em>Words to use:</em> dried herb, camphor, root, bitter, cooling, complex.</p>
+
+      <h2 id="glossary">Descriptor glossary</h2>
+      <p>The words that appear most often in serious baijiu tasting notes, with the Chinese term where one exists.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Descriptor</th><th>Chinese</th><th>What it actually refers to</th></tr></thead>
+          <tbody>
+            <tr><td>Jiaoxiang (pit aroma)</td><td>窖香</td><td>The savoury cellar note from mud-pit fermentation — the defining marker of strong aroma</td></tr>
+            <tr><td>Chenxiang (aged aroma)</td><td>陈香</td><td>The soft, rounded note that develops in ceramic-jar ageing; not the same as oak in whisky</td></tr>
+            <tr><td>Quxiang (starter aroma)</td><td>曲香</td><td>The dry, grain-and-mould character contributed by the qu itself</td></tr>
+            <tr><td>Jiangxiang (sauce aroma)</td><td>酱香</td><td>The fermented soybean and roasted grain complex of sauce-aroma baijiu</td></tr>
+            <tr><td>Mianrou</td><td>绵柔</td><td>"Soft and supple" — a texture descriptor for low-heat, rounded spirit; a deliberate style in Jiangsu</td></tr>
+            <tr><td>Ganjing</td><td>干净</td><td>"Clean" — no off-notes, no roughness; a baseline quality marker</td></tr>
+            <tr><td>Huigan</td><td>回甘</td><td>The returning sweetness after swallowing — a mark of good balance</td></tr>
+            <tr><td>Houwei</td><td>厚味</td><td>"Thick flavour" — density and persistence on the palate, distinct from sweetness</td></tr>
+            <tr><td>Shangtou</td><td>上头</td><td>Literally "goes to the head" — the headache and flushing some drinkers report, usually attributed to congeners and drinking speed</td></tr>
+            <tr><td>Kougan</td><td>口感</td><td>Mouthfeel, as distinct from aroma — the structural channel</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>How To Taste Without Getting Overwhelmed</h2>
-      <p>Pour a very small amount. Smell from a little distance first, then closer. Take a small sip and separate the experience into four parts: first aroma, middle flavor, alcohol heat, and finish. If the alcohol feels too loud, taste again with food instead of forcing a neat judgment.</p>
-
-      <h2>Compare Instead of Guessing</h2>
-      <p>The easiest way to learn baijiu is side-by-side comparison. A light-aroma bottle beside a strong-aroma bottle teaches more than one expensive bottle tasted alone. Add a sauce-aroma reference later, and the category starts to make sense as a map rather than a dare. <a href="/db/">Use the database</a> to pick 2-3 benchmark bottles from different aroma types, regions, and price tiers.</p>
-
-      <div class="decision-box">
-        <h2>Simple Tasting Note Template</h2>
-        <p><strong>Aroma:</strong> What do you smell first? Grain, fruit, savory, floral, or fermentation?</p>
-        <p><strong>Palate:</strong> Is it dry, sweet, oily, sharp, soft, or hot?</p>
-        <p><strong>Context:</strong> Does it improve with food, or does it work better alone?</p>
-        <p><strong>Judgment:</strong> Would you use it for learning, gifting, cocktails, banquets, or serious tasting?</p>
+      <h2 id="template">The tasting template</h2>
+      <p>A note that records four channels is worth ten scores. Copy this structure and fill it in for every new bottle:</p>
+      <div class="callout">
+        <p><strong>Aroma —</strong> What do you smell in the first three seconds? Pick one family from the wheel, then one specific word.</p>
+        <p><strong>Palate —</strong> Sweet, dry, oily, or sharp? Where does the flavour sit — front, middle, or back of the mouth?</p>
+        <p><strong>Heat —</strong> Where does the alcohol land, and does it integrate or interrupt? Back-of-throat is good; all-over burn is not.</p>
+        <p><strong>Finish —</strong> Count the seconds. Does the flavour stay the same or change?</p>
+        <p><strong>Context —</strong> Does it improve with food? Which food?</p>
+        <p><strong>Verdict —</strong> What is this bottle <em>for</em>: learning, gifting, cocktails, a banquet, or serious tasting?</p>
       </div>
+      <p>The last line matters more than it looks. A bottle can be excellent and still wrong for your occasion, and separating "is it good" from "is it for me" is what stops you buying the wrong thing twice.</p>
 
-      <section class="faq">
-        <h2>FAQ</h2>
-        <h3>Why does baijiu smell savory?</h3>
-        <p>Fermentation and production environment can create savory, roasted, nutty, soy-like, or earthy aromas, especially in sauce-aroma styles.</p>
+      <h2 id="mistakes">Four tasting mistakes</h2>
+      <ul>
+        <li><strong>Swirling.</strong> A whisky habit that backfires at 52% — agitation releases ethanol faster than aroma and flattens the glass. Hold it still and sniff twice.</li>
+        <li><strong>Judging from the first sip.</strong> The first sip is mostly heat. The second and third carry the information.</li>
+        <li><strong>Tasting neat only.</strong> Baijiu was designed for food. A bottle that seems harsh alone often reads as balanced with fat and salt, and you will misjudge it if you never try.</li>
+        <li><strong>Scoring instead of describing.</strong> A number cannot be compared across sessions or communicated to anyone. Three words can.</li>
+      </ul>
+
+      <section class="faq" id="faq">
+        <h2>Frequently asked</h2>
+        <h3>Why does baijiu smell savoury?</h3>
+        <p>Solid-state fermentation with qu produces amino acid and sulphur chemistry that liquid fermentation does not. In sauce aroma this is the dominant character — soy, mushroom, roasted grain — and it is a feature of the production method rather than an additive.</p>
         <h3>Is strong alcohol heat a quality problem?</h3>
-        <p>Not always, but rough heat that overwhelms aroma and finish can make a bottle less enjoyable. Balance matters more than proof alone.</p>
+        <p>Not by itself — 52% is a deliberate standard strength. The problem is heat that overwhelms aroma and finish, or heat that lands across the whole mouth rather than at the back of the throat. Balance is the marker, not proof.</p>
         <h3>Should baijiu be tasted with food?</h3>
-        <p>Often, yes. Many baijiu styles are easier to understand with rich, spicy, salty, or grilled foods than alone.</p>
+        <p>Yes, at least once per bottle. The category was built around Chinese meal structure, and many bottles that seem aggressive neat become coherent with rich, salty, or fermented food. Taste neat first to evaluate, then with food to understand.</p>
+        <h3>How many descriptors should a tasting note have?</h3>
+        <p>Three to five. More than that and you are inventing. A note that says "pineapple, honey, damp cellar, long warm finish" is more useful than a paragraph of adjectives.</p>
+        <h3>Does the flavour wheel apply to all baijiu?</h3>
+        <p>It covers the six major aroma types and the vast majority of bottles sold internationally. The four rare types — special, sesame, laobaigan, chi — have their own signatures that sit outside this wheel, and each is worth learning separately if you go deep.</p>
       </section>
+
+      <div class="next-links">
+        <a href="/types-of-baijiu/">The full aroma-type reference</a>
+        <a href="/how-to-drink-baijiu/">How to serve and taste</a>
+        <a href="/best-baijiu-for-beginners/">Pick a comparison set</a>
+        <a href="/db/">Read tasting notes for 16 varieties</a>
+      </div>
     </article>
   </section>
 </BaseLayout>

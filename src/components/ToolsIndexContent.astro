@@ -1,10 +1,12 @@
 ---
 import { common, getToolPath, languages, toolContent, toolSlugs, toolsHome, type Lang } from '../data/toolContent';
+import { toolMethod } from '../data/toolDetail';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const home = toolsHome[lang];
 const c = common[lang];
+const method = toolMethod[lang];
 ---
 <section class="tools-hero">
   <div class="wrap tools-hero-grid">
@@ -24,126 +26,208 @@ const c = common[lang];
 <section class="section">
   <div class="wrap">
     <div class="section-heading">
-      <h2>{home.introTitle}</h2>
+      <div>
+        <p class="eyebrow">{c.tools}</p>
+        <h2>{home.introTitle}</h2>
+      </div>
       <p>{home.introText}</p>
     </div>
     <div class="tools-grid">
-      {toolSlugs.map((slug) => {
+      {toolSlugs.map((slug, i) => {
         const tool = toolContent[slug][lang];
         return (
           <a class="tool-card" href={getToolPath(lang, slug)}>
-            <span>{tool.eyebrow}</span>
+            <span class="tool-index">{String(i + 1).padStart(2, '0')}</span>
+            <span class="tool-eyebrow">{tool.eyebrow}</span>
             <h3>{tool.shortTitle}</h3>
             <p>{tool.description}</p>
-            <strong>{home.openTool}</strong>
+            <strong>{home.openTool} &rarr;</strong>
           </a>
         );
       })}
+      <a class="tool-card cta-card" href="/db/">
+        <span class="tool-index">06</span>
+        <span class="tool-eyebrow">{home.dbCta.label}</span>
+        <h3>{home.dbCta.action}</h3>
+        <p>{home.dbCta.text}</p>
+        <strong>{home.dbCta.action} &rarr;</strong>
+      </a>
     </div>
   </div>
 </section>
 
 <section class="section tight">
-  <div class="wrap tool-note-band">
-    <p>{c.note}</p>
+  <div class="wrap">
+    <div class="method-band">
+      <h2>{method.title}</h2>
+      <div class="method-grid">
+        {method.items.map(m => (
+          <div class="method-card">
+            <h3>{m.h}</h3>
+            <p>{m.p}</p>
+          </div>
+        ))}
+      </div>
+      <p class="tool-note">{c.note}</p>
+    </div>
   </div>
 </section>
 
 <style>
   .tools-hero {
-    padding: clamp(34px, 5vw, 56px) clamp(18px, 4vw, 44px) clamp(24px, 4vw, 38px);
-    border-bottom: 1px solid var(--line);
-    background: #181412;
-    color: #fffdf8;
+    position: relative;
+    padding: clamp(122px, 16vh, 170px) 0 clamp(38px, 5vw, 56px);
+    border-bottom: 1px solid var(--line-dark);
+    background:
+      radial-gradient(120% 90% at 78% 0%, rgba(211, 172, 104, 0.14), transparent 62%),
+      linear-gradient(180deg, var(--ink-950), var(--ink-900));
   }
 
   .tools-hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.28fr);
-    gap: clamp(20px, 4vw, 42px);
-    align-items: end;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.26fr);
+    gap: clamp(24px, 4vw, 48px);
+    align-items: start;
   }
 
-  .tools-hero h1 {
-    max-width: 920px;
-    font-size: clamp(32px, 4.8vw, 54px);
-  }
+  .tools-hero h1 { max-width: 880px; }
+  .tools-hero .lede { max-width: 58ch; }
 
-  .language-panel {
-    display: grid;
-    gap: 8px;
-  }
-
+  .language-panel { display: grid; gap: 7px; }
   .language-panel a {
-    min-height: 42px;
+    min-height: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 9px 12px;
-    border: 1px solid rgba(255, 253, 248, 0.2);
-    border-radius: 6px;
-    color: rgba(255, 253, 248, 0.78);
+    padding: 9px 13px;
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 8px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--muted-on-dark);
     text-decoration: none;
+    background: rgba(255, 253, 247, 0.02);
   }
-
   .language-panel a.active,
   .language-panel a:hover {
-    background: #fffdf8;
-    color: var(--ink);
+    background: rgba(211, 172, 104, 0.14);
+    border-color: var(--gold-500);
+    color: var(--gold-300);
   }
 
   .tools-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
   }
+
+  .tool-card.cta-card {
+    border-color: var(--line-dark-strong);
+    background: linear-gradient(170deg, rgba(211, 172, 104, 0.12), rgba(211, 172, 104, 0.03));
+  }
+  .tool-card.cta-card h3 { font-size: 19px; }
 
   .tool-card {
-    min-height: 178px;
+    position: relative;
+    min-height: 230px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 18px;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: #fff;
-    color: var(--ink);
+    gap: 8px;
+    padding: 22px 20px 20px;
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    background: linear-gradient(170deg, rgba(255, 253, 247, 0.045), rgba(255, 253, 247, 0.012));
     text-decoration: none;
-    box-shadow: 0 2px 0 rgba(32, 29, 26, 0.03);
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
   }
-
   .tool-card:hover {
-    border-color: rgba(159, 47, 36, 0.46);
-    box-shadow: var(--shadow);
+    border-color: var(--line-dark-strong);
+    background: linear-gradient(170deg, rgba(211, 172, 104, 0.11), rgba(255, 253, 247, 0.015));
+    transform: translateY(-2px);
   }
 
-  .tool-card span {
-    color: var(--red);
-    font-size: 12px;
-    font-weight: 900;
+  .tool-index {
+    font-family: var(--serif);
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--gold-500);
+  }
+  .tool-eyebrow {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
+    color: var(--gold-400);
   }
-
+  .tool-card h3 {
+    margin: 2px 0 0;
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--text-on-dark);
+  }
   .tool-card p {
-    color: var(--muted);
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted-on-dark);
   }
-
   .tool-card strong {
-    color: var(--red);
+    margin-top: auto;
+    padding-top: 12px;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--gold-300);
   }
 
-  .tool-note-band {
-    padding: 18px 0;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
+  .method-band {
+    padding: clamp(22px, 3vw, 32px);
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    background: linear-gradient(170deg, rgba(255, 253, 247, 0.04), rgba(255, 253, 247, 0.01));
+  }
+  .method-band h2 {
+    margin: 0 0 18px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-300);
+  }
+  .method-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .method-card {
+    padding: 16px 16px 14px;
+    border: 1px solid var(--line-dark);
+    border-radius: 9px;
+    background: rgba(13, 10, 7, 0.32);
+  }
+  .method-card h3 {
+    margin: 0 0 7px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold-300);
+  }
+  .method-card p { margin: 0; font-size: 13.5px; line-height: 1.62; color: rgba(242, 236, 221, 0.74); }
+
+  .tool-note {
+    margin: 18px 0 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-dark);
+    font-size: 13px;
+    color: var(--muted-on-dark);
   }
 
-  @media (max-width: 860px) {
-    .tools-hero-grid,
+  @media (max-width: 1024px) {
+    .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 900px) {
+    .tools-hero-grid { grid-template-columns: 1fr; }
+    .method-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
     .tools-grid { grid-template-columns: 1fr; }
+    .language-panel { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
-</style>
-<style is:global>
-  @media (max-width: 1100px) { .tools-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (max-width: 760px) { .tools-grid { grid-template-columns: 1fr; } }
 </style>

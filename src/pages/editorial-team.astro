@@ -1,36 +1,63 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Editorial Team - Baijiu365';
-const description = 'Meet the editorial team behind Baijiu365 and how our baijiu guides are reviewed.';
+import { site } from '../data/site';
+const title = 'Editorial Team | Baijiu365';
+const description = 'Who edits Baijiu365, what each role is responsible for, and why no contributor is named without consent.';
 ---
+
 <BaseLayout title={title} description={description} type="AboutPage">
   <header class="article-header">
     <div class="narrow">
       <p class="eyebrow">People</p>
       <h1>Editorial Team</h1>
-      <p class="lede">Baijiu365 is edited by people who care about clear tasting language, buying risk, and honest limits.</p>
+      <p class="lede">A small desk, described honestly. No invented critics, no borrowed credentials, and no name published without the person's agreement.</p>
+      <div class="article-meta">
+        <span>Roles <b>3</b></span>
+        <span>Named contributors <b>by consent only</b></span>
+      </div>
     </div>
   </header>
+
   <section class="content">
     <article>
       <div class="decision-box">
-        <h2>Trust note</h2>
-        <p>We do not invent critic credentials, awards, or bottle authentication authority. Public social profiles will be linked here only after the person has approved a verified profile.</p>
+        <h2>Why this page looks the way it does</h2>
+        <p>Most spirits sites fill a team page with photographs, job titles and scores. This one lists functions instead, because the honest position is that the site is written by a small desk and reviewed against sources rather than by a panel of famous tasters. A borrowed credential would make the page look better and the site less trustworthy.</p>
       </div>
-      <section class="profile-list">
-        <article class="profile-card">
-          <h2>Baijiu365 Editorial Team</h2>
-          <p><strong>Role:</strong> Site editing, guide structure, buying-risk review, and English-language clarity.</p>
-          <p>The editorial desk maintains the core baijiu explainers, updates policy pages, and tracks corrections across the site.</p>
-          <p><a href="/author/editorial-team/">Author profile</a> · <a href="/editorial-policy/">Editorial policy</a></p>
-        </article>
-        <article class="profile-card">
-          <h2>China Spirits Research Editor</h2>
-          <p><strong>Role:</strong> Research support for aroma types, banquet context, retail risk, and Chinese spirits terminology.</p>
-          <p>This role is used for research-backed edits where the site needs Chinese market context but does not yet have a named public contributor.</p>
-          <p><a href="/contact/">Submit a correction</a> · <a href="/affiliate-disclosure/">Disclosure</a></p>
-        </article>
-      </section>
+
+      <h2>Editorial desk</h2>
+      <p><strong>Responsible for:</strong> structure of the guides, English-language clarity, consistency of terminology, and the accuracy of the buying-risk pages.</p>
+      <p>The desk maintains the core explainers, keeps the database records aligned with producer labels, writes the policy pages, and handles every correction that arrives. When a page is revised, the desk is the one that changes it and updates the date.</p>
+
+      <h2>Research</h2>
+      <p><strong>Responsible for:</strong> sourcing claims about aroma types, production method, regional history, standards and market context.</p>
+      <p>Research work is what turns a plausible sentence into a sourced one. It is also what stops the site from repeating a claim that every other site repeats — the kind of thing that turns out to be a marketing line rather than a fact. Where research cannot settle a question, the page says the question is unsettled.</p>
+
+      <h2>Production and images</h2>
+      <p><strong>Responsible for:</strong> the photography of the house label, the illustrations used for styles and regions, and the labelling that keeps the two apart.</p>
+      <p>This role exists because the difference matters. A photograph of a real bottle and an illustration of what a style looks like are different claims, and the site labels them differently. See the <a href="/editorial-policy/">editorial policy</a> for exactly how.</p>
+
+      <h2>Named contributors</h2>
+      <p>Individuals are named here only when they have agreed to be, and with a role that can be checked. At the time of writing no external contributor has asked to be listed, so none is. If you are a distiller, importer, bartender or researcher who would like to contribute a sourced piece, write to <a href={`mailto:${site.email}`}>{site.email}</a> — the requirement is evidence, not credentials.</p>
+
+      <h2>How review works in practice</h2>
+      <ul>
+        <li>A factual claim is checked against a primary source before it is published.</li>
+        <li>A price is checked against a live listing and dated.</li>
+        <li>A tasting description is checked against the published style profile of the aroma family.</li>
+        <li>A claim about the house label is checked against the physical back label.</li>
+        <li>Anything that fails those checks is either removed or rewritten as an open question.</li>
+      </ul>
+
+      <h2>Citing this site</h2>
+      <p>If you are writing about baijiu and want to cite Baijiu365, cite the specific page rather than the site, and include the revision date shown on it — a page about prices is only as good as the month it was checked. Short quotation with attribution and a link is fine; wholesale republication is not.</p>
+
+      <div class="next-links">
+        <a href="/editorial-policy/">Editorial policy</a>
+        <a href="/about/">About Baijiu365</a>
+        <a href="/author/editorial-team/">Author profile</a>
+        <a href="/contact/">Contact the desk</a>
+      </div>
     </article>
   </section>
 </BaseLayout>

@@ -2,16 +2,17 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import fs from 'fs';
 import path from 'path';
+import { regionEditorial } from '../../../data/regionEditorial';
 
 const regionDescriptions = {
-  guizhou: 'Guizhou Province is the heartland of sauce-aroma baijiu. The Chishui River valley, particularly Maotai Town, provides a unique microbial terroir considered essential for sauce-aroma production.',
-  sichuan: 'Sichuan Province produces more baijiu than any other region in China. Known for strong-aroma baijiu fermented in aged mud pits, with distinct sub-regions like Luzhou and Yibin.',
-  shanxi: 'Shanxi Province is the birthplace of light-aroma baijiu. The clean, grain-forward style originated here with Fenjiu, dating back over 1,500 years.',
-  beijing: 'Beijing is home to erguotou-style light-aroma baijiu, a working-class staple. Niulanshan and Hongxing are the dominant brands.',
-  jiangsu: 'Jiangsu Province produces strong-aroma baijiu with a softer, sweeter profile than Sichuan. Yanghe is the flagship brand.',
-  anhui: 'Anhui Province has a long strong-aroma tradition. Gujinggong is the most famous brand, using ancient well water in production.',
-  shaanxi: 'Shaanxi Province is the sole producer of phoenix-aroma baijiu, a hybrid style unique to the region. Xifeng is the defining brand.',
-  hunan: 'Hunan Province is home to fuyu-aroma (mixed aroma) baijiu. Jiugui is the primary producer, using a composite fermentation approach.',
+  guizhou: 'Guizhou Province is the heartland of sauce-aroma baijiu. The Chishui River valley provides a microbial terroir considered essential for sauce-aroma production.',
+  sichuan: 'Sichuan Province produces more baijiu than any other region in China, known for strong-aroma baijiu fermented in aged mud pits.',
+  shanxi: 'Shanxi Province is the birthplace of light-aroma baijiu, with Fenjiu dating back over 1,500 years.',
+  beijing: 'Beijing is home to erguotou-style light-aroma baijiu, a working-class staple.',
+  jiangsu: 'Jiangsu Province produces strong-aroma baijiu with a softer, sweeter profile than Sichuan.',
+  anhui: 'Anhui Province has a long strong-aroma tradition, using ancient well water in production.',
+  shaanxi: 'Shaanxi Province is the sole producer of phoenix-aroma baijiu, a hybrid style unique to the region.',
+  hunan: 'Hunan Province is home to fuyu-aroma baijiu, using a composite fermentation approach.',
 };
 
 export function getStaticPaths() {
@@ -32,24 +33,112 @@ export function getStaticPaths() {
 
 const { label, items } = Astro.props;
 const regionKey = Astro.params.region;
-const description = regionDescriptions[regionKey] || '';
+const ed = regionEditorial[regionKey];
+const fallbackDescription = regionDescriptions[regionKey] || '';
 
-const title = `${label} Baijiu — ${items.length} Varieties | Baijiu365`;
-const metaDesc = `Baijiu from ${label}: ${items.length} varieties with GB/T standards, ABV, tasting notes. ${description.slice(0, 100)}`;
-const keywords = [`${label} baijiu`, `${label} chinese liquor`, ...items.map(v => v.name)];
+const title = `${label} Baijiu — ${items.length} Varieties, Terroir and Styles | Baijiu365`;
+const metaDesc = ed
+  ? `${label} baijiu explained: ${ed.lede.slice(0, 110)} Plus ${items.length} bottles with GB/T codes and price guidance.`
+  : `Baijiu from ${label}: ${items.length} varieties with GB/T standards, ABV, tasting notes. ${fallbackDescription}`;
+const keywords = [`${label} baijiu`, `${label} chinese liquor`, `${label} distilleries`, ...items.map(v => v.name)];
+
+const aromasHere = [...new Set(items.map(v => v.aroma_type))];
+const prices = items.map(v => v.price_range_usd).filter(Boolean);
+const minPrice = prices.length ? Math.min(...prices.map(p => p.min)) : null;
+const maxPrice = prices.length ? Math.max(...prices.map(p => p.max)) : null;
+const abvs = [...new Set(items.map(v => v.abv_range))];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `Baijiu from ${label}`,
+  description: metaDesc,
+  url: `https://baijiu365.com/db/region/${regionKey}/`,
+  isPartOf: { '@type': 'WebSite', name: 'Baijiu365', url: 'https://baijiu365.com/' },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: items.length,
+    itemListElement: items.map((v, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: v.name,
+      url: `https://baijiu365.com/db/variety/${v.id}/`,
+    })),
+  },
+};
 ---
 
-<BaseLayout title={title} description={metaDesc} keywords={keywords} type="WebSite">
+<BaseLayout title={title} description={metaDesc} keywords={keywords} type="WebSite" jsonLd={jsonLd}>
   <section class="region-hero">
     <div class="region-hero-bg" aria-hidden="true">
       <img src="/images/region-river.webp" alt="" width="1600" height="1024" />
     </div>
     <div class="wrap">
       <p class="eyebrow"><a href="/db/">Database</a> &rsaquo; Producing Region</p>
-      <h1>{label} <span class="region-cn">产区</span></h1>
-      <p class="lede">{items.length} {items.length === 1 ? 'variety' : 'varieties'} &middot; {description}</p>
+      <h1>{label} <span class="region-cn">{ed?.cn || '产区'}</span></h1>
+      <p class="lede">{ed ? ed.lede : `${items.length} varieties in this region. ${fallbackDescription}`}</p>
+      <ul class="region-chips">
+        <li><b>{items.length}</b> {items.length === 1 ? 'bottle' : 'bottles'}</li>
+        <li><b>{aromasHere.length}</b> aroma {aromasHere.length === 1 ? 'style' : 'styles'}</li>
+        {minPrice !== null && <li><b>US${minPrice}–{maxPrice}</b> range</li>}
+      </ul>
     </div>
   </section>
+
+  {ed && (
+    <section class="section region-section">
+      <div class="wrap region-layout">
+        <article class="region-prose">
+          <h2>Why this region</h2>
+          {ed.terroir.map(p => <p>{p}</p>)}
+
+          <h2>What it tastes like here</h2>
+          {ed.character.map(p => <p>{p}</p>)}
+
+          <h2>What to buy</h2>
+          {ed.buying.map(p => <p>{p}</p>)}
+
+          <h2>What people get wrong</h2>
+          <dl class="myth-list">
+            {ed.misconceptions.map(m => (
+              <div class="myth">
+                <dt>{m.claim}</dt>
+                <dd>{m.reality}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
+
+        <aside class="region-aside">
+          <div class="aside-card">
+            <h2>At a glance</h2>
+            <dl class="fact-list">
+              {ed.facts.map(f => (
+                <div><dt>{f.label}</dt><dd>{f.value}</dd></div>
+              ))}
+            </dl>
+          </div>
+
+          <div class="aside-card">
+            <h2>Styles here</h2>
+            <div class="aroma-tags">
+              {aromasHere.map(a => (
+                <a href={`/db/aroma/${a}/`} class="aroma-tag">{a}</a>
+              ))}
+            </div>
+            <dl class="fact-list" style="margin-top:14px;">
+              <div><dt>ABV on record</dt><dd>{abvs.join(' · ')}</dd></div>
+            </dl>
+          </div>
+
+          <div class="aside-card aside-links">
+            <h2>Read next</h2>
+            {ed.related.map(l => <a href={l.href}>{l.label}</a>)}
+          </div>
+        </aside>
+      </div>
+    </section>
+  )}
 
   <section class="section">
     <div class="wrap">
@@ -76,12 +165,13 @@ const keywords = [`${label} baijiu`, `${label} chinese liquor`, ...items.map(v =
       <div class="table-wrap reveal" style="margin-top:32px;">
         <table>
           <thead>
-            <tr><th>Variety</th><th>Aroma</th><th>ABV</th><th>GB/T</th><th>Tier</th></tr>
+            <tr><th>Variety</th><th>House</th><th>Aroma</th><th>ABV</th><th>GB/T</th><th>Tier</th></tr>
           </thead>
           <tbody>
             {items.map(v => (
               <tr>
                 <td><a href={`/db/variety/${v.id}/`}><strong>{v.name}</strong> ({v.name_cn})</a></td>
+                <td>{v.brand?.name || '—'}{v.brand?.founded ? ` · ${v.brand.founded}` : ''}</td>
                 <td><a href={`/db/aroma/${v.aroma_type}/`}>{v.aroma_type}</a></td>
                 <td>{v.abv_range}</td>
                 <td><code>{v.gbt_standard}</code></td>
@@ -114,6 +204,7 @@ const keywords = [`${label} baijiu`, `${label} chinese liquor`, ...items.map(v =
   }
   .region-hero .wrap { position: relative; z-index: 1; }
   .region-hero h1 { max-width: 800px; }
+  .region-hero .lede { max-width: 62ch; }
   .region-cn {
     display: inline-block;
     margin-left: 12px;
@@ -125,5 +216,119 @@ const keywords = [`${label} baijiu`, `${label} chinese liquor`, ...items.map(v =
     letter-spacing: 0.2em;
   }
 
+  .region-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .region-chips li {
+    padding: 7px 14px;
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 999px;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: var(--muted-on-dark);
+    background: rgba(255, 253, 247, 0.03);
+  }
+  .region-chips b { color: var(--gold-300); font-weight: 600; }
+
+  .region-section { border-bottom: 1px solid var(--line-dark); }
+  .region-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.85fr);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+  }
+  .region-prose h2 {
+    margin: 44px 0 14px;
+    font-family: var(--serif);
+    font-size: clamp(23px, 2.6vw, 30px);
+    font-weight: 500;
+    color: var(--text-on-dark);
+  }
+  .region-prose h2:first-child { margin-top: 0; }
+  .region-prose p {
+    margin: 0 0 16px;
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: rgba(242, 236, 221, 0.82);
+  }
+
+  .myth-list { margin: 22px 0 0; }
+  .myth { padding: 16px 0; border-top: 1px solid var(--line-dark); }
+  .myth dt {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--text-on-dark);
+    margin-bottom: 6px;
+  }
+  .myth dd { margin: 0; font-size: 15px; line-height: 1.65; color: rgba(242, 236, 221, 0.74); }
+
+  .region-aside {
+    position: sticky;
+    top: 96px;
+    display: grid;
+    gap: 14px;
+  }
+  .aside-card {
+    padding: 20px 20px 18px;
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    background: linear-gradient(170deg, rgba(255, 253, 247, 0.045), rgba(255, 253, 247, 0.012));
+  }
+  .aside-card h2 {
+    margin: 0 0 14px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-300);
+  }
+  .fact-list { margin: 0; display: grid; gap: 10px; }
+  .fact-list div { display: grid; gap: 2px; }
+  .fact-list dt {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-on-dark);
+  }
+  .fact-list dd { margin: 0; font-size: 14px; color: var(--text-on-dark); line-height: 1.45; }
+
+  .aroma-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .aroma-tag {
+    padding: 6px 12px;
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 999px;
+    font-size: 12.5px;
+    text-transform: capitalize;
+    color: var(--gold-300);
+    text-decoration: none;
+  }
+  .aroma-tag:hover { background: rgba(211, 172, 104, 0.12); }
+
+  .aside-links { display: grid; gap: 0; }
+  .aside-links a {
+    display: block;
+    padding: 9px 0;
+    font-size: 14px;
+    color: rgba(242, 236, 221, 0.82);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(211, 172, 104, 0.18);
+  }
+  .aside-links a:last-child { border-bottom: 0; }
+  .aside-links a:hover { color: var(--gold-300); }
+
   table code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--gold-300); font-size: 13px; }
+
+  @media (max-width: 1024px) {
+    .region-layout { grid-template-columns: 1fr; }
+    .region-aside { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .region-aside { grid-template-columns: 1fr; }
+    .region-prose p { font-size: 15.5px; }
+  }
 </style>

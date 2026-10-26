@@ -1,25 +1,285 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Baijiu Glossary: Essential Terms for Beginners';
-const description = 'A beginner glossary for baijiu terms including qu, aroma type, sauce aroma, strong aroma, light aroma, and Maotai.';
+const title = 'Baijiu Glossary: 60 Terms for Reading a Bottle and a Menu';
+const description = 'Every baijiu term that matters, grouped by aroma types, production, tasting, labelling, market, and drinking etiquette — with the Chinese characters and why each one changes a decision.';
+const keywords = ['baijiu glossary', 'baijiu terms', 'qu definition', 'GB/T standard baijiu', 'Chinese baijiu vocabulary'];
 ---
-<BaseLayout title={title} description={description}>
-  <header class="article-header"><div class="narrow"><p class="eyebrow">Reference</p><h1>Baijiu Glossary</h1><p class="lede">A plain-English reference for the terms that appear again and again in baijiu buying, tasting, and production.</p></div></header>
-  <section class="content"><article>
-    <h2 id="qu">Qu</h2><p>A fermentation starter made with grains and microbes. Qu is one reason baijiu develops such distinctive aromas.</p>
-    <h2 id="aroma-type">Aroma Type</h2><p>The main style classification for baijiu. It is more useful than judging bottles by color. <a href="/db/">Browse all 6 aroma types with their varieties in the database.</a></p>
-    <h2 id="sauce-aroma">Sauce Aroma</h2><p>A savory, complex aroma style made famous by Maotai. <a href="/db/aroma/sauce/">View all sauce-aroma varieties &rarr;</a></p>
-    <h2 id="strong-aroma">Strong Aroma</h2><p>A rich, often fruity and cellar-influenced style common across many Chinese banquet bottles. <a href="/db/aroma/strong/">View all strong-aroma varieties &rarr;</a></p>
-    <h2 id="light-aroma">Light Aroma</h2><p>A cleaner, grain-forward style that can be easier to understand for some first-time drinkers. <a href="/db/aroma/light/">View all light-aroma varieties &rarr;</a></p>
-    <h2 id="gbt">GB/T Standard</h2><p>Chinese national standard codes that classify baijiu production methods and quality grades. Each aroma type maps to specific GB/T numbers (e.g., GB/T 10781.1 for strong aroma). Every entry in the <a href="/db/">baijiu database</a> includes its verified GB/T standard.</p>
-    <h2 id="development-bottle">Development Bottle</h2><p>A bottle connected to a major brand group or authorized producer but not necessarily equivalent to the core flagship product. These require careful reading before purchase.</p>
-    <h2 id="flagship-bottle">Flagship Bottle</h2><p>The core product line most people mean when they refer to a famous brand. Related products, commemorative editions, and group-affiliated bottles may not carry the same status or resale logic.</p>
-    <h2 id="importer-label">Importer Label</h2><p>A market-specific label that can show who brought the bottle into a country legally. It is useful for overseas buyers, but it does not replace careful product identification.</p>
-    <h2 id="toasting">Toasting</h2><p>The social act of drinking together, often during meals or banquets. Toasting culture matters, but responsible pacing matters more than blind imitation.</p>
-    <div class="next-links">
-      <a href="/baijiu-basics/">Start with the basics</a>
-      <a href="/how-to-buy-baijiu-outside-china/">Use these terms while buying overseas</a>
-      <a href="/types-of-baijiu/">Browse baijiu by aroma type</a>
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">Reference</p>
+      <h1>Baijiu Glossary</h1>
+      <p class="lede">Sixty terms, grouped the way you actually need them: what a bottle is, how it was made, what it tastes like, what the label means, and what to do at the table.</p>
+      <div class="article-meta">
+        <span><b>60 terms</b></span>
+        <span>Six sections</span>
+        <span>Chinese included</span>
+      </div>
     </div>
-  </article></section>
+  </header>
+
+  <section class="content">
+    <article>
+      <nav class="toc" aria-label="Sections">
+        <h2>Sections</h2>
+        <ol>
+          <li><a href="#classification">Aroma and classification</a></li>
+          <li><a href="#production">Production and raw material</a></li>
+          <li><a href="#tasting">Tasting vocabulary</a></li>
+          <li><a href="#labels">Labels and standards</a></li>
+          <li><a href="#market">Market and pricing</a></li>
+          <li><a href="#drinking">Drinking and etiquette</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="classification">Aroma and classification</h2>
+
+      <h3>Baijiu <span class="term-cn">白酒 báijiǔ</span></h3>
+      <p>Literally "white liquor." A Chinese distilled spirit made from grain through solid-state fermentation with a microbial starter, then distilled, aged, and blended. Legally defined by a set of national standards, not by brand or region. <a href="/baijiu-basics/">Full beginner guide &rarr;</a></p>
+
+      <h3>Aroma type <span class="term-cn">香型 xiāngxíng</span></h3>
+      <p>The primary classification of baijiu, and the single most useful piece of information about any bottle. Twelve types are recognised; six cover almost everything sold internationally. Aroma type is determined by the starter, the fermentation vessel, and the cycle length — not by added flavour. <a href="/types-of-baijiu/">All twelve explained &rarr;</a></p>
+
+      <h3>Sauce aroma <span class="term-cn">酱香型 jiàngxiāng</span></h3>
+      <p>The style made famous by Moutai: savoury, roasted, fermented soybean, mushroom, dried fruit, with the longest finish in the category. Produced with high-temperature qu, stone-lined pits, and a year-long cycle. Standard GB/T 26760. Divisive for beginners — the most acquired taste in baijiu.</p>
+
+      <h3>Strong aroma <span class="term-cn">浓香型 nóngxiāng</span></h3>
+      <p>The largest category by volume, roughly half of all baijiu sold. Ripe fruit, honey, cooked grain, and a savoury pit note. Fermented in mud pits whose microbial communities develop over decades. Standard GB/T 10781.1. The most immediately likeable style and the safest gift.</p>
+
+      <h3>Light aroma <span class="term-cn">清香型 qīngxiāng</span></h3>
+      <p>The cleanest profile: steamed grain, pear, faint florals, dry finish. Fermented in earthenware jars isolated from soil contact, using low-temperature qu. Standard GB/T 10781.2. The most accessible type for a palate trained on Western spirits.</p>
+
+      <h3>Rice aroma <span class="term-cn">米香型 mǐxiāng</span></h3>
+      <p>The softest major type: cooked rice, light sweetness, gentle florals. Uses small qu and a semi-solid fermentation. Standard GB/T 10781.3. Low intensity makes it the best cocktail base and the worst match for bold food.</p>
+
+      <h3>Phoenix aroma <span class="term-cn">凤香型 fèngxiāng</span></h3>
+      <p>Shaanxi's distinctive style, represented almost entirely by Xifeng. Dry, faintly smoky, firm on the grain, with a mineral finish. Ferments in an earthen pit renewed annually. Standard GB/T 14867.</p>
+
+      <h3>Herbal / Dong aroma <span class="term-cn">董香型 dǒngxiāng</span></h3>
+      <p>The outlier: over a hundred medicinal herbs in the qu, producing camphor, dried herb, and a faint bitterness. Regulated under a Guizhou provincial standard (DB52/T 550) rather than a national one, which reflects how singular it is.</p>
+
+      <h3>Mixed aroma <span class="term-cn">兼香型 jiānxiāng</span></h3>
+      <p>A deliberate blend of production methods, typically a strong-aroma opening with a sauce-aroma finish. Standard GB/T 23547. Jiugui is the best-known producer.</p>
+
+      <h3>Fuyu aroma <span class="term-cn">馥郁香型 fùyùxiāng</span></h3>
+      <p>"Layered fragrance." A sub-category associated with Jiugui's premium line, designed to present three aroma profiles in sequence within one glass. Standard GB/T 10781.11.</p>
+
+      <h3>Special aroma <span class="term-cn">特香型 tèxiāng</span></h3>
+      <p>Jiangxi's Site Liquor. Rice-husk-inoculated fermentation producing a rice-grain base with strong-aroma depth. Standard GB/T 20823. Rare outside China.</p>
+
+      <h3>Sesame aroma <span class="term-cn">芝麻香型 zhīmaxiāng</span></h3>
+      <p>Shandong's Jingzhi. Toasted sesame and roasted nut character produced by high-temperature fermentation — there is no actual sesame in it. Standard GB/T 20824.</p>
+
+      <h3>Laobaigan aroma <span class="term-cn">老白干香型 lǎobáigān</span></h3>
+      <p>Hebei's Hengshui Laobaigan. Extremely clean, dry, and high-proof, with a wheat-based fermentation that reads almost austere. Standard GB/T 20825.</p>
+
+      <h3>Chi aroma <span class="term-cn">豉香型 chǐxiāng</span></h3>
+      <p>Guangdong's Yubingshao, fermented with cooked pork fat in the jar. Fermented black bean character, genuinely strange to most palates, beloved in the Pearl River Delta. Standard GB/T 16289.</p>
+
+      <h2 id="production">Production and raw material</h2>
+
+      <h3>Qu <span class="term-cn">曲 qū</span></h3>
+      <p>The fermentation starter: a brick of grain colonised by moulds, yeasts, and bacteria. Qu is not a yeast packet — it is a living ecosystem, and it determines the aroma family before fermentation begins. The single most important concept for understanding why baijiu tastes the way it does.</p>
+
+      <h3>Daqu <span class="term-cn">大曲 dàqū</span></h3>
+      <p>"Large qu." Bricks made from wheat, barley, or peas, used for the premium aroma types. Classified by the peak temperature reached during incubation — low (40–50 °C) for light aroma, medium (50–60 °C) for strong aroma, high (60–65 °C) for sauce aroma.</p>
+
+      <h3>Xiaoqu <span class="term-cn">小曲 xiǎoqū</span></h3>
+      <p>"Small qu." Rice-bran or herb-based starter used in warmer southern regions, typically for rice aroma. Produces a softer, more floral profile than daqu.</p>
+
+      <h3>Fuqu <span class="term-cn">麸曲 fūqū</span></h3>
+      <p>Bran-based cultured starter. Faster and cheaper than traditional qu, used widely in entry-level bottles. Not a defect, but it produces a simpler profile.</p>
+
+      <h3>Solid-state fermentation <span class="term-cn">固态法 gùtàifǎ</span></h3>
+      <p>Fermenting grain in a damp solid heap or pit at 55–65% moisture, rather than in a liquid wash. This is the defining process of traditional baijiu, and the reason the category develops aromas that liquid fermentation cannot. Indicated on labels by GB/T 10781.x or GB/T 26760.</p>
+
+      <h3>Liquid-state fermentation <span class="term-cn">液态法 yètàifǎ</span></h3>
+      <p>Fermenting a liquid wash, closer to Western spirit production. Cheaper and faster, with far less aromatic complexity. Standard GB/T 20821. Legal and common at the bottom of the market — but not what most drinkers mean by traditional baijiu.</p>
+
+      <h3>Semi-solid fermentation <span class="term-cn">半固态法 bàngùtàifǎ</span></h3>
+      <p>A middle method used for rice aroma, where fermentation begins solid and becomes liquid. Produces the soft, low-intensity profile typical of the type.</p>
+
+      <h3>Pit <span class="term-cn">窖池 jiàochí</span></h3>
+      <p>The fermentation vessel dug into the ground. Strong aroma uses mud pits, sauce aroma uses stone-lined pits, light aroma uses earthenware jars set into the ground. The vessel type is the main structural difference between aroma families.</p>
+
+      <h3>Old pit <span class="term-cn">老窖 lǎojiào</span></h3>
+      <p>A pit that has been in continuous use for decades or centuries. The microbial community in the pit wall cannot be replicated quickly, so old pits are a genuine quality asset — and the reason "old pit" appears on so many strong-aroma labels.</p>
+
+      <h3>Cellar mud <span class="term-cn">窖泥 jiàoní</span></h3>
+      <p>The mud lining a strong-aroma pit, saturated with bacteria and yeasts. It is the source of the <em>jiaoxiang</em> pit aroma, and the reason a Sichuan strong aroma smells of damp cellar as well as fruit.</p>
+
+      <h3>Ceramic jar ageing <span class="term-cn">陶坛陈酿 táotán chénniàng</span></h3>
+      <p>Storing spirit in unglazed earthenware jars. The wall is slightly porous, so oxygen crosses slowly and the spirit breathes — softening harsh edges and building roundness. This is why baijiu is clear even after years of ageing: ceramic imparts no colour.</p>
+
+      <h3>The 12987 process</h3>
+      <p>The sauce-aroma production shorthand: one year per batch, two grain additions, nine steamings, eight fermentations, seven distillate collections. The most labour-intensive cycle in the category, and the structural reason sauce aroma costs more across all producers.</p>
+
+      <h3>Run-accumulation <span class="term-cn">跑窖法 pǎojiàofǎ</span></h3>
+      <p>A strong-aroma technique where base spirits from different pits are blended continuously across production cycles, building a consistent house profile rather than a single-pit expression.</p>
+
+      <h3>Blending <span class="term-cn">勾调 gōutiáo</span></h3>
+      <p>The master blender's craft: combining base spirits of different ages, pits, and fermentation rounds into a final consistent product. Almost no premium baijiu is a single-vessel bottling. Blending is where the house style is actually created.</p>
+
+      <h3>Base spirit <span class="term-cn">基酒 jījiǔ</span></h3>
+      <p>The unblended distillate held in jars. A premium bottle may contain base spirits from dozens of pits and several vintages.</p>
+
+      <h3>Sorghum <span class="term-cn">高粱 gāoliang</span></h3>
+      <p>The backbone grain of most baijiu. High in starch, tolerant of heat and acidity, and contributes a characteristic grain sweetness. Chinese baijiu is unusual among world spirits in relying on sorghum rather than wheat or corn as its primary grain.</p>
+
+      <h3>Hongyingzi sorghum <span class="term-cn">红缨子高粱 hóngyīngzi</span></h3>
+      <p>The small-grained, tough-skinned sorghum grown around the Chishui River, suited to the repeated steaming that sauce-aroma production demands. Its limited growing area is part of why the appellation is protected.</p>
+
+      <h2 id="tasting">Tasting vocabulary</h2>
+
+      <h3>Jiaoxiang <span class="term-cn">窖香 jiàoxiāng</span></h3>
+      <p>"Pit aroma." The savoury, damp-cellar note from mud-pit fermentation. The defining marker of strong aroma, and the note that distinguishes a Sichuan bottle from a Jiangsu one.</p>
+
+      <h3>Chenxiang <span class="term-cn">陈香 chénxiāng</span></h3>
+      <p>"Aged aroma." The soft, rounded note that develops during ceramic-jar ageing. Not the same as oak in whisky — there is no wood contact, so the change is integration rather than flavour addition.</p>
+
+      <h3>Quxiang <span class="term-cn">曲香 qūxiāng</span></h3>
+      <p>"Starter aroma." The dry, grain-and-mould character contributed by the qu itself, most visible in light aroma.</p>
+
+      <h3>Mianrou <span class="term-cn">绵柔 miánróu</span></h3>
+      <p>"Soft and supple." A texture descriptor for spirit with low alcohol heat and a rounded body. In Jiangsu it is a deliberate style — Yanghe built its market position on it at 40.8% ABV.</p>
+
+      <h3>Huigan <span class="term-cn">回甘 huígān</span></h3>
+      <p>"Returning sweetness." The sweetness that appears after swallowing, rather than on the entry. A marker of good balance and a common note in tasting write-ups.</p>
+
+      <h3>Houwei <span class="term-cn">厚味 hòuwèi</span></h3>
+      <p>"Thick flavour." Density and persistence on the palate, distinct from sweetness or strength. A bottle with houwei feels substantial in the mouth.</p>
+
+      <h3>Ganjing <span class="term-cn">干净 gānjìng</span></h3>
+      <p>"Clean." No off-notes, no roughness, no muddiness. A baseline quality marker rather than a compliment — but a bottle that fails it has a real problem.</p>
+
+      <h3>Shangtou <span class="term-cn">上头 shàngtóu</span></h3>
+      <p>Literally "goes to the head." The headache and flushing some drinkers report after baijiu. Usually attributed to congener load and drinking speed rather than to the spirit itself.</p>
+
+      <h3>Finish <span class="term-cn">余味 yúwèi</span></h3>
+      <p>How long the flavour persists after swallowing, and whether it changes. Entry-level bottles fade in ten seconds; a good strong aroma holds thirty; a serious sauce aroma can run past a minute.</p>
+
+      <h3>Body <span class="term-cn">酒体 jiǔtǐ</span></h3>
+      <p>The weight and texture of the spirit in the mouth — light, medium, or full. Driven by glycerol, esters, and ABV together.</p>
+
+      <h3>Congeners</h3>
+      <p>The trace compounds — esters, acids, higher alcohols, aldehydes — that carry flavour. Baijiu's congener load is far higher than vodka's by design, which is why the aroma is intense and why pacing matters.</p>
+
+      <h3>Acquired taste</h3>
+      <p>A flavour profile that most drinkers dislike on first contact and come to enjoy with repetition. Sauce aroma is the clearest example in baijiu, and the honest way to describe it to a beginner.</p>
+
+      <h2 id="labels">Labels and standards</h2>
+
+      <h3>GB/T standard <span class="term-cn">产品标准号 chǎnpǐn biāozhǔn hào</span></h3>
+      <p>The Chinese national standard code printed on every compliant label. It identifies the production method and aroma type, and it is the most reliable information on the packaging — far more reliable than front-label marketing.</p>
+
+      <h3>GB/T 10781.1</h3>
+      <p>Strong aroma, solid-state. If a bottle carries this code, it is traditional strong-aroma baijiu.</p>
+
+      <h3>GB/T 10781.2</h3>
+      <p>Light aroma, solid-state.</p>
+
+      <h3>GB/T 10781.3</h3>
+      <p>Rice aroma, solid-state.</p>
+
+      <h3>GB/T 26760</h3>
+      <p>Sauce aroma, solid-state. Used by Xijiu, Langjiu, and most sauce-aroma producers.</p>
+
+      <h3>GB/T 18356</h3>
+      <p>The geographical-indication standard for Moutai, specific to Maotai Town in Guizhou. It is not a higher quality grade than GB/T 26760 — it is a statement of origin and method.</p>
+
+      <h3>GB/T 20821</h3>
+      <p>Liquid-state fermentation. Legal, cheap, and not traditional solid-state baijiu. The code to look for when you want to know whether a bottle is what drinkers mean by pure grain.</p>
+
+      <h3>GB/T 20822</h3>
+      <p>Blended baijiu — part solid-state, part liquid-state. Also legal, also not traditional.</p>
+
+      <h3>Solid-state baijiu <span class="term-cn">固态法白酒 gùtàifǎ báijiǔ</span></h3>
+      <p>The label term for traditional production. This is what "pure grain" (纯粮) claims are pointing at, and the standard code is the only way to verify it.</p>
+
+      <h3>ABV <span class="term-cn">酒精度 jiǔjīngdù</span></h3>
+      <p>Alcohol by volume, printed as "% vol." Chinese menus and boxes often write it without the sign — "52度" means 52% ABV.</p>
+
+      <h3>Importer label</h3>
+      <p>The locally compliant sticker applied by the company that legally imported the bottle. It is the paper trail: no label means no traceable import route and no recourse.</p>
+
+      <h3>SC code <span class="term-cn">食品生产许可证 shípǐn shēngchǎn xǔkězhèng</span></h3>
+      <p>The food production licence number, prefixed "SC." It identifies the licensed manufacturer and can be checked against the producer named on the label.</p>
+
+      <h3>Series product <span class="term-cn">系列酒 xìlièjiǔ</span></h3>
+      <p>A product from the same corporate family as a famous flagship, made to different specifications and sold far cheaper. Legitimate baijiu, but not the flagship — and the gap in liquid and price is large.</p>
+
+      <h3>Development product <span class="term-cn">开发酒 kāifājiǔ</span></h3>
+      <p>A bottle produced under a brand association by a partner or subsidiary, with its own quality and positioning. Frequently the source of "I paid a lot for a famous name" disappointment.</p>
+
+      <h2 id="market">Market and pricing</h2>
+
+      <h3>Guide price <span class="term-cn">指导价 zhǐdǎojià</span></h3>
+      <p>The producer's official retail price. For in-demand bottles such as Moutai Flying Fairy, the actual market price has run well above the guide price for years because of allocation scarcity.</p>
+
+      <h3>Tier <span class="term-cn">档次 dǎngcì</span></h3>
+      <p>Positioning band — entry, premium, ultra-premium, collector. Useful for orientation, but a weak predictor of what you will actually enjoy.</p>
+
+      <h3>Grey market</h3>
+      <p>Bottles that move outside authorised distribution. Legal in some contexts, always lower-recourse, and the main channel through which counterfeits reach buyers.</p>
+
+      <h3>Vintage claim <span class="term-cn">年份酒 niánfènjiǔ</span></h3>
+      <p>A bottle marketed with an age. In baijiu this usually means the blend contains spirit of that age, or that the release is tied to a year — not that the whole bottle was aged that long in a single vessel.</p>
+
+      <h3>Commemorative edition <span class="term-cn">纪念酒 jìniànjiǔ</span></h3>
+      <p>A release tied to an event, anniversary, or zodiac year. Collector-driven pricing, often with the same liquid as a standard product.</p>
+
+      <h3>Allocation <span class="term-cn">配额 pèi'é</span></h3>
+      <p>The volume a distributor is permitted to buy of a scarce product. Allocation systems are why guide prices and market prices diverge so widely on prestige bottles.</p>
+
+      <h2 id="drinking">Drinking and etiquette</h2>
+
+      <h3>Ganbei <span class="term-cn">干杯 gānbēi</span></h3>
+      <p>"Empty the glass." A toast that signals finishing the drink. In practice, matching the gesture matters more than matching the volume — but the phrase does mean what it says.</p>
+
+      <h3>Suiyi <span class="term-cn">随意 suíyì</span></h3>
+      <p>"As you please." The polite escape hatch in a toast: drink what you want, not what the glass holds. Using it is not rude; it is the mechanism working as intended.</p>
+
+      <h3>Toast with tea <span class="term-cn">以茶代酒 yǐ chá dài jiǔ</span></h3>
+      <p>The recognised, face-saving way to decline alcohol. Hold the teacup the same way, make the same gesture. Hosts accept it routinely.</p>
+
+      <h3>Host and co-host <span class="term-cn">主陪 · 副陪 zhǔpéi · fùpéi</span></h3>
+      <p>At a formal round table the host sits facing the door with the guest of honour on the right; the co-host sits opposite and drives the pace of toasting. Knowing the seating logic removes most banquet anxiety.</p>
+
+      <h3>Guest of honour <span class="term-cn">主宾 zhǔbīn</span></h3>
+      <p>The most senior guest, seated to the host's right. Toasting order follows seniority from this position.</p>
+
+      <h3>Decanting pitcher <span class="term-cn">分酒器 fēnjiǔqì</span></h3>
+      <p>The small pitcher used to pour from a sealed bottle into individual cups. Standard table equipment — the bottle itself usually stays closed.</p>
+
+      <h3>Tasting cup <span class="term-cn">酒杯 jiǔbēi</span></h3>
+      <p>The 15–25 ml cup used for baijiu. The size is functional, not ceremonial: it keeps the spirit at room temperature and allows many refills across a long meal.</p>
+
+      <h3>The drinking table <span class="term-cn">酒桌 jiǔzhuō</span></h3>
+      <p>The social system of Chinese banquet drinking — seating, toasting order, who drinks with whom. The spirit is the medium; the relationships are the content.</p>
+
+      <div class="next-links">
+        <a href="/baijiu-basics/">Start with the basics</a>
+        <a href="/types-of-baijiu/">Aroma types in detail</a>
+        <a href="/how-to-buy-baijiu-outside-china/">Use these terms while buying</a>
+        <a href="/db/">Browse all 16 varieties</a>
+      </div>
+    </article>
+  </section>
 </BaseLayout>
+
+<style>
+  .term-cn {
+    font-family: var(--serif-cn, serif);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--gold-400, #d3ac68);
+    letter-spacing: 0.04em;
+    margin-left: 10px;
+    opacity: 0.85;
+  }
+  .content article h3 {
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(211, 172, 104, 0.1);
+  }
+</style>

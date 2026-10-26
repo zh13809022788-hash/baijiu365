@@ -1,55 +1,162 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'How to Buy Baijiu Outside China Without Getting Misled';
-const description = 'A practical overseas buying guide for baijiu: channels, labels, importer checks, pricing signals, gift boxes, and common red flags.';
+const title = 'How to Buy Baijiu Outside China: Channels, Labels, and Red Flags';
+const description = 'A buying guide for overseas shoppers — which channels are safe, how to read a Chinese label, what price is fair, and the specific red flags that signal a fake or grey-market bottle.';
+const keywords = ['buy baijiu online', 'baijiu outside China', 'baijiu importer label', 'Chinese liquor shopping', 'baijiu price'];
 ---
-<BaseLayout title={title} description={description}>
+
+<BaseLayout title={title} description={description} keywords={keywords}>
   <header class="article-header">
     <div class="narrow">
       <p class="eyebrow">Overseas Buying</p>
       <h1>How to Buy Baijiu Outside China</h1>
-      <p class="lede">Outside China, the hardest part is not finding baijiu. It is knowing whether the bottle, seller, price, and story make sense.</p>
+      <p class="lede">Finding baijiu abroad is easy. Finding a bottle that is authentic, fairly priced, and actually the product you think it is — that is the hard part, and it is solvable with a short checklist.</p>
+      <div class="article-meta">
+        <span>Reading time <b>11 min</b></span>
+        <span>Includes <b>label decoder</b></span>
+        <span>Price data <b>16 varieties</b></span>
+      </div>
     </div>
   </header>
+
   <section class="content">
     <article>
-      <p>Baijiu buying outside China is uneven. Some cities have excellent specialist stores and importers. Other markets have only a few dusty bottles, confusing gift boxes, or marketplace listings with weak product information. Your first filter should be trust, not decoration.</p>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>Channel is the single strongest predictor of authenticity. Licensed retailer beats marketplace seller every time.</li>
+          <li>Every legal import carries an importer label in the local language. No label means no traceable import route.</li>
+          <li>The GB/T standard code on the back is the most reliable information on the bottle — it tells you the production method and aroma type.</li>
+          <li>Expect to pay 30–100% above Chinese retail once import duty, freight, and distributor margin are included.</li>
+          <li>Fakes concentrate in the expensive, famous, giftable end. Buying a $40 bottle is low risk; buying a $200 Moutai is high risk.</li>
+        </ul>
+      </div>
 
-      <h2>Check the Channel First</h2>
-      <p>Prefer licensed retailers, known importers, established Asian spirits shops, and restaurants or distributors that can explain what they sell. Be more careful with anonymous marketplace sellers, private resellers, and listings built around "rare," "vintage," or "limited" language without documentation.</p>
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#channels">Ranking the channels</a></li>
+          <li><a href="#label">Reading a Chinese label</a></li>
+          <li><a href="#importer">The importer label</a></li>
+          <li><a href="#price">What a fair price looks like</a></li>
+          <li><a href="#flags">Red flags</a></li>
+          <li><a href="#gift">Buying as a gift</a></li>
+          <li><a href="#checklist">The 60-second checklist</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
 
-      <h2>What To Inspect</h2>
+      <h2 id="channels">Ranking the channels</h2>
+      <p>Baijiu distribution outside China is uneven. In some cities — Vancouver, Los Angeles, Singapore, London, Sydney — there are specialist importers with deep stock and staff who know the category. In others, there are three dusty bottles in the back of an Asian grocery and a lot of marketplace listings.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Check</th><th>Good sign</th><th>Red flag</th></tr></thead>
+          <thead><tr><th>Channel</th><th>Risk</th><th>Best for</th><th>Watch out for</th></tr></thead>
           <tbody>
-            <tr><td>Importer label</td><td>Clear importer or distributor details for your market</td><td>No local compliance information on an imported bottle</td></tr>
-            <tr><td>Seller knowledge</td><td>Can explain aroma type, producer, ABV, and intended use</td><td>Only talks about price, gift value, or status</td></tr>
-            <tr><td>Price</td><td>Consistent with other reliable sellers</td><td>Much cheaper than market level for a famous premium bottle</td></tr>
-            <tr><td>Packaging</td><td>Clean, consistent, not the main sales argument</td><td>Heavy box, vague certificate, little liquid information</td></tr>
-            <tr><td>Product name</td><td>Specific brand and product line</td><td>Confusing use of a famous group name without clarity</td></tr>
+            <tr><td>Licensed spirits specialist / Asian liquor store</td><td>Low</td><td>Everything; the default choice</td><td>Storage conditions; ask how long it has sat in sunlight</td></tr>
+            <tr><td>Established online spirits retailer</td><td>Low–medium</td><td>Price comparison, wider range</td><td>Shipping damage; check the returns policy before ordering</td></tr>
+            <tr><td>Duty-free at Chinese airports</td><td>Low</td><td>Standard bottles at good prices, travel-exclusive editions</td><td>Purchase limits at destination; no recourse after you leave</td></tr>
+            <tr><td>Chinese supermarket with a liquor aisle</td><td>Medium</td><td>Everyday bottles, entry-level brands</td><td>Poor storage, no staff knowledge, occasional grey imports</td></tr>
+            <tr><td>Restaurant list</td><td>Medium</td><td>Trying before buying; convivial occasions</td><td>3–4× retail markup; verify the bottle is opened at your table</td></tr>
+            <tr><td>Marketplace / private reseller</td><td>High</td><td>Nothing a beginner should need</td><td>Counterfeits, refills, unknown storage, no recourse</td></tr>
           </tbody>
         </table>
       </div>
+      <p>The practical rule: if you cannot identify who imported the bottle and who is legally responsible for selling it, you are not buying a product — you are buying a story.</p>
 
-      <h2>Do Not Overpay for Mystery</h2>
-      <p>Overseas buyers often overpay because they cannot read Chinese labels or judge the difference between a core flagship bottle and a related development product. If a listing leans heavily on "official," "special edition," "aged," or "collector" language, slow down and verify what product line it actually belongs to.</p>
+      <h2 id="label">Reading a Chinese label</h2>
+      <p>You do not need Chinese to evaluate a bottle. Six fields carry almost all the decision-relevant information, and they are all in the same place on every compliant label.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Field</th><th>Chinese</th><th>What to look for</th></tr></thead>
+          <tbody>
+            <tr><td>Product type</td><td>产品类型</td><td>固态法白酒 = solid-state (traditional). 液态法 = liquid-fermented. 固液法 = blended.</td></tr>
+            <tr><td>Aroma type</td><td>香型</td><td>浓香型 strong · 酱香型 sauce · 清香型 light · 米香型 rice · 凤香型 phoenix</td></tr>
+            <tr><td>Standard code</td><td>产品标准号</td><td>GB/T 10781.1 strong · 10781.2 light · 26760 sauce · 20821/20822 avoid if seeking traditional</td></tr>
+            <tr><td>ABV</td><td>酒精度</td><td>Printed as % vol. 52% vol is standard for strong aroma; 53% for sauce</td></tr>
+            <tr><td>Raw materials</td><td>原料</td><td>Sorghum (高粱), wheat (小麦), rice (大米), corn (玉米), barley (大麦), peas (豌豆), water (水)</td></tr>
+            <tr><td>Producer</td><td>生产商 / 制造商</td><td>Check it matches the brand you think you are buying — group subsidiaries differ</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warning"><strong>The one field that matters most:</strong> 产品标准号 (product standard number). GB/T 10781.x and GB/T 26760 mean solid-state fermentation. GB/T 20821 means liquid-fermented and GB/T 20822 means partially blended. All three are legal; only the first is what most drinkers mean by traditional baijiu. Front labels rarely mention this — the back label always does.</div>
 
-      <h2>Best Buying Path for Beginners</h2>
-      <p>Start with a bottle that has enough information to compare: aroma type, ABV, producer, importer, and intended drinking context. A moderate bottle from a reliable channel teaches more than a mysterious premium-looking bottle from a weak seller.</p>
+      <h2 id="importer">The importer label</h2>
+      <p>In most jurisdictions, a legally imported bottle must carry a locally compliant label applied by the importer: product name in the local language, importer name and address, net volume, ABV, and often an allergen or age statement. This sticker is not decoration. It is the paper trail.</p>
+      <p>A bottle with no importer label, or one whose label names a company you cannot look up, has arrived through a channel that did not go through normal import procedures. That does not automatically make it counterfeit — personal imports and cross-border shopping are legal in many places — but it removes your recourse if something is wrong.</p>
+      <p>One useful check: the importer label and the original Chinese label should agree on ABV and volume. Mismatches are a strong signal of a repackaged or refilled bottle.</p>
 
-      <section class="faq">
-        <h2>FAQ</h2>
+      <h2 id="price">What a fair price looks like</h2>
+      <p>Chinese retail prices do not translate directly to overseas prices. Import duty, freight, distributor margin, and retailer margin typically add 30–100% depending on the market, and gift-box editions carry their own premium.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Tier</th><th>Chinese retail</th><th>Realistic overseas price</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td>Entry</td><td>¥15–100</td><td>$5–25</td><td>Niulanshan, Hongxing Erguotou, Xifeng</td></tr>
+            <tr><td>Premium</td><td>¥200–500</td><td>$30–90</td><td>Fenjiu, Yanghe, Luzhou Laojiao, Gujinggong</td></tr>
+            <tr><td>Upper premium</td><td>¥600–1,200</td><td>$80–200</td><td>Wuliangye Puwu, Shuijingfang, Shede</td></tr>
+            <tr><td>Prestige</td><td>¥1,499+ (often grey-market above)</td><td>$250–600</td><td>Moutai Flying Fairy</td></tr>
+            <tr><td>Collector</td><td>Varies wildly</td><td>$500–5,000+</td><td>Moutai vintage, zodiac, commemorative</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Two pricing signals are worth acting on. A premium bottle priced <strong>well below</strong> the band is a fraud signal, not a bargain — Moutai does not need to be discounted by strangers. A bottle priced <strong>well above</strong> the band is usually a restaurant or a gift-shop markup, and it is worth walking to the next store.</p>
+
+      <h2 id="flags">Red flags</h2>
+      <ul>
+        <li><strong>Price far below market</strong> on a famous premium bottle. The most reliable single indicator of a counterfeit or refill.</li>
+        <li><strong>No importer label</strong> on a bottle sold in a retail setting.</li>
+        <li><strong>"Official" and "special edition" language</strong> with no exact product name. Vague prestige words are a sales technique, not a specification.</li>
+        <li><strong>Vintage claims without documentation.</strong> In baijiu, a year on the box usually marks a release, not the age of the liquid.</li>
+        <li><strong>Group-name confusion.</strong> Many products borrow a famous parent name while being a different product line with different liquid. Identify the exact bottle, not the family.</li>
+        <li><strong>Seals that have been re-glued</strong>, cap rings that rotate freely, or box shrink-wrap that looks re-applied.</li>
+        <li><strong>Seller cannot explain the supply route.</strong> A legitimate importer knows where the pallet came from.</li>
+        <li><strong>Pressure to decide quickly.</strong> Scarcity urgency is a sales tactic, and in baijiu it is almost always manufactured.</li>
+      </ul>
+      <p>For a detailed treatment of the highest-risk category, see <a href="/how-to-spot-fake-maotai/">how to spot fake Maotai</a>.</p>
+
+      <h2 id="gift">Buying as a gift</h2>
+      <p>Gift purchasing follows different rules from personal purchasing, because the bottle is a social object. Three principles:</p>
+      <ul>
+        <li><strong>Buy recognition, not novelty.</strong> A recipient should be able to place the bottle instantly. Wuliangye, Yanghe, Gujinggong, and Fenjiu are all instantly readable in China.</li>
+        <li><strong>Buy from a channel you could name if asked.</strong> If the recipient asks where it came from, "a licensed importer in Chinatown" is a good answer. "An online seller" is not.</li>
+        <li><strong>Keep the receipt.</strong> Not because you expect to return it, but because a gift that can be verified is a better gift.</li>
+      </ul>
+      <p>Also consider the packaging convention: Chinese gifts are usually presented in the box, with both hands, and often with the bottle still sealed and the box unopened. Do not pre-open a gift bottle to check it unless you have a specific concern — buy from a source you trust instead.</p>
+
+      <h2 id="checklist">The 60-second checklist</h2>
+      <p>Before money changes hands:</p>
+      <ol>
+        <li>Can I name the exact product line, not just the brand?</li>
+        <li>Is there an importer label with a company I can look up?</li>
+        <li>Does the back label show a GB/T standard, and do I know what it means?</li>
+        <li>Does the price sit inside a plausible band for this bottle?</li>
+        <li>Is the seller able to tell me the aroma type and ABV without reading the box?</li>
+        <li>Is the seal intact and the cap ring unbroken?</li>
+        <li>If this is a gift, would I be comfortable naming the seller?</li>
+      </ol>
+      <p>If any answer is no, do not buy. There is always another bottle.</p>
+
+      <section class="faq" id="faq">
+        <h2>Frequently asked</h2>
         <h3>Where should I buy baijiu overseas?</h3>
-        <p>Start with licensed retailers, reputable online spirits shops, known importers, and specialist Asian alcohol stores. Trust and traceability matter more than the lowest price.</p>
-        <h3>Are marketplace baijiu listings safe?</h3>
-        <p>Some may be legitimate, but risk is higher when seller identity, import route, storage, and product line are unclear.</p>
+        <p>Start with licensed spirits retailers, established online spirits shops, known importers, and specialist Asian liquor stores. Trust and traceability matter far more than the lowest price, because the price gap between a real and a fake bottle is much larger than the gap between two honest retailers.</p>
+        <h3>Are marketplace listings safe?</h3>
+        <p>Some are legitimate, but risk is materially higher when seller identity, import route, storage history, and exact product line are unclear. For everyday bottles under $40 the risk is tolerable; for anything above $100 it is not.</p>
+        <h3>Can I bring baijiu home from China?</h3>
+        <p>Usually yes, within your destination country's personal allowance — commonly 1–2 litres duty-free, with duty above that. Check your own country's rules before flying, keep the bottle in checked baggage with proper padding, and declare what you are carrying.</p>
+        <h3>Why is baijiu so much more expensive outside China?</h3>
+        <p>Import duty, freight, distributor and retailer margins, and low volume all add up. A bottle that costs ¥300 in China can reasonably retail at $80 abroad. Markups beyond roughly double the converted Chinese price usually reflect channel positioning rather than cost.</p>
+        <h3>Is duty-free baijiu a good deal?</h3>
+        <p>Often yes for standard bottles, and airport shops in China carry travel-exclusive editions that are genuinely different products. Check the price against a specialist retailer at your destination — duty-free is not automatically cheaper, and the editions are not automatically better.</p>
         <h3>What is the biggest beginner buying mistake?</h3>
-        <p>Buying a famous-looking bottle without understanding whether it is authentic, fairly priced, and suitable for the occasion.</p>
+        <p>Buying a famous-looking bottle without knowing whether it is authentic, fairly priced, or suitable for the occasion. The second biggest is assuming an expensive bottle must be a good one — in baijiu, price tracks gifting demand at least as much as quality.</p>
       </section>
-      <div class="decision-box">
-        <h2>Before You Buy, Check the Database</h2>
-        <p>Verify the GB/T standard, ABV range, typical price tier, and production region of any baijiu variety before purchasing. <a href="/db/">Open the baijiu database &rarr;</a></p>
+
+      <div class="next-links">
+        <a href="/how-to-spot-fake-maotai/">Spot a fake before you pay</a>
+        <a href="/best-baijiu-for-beginners/">Choose a first bottle</a>
+        <a href="/types-of-baijiu/">Know the aroma types</a>
+        <a href="/db/">Check prices in the database</a>
       </div>
     </article>
   </section>

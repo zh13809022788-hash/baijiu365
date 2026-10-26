@@ -1,61 +1,212 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'What Is Baijiu? A Practical Beginner Guide';
-const description = 'Baijiu is China\'s dominant distilled spirit. Learn what it is, what it tastes like, how it is made, how to drink it, and what buying mistakes to avoid.';
+const title = 'What Is Baijiu? A Practical Guide to China\'s Grain Spirit';
+const description = 'Baijiu explained without the myths: what it is, how qu fermentation works, the six aroma types, why it is 52% ABV, how to drink it, and what a bottle should cost.';
+const keywords = ['what is baijiu', 'baijiu guide', 'qu starter', 'aroma types', 'solid-state fermentation', 'baijiu ABV'];
+const updated = '2026-10-22';
 ---
-<BaseLayout title={title} description={description}>
+
+<BaseLayout title={title} description={description} keywords={keywords}>
   <header class="article-header">
     <div class="narrow">
       <p class="eyebrow">Basics</p>
       <h1>What Is Baijiu?</h1>
-      <p class="lede">Baijiu is not Chinese vodka. It is a family of grain spirits shaped by fermentation, aroma type, food culture, gifting, and buying risk.</p>
+      <p class="lede">China's national spirit is not a clear vodka with a different label. It is a family of grain spirits built on solid-state fermentation, and almost everything unusual about it follows from that one fact.</p>
+      <div class="article-meta">
+        <span>Updated <b>22 Oct 2026</b></span>
+        <span>Reading time <b>13 min</b></span>
+        <span>Based on <b>16 varieties, 6 aroma types</b></span>
+      </div>
     </div>
   </header>
+
   <section class="content">
     <article>
-      <p>Baijiu is a Chinese distilled spirit usually made from sorghum, wheat, rice, corn, or other grains. It is often clear and strong, but judging it by color is the fastest way to misunderstand it. The important question is not "is it clear?" The important question is "what aroma type is it, who is it for, and what occasion does it fit?"</p>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>Baijiu (白酒, "white liquor") is a Chinese grain spirit, typically 38–53% ABV, distilled from sorghum, wheat, rice, corn, or barley.</li>
+          <li>It is fermented <strong>solid</strong>, not in liquid. Grain stays in a damp heap with a microbial starter called <em>qu</em>, which is why the aroma is so much denser than vodka's.</li>
+          <li>Aroma type — sauce, strong, light, rice, and several smaller categories — predicts flavour far better than price or packaging.</li>
+          <li>Most baijiu is drunk at room temperature, in small cups, with food. It is a table spirit, not a shot spirit.</li>
+          <li>Outside China, expect to pay $15–60 for a solid entry bottle, $60–150 for a recognised premium name, and $300+ for Moutai-tier prestige.</li>
+        </ul>
+      </div>
 
-      <div class="callout"><strong>Quick answer:</strong> baijiu is best understood by aroma type. <a href="/db/aroma/sauce/">Sauce aroma</a> can be savory and fermented, <a href="/db/aroma/strong/">strong aroma</a> can be fruity and lush, <a href="/db/aroma/light/">light aroma</a> can be clean and grain-forward, and rice aroma can feel softer and easier in mixed drinks. <a href="/db/">Browse the full database</a> to compare 16 iconic varieties across 6 aroma types.</div>
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#what">What baijiu actually is</a></li>
+          <li><a href="#qu">Qu: the one idea that explains the taste</a></li>
+          <li><a href="#aroma">The six aroma types</a></li>
+          <li><a href="#made">How a bottle is made</a></li>
+          <li><a href="#abv">Why 52% and 53% keep appearing</a></li>
+          <li><a href="#drink">How to drink it without wasting it</a></li>
+          <li><a href="#cost">What it should cost</a></li>
+          <li><a href="#mistakes">Six mistakes beginners make</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
 
-      <h2>Why It Tastes So Different</h2>
-      <p>Most global drinkers meet clear spirits through vodka, gin, tequila blanco, rum, or soju. Baijiu lives in another lane. Traditional baijiu fermentation uses grain, qu starter, pits, jars, or other microbial environments before distillation. That process can create aromas that feel fruity, earthy, floral, roasted, nutty, savory, pickled, or soy-like.</p>
-      <p>This is why a beginner may smell one bottle and think of pineapple and cellar fruit, then smell another and find roasted grain, fermented bean paste, herbs, or heat. Those differences are not random. They often reflect aroma type, production method, region, age, and quality.</p>
+      <h2 id="what">What baijiu actually is</h2>
+      <p>Baijiu is a distilled spirit made from grain, fermented with a mixed microbial starter, and produced almost entirely in China. The legal definition matters more than the marketing: under Chinese national standards, baijiu is a distilled liquor made from grains through fermentation, distillation, ageing, and blending. The grain bill, the starter, the fermentation vessel, and the ageing container are what separate one bottle from another.</p>
+      <p>Three things make it structurally different from every other major spirit category:</p>
+      <ul>
+        <li><strong>It is fermented as a solid.</strong> Whisky, rum, and vodka ferment in liquid wash. Baijiu ferments grain in a damp, porous heap or pit, with 55–65% moisture. That environment supports moulds and bacteria that a liquid ferment cannot sustain.</li>
+        <li><strong>The starter is a solid cake of mould-cultured grain.</strong> <em>Qu</em> (曲) is not a yeast packet. It is a brick of wheat, barley, or rice colonised by moulds, yeasts, and bacteria, and it determines the aroma family before fermentation even begins.</li>
+        <li><strong>It is distilled in batches, then blended across years and vessels.</strong> A single premium bottle may combine base spirits from dozens of fermentation pits and several vintages. Blending is the master distiller's main craft.</li>
+      </ul>
+      <p>That combination produces aroma compounds in concentrations that surprise drinkers coming from whisky or gin. A good strong-aroma bottle throws ripe pineapple and honey at you. A sauce-aroma bottle smells of fermented soybean, roasted grain, and dried mushrooms. Neither is an additive. Both come from microbes.</p>
 
-      <h2>How People Actually Drink It</h2>
-      <p>In China, baijiu is often served in small cups with food. It appears at banquets, family meals, business dinners, festivals, gifting situations, and formal toasts. That does not mean every glass has to be swallowed quickly. For learning, small pours are better: smell first, sip, eat, then notice how the aroma changes with food.</p>
-      <p>For overseas drinkers, the best first experience is usually controlled and slow. Try a small pour next to grilled meat, spicy food, pickles, braised dishes, or rich sauces. Baijiu often makes more sense with food than as a neat solo drink.</p>
+      <div class="stat-row">
+        <div><strong>6</strong><span>Major aroma types</span></div>
+        <div><strong>38–53%</strong><span>Typical ABV band</span></div>
+        <div><strong>3–5 yr</strong><span>Typical minimum ageing</span></div>
+        <div><strong>16</strong><span>Varieties in our database</span></div>
+      </div>
 
-      <h2>Beginner Decision Table</h2>
+      <h2 id="qu">Qu: the one idea that explains the taste</h2>
+      <p>If you remember one thing about baijiu, remember <em>qu</em>. Everything else — the aroma, the body, the price tiers, the regional styles — traces back to it.</p>
+      <p>Qu is made by pressing a damp grain-and-water mixture into bricks, inoculating it with a culture, and letting it sit in a warm room until moulds colonise the whole brick. The temperature it reaches during that incubation decides what kind of qu it becomes, and that decides what kind of baijiu you get:</p>
+
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Reader situation</th><th>Better starting point</th><th>What to avoid</th></tr></thead>
+          <thead><tr><th>Qu type</th><th>Peak temperature</th><th>Made from</th><th>Typical use</th><th>Aroma signature it creates</th></tr></thead>
           <tbody>
-            <tr><td>First tasting at home</td><td>Small bottle, light aroma, rice aroma, or approachable strong aroma</td><td>Buying an expensive prestige bottle before knowing your taste</td></tr>
-            <tr><td>Gift for Chinese host</td><td>Recognizable brand, reliable channel, clear packaging and invoice</td><td>Unknown "limited edition" bottles with inflated stories</td></tr>
-            <tr><td>Restaurant or banquet</td><td>Drink slowly, match with food, understand toast expectations</td><td>Trying to keep pace with every round if you are not comfortable</td></tr>
-            <tr><td>Cocktail experiment</td><td>Rice aroma, light aroma, or measured use of strong aroma</td><td>Using intense sauce aroma like neutral vodka</td></tr>
+            <tr><td>Low-temperature daqu</td><td>40–50 °C</td><td>Barley, peas</td><td>Light aroma</td><td>Clean grain, pear, faint florals</td></tr>
+            <tr><td>Medium-temperature daqu</td><td>50–60 °C</td><td>Wheat</td><td>Strong aroma</td><td>Ripe fruit, honey, cellar</td></tr>
+            <tr><td>High-temperature daqu</td><td>60–65 °C</td><td>Wheat</td><td>Sauce aroma</td><td>Savory, roasted, soy, nuts</td></tr>
+            <tr><td>Xiaoqu (small qu)</td><td>25–35 °C</td><td>Rice bran, herbs</td><td>Rice aroma</td><td>Soft, floral, lightly sweet</td></tr>
+            <tr><td>Fuqu (bran qu)</td><td>Controlled</td><td>Bran, cultured</td><td>Entry-level bottles</td><td>Lighter, simpler, faster</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Common Mistakes</h2>
+      <p>The practical consequence: when a bottle says "sauce aroma," it is telling you the producer used high-temperature qu, fermented in stone-lined pits, and ran a year-long cycle. When it says "light aroma," it is telling you the opposite — low-temperature qu, earthenware jars, a fast double-fermentation. You can predict the glass from the label.</p>
+      <p>This is also why <a href="/db/">the database</a> is organised by aroma type rather than by brand. A brand tells you who made it. The aroma type tells you what it will taste like.</p>
+
+      <blockquote><p>Qu is a living ecosystem, not an ingredient. Two distilleries using the same grain and the same water will produce different baijiu if their qu differs — and their qu always differs.</p></blockquote>
+
+      <h2 id="aroma">The six aroma types</h2>
+      <p>Chinese standards recognise twelve aroma types. Six of them account for almost everything you will find on a shelf outside China, and they are the ones worth learning first.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Aroma type</th><th>Chinese</th><th>Standard</th><th>Smells like</th><th>Benchmark</th><th>Beginner difficulty</th></tr></thead>
+          <tbody>
+            <tr><td>Sauce</td><td>酱香</td><td>GB/T 26760</td><td>Fermented soy, roasted grain, mushroom, dried fruit</td><td><a href="/db/variety/maotai/">Moutai</a></td><td>High</td></tr>
+            <tr><td>Strong</td><td>浓香</td><td>GB/T 10781.1</td><td>Ripe pineapple, honey, cellar, warm grain</td><td><a href="/db/variety/wuliangye/">Wuliangye</a></td><td>Medium</td></tr>
+            <tr><td>Light</td><td>清香</td><td>GB/T 10781.2</td><td>Clean grain, pear, dry finish</td><td><a href="/db/variety/fenjiu/">Fenjiu</a></td><td>Low</td></tr>
+            <tr><td>Rice</td><td>米香</td><td>GB/T 10781.3</td><td>Soft rice, light floral, gentle sweetness</td><td>Guilin Sanhua</td><td>Low</td></tr>
+            <tr><td>Phoenix</td><td>凤香</td><td>GB/T 14867</td><td>Dry, slightly smoky, firm grain</td><td><a href="/db/variety/xifeng/">Xifeng</a></td><td>Medium</td></tr>
+            <tr><td>Mixed /兼</td><td>兼香</td><td>GB/T 23547</td><td>Strong aroma up front, sauce aroma behind</td><td><a href="/db/variety/jiugui/">Jiugui</a></td><td>Medium</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Which one should you start with?</h3>
+      <p>For a first bottle, light aroma or an approachable strong aroma is usually the safer bet. Light aroma is the most legible style for a palate trained on whisky or gin — it is dry, grain-forward, and does not ask you to enjoy fermented soybean. Strong aroma is the crowd-pleaser of the category: fruit and honey make it immediately likeable, and it holds up to rich food.</p>
+      <p>Sauce aroma is the style everyone has heard of, and the worst place to begin. Its savoury intensity is genuinely divisive. Drinkers who love peated Islay whisky, mezcal, or funky Jamaican rum tend to connect with it faster than drinkers who prefer clean spirits. Everyone else should arrive after five or ten tastings, not before. Our <a href="/best-baijiu-for-beginners/">beginner bottle guide</a> ranks specific options by aroma type and price.</p>
+
+      <h2 id="made">How a bottle is made</h2>
+      <p>Production differs by aroma type, but the general arc is the same: grain preparation, qu inoculation, solid-state fermentation, batch distillation, ageing, blending.</p>
+
+      <h3>1. Grain and qu</h3>
+      <p>Sorghum is the backbone of most baijiu. It is high in starch, tolerant of the heat and acidity of solid-state fermentation, and contributes a characteristic grain sweetness. Wheat, rice, glutinous rice, corn, barley, and peas appear in various combinations. The five-grain formula used by <a href="/db/variety/wuliangye/">Wuliangye</a> — sorghum, rice, glutinous rice, wheat, corn — is the most famous example of deliberate grain blending, with each grain contributing a different compound: sorghum for structure, rice for cleanliness, glutinous rice for body, wheat for aroma, corn for fruity esters.</p>
+
+      <h3>2. Fermentation</h3>
+      <p>The vessel defines the style. Strong aroma ferments in mud pits, where the pit wall's microbial community — built up over decades — contributes the cellar note. Sauce aroma ferments in stone-lined pits in a year-long cycle of repeated steaming and fermentation. Light aroma ferments in earthenware jars set into the ground, kept separate from soil contact, which is why it stays clean.</p>
+      <p>Fermentation length varies enormously. Strong aroma runs 60–90 days per batch. Sauce aroma runs a full year, with eight fermentation rounds and seven separate distillate collections.</p>
+
+      <h3>3. Distillation</h3>
+      <p>Traditional pot stills, run in batches. The distiller separates the heads, heart, and tails by strength and taste, keeping the heart. This is closer to Cognac production than to column-still vodka.</p>
+
+      <h3>4. Ageing</h3>
+      <p>Ceramic jars, usually unglazed earthenware, in a cool cellar. The jar is slightly porous, so oxygen slowly crosses the wall and the spirit breathes. Three years is a common minimum for premium lines; sauce aroma typically ages base spirit for at least three years before blending, then rests the blend further. Ageing softens the raw edge and builds the roundness that separates a good bottle from a harsh one.</p>
+
+      <h3>5. Blending</h3>
+      <p>Almost no premium baijiu is a single-vessel product. The blender combines base spirits from different pits, different fermentation rounds, and different years to hit a consistent house profile. This is why "vintage" claims on baijiu labels mean something different from whisky: the number usually refers to the age of a component or the year of a commemorative release, not to a single-barrel bottling.</p>
+
+      <h2 id="abv">Why 52% and 53% keep appearing</h2>
+      <p>Two numbers dominate Chinese shelves: 52% for strong aroma and 53% for sauce aroma. These are conventions, not laws, and the reasons are part tradition and part chemistry.</p>
+      <p>At around 52–54% ABV, ethanol and water molecules associate most tightly in solution, which tasters describe as a rounder, less prickly mouthfeel. Whether the effect is as pronounced as the industry claims is debatable, but the practical outcome is real: a well-made 52% strong aroma often feels softer than a 40% spirit of lesser quality, because the aroma compounds are carried differently and the body is fuller.</p>
+      <p>Lower-strength versions exist and are popular. Yanghe's flagship sits at 40.8%, Luzhou Laojiao sells a 38% expression, and Fenjiu offers 42% and 48% alongside its 53%. Lower ABV is easier to drink neat and better for long meals, at the cost of some aromatic intensity. Neither is superior — they are different products for different tables.</p>
+      <div class="callout"><strong>Reading the label:</strong> ABV is printed as <em>vol</em> (酒精度). A bottle marked 52% vol contains 52 ml of ethanol per 100 ml. Chinese menus and gift boxes often quote the number without the % sign, so "52度" means 52% ABV.</div>
+
+      <h2 id="drink">How to drink it without wasting it</h2>
+      <p>Baijiu is served at room temperature in small cups — typically 15–25 ml, sometimes smaller. The cup size is not a challenge. It exists because the aroma is intense and because the spirit is meant to be sipped alongside food over a long meal.</p>
+      <p>The sequence that works:</p>
+      <ol>
+        <li><strong>Pour small.</strong> 15 ml is enough to evaluate. You can always pour again.</li>
+        <li><strong>Smell before you sip.</strong> Hold the cup still at chin height. Baijiu's volatile compounds are dense; aggressive swirling releases alcohol rather than aroma.</li>
+        <li><strong>Sip, do not shoot.</strong> A small mouthful, held briefly. The first impression is often heat; the flavour arrives after.</li>
+        <li><strong>Eat.</strong> This is the step most beginners skip. Baijiu is built for food — fat, salt, chilli, and fermented flavours all make the spirit read as intentional rather than harsh.</li>
+        <li><strong>Notice the finish.</strong> Good baijiu lingers. A sauce-aroma bottle can hold for a minute or more, evolving from savoury to sweet.</li>
+      </ol>
+      <p>Water is normal and expected. So is not finishing a glass. Chinese banquet culture has strong toasting conventions, but they are social rituals with room for pacing, and no host expects a guest to damage themselves. Our <a href="/how-to-drink-baijiu/">serving guide</a> covers glassware, temperature, food pairing by aroma type, and how to handle a toast-heavy dinner.</p>
+
+      <h2 id="cost">What it should cost</h2>
+      <p>Baijiu pricing outside China is distorted by import costs, grey-market supply, and gift-box premiums. Rough bands, based on the 16 varieties in our database:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Band</th><th>Price (USD, 500 ml)</th><th>What you get</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td>Entry</td><td>$3–20</td><td>Everyday drinking bottles, often lighter styles, sometimes fuqu-fermented</td><td>Hongxing Erguotou, Niulanshan</td></tr>
+            <tr><td>Premium</td><td>$30–80</td><td>Serious bottles from major houses, proper ageing, reliable quality</td><td>Fenjiu, Yanghe, Luzhou Laojiao, Xijiu</td></tr>
+            <tr><td>Ultra-premium</td><td>$120–150+</td><td>Flagship products of the biggest houses, gift-tier packaging</td><td>Wuliangye Puwu, Moutai Flying Fairy</td></tr>
+            <tr><td>Collector</td><td>$500–5,000+</td><td>Vintage, commemorative, and auction-tier bottles</td><td>Moutai aged and zodiac editions</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Two warnings. First, price and quality correlate weakly in baijiu, because a large part of the premium is gift status rather than liquid. A $40 bottle from a serious regional house frequently outperforms a $200 gift box at the table. Second, the most counterfeited bottles are the expensive ones, which means the high end carries real fraud risk. See <a href="/how-to-spot-fake-maotai/">how to spot fake Moutai</a> before spending above $150.</p>
+
+      <h2 id="mistakes">Six mistakes beginners make</h2>
       <ul>
-        <li>Buying only by price, box weight, or gift appearance.</li>
-        <li>Assuming <a href="/db/variety/maotai/">Maotai</a> (sauce aroma) represents every baijiu style.</li>
-        <li>Choosing very high-proof sauce aroma as the first bottle for a casual tasting.</li>
-        <li>Ignoring fake bottles, refilled bottles, development labels, and vague vintage claims.</li>
-        <li>Calling it Chinese vodka and expecting neutral flavor.</li>
+        <li><strong>Treating it as Chinese vodka.</strong> Vodka is engineered for neutrality. Baijiu is engineered for aroma. Expecting a clean, mixable spirit guarantees disappointment.</li>
+        <li><strong>Starting with the most famous bottle.</strong> Moutai is a superb reference point and a poor first purchase. Its intensity and price both work against a beginner.</li>
+        <li><strong>Drinking it cold or over ice.</strong> Chilling suppresses the aroma compounds that justify the price. Room temperature is the default for a reason.</li>
+        <li><strong>Drinking it without food.</strong> Neat baijiu on an empty table is a hard introduction. The same bottle with roast meat or chilli oil is a different drink.</li>
+        <li><strong>Buying by box weight.</strong> Heavy packaging signals gift positioning, not quality. Some of the best-value bottles come in plain boxes.</li>
+        <li><strong>Ignoring the standard code.</strong> The GB/T number on the back label tells you the production method and aroma type. It is the single most reliable piece of information on the bottle.</li>
       </ul>
 
-      <section class="faq">
-        <h2>FAQ</h2>
+      <div class="callout warning"><strong>On "pure grain" claims:</strong> Chinese labels distinguish 固态法 (solid-state, GB/T 10781 series and GB/T 26760), 固液法 (blended, GB/T 20822), and 液态法 (liquid-fermented, GB/T 20821). Only the first is what drinkers mean by traditional pure-grain baijiu. If the standard code starts with 20821 or 20822, the bottle is not solid-state regardless of what the front label implies.</div>
+
+      <section class="faq" id="faq">
+        <h2>Frequently asked</h2>
         <h3>Is baijiu stronger than vodka?</h3>
-        <p>Many baijiu bottles are strong, often around 40-53% ABV, but strength alone is not the whole story. Aroma intensity makes baijiu feel more powerful than neutral spirits.</p>
-        <h3>Is baijiu supposed to be drunk as a shot?</h3>
-        <p>It is often served in small cups, especially at meals and banquets, but beginners learn more by smelling and sipping slowly.</p>
-        <h3>What is the easiest baijiu for beginners?</h3>
-        <p>Many beginners do better with lighter, cleaner styles or approachable strong-aroma bottles before moving into intense sauce-aroma prestige bottles. <a href="/db/">Use the baijiu database</a> to filter and compare varieties by aroma type, ABV, region, and beginner-friendliness.</p>
+        <p>Often, yes — 52–53% is common versus 40% for most vodka — but strength is not the main difference. Aroma intensity is. A 52% baijiu delivers far more aromatic impact per sip than a 40% vodka, which is why it reads as more powerful even when the numbers are close.</p>
+        <h3>Does baijiu contain gluten?</h3>
+        <p>Most baijiu is made from sorghum and wheat, both of which contain gluten proteins. Distillation removes proteins, so distilled spirits are generally considered gluten-free, but producers rarely certify this and cross-contamination in blending is possible. Anyone with coeliac disease should contact the producer directly rather than rely on general rules.</p>
+        <h3>Why does baijiu smell so strong?</h3>
+        <p>Solid-state fermentation with qu produces high concentrations of esters, acids, and sulphur compounds that liquid fermentation does not. Those compounds are the point. The same chemistry that makes a sauce-aroma bottle smell of fermented soybean makes a strong-aroma bottle smell of pineapple.</p>
+        <h3>Can you mix baijiu into cocktails?</h3>
+        <p>Yes, with care. Light and rice aroma work well as base spirits because they are cleaner. Strong aroma works in small proportions as a modifier. Sauce aroma overwhelms almost everything — treat it as a seasoning, not a base. See our <a href="/baijiu-vs-vodka/">baijiu vs vodka comparison</a> for the substitution logic.</p>
+        <h3>How long does an open bottle keep?</h3>
+        <p>Six to twelve months if tightly sealed and stored upright away from light and heat. Baijiu does not spoil, but it does lose aromatic intensity as oxygen works on the esters. Decanting into a smaller bottle reduces headspace and slows the decline.</p>
+        <h3>Is older baijiu always better?</h3>
+        <p>No. Ageing improves spirit that was well made to begin with. It cannot rescue a flawed base, and beyond a certain point — often 15–20 years in a standard bottle — further ageing adds little. Vintage claims are also frequently about the release year rather than the age of the liquid.</p>
       </section>
+
+      <div class="source-list">
+        <h2>Sources and standards</h2>
+        <ol>
+          <li>GB/T 10781.1-2021 — Strong-aroma baijiu, National Standard of the PRC.</li>
+          <li>GB/T 10781.2-2022 — Light-aroma baijiu, National Standard of the PRC.</li>
+          <li>GB/T 26760-2011 — Sauce-aroma baijiu, National Standard of the PRC.</li>
+          <li>GB/T 20821-2007 and GB/T 20822-2007 — Liquid-fermented and blended baijiu standards.</li>
+          <li>Producer specifications and label data recorded in the <a href="/db/">Baijiu365 database</a> for 16 varieties.</li>
+        </ol>
+      </div>
+
+      <div class="next-links">
+        <a href="/types-of-baijiu/">Compare the aroma types in detail</a>
+        <a href="/best-baijiu-for-beginners/">Pick a first bottle</a>
+        <a href="/how-to-buy-baijiu-outside-china/">Buy safely outside China</a>
+        <a href="/db/">Browse all 16 varieties</a>
+      </div>
     </article>
   </section>
 </BaseLayout>

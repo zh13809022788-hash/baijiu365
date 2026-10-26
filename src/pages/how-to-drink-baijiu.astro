@@ -1,37 +1,210 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'How to Drink Baijiu Without Wasting It';
-const description = 'Learn how to serve, smell, sip, toast, and pair baijiu so the drink makes sense instead of feeling like a harsh challenge.';
+const title = 'How to Drink Baijiu: Glassware, Temperature, Pairing, and Toasts';
+const description = 'A practical serving guide to baijiu — cup size, temperature, how to nose and sip it, what food to pair with each aroma type, and how Chinese banquet toasting actually works.';
+const keywords = ['how to drink baijiu', 'baijiu glassware', 'baijiu food pairing', 'Chinese toasting etiquette', 'baijiu cocktails'];
 ---
-<BaseLayout title={title} description={description}>
-  <header class="article-header"><div class="narrow"><p class="eyebrow">Serving Guide</p><h1>How to Drink Baijiu</h1><p class="lede">Baijiu is often served in tiny cups, but that does not mean the only way to drink it is to throw it back without tasting.</p></div></header>
-  <section class="content"><article>
-    <h2>Use Small Pours</h2><p>Small cups help manage intensity. Smell first, take a small sip, and let the aroma unfold with food.</p>
-    <h2>Pair With Food</h2><p>Baijiu often works better with meals than alone. Rich meat, spicy dishes, grilled foods, pickles, and savory sauces can make strong aromas feel more integrated.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Style</th><th>Food direction</th><th>Why it helps</th></tr></thead>
-        <tbody>
-          <tr><td>Sauce aroma</td><td>Roasted meat, fermented sauces, mushrooms, rich braises</td><td>Savory food makes the fermented depth feel intentional <a href="/db/aroma/sauce/">(browse sauce varieties)</a></td></tr>
-          <tr><td>Strong aroma</td><td>Spicy Sichuan dishes, grilled skewers, fatty pork, pickles</td><td>Fruit and cellar notes stand up to bold seasoning <a href="/db/aroma/strong/">(browse strong varieties)</a></td></tr>
-          <tr><td>Light aroma</td><td>Dumplings, cold dishes, simple grilled foods</td><td>Cleaner grain notes do not need heavy sauces <a href="/db/aroma/light/">(browse light varieties)</a></td></tr>
-          <tr><td>Rice aroma</td><td>Seafood, vegetables, lighter southern dishes</td><td>Softer aroma is easier to overwhelm</td></tr>
-        </tbody>
-      </table>
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">Serving Guide</p>
+      <h1>How to Drink Baijiu</h1>
+      <p class="lede">Small cups, room temperature, always with food. That is the whole method — but the details inside those three rules decide whether the bottle tastes like a revelation or a punishment.</p>
+      <div class="article-meta">
+        <span>Reading time <b>12 min</b></span>
+        <span>Covers <b>glassware · pairing · etiquette</b></span>
+      </div>
     </div>
-    <h2>Understand Toasting</h2><p>In banquet settings, baijiu can carry social meaning. You do not need to imitate every drinking rhythm blindly. Pace, politeness, and clarity matter. If you are planning a trip, ChinaTripBox's guide to <a href="https://www.chinatripbox.com/posts/tipping-in-china-when-it-s-expected-and-when-it-s-not/">tipping and service expectations in China</a> helps explain the wider restaurant etiquette context around bills, service, and host-guest roles.</p>
-    <h2>Try Cocktails Carefully</h2><p>Rice aroma and some light/strong aroma bottles can work in cocktails, but intense sauce aroma can dominate a drink. Use it like a powerful flavor ingredient.</p>
-    <div class="faq">
-      <h2>FAQ</h2>
-      <h3>Should baijiu be chilled?</h3>
-      <p>Most traditional baijiu service is at room temperature. Chilling can reduce alcohol heat, but it also hides aroma, which is the point of the drink.</p>
-      <h3>Do I have to finish every toast?</h3>
-      <p>No. Social expectations vary, but clear pacing and polite refusal are better than drinking beyond your limit.</p>
-    </div>
-    <div class="next-links">
-      <a href="/types-of-baijiu/">Back to aroma types</a>
-      <a href="/best-baijiu-for-beginners/">Choose a bottle for this use case</a>
-      <a href="/db/">Explore the baijiu database</a>
-    </div>
-  </article></section>
+  </header>
+
+  <section class="content">
+    <article>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>Serve at room temperature, in 15–25 ml cups. Never chill, never add ice.</li>
+          <li>Smell before you sip, and do not swirl — baijiu releases alcohol before aroma when agitated.</li>
+          <li>Eat. Baijiu is a table spirit; almost every complaint about harshness disappears next to fat, salt, and chilli.</li>
+          <li>Match the aroma type to the cuisine, not the price to the occasion.</li>
+          <li>Chinese toasting has real rules, but none of them require you to drink past your limit.</li>
+        </ul>
+      </div>
+
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#vessels">Cups, bottles, and temperature</a></li>
+          <li><a href="#taste">How to actually taste it</a></li>
+          <li><a href="#food">Food pairing by aroma type</a></li>
+          <li><a href="#banquet">Banquet etiquette without the damage</a></li>
+          <li><a href="#decline">How to decline a drink politely</a></li>
+          <li><a href="#cocktails">Baijiu in cocktails</a></li>
+          <li><a href="#storage">Storing an open bottle</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="vessels">Cups, bottles, and temperature</h2>
+      <p>The standard serving vessel is a small ceramic or glass cup holding 15–25 ml — roughly a third of a shot. Restaurants use them because a large pour of 52% spirit goes warm and flat before you finish it, and because the small format is designed for many refills across a long meal rather than one big drink.</p>
+      <p>Two upgrades are worth making at home. First, a <strong>tulip-shaped glass</strong> — the same shape used for whisky — concentrates aroma far better than an open cup and makes the difference between two bottles much easier to read. Second, a <strong>small decanter or pitcher</strong> (分酒器), which is how Chinese tables actually serve: the bottle stays sealed and the pitcher gets passed around.</p>
+      <p><strong>Temperature: room, always.</strong> Chilling baijiu suppresses exactly the aromatic compounds you paid for. Ice dilutes and numbs at the same time. If a 52% bottle feels too hot, the answer is a smaller sip or a lower-ABV expression — Yanghe's 40.8% or Luzhou Laojiao's 38% — not refrigeration.</p>
+      <p>One nuance: in winter, some drinkers warm the cup gently in hot water. This is traditional for certain styles and does soften the alcohol, but it also volatilises the aromatics quickly. Try it once with a cheap bottle to see the effect; do not do it with an expensive one.</p>
+
+      <div class="stat-row">
+        <div><strong>15–25 ml</strong><span>Standard pour</span></div>
+        <div><strong>18–22 °C</strong><span>Ideal serving temp</span></div>
+        <div><strong>No ice</strong><span>Ever</span></div>
+        <div><strong>3–5</strong><span>Sips per cup</span></div>
+      </div>
+
+      <h2 id="taste">How to actually taste it</h2>
+      <p>Baijiu tasting follows the same four steps as any serious spirit, but the emphasis is different: aroma carries more of the information than the palate does.</p>
+
+      <h3>1. Look — briefly</h3>
+      <p>Baijiu is clear to faintly straw. Colour tells you almost nothing: unlike whisky, dark colour is not a sign of age, and any tint is usually from the jar or a deliberate addition. A slight oiliness on the glass wall is normal and indicates body. Do not spend long here.</p>
+
+      <h3>2. Nose — slowly, at a distance</h3>
+      <p>Hold the cup at chin height and breathe normally. Do not put your nose in it and inhale hard; at 52% you will get alcohol burn and lose the aromatics behind it. Then move closer and take two or three short sniffs. Wait ten seconds. The second pass is usually where the real character appears — the fruit in a strong aroma, the soy and mushroom in a sauce aroma, the pear in a light aroma.</p>
+      <p>Do not swirl. Swirling is a whisky habit that works because whisky is 40% and lower; agitating a 52% spirit releases ethanol faster than aroma and flattens the experience.</p>
+
+      <h3>3. Palate — small, and hold</h3>
+      <p>Take 5 ml or so and let it sit on the front of your tongue for two seconds before swallowing. The first impression is often heat; the flavour arrives behind it. Note three things: how sweet it reads, how viscous it feels, and where the heat lands. A well-made baijiu puts the heat at the back of the throat and keeps the front of the palate sweet. A rough one burns across the whole mouth immediately.</p>
+
+      <h3>4. Finish — and the second sip</h3>
+      <p>Count how long the flavour lasts after you swallow. Entry-level bottles fade in ten seconds. A good strong aroma holds thirty. A serious sauce aroma can run past a minute and change character on the way — savoury first, then a returning sweetness. The second sip is always more informative than the first, because the palate has adjusted.</p>
+      <blockquote><p>If a baijiu tastes harsh, try it again after a bite of food. In our experience most "harsh" bottles are simply being drunk in the wrong context.</p></blockquote>
+
+      <h2 id="food">Food pairing by aroma type</h2>
+      <p>This is where baijiu makes sense. The spirit was designed around Chinese meal structure — multiple dishes, strong flavours, shared plates — and the pairing logic is regional: the bottle from a province tends to work with that province's food.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Aroma type</th><th>Pair with</th><th>Specific dishes</th><th>Why it works</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a href="/db/aroma/strong/">Strong</a></td>
+              <td>Sichuan, Hunan, rich braises, grilled meat</td>
+              <td>Mapo tofu, twice-cooked pork, kung pao chicken, chilli fish head</td>
+              <td>Fruit and cellar notes cut through oil and chilli heat without being overwhelmed</td>
+            </tr>
+            <tr>
+              <td><a href="/db/aroma/sauce/">Sauce</a></td>
+              <td>Guizhou, fermented and smoked flavours, cold appetisers</td>
+              <td>Sour fish soup, smoked meats, drunken chicken, century egg</td>
+              <td>Savory depth mirrors fermented and smoked food; cold dishes let the complexity lead</td>
+            </tr>
+            <tr>
+              <td><a href="/db/aroma/light/">Light</a></td>
+              <td>Northern wheat food, seafood, dim sum</td>
+              <td>Knife-cut noodles, vinegar-braised pork, steamed white fish, har gow</td>
+              <td>Clean grain does not compete with delicate flavours; acid in Shanxi vinegar lifts it</td>
+            </tr>
+            <tr>
+              <td>Rice</td>
+              <td>Southern seafood, vegetables, light dishes</td>
+              <td>Steamed fish, blanched greens, shellfish</td>
+              <td>Soft aroma is easily overwhelmed by strong seasoning — keep the food gentle</td>
+            </tr>
+            <tr>
+              <td><a href="/db/aroma/phoenix/">Phoenix</a></td>
+              <td>Shaanxi, lamb, wheat staples</td>
+              <td>Biang biang noodles, rou jia mo, yangrou paomo</td>
+              <td>Dry, faintly smoky profile handles lamb fat and wheat starch well</td>
+            </tr>
+            <tr>
+              <td>Mixed / fuyu</td>
+              <td>Hunan, heavy chilli</td>
+              <td>Red-braised pork, dry-pot cauliflower, spicy crayfish</td>
+              <td>The layered aroma can follow a dish from savoury to sweet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Pairing rules that generalise</h3>
+      <ul>
+        <li><strong>Fat is your friend.</strong> Pork belly, lamb, duck skin — fat coats the palate and makes high-ABV spirit read as smooth rather than sharp.</li>
+        <li><strong>Acid resets.</strong> Vinegar dishes, pickles, and cold cucumber revive the palate between sips and let you taste the next glass properly.</li>
+        <li><strong>Chilli needs sugar.</strong> Strong aroma's fruit-forward sweetness is the reason it survives Sichuan food. Sauce aroma with extreme chilli can turn metallic.</li>
+        <li><strong>Do not pair with delicate fish</strong> unless the baijiu is light or rice aroma. A 52% sauce aroma will erase a steamed bass entirely.</li>
+        <li><strong>Western food works too.</strong> Roast lamb, hard cheese, charcuterie, and smoked brisket all pair well with strong and sauce aroma. Avoid cream sauces and anything heavily sweetened.</li>
+      </ul>
+
+      <h2 id="banquet">Banquet etiquette without the damage</h2>
+      <p>Chinese banquet drinking is a social system, not a drinking competition. Understanding the structure removes most of the anxiety — and most of the pressure.</p>
+
+      <h3>The seating logic</h3>
+      <p>At a formal round table, the host (主陪) sits facing the door. The guest of honour (主宾) sits to the host's right. The co-host (副陪) sits directly opposite the host, and is usually the one who drinks most and keeps the table moving. If you are a guest, you will be placed; do not rearrange.</p>
+
+      <h3>The toast sequence</h3>
+      <p>A formal meal opens with a host's welcome — often three glasses together, or three sips from one. After that, toasts proceed by seniority: the host to the guest of honour, then the guest of honour returns it, then others join in order. When you clink, <strong>your rim should sit slightly lower than the other person's</strong>, particularly if they are older or more senior. It is a small gesture that is noticed.</p>
+      <p><em>Ganbei</em> (干杯) means empty the glass. <em>Suíyì</em> (随意) means drink as you please. If a host says 随意, take it literally — that is the polite escape hatch, and using it is not rude. If someone says 干杯, you are not obligated to match the volume; matching the gesture is what counts.</p>
+
+      <h3>What is actually expected of you</h3>
+      <ul>
+        <li><strong>Participate in the first round.</strong> Skipping the opening toast entirely reads as coldness.</li>
+        <li><strong>Return a toast.</strong> If someone drinks to you individually, drink back at some point. It does not need to be the same glass.</li>
+        <li><strong>Keep your glass no fuller than half.</strong> A full glass makes every subsequent 干杯 harder.</li>
+        <li><strong>Eat between toasts.</strong> This is not optional for pacing — it is the only thing that makes a two-hour banquet survivable.</li>
+        <li><strong>You do not have to finish every glass.</strong> Leaving a little is normal at a long table; the ritual is the raising, not the volume.</li>
+      </ul>
+      <div class="callout"><strong>Business dinners:</strong> the pressure is highest here, and the expectation is usually participation rather than volume. A guest who drinks moderately, toasts everyone once, and stays coherent is remembered better than one who tries to keep pace with the co-host.</div>
+
+      <h2 id="decline">How to decline a drink politely</h2>
+      <p>Refusing alcohol in a Chinese banquet context needs a reason, not a preference. "I don't want to" is socially expensive. The standard moves:</p>
+      <ul>
+        <li><strong>Health, stated plainly.</strong> 我最近在吃药，不能喝酒 ("I'm on medication, I can't drink") is accepted without follow-up. So is 医生不让 ("doctor's orders").</li>
+        <li><strong>Driving.</strong> 我开车来的 ("I'm driving") is now widely respected, and enforcement in China is strict enough that no one argues.</li>
+        <li><strong>Tea substitution.</strong> 以茶代酒 — offer to toast with tea instead. Hold the teacup the same way, make the same gesture. This is a recognised, face-saving solution and hosts accept it routinely.</li>
+        <li><strong>Pregnancy, religion, allergy.</strong> All accepted immediately; no explanation needed.</li>
+        <li><strong>Nurse the glass.</strong> If you want to avoid the conversation entirely, keep a partially full glass and take small sips. Nobody refills a glass that is not empty, and nobody toasts someone whose glass is already raised.</li>
+      </ul>
+      <p>What not to do: pretend to drink and pour it away visibly, or agree to a 干杯 and then not drink. Both are read as disrespect rather than moderation. Decline clearly at the start — it is far easier than declining repeatedly through the evening.</p>
+
+      <h2 id="cocktails">Baijiu in cocktails</h2>
+      <p>Baijiu works in mixed drinks, but only if you treat it as a flavoured spirit rather than a neutral base. The substitution rule: use light or rice aroma where a recipe calls for vodka or gin, and use strong or sauce aroma where a recipe calls for an aged or smoky spirit.</p>
+
+      <h3>Three ratios that work</h3>
+      <ul>
+        <li><strong>Baijiu sour.</strong> 45 ml light aroma (Fenjiu) + 20 ml lemon juice + 15 ml syrup + 1 egg white. Shake hard. The clean grain behaves like a high-proof gin and the acid carries it.</li>
+        <li><strong>Baijiu highball.</strong> 45 ml rice aroma + 90 ml soda + a wide lemon peel, over one large cube. The softness of rice aroma makes this genuinely refreshing — the best gateway drink for sceptics.</li>
+        <li><strong>Sauce-aroma old fashioned.</strong> 45 ml sauce aroma + 7 ml syrup + 2 dashes aromatic bitters, stirred, orange peel. Use a $30 bottle, not Moutai. The savoury notes read like a peated whisky and the drink is excellent.</li>
+      </ul>
+      <p>What does not work: sauce aroma in anything with citrus-forward or creamy ingredients. The fermented notes turn sharp and the drink collapses. Also avoid using baijiu as a float or a rinse — its intensity is too high for that role.</p>
+
+      <h2 id="storage">Storing an open bottle</h2>
+      <p>Baijiu does not spoil, but it does fade. Once air is in the bottle, esters slowly oxidise and the aroma flattens — usually noticeable after six to twelve months in a half-empty bottle.</p>
+      <ul>
+        <li><strong>Keep it upright.</strong> High-ABV spirit degrades cork and cap liners if it sits against them.</li>
+        <li><strong>Reduce headspace.</strong> Decant the remainder into a smaller bottle. This is the single most effective step.</li>
+        <li><strong>Dark, stable, cool.</strong> Not the fridge — temperature swings are worse than a steady room. A cupboard away from the stove is fine.</li>
+        <li><strong>Seal the cap with film</strong> if you plan to keep it more than a year.</li>
+        <li><strong>Do not store in the gift box.</strong> Silk and foam linings hold smells that the spirit will pick up through the closure.</li>
+      </ul>
+
+      <section class="faq" id="faq">
+        <h2>Frequently asked</h2>
+        <h3>Should baijiu be chilled or served over ice?</h3>
+        <p>No. Chilling suppresses the aromatic compounds that define the spirit, and ice dilutes it while numbing the palate. Room temperature in a small cup is the correct serve. If the alcohol heat is too much, choose a lower-ABV expression instead.</p>
+        <h3>Do I have to finish every toast?</h3>
+        <p>No. Chinese toasting has real conventions, but they are about participation and gesture rather than volume. Keep your glass half full, eat between rounds, and use 以茶代酒 (toast with tea) if you need to stop. Clear early refusal is respected; repeated half-compliance is not.</p>
+        <h3>Why do Chinese cups look so small?</h3>
+        <p>Because the format is designed for a long meal with many refills, not a single large drink. A 20 ml pour of 52% spirit delivers more aromatic impact than a 50 ml pour of 40% vodka, and it stays at the right temperature while you eat.</p>
+        <h3>Can I drink baijiu with Western food?</h3>
+        <p>Yes. Strong and sauce aroma work well with roast lamb, hard cheese, charcuterie, and smoked meat. Avoid cream sauces, sweet desserts, and anything delicate — a 52% sauce aroma will erase a light fish dish.</p>
+        <h3>Does baijiu give a worse hangover than other spirits?</h3>
+        <p>There is no strong evidence that it does, but several factors make it feel that way: the ABV is often higher than Western spirits, the pours are frequent, and it is usually drunk over a long meal with rich food. Congeners — the compounds behind the aroma — are present at high levels, and congeners are associated with worse hangovers. The practical answer is the same as for any spirit: smaller pours, more food, more water.</p>
+        <h3>Is it rude to add water?</h3>
+        <p>Not rude, but unusual. A few drops of room-temperature water will open up a high-ABV sauce aroma the way it does with cask-strength whisky, and no one will object if you explain what you are doing. Ice is a different matter and will draw comments.</p>
+      </section>
+
+      <div class="next-links">
+        <a href="/types-of-baijiu/">Match the aroma type to your table</a>
+        <a href="/best-baijiu-for-beginners/">Choose a first bottle</a>
+        <a href="/baijiu-vs-vodka/">Why baijiu is not vodka</a>
+        <a href="/db/">Browse all 16 varieties</a>
+      </div>
+    </article>
+  </section>
 </BaseLayout>

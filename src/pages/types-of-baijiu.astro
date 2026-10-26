@@ -1,57 +1,185 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Types of Baijiu: Sauce, Strong, Light, and Rice Aroma';
-const description = 'A practical guide to the main baijiu aroma types and how each style tastes, drinks, and fits different occasions.';
+const title = 'Baijiu Aroma Types: All Twelve, Explained With Standards';
+const description = 'The complete map of Chinese baijiu aroma types — sauce, strong, light, rice, phoenix, herbal, mixed and the rest — with GB/T standards, flavour profiles, and benchmark bottles.';
+const keywords = ['baijiu aroma types', 'sauce aroma', 'strong aroma', 'light aroma', 'GB/T 10781', 'Chinese baijiu classification'];
 ---
-<BaseLayout title={title} description={description}>
+
+<BaseLayout title={title} description={description} keywords={keywords}>
   <header class="article-header">
     <div class="narrow">
       <p class="eyebrow">Aroma Types</p>
-      <h1>Types of Baijiu</h1>
-      <p class="lede">Aroma type is the most useful map for baijiu. It tells you more than bottle color, box design, or alcohol strength.</p>
+      <h1>Baijiu Aroma Types</h1>
+      <p class="lede">China recognises twelve aroma types. Six of them cover almost every bottle you will meet abroad. This is the map — with the standard code, the flavour signature, and the benchmark bottle for each.</p>
+      <div class="article-meta">
+        <span>Reference <b>12 aroma types</b></span>
+        <span>Standards <b>GB/T series</b></span>
+        <span>Benchmarks <b>16 varieties</b></span>
+      </div>
     </div>
   </header>
+
   <section class="content">
     <article>
-      <p>Baijiu is not one flavor. The category is organized by aroma type, and each type gives a different first impression. If a first-time drinker says "baijiu tastes harsh," the real question is often: which aroma type, which bottle, and in what setting?</p>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>Aroma type (香型) is the primary classification of baijiu, and it predicts flavour better than brand, price, or packaging.</li>
+          <li>Twelve types are recognised; six account for nearly all internationally available bottles.</li>
+          <li>Each type is tied to a national standard code printed on the back label — the fastest way to know what you are buying.</li>
+          <li>Strong aroma is the biggest category by volume. Sauce aroma is the most famous. Light aroma is the most accessible.</li>
+          <li>Aroma type does not predict quality. Excellent and poor bottles exist inside every category.</li>
+        </ul>
+      </div>
 
-      <h2>Aroma Type Comparison</h2>
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#why">Why aroma type is the right map</a></li>
+          <li><a href="#master">The master table</a></li>
+          <li><a href="#strong">Strong aroma</a></li>
+          <li><a href="#sauce">Sauce aroma</a></li>
+          <li><a href="#light">Light aroma</a></li>
+          <li><a href="#rice">Rice aroma</a></li>
+          <li><a href="#smaller">Phoenix, herbal, mixed</a></li>
+          <li><a href="#rare">The four rare types</a></li>
+          <li><a href="#choose">Choosing by aroma type</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="why">Why aroma type is the right map</h2>
+      <p>Most spirits are classified by raw material or origin. Whisky is single malt or grain, Scotch or bourbon. Cognac is a region. Baijiu is classified by <em>aroma</em>, because aroma is what actually varies — and it varies enormously.</p>
+      <p>The reason goes back to fermentation. Baijiu ferments grain in a solid state with a microbial starter called <em>qu</em>, and the type of qu, the temperature it reaches, the vessel it ferments in, and the length of the cycle together determine which aromatic compounds dominate. A high-temperature qu in a stone pit produces savoury, roasted, soy-like notes. A low-temperature qu in an earthenware jar produces clean pear and grain. Same grain, same country, completely different drink.</p>
+      <p>So when a bottle says "sauce aroma," it is not describing a flavouring. It is describing an entire production system, and the flavour follows from it. That is why <a href="/db/">our database</a> is indexed by aroma type first.</p>
+
+      <h2 id="master">The master table</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Aroma type</th><th>Typical impression</th><th>Beginner difficulty</th><th>Best use case</th></tr></thead>
+          <thead><tr><th>#</th><th>Aroma type</th><th>Chinese</th><th>Standard</th><th>Core signature</th><th>Benchmark</th></tr></thead>
           <tbody>
-            <tr><td>Sauce aroma</td><td>Savory, fermented, roasted grain, nutty, herbal, soy-like</td><td>Higher</td><td>Prestige gifting, slow tasting, serious reference bottles</td></tr>
-            <tr><td>Strong aroma</td><td>Fruit, cellar, ripe grain, lush sweetness, expressive finish</td><td>Medium</td><td>Banquets, food pairing, approachable full-flavor tasting</td></tr>
-            <tr><td>Light aroma</td><td>Clean grain, sharp lift, dry finish, less heavy fermentation</td><td>Lower to medium</td><td>First comparisons, clearer drinking, structured meals</td></tr>
-            <tr><td>Rice aroma</td><td>Soft, mild, rice-like, sometimes floral or lightly sweet</td><td>Lower</td><td>Gentle introductions, cocktails, lower-intensity occasions</td></tr>
+            <tr><td>1</td><td>Strong</td><td>浓香</td><td>GB/T 10781.1</td><td>Ripe fruit, honey, cellar, warm grain</td><td><a href="/db/variety/wuliangye/">Wuliangye</a></td></tr>
+            <tr><td>2</td><td>Sauce</td><td>酱香</td><td>GB/T 26760</td><td>Fermented soy, roasted grain, mushroom, dried fruit</td><td><a href="/db/variety/maotai/">Moutai</a></td></tr>
+            <tr><td>3</td><td>Light</td><td>清香</td><td>GB/T 10781.2</td><td>Clean grain, pear, dry finish</td><td><a href="/db/variety/fenjiu/">Fenjiu</a></td></tr>
+            <tr><td>4</td><td>Rice</td><td>米香</td><td>GB/T 10781.3</td><td>Soft rice, light floral, gentle sweetness</td><td>Guilin Sanhua</td></tr>
+            <tr><td>5</td><td>Phoenix</td><td>凤香</td><td>GB/T 14867</td><td>Dry, faint smoke, firm grain, long finish</td><td><a href="/db/variety/xifeng/">Xifeng</a></td></tr>
+            <tr><td>6</td><td>Herbal / Dong</td><td>董香</td><td>DB52/T 550</td><td>Herbal, medicinal, camphor, dark and bitter-sweet</td><td><a href="/db/variety/dongjiu/">Dongjiu</a></td></tr>
+            <tr><td>7</td><td>Mixed</td><td>兼香</td><td>GB/T 23547</td><td>Strong aroma entry, sauce aroma finish</td><td><a href="/db/variety/jiugui/">Jiugui</a></td></tr>
+            <tr><td>8</td><td>Fuyu</td><td>馥郁香</td><td>GB/T 10781.11</td><td>Three aromas layered in one glass</td><td>Jiugui Neipin</td></tr>
+            <tr><td>9</td><td>Special</td><td>特香</td><td>GB/T 20823</td><td>Rice-grain base with strong-aroma depth</td><td>Site Liquor</td></tr>
+            <tr><td>10</td><td>Sesame</td><td>芝麻香</td><td>GB/T 20824</td><td>Toasted sesame, roasted nut, savoury</td><td>Jingzhi</td></tr>
+            <tr><td>11</td><td>Laobaigan</td><td>老白干香</td><td>GB/T 20825</td><td>Sharp, dry, high-proof grain clarity</td><td>Hengshui Laobaigan</td></tr>
+            <tr><td>12</td><td>Chi</td><td>豉香</td><td>GB/T 16289</td><td>Fermented black bean, fat-backed, unusual</td><td>Yubingshao</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The rest of this page covers the six types you are likely to encounter, in order of how much they matter to a buyer.</p>
+
+      <h2 id="strong">Strong aroma — 浓香</h2>
+      <p><strong>Standard:</strong> GB/T 10781.1 · <strong>Share of the category:</strong> roughly half of all baijiu sold in China</p>
+      <p>Strong aroma is the workhorse of Chinese drinking. If a restaurant in Chengdu or a wedding banquet in Nanjing serves baijiu, it is probably strong aroma. The style ferments in mud pits — the pit wall carries a microbial community built up over decades, and that community produces the signature "cellar" note that sits underneath the fruit.</p>
+      <p>On the nose you get ripe pineapple, honey, cooked grain, and a savoury earthiness that tasters call <em>jiaoxiang</em> (窖香, pit aroma). On the palate it is full-bodied and round, often with a sweetness that makes it the most immediately likeable of the major types. The finish is warm and long but rarely aggressive.</p>
+      <p>This is the style to choose for a dinner with rich food, for a gift that needs to be universally appreciated, and for a first serious bottle. It is also the most competitive category in China, which means the quality floor is high and the value is good at almost every price point.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Variety</th><th>Region</th><th>ABV</th><th>From</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td><a href="/db/variety/wuliangye/">Wuliangye</a></td><td>Sichuan</td><td>52%</td><td>$120</td><td>The reference bottle. Five-grain formula, Ming-era pits</td></tr>
+            <tr><td><a href="/db/variety/luzhou-laojiao/">Luzhou Laojiao</a></td><td>Sichuan</td><td>52% / 38%</td><td>$30</td><td>Oldest continuous pits in the category</td></tr>
+            <tr><td><a href="/db/variety/yanghe/">Yanghe</a></td><td>Jiangsu</td><td>40.8–52%</td><td>$30</td><td>Softer, mianrou style; the low-ABV leader</td></tr>
+            <tr><td><a href="/db/variety/jiannanchun/">Jiannanchun</a></td><td>Sichuan</td><td>52% / 46% / 38%</td><td>$50</td><td>Drier and more structured than Sichuan peers</td></tr>
+            <tr><td><a href="/db/variety/shede/">Shede</a></td><td>Sichuan</td><td>52%</td><td>$50</td><td>Premium offshoot of Tuopai, aged longer</td></tr>
+            <tr><td><a href="/db/variety/shuijingfang/">Shuijingfang</a></td><td>Sichuan</td><td>52–54%</td><td>$80</td><td>Modern luxury positioning, clean and precise</td></tr>
+            <tr><td><a href="/db/variety/gujinggong/">Gujinggong</a></td><td>Anhui</td><td>50–52%</td><td>$20</td><td>Anhui style: lighter, more floral than Sichuan</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Within strong aroma there are regional sub-styles worth knowing. Sichuan versions are the fullest and most aromatic. Jiangsu versions — Yanghe above all — are deliberately softer, lower in ABV, and built for long meals. Anhui versions sit between the two, with more floral lift. None is "correct"; they are different answers to the same question.</p>
+
+      <h2 id="sauce">Sauce aroma — 酱香</h2>
+      <p><strong>Standard:</strong> GB/T 26760 (Moutai itself uses GB/T 18356, a geographical-indication standard)</p>
+      <p>Sauce aroma is the most famous and the most demanding. The name refers to <em>jiang</em> (酱) — fermented bean paste — and that is genuinely what it smells like: soy, roasted grain, dried mushroom, toasted nuts, a hint of dried fruit, sometimes sandalwood or cocoa.</p>
+      <p>The production cycle is the most laborious in the category. Sauce aroma runs a full year per batch: two grain additions, nine steamings, eight fermentations, seven distillate collections — the process the industry calls <em>12987</em>. Base spirit then ages at least three years before blending, and premium bottlings rest longer. This is why sauce aroma costs more across the board, independent of brand prestige.</p>
+      <p>For a beginner, sauce aroma is a gamble. Drinkers who love peated Islay whisky, mezcal, aged sherry, or funky rum tend to find it immediately compelling. Drinkers who prefer clean spirits often find it medicinal or overwhelming on first contact. Both reactions are legitimate — this is a genuinely divisive flavour, not a question of sophistication.</p>
+      <div class="callout"><strong>If you only try one sauce-aroma bottle:</strong> skip Moutai and buy <a href="/db/variety/xijiu/">Xijiu</a> or <a href="/db/variety/langjiu/">Langjiu</a> at $30–60. Both are serious sauce-aroma producers, both are far easier to authenticate, and both will tell you honestly whether you like the style before you spend $150+.</div>
+
+      <h2 id="light">Light aroma — 清香</h2>
+      <p><strong>Standard:</strong> GB/T 10781.2 · <strong>Benchmark:</strong> <a href="/db/variety/fenjiu/">Fenjiu</a>, Shanxi</p>
+      <p>Light aroma is the cleanest expression of the category and the easiest entry point for a palate trained on Western spirits. It ferments in earthenware jars set into the ground, separated from direct soil contact, using low-temperature qu — a method that keeps the microbial action controlled and the flavour narrow.</p>
+      <p>The result is dry, grain-forward, and precise: steamed rice, pear, a faint floral lift, and a finish that stops cleanly rather than lingering. "Light" refers to aromatic density, not to weakness. A 53% light aroma is a firm, structured drink.</p>
+      <p>Fenjiu is the benchmark and one of the best-value bottles in the entire category — its flagship sells for around $15–40 depending on market. Beijing's <a href="/db/variety/niulanshan/">Niulanshan</a> and <a href="/db/variety/hongxing/">Hongxing Erguotou</a> are the everyday versions: cheap, bracing, and enormously popular in the north.</p>
+
+      <h2 id="rice">Rice aroma — 米香</h2>
+      <p><strong>Standard:</strong> GB/T 10781.3</p>
+      <p>Rice aroma is the smallest of the six major types and the softest. It uses small qu (小曲) and a semi-solid fermentation, producing a spirit that is gentle, lightly sweet, and floral rather than savoury. Guilin Sanhua is the standard-bearer.</p>
+      <p>Its weakness is also its strength: because it lacks intensity, it does not stand up to bold food or carry the prestige that gifting demands. But it is the most forgiving baijiu for a first taste, and it is the best candidate for cocktails, where its softness lets other ingredients speak. If you want to introduce someone to baijiu without scaring them, start here.</p>
+
+      <h2 id="smaller">Phoenix, herbal, and mixed</h2>
+      <h3>Phoenix aroma — 凤香 · GB/T 14867</h3>
+      <p>Shaanxi's <a href="/db/variety/xifeng/">Xifeng</a> is the sole significant producer. The style ferments in a distinctive earthen pit that is renewed annually, which gives it a profile between light and strong: dry, slightly smoky, firm on the grain, with less fruit than a Sichuan strong aroma. It is one of the best-value bottles in the database at around $10–30, and a genuinely interesting stop for anyone exploring the category.</p>
+      <h3>Herbal / Dong aroma — 董香 · DB52/T 550</h3>
+      <p><a href="/db/variety/dongjiu/">Dongjiu</a> is the outlier of Chinese baijiu. It incorporates over a hundred medicinal herbs into the qu, producing a profile that is herbal, camphor-like, faintly bitter, and unlike anything else in the category. It is regulated under a Guizhou provincial standard rather than a national one, which tells you how singular it is. Try it out of curiosity, not as a first bottle.</p>
+      <h3>Mixed aroma — 兼香 · GB/T 23547</h3>
+      <p>Mixed aroma deliberately combines production methods to land between categories: typically a strong-aroma opening with a sauce-aroma finish. <a href="/db/variety/jiugui/">Jiugui</a> from Hunan is the best-known example, and its premium line is separately classified as fuyu aroma (馥郁香, GB/T 10781.11) because it layers three aroma profiles in sequence. These bottles are interesting precisely because they refuse to sit still.</p>
+
+      <h2 id="rare">The four rare types</h2>
+      <p>You will rarely meet these outside China, but they are worth knowing by name because they explain why the category has twelve entries rather than six.</p>
+      <ul>
+        <li><strong>Special aroma (特香, GB/T 20823)</strong> — Jiangxi's Site Liquor. Rice-husk-inoculated fermentation that produces a rice-grain base with strong-aroma depth. Unusual and rewarding.</li>
+        <li><strong>Sesame aroma (芝麻香, GB/T 20824)</strong> — Shandong's Jingzhi. Despite the name there is no sesame in it; the toasted-nut character comes from high-temperature fermentation. The most savoury baijiu after sauce aroma.</li>
+        <li><strong>Laobaigan aroma (老白干香, GB/T 20825)</strong> — Hebei's Hengshui Laobaigan. Extremely clean, high-proof, and dry, with a wheat-based fermentation that reads almost austere.</li>
+        <li><strong>Chi aroma (豉香, GB/T 16289)</strong> — Guangdong's Yubingshao. Fermented with cooked pork fat in the jar, giving a fermented black-bean character. Genuinely strange to most palates and beloved in the Pearl River Delta.</li>
+      </ul>
+
+      <h2 id="choose">Choosing by aroma type</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>If you want…</th><th>Choose</th><th>Budget</th></tr></thead>
+          <tbody>
+            <tr><td>The safest first bottle</td><td>Light aroma (Fenjiu) or soft strong aroma (Yanghe)</td><td>$15–40</td></tr>
+            <tr><td>A bottle for a rich dinner</td><td>Strong aroma from Sichuan</td><td>$30–80</td></tr>
+            <tr><td>A gift that reads as serious</td><td>Strong aroma flagship or sauce aroma from a major house</td><td>$80–200</td></tr>
+            <tr><td>Cocktail experimentation</td><td>Rice aroma or light aroma</td><td>$15–30</td></tr>
+            <tr><td>To understand what the fuss is about</td><td>Sauce aroma — but from Xijiu or Langjiu, not Moutai</td><td>$30–60</td></tr>
+            <tr><td>Something genuinely unusual</td><td>Dongjiu or sesame aroma</td><td>$20–50</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Sauce Aroma</h2>
-      <p>Sauce-aroma baijiu is famous because of Maotai, but fame can mislead beginners. Good sauce aroma can be layered and memorable: roasted grain, savory fermentation, nuts, herbs, dried fruit, and a long finish. It can also feel demanding if you expect a clean, neutral spirit. <a href="/db/aroma/sauce/">Browse all sauce-aroma varieties in the database &rarr;</a></p>
-      <p>Use sauce aroma when the occasion values prestige, cultural reference, or slow tasting. Do not use it as the default first bottle for a casual drinker unless they already like intense fermented flavors such as mezcal, funky rum, peated whisky, aged sherry, or savory spirits. See <a href="/db/variety/maotai/">Maotai's full parameter card</a> for a benchmark reference.</p>
-
-      <h2>Strong Aroma</h2>
-      <p>Strong aroma is one of the most important everyday styles in China. It can feel generous: fruit, cellar notes, grain sweetness, and a broad aroma that works well with rich meals. For many global drinkers, a good strong-aroma bottle is easier to understand than sauce aroma because the fruit and texture give the palate something familiar. <a href="/db/aroma/strong/">Browse all strong-aroma varieties &rarr;</a> — including <a href="/db/variety/wuliangye/">Wuliangye</a>, <a href="/db/variety/luzhou-laojiao/">Luzhou Laojiao</a>, and <a href="/db/variety/jiannanchun/">Jiannanchun</a>.</p>
-
-      <h2>Light Aroma</h2>
-      <p>Light aroma is cleaner and more direct. It can show grain, dryness, heat, and a sharper finish. The word "light" does not mean weak; it means the aroma profile is less dense than sauce or strong aroma. It is useful for drinkers who want structure before complexity. <a href="/db/aroma/light/">Browse light-aroma varieties &rarr;</a> — benchmarked by <a href="/db/variety/fenjiu/">Fenjiu</a>.</p>
-
-      <h2>Rice Aroma</h2>
-      <p>Rice aroma is usually softer and less confrontational. It can be a good bridge for cocktails, tasting flights, and drinkers who are not ready for heavy fermented notes. The tradeoff is that it may not deliver the prestige or intensity many people associate with baijiu gifting.</p>
-
-      <div class="callout">Practical rule: choose sauce aroma for prestige, strong aroma for expressive meals, light aroma for clearer structure, and rice aroma for softer entry points or cocktails.</div>
-
-      <section class="faq">
-        <h2>FAQ</h2>
+      <section class="faq" id="faq">
+        <h2>Frequently asked</h2>
         <h3>Which aroma type is best for beginners?</h3>
-        <p>Light aroma, rice aroma, or an approachable strong-aroma bottle are usually safer than jumping directly into high-proof sauce aroma.</p>
-        <h3>Is Maotai the same as baijiu?</h3>
-        <p>No. Maotai is the most famous sauce-aroma brand, but baijiu includes many aroma types, regions, price levels, and drinking occasions.</p>
-        <h3>Can aroma type predict quality?</h3>
-        <p>No. Aroma type predicts style, not quality. There are excellent and poor examples inside every aroma type. <a href="/db/">Compare specific bottles in the database</a> to see GB/T standards, ABV, tier, and production details side by side.</p>
+        <p>Light aroma or a soft strong aroma. Both are legible to a palate trained on Western spirits, and both cost little enough that a disappointing bottle is not expensive. Sauce aroma is the worst starting point despite being the most famous.</p>
+        <h3>Is Maotai a type of baijiu?</h3>
+        <p>No — Maotai is a brand, and its products are sauce aroma. The confusion is understandable because Maotai dominates the category's reputation, but "sauce aroma" is the style and "Maotai" is one producer within it.</p>
+        <h3>Does a higher price mean a better aroma type?</h3>
+        <p>No. Aroma type predicts style, not quality. There are $20 strong-aroma bottles that outperform $100 ones, and there are mediocre sauce-aroma bottles at every price. Price in baijiu reflects scarcity, gifting demand, and brand power at least as much as liquid quality.</p>
+        <h3>Can I tell the aroma type from the bottle?</h3>
+        <p>Yes — the GB/T standard code on the back label identifies it. 10781.1 is strong, 10781.2 is light, 10781.3 is rice, 26760 is sauce. This is the most reliable information on the packaging and it is legally required.</p>
+        <h3>What does "aroma type" translate to on a Chinese label?</h3>
+        <p>香型 (xiāngxíng). You will see it written as 浓香型, 酱香型, 清香型 and so on. The character 型 means "type" and always follows the aroma name.</p>
       </section>
+
+      <div class="source-list">
+        <h2>Sources and standards</h2>
+        <ol>
+          <li>GB/T 10781.1-2021 — Strong-aroma baijiu.</li>
+          <li>GB/T 10781.2-2022 — Light-aroma baijiu.</li>
+          <li>GB/T 10781.3-2006 — Rice-aroma baijiu.</li>
+          <li>GB/T 26760-2011 — Sauce-aroma baijiu.</li>
+          <li>GB/T 14867-2007 — Phoenix-aroma baijiu.</li>
+          <li>GB/T 23547-2009 — Mixed-aroma baijiu; GB/T 10781.11-2021 — Fuyu-aroma baijiu.</li>
+          <li>GB/T 20823, 20824, 20825, 16289 — Special, sesame, laobaigan, and chi aroma standards.</li>
+          <li>Producer data and label transcription recorded in the <a href="/db/">Baijiu365 database</a>.</li>
+        </ol>
+      </div>
+
+      <div class="next-links">
+        <a href="/baijiu-basics/">Start with the basics</a>
+        <a href="/best-baijiu-for-beginners/">Pick a first bottle by aroma type</a>
+        <a href="/baijiu-flavor-wheel/">Learn the flavour vocabulary</a>
+        <a href="/db/">Compare all 16 varieties</a>
+      </div>
     </article>
   </section>
 </BaseLayout>

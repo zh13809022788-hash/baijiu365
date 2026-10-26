@@ -1,63 +1,162 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'How to Spot Fake Maotai and Risky Premium Baijiu';
-const description = 'A practical risk guide to fake Maotai, refilled bottles, suspicious prices, development products, vintage claims, and overseas buying traps.';
+const title = 'How to Spot Fake Maotai: Four Fraud Types and a Buying Checklist';
+const description = 'Fake Maotai is not one problem but four — counterfeit bottles, refills, lookalike product lines, and invented vintages. How to tell them apart before you pay.';
+const keywords = ['fake Maotai', 'counterfeit baijiu', 'Maotai authentication', 'how to verify Maotai', 'premium baijiu risk'];
 ---
-<BaseLayout title={title} description={description}>
+
+<BaseLayout title={title} description={description} keywords={keywords}>
   <header class="article-header">
     <div class="narrow">
       <p class="eyebrow">Buying Risk</p>
       <h1>How to Spot Fake Maotai</h1>
-      <p class="lede">You do not need to become a forensic bottle inspector. You need a risk filter before money changes hands.</p>
+      <p class="lede">Maotai is the most counterfeited spirit in China, but "fake" covers four different problems. Understanding which one you are facing is the whole skill.</p>
+      <div class="article-meta">
+        <span>Reading time <b>11 min</b></span>
+        <span>Standard <b>GB/T 18356</b></span>
+        <span>Focus <b>risk before purchase</b></span>
+      </div>
     </div>
   </header>
+
   <section class="content">
     <article>
-      <p>Maotai is valuable, famous, and heavily gifted. That combination creates counterfeit risk, refilled-bottle risk, inflated-price risk, and confusion between core Kweichow Moutai products and other bottles that borrow prestige from the wider Maotai name. Before buying, check the <a href="/db/variety/maotai/">Maotai parameter card</a> to verify the correct GB/T standard (GB/T 18356), ABV range, and production region.</p>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>There are four distinct problems: counterfeit bottles, refilled genuine bottles, lookalike product lines, and invented vintage claims.</li>
+          <li>Seller and channel are stronger signals than any packaging detail, because packaging details change and fakes follow them.</li>
+          <li>Price is the single most reliable red flag. Genuine Moutai does not need discounting by unknown sellers.</li>
+          <li>Use the official anti-counterfeit check — QR and NFC verification — but treat it as one input, not proof.</li>
+          <li>For gifts, buy boringly from a licensed retailer and keep the receipt.</li>
+        </ul>
+      </div>
 
-      <div class="callout"><strong>Important limit:</strong> packaging details change over time and by market. Use this page as a buying-risk framework, not as a final authentication certificate.</div>
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#four">The four fraud types</a></li>
+          <li><a href="#price">Price as a signal</a></li>
+          <li><a href="#seller">Seller and channel</a></li>
+          <li><a href="#physical">Physical checks</a></li>
+          <li><a href="#lines">Product lines and lookalikes</a></li>
+          <li><a href="#vintage">Vintage and "aged" claims</a></li>
+          <li><a href="#checklist">The checklist</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
 
-      <h2>Start With the Seller</h2>
-      <p>The first authentication question is not the label. It is the source. A reliable licensed retailer, importer, or distributor reduces risk before you even inspect the bottle. A private seller with a premium story and no traceable purchase path increases risk even if the box looks convincing.</p>
+      <div class="callout warning"><strong>Important limit:</strong> packaging details change between production runs, markets, and years, and counterfeiters copy whatever is current. This page is a risk framework, not an authentication certificate. If a bottle matters financially, have it verified by the producer or a licensed professional.</div>
 
-      <h2>Risk Signals</h2>
+      <h2 id="four">The four fraud types</h2>
+      <p>Most advice about fake Moutai treats it as one problem. It is not, and the four types require different defences.</p>
+
+      <h3>1. Counterfeit bottles</h3>
+      <p>A complete fabrication: fake bottle, fake label, fake box, cheap spirit inside — or worse, industrial alcohol. These are the ones the news reports, and they are the most dangerous. They are also the easiest to avoid, because they almost always enter through channels with no traceable import route and prices far below market.</p>
+
+      <h3>2. Refilled genuine bottles</h3>
+      <p>The most insidious type, and increasingly common. A genuine empty bottle — often collected from restaurants and banquets — is refilled with a cheaper baijiu and resealed. The bottle, label, and box are all real. Only the liquid is not.</p>
+      <p>This is why "the packaging looked perfect" proves nothing. Defences that work here are about provenance and seals, not printing quality: an unbroken cap ring, a seal that has not been re-glued, and a seller who can account for the bottle's path.</p>
+
+      <h3>3. Lookalike product lines</h3>
+      <p>Not counterfeit, but not what the buyer thinks. A bottle carries a prestigious name association while being a different product line — different liquid, different price tier, different status. This is legal, common, and responsible for a large share of "I paid a lot for Moutai" disappointment.</p>
+      <p>The defence is simple: identify the <em>exact product</em>, not the family name. "Moutai" as a brand covers a range from everyday series products to the flagship Flying Fairy, and the gap in both liquid and price is enormous.</p>
+
+      <h3>4. Invented vintage and "aged" claims</h3>
+      <p>Baijiu labelling does not work like whisky labelling. A number on a Moutai box often refers to a release year, a commemorative edition, or the age of one component in a blend — not to a single-vintage bottling aged that many years in cask. Sellers frequently exploit this ambiguity, and overseas buyers who assume Scotch conventions are the easiest target.</p>
+      <p>Defence: require a specific, checkable claim. "Aged 30 years" with no documentation is marketing. A named edition with a verifiable release year is a fact.</p>
+
+      <div class="stat-row">
+        <div><strong>4</strong><span>Fraud types</span></div>
+        <div><strong>¥1,499</strong><span>Official retail guide price</span></div>
+        <div><strong>GB/T 18356</strong><span>Correct standard code</span></div>
+        <div><strong>53%</strong><span>Flagship ABV</span></div>
+      </div>
+
+      <h2 id="price">Price as a signal</h2>
+      <p>Moutai Flying Fairy (飞天茅台) carries an official retail guide price of ¥1,499 for 500 ml, and has traded well above that in the secondary market for years because supply is limited relative to gifting and investment demand. Outside China, expect $250–600 depending on market and vintage.</p>
+      <p>That market structure produces a clean signal: <strong>a genuine premium Moutai has no reason to be sold cheaply by an unknown seller.</strong> A bottle at 40% below prevailing market is not a bargain — it is either a counterfeit, a refill, or a bottle with a story that will not survive inspection.</p>
+      <p>The inverse also applies. A price far <em>above</em> market is not proof of authenticity either; it is simply a markup, and it is common in tourist areas and hotel gift shops.</p>
+
+      <h2 id="seller">Seller and channel</h2>
+      <p>The most effective single question is not about the bottle. It is: <em>who is legally responsible for this sale, and can I find them?</em></p>
+      <ul>
+        <li><strong>Best:</strong> licensed spirits retailer, authorised distributor, established importer with a physical address, or the producer's own channel.</li>
+        <li><strong>Acceptable with care:</strong> large online retailer with a returns policy, airport duty-free.</li>
+        <li><strong>High risk:</strong> private resellers, social-media sellers, marketplace listings with stock photography, "a friend of a friend" with a case in the trunk.</li>
+      </ul>
+      <p>A legitimate seller can answer three questions without hesitation: where the bottle came from, what the exact product line is, and what happens if it turns out to be wrong. If any of those produces a story instead of an answer, walk away.</p>
+
+      <h2 id="physical">Physical checks</h2>
+      <p>These are supporting evidence, not proof. Work through them in order, and treat any single failure as a reason to stop.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Signal</th><th>Why it matters</th><th>What to do</th></tr></thead>
+          <thead><tr><th>Check</th><th>What to look for</th><th>Why it matters</th></tr></thead>
           <tbody>
-            <tr><td>Price far below market</td><td>Premium Maotai rarely needs deep discounting from unknown sellers</td><td>Compare with reputable retailers before buying</td></tr>
-            <tr><td>Private resale without documents</td><td>Storage, origin, and authenticity are hard to verify</td><td>Ask for proof of purchase and decline if the story is vague</td></tr>
-            <tr><td>Heavy gift-box storytelling</td><td>Packaging can distract from product-line clarity</td><td>Identify the exact bottle, producer, and series</td></tr>
-            <tr><td>Vague vintage claims</td><td>"Old" and "aged" are often used loosely in sales language</td><td>Require specific, verifiable production information</td></tr>
-            <tr><td>Confusing group-name products</td><td>Not every related product equals the flagship bottle buyers imagine</td><td>Separate core product identity from association language</td></tr>
+            <tr><td>Official verification</td><td>QR code and NFC chip on the cap, checked through the producer's own anti-counterfeit system</td><td>The only check the producer controls directly. Note that a genuine code on a refilled bottle will still verify — it proves the bottle, not the liquid</td></tr>
+            <tr><td>Cap and seal</td><td>Cap ring intact and unbroken; no evidence of re-gluing, heat, or cutting; seal sits flush</td><td>Refills require the seal to be defeated and restored</td></tr>
+            <tr><td>Fill level</td><td>Consistent with the stated volume; not visibly low</td><td>A low fill on a "new" bottle suggests decanting or evaporation from a compromised seal</td></tr>
+            <tr><td>Print quality</td><td>Sharp text, correct characters, even colour registration, no fuzzy edges</td><td>Catches crude counterfeits; tells you nothing about refills</td></tr>
+            <tr><td>Label alignment</td><td>Straight, evenly applied, correct adhesive behaviour</td><td>Hand-applied replacement labels usually sit slightly off</td></tr>
+            <tr><td>Standard code</td><td>GB/T 18356 on a genuine Moutai product</td><td>Confirms you are looking at a geographical-indication product rather than a different line</td></tr>
+            <tr><td>Importer label</td><td>Present and legible outside China, with a lookup-able company</td><td>No label means no traceable import route and no recourse</td></tr>
           </tbody>
         </table>
       </div>
+      <p>One caution about verification codes: counterfeiters have produced fake verification pages, and genuine codes can be harvested from real bottles. Always reach the verification system through the producer's official app or website rather than a link or QR printed by the seller.</p>
 
-      <h2>Development Products Are Not Automatically Fake</h2>
-      <p>One common mistake is treating every non-core bottle as fake. Some products may be legitimate but still not equivalent to the famous flagship bottle people think they are buying. The risk is misunderstanding: a seller may lean on a prestigious name while the actual product line, producer relationship, liquid quality, or resale value is different.</p>
+      <h2 id="lines">Product lines and lookalikes</h2>
+      <p>Maotai's corporate family includes a wide range of products at very different price points, from everyday series bottles to the flagship Flying Fairy. None of the lower-tier products are fake. They are simply not what a buyer imagining "Moutai" usually has in mind.</p>
+      <p>The practical consequence for buyers: <strong>learn the product name, not the brand name.</strong> A box that says Moutai and costs $40 is a different product from a box that says Moutai and costs $400, and the difference is not packaging.</p>
+      <p>This matters most in gifting. A recipient who knows baijiu will read the exact product instantly, and an ambiguous gift can read as either ignorance or an attempt at value substitution. Buy the product you can name precisely.</p>
 
-      <h2>For Gifts, Buy Boringly</h2>
-      <p>If the bottle is a serious business or family gift, this is not the moment for a clever bargain. Buy from a reliable channel, keep receipts, avoid mystery listings, and choose a product the recipient can recognize. A safe, well-sourced bottle beats a dramatic story.</p>
-
-      <h2>When To Walk Away</h2>
+      <h2 id="vintage">Vintage and "aged" claims</h2>
+      <p>Chinese baijiu does improve with age in the bottle to a degree — unlike wine, it does not turn, and esterification continues slowly — but the market's vintage language is loose.</p>
       <ul>
-        <li>The seller pressures you to decide quickly.</li>
-        <li>The price is too good for a premium bottle.</li>
-        <li>The listing uses prestige words but avoids exact product details.</li>
-        <li>The seller cannot explain the supply path.</li>
-        <li>You need the bottle for an important gift and cannot verify it.</li>
+        <li><strong>A year on the box</strong> usually marks the release or a commemorative occasion, not the distillation date.</li>
+        <li><strong>"Aged 15 years"</strong> typically means the blend includes spirit of that age, not that the whole bottle is 15 years old.</li>
+        <li><strong>"Old bottle"</strong> claims in resale are almost unverifiable without documented provenance.</li>
+        <li><strong>Auction and collector tiers</strong> exist and are legitimate, but they are a specialist market with specialist authentication. Do not enter it casually.</li>
       </ul>
 
-      <section class="faq">
-        <h2>FAQ</h2>
-        <h3>Can photos prove a Maotai bottle is real?</h3>
-        <p>Photos can reveal obvious problems, but they rarely prove authenticity by themselves. Seller trust, purchase path, and product-line clarity still matter.</p>
-        <h3>Is every cheap Maotai fake?</h3>
-        <p>No, but a famous premium bottle priced far below normal market levels should trigger caution, especially from unknown sellers.</p>
-        <h3>Are Maotai Group products the same as Kweichow Moutai?</h3>
-        <p>Not necessarily. Buyers should identify the exact product and avoid assuming every related name has the same status, liquid, or market value.</p>
+      <h2 id="checklist">The checklist</h2>
+      <p>Before you pay for any premium baijiu:</p>
+      <ol>
+        <li>Can I name the exact product line — not the brand family?</li>
+        <li>Is the seller licensed and identifiable, with an address I can look up?</li>
+        <li>Does the price sit inside the plausible market band?</li>
+        <li>Is the cap ring and seal intact, with no sign of rework?</li>
+        <li>Does the official verification check pass through the producer's own system?</li>
+        <li>If overseas, is there an importer label naming a real company?</li>
+        <li>Can the seller explain the supply route in one sentence?</li>
+        <li>Would I be comfortable if the recipient had this bottle inspected?</li>
+      </ol>
+      <p>If any answer is no, do not buy. This is not a category where a good deal compensates for a bad channel.</p>
+
+      <div class="callout"><strong>A cheaper way to learn the style:</strong> if what you actually want is to know whether you like sauce aroma, buy <a href="/db/variety/xijiu/">Xijiu</a> or <a href="/db/variety/langjiu/">Langjiu</a> at $30–60. Both are serious sauce-aroma producers, both are far harder to counterfeit profitably, and both will answer the flavour question that Moutai's price tag is standing in for.</div>
+
+      <section class="faq" id="faq">
+        <h2>Frequently asked</h2>
+        <h3>Can photos prove a bottle is real?</h3>
+        <p>No. Photos can expose crude counterfeits — wrong characters, poor printing, obvious seal damage — but they cannot distinguish a refilled genuine bottle from a genuine one, and counterfeiters photograph genuine bottles for their listings. Provenance is the only thing that scales.</p>
+        <h3>Is every cheap Moutai fake?</h3>
+        <p>No. Lower-tier products in the Moutai corporate family legitimately sell for far less than Flying Fairy, and older or damaged bottles sometimes sell at a discount. But a <em>flagship</em> bottle priced far below market from an unknown seller should be assumed problematic until proven otherwise.</p>
+        <h3>Does the anti-counterfeit QR code guarantee authenticity?</h3>
+        <p>It verifies the code, not the contents. A genuine bottle can be refilled and its genuine code will still check out. Use the code as one input alongside channel, seal integrity, and price.</p>
+        <h3>Are Moutai series products the same as Flying Fairy?</h3>
+        <p>No. They are different products at different price points with different liquid. They are legitimate baijiu, but a buyer expecting flagship status and paying series-product prices — or the reverse — is the most common misunderstanding in the category.</p>
+        <h3>What should I do if I think I bought a fake?</h3>
+        <p>Do not drink it — counterfeit spirits have caused serious poisonings. Keep the bottle and packaging intact, keep your receipt, and report it to the retailer and to your local consumer protection or food safety authority. In China, report to the market supervision bureau (12315).</p>
+        <h3>Is it safer to buy Moutai in China?</h3>
+        <p>Not automatically. Counterfeits are most prevalent where demand is highest, which is China itself. What helps is buying from an authorised channel — the producer's own stores, major licensed retailers, or official e-commerce flagships — anywhere in the world.</p>
       </section>
+
+      <div class="next-links">
+        <a href="/how-to-buy-baijiu-outside-china/">The full overseas buying guide</a>
+        <a href="/db/variety/maotai/">Maotai parameter card</a>
+        <a href="/best-baijiu-for-beginners/">Cheaper ways to try sauce aroma</a>
+        <a href="/types-of-baijiu/">Understand sauce aroma</a>
+      </div>
     </article>
   </section>
 </BaseLayout>

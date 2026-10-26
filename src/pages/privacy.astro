@@ -1,16 +1,85 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Privacy Policy - Baijiu365';
-const description = 'A plain-language privacy policy for Baijiu365.';
+import { site } from '../data/site';
+const title = 'Privacy Policy | Baijiu365';
+const description = 'What Baijiu365 collects, what it does not, and the two third parties that see a request: Cloudflare and Google Fonts.';
 ---
+
 <BaseLayout title={title} description={description}>
-  <header class="article-header"><div class="narrow"><p class="eyebrow">Policy</p><h1>Privacy Policy</h1><p class="lede">Baijiu365 is a static information site and aims to collect as little personal data as possible.</p></div></header>
-  <section class="content"><article>
-    <h2>Information We Collect</h2>
-    <p>Baijiu365 does not currently run user accounts, comments, checkout, or newsletter forms. Hosting providers may process standard server logs such as IP address, browser, referring page, and request time for security and reliability.</p>
-    <h2>Analytics And Advertising</h2>
-    <p>The site is not currently using advertising or personalized ad tracking. If analytics or advertising tools are added later, this page should be updated before launch.</p>
-    <h2>Contact</h2>
-    <p>If you contact the project directly, the information you provide may be used to respond to that message and improve the site.</p>
-  </article></section>
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">Policy</p>
+      <h1>Privacy Policy</h1>
+      <p class="lede">Baijiu365 is a static reference site. It has no accounts, no comments, no checkout and no newsletter, so there is very little to collect. This page lists everything that does happen.</p>
+      <div class="article-meta">
+        <span>Last updated <b>{site.updated}</b></span>
+        <span>Applies to <b>baijiu365.com</b></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="content">
+    <article>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>No accounts, no tracking scripts, no advertising pixels, no newsletter.</li>
+          <li>The site sets no cookies of its own and writes nothing to your browser storage.</li>
+          <li>Two third parties see a page request: Cloudflare, which serves the site, and Google, which serves the fonts.</li>
+          <li>Email sent to us is kept only long enough to answer it and fix the problem raised.</li>
+        </ul>
+      </div>
+
+      <h2>What the site itself does not do</h2>
+      <p>There is no login, no user profile, no comment system, no shopping cart and no mailing list. Nothing on the site asks for a name, address, phone number or payment detail, and no page writes to cookies, <code>localStorage</code> or <code>sessionStorage</code>. The interactive tools on <a href="/tools/">the tools pages</a> run entirely in the browser: the values you select are not sent anywhere, and they disappear when you close the tab.</p>
+
+      <h2>Server logs</h2>
+      <p>The site is served by Cloudflare Pages. Like any web host, Cloudflare processes the technical data needed to deliver a page and to defend against abuse: IP address, user agent, requested URL, timestamp and referring page. This is standard for every website and is not used by us to identify individual readers. Retention and handling are governed by Cloudflare's own privacy terms.</p>
+      <p>Cloudflare may also set a short-lived security cookie for bot protection. That cookie is set by Cloudflare, not by Baijiu365, and it does not follow you across other sites.</p>
+
+      <h2>Third-party requests</h2>
+      <p>There are exactly two, and both are worth naming rather than hiding in a list:</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Service</th><th>What it receives</th><th>Why</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Cloudflare</td>
+              <td>Full request metadata, as described above</td>
+              <td>Hosting, TLS, caching, abuse protection</td>
+            </tr>
+            <tr>
+              <td>Google Fonts</td>
+              <td>Your IP address and browser user agent</td>
+              <td>Loading the typefaces used on every page</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Google Fonts is the one request a privacy-conscious reader may want to avoid, because it discloses your IP address to Google even though nothing on this site is a Google product. All images and video are served from this domain, so nothing else leaves your browser.</p>
+
+      <h2>Email</h2>
+      <p>If you write to <a href={`mailto:${site.email}`}>{site.email}</a>, we receive your address, your message and anything you attach. That is used to reply and, where relevant, to correct the page you wrote about. It is not added to a list, sold, or used for marketing. Messages are kept while the correction is open and for a reasonable period afterwards as a record of what changed.</p>
+
+      <h2>Your rights</h2>
+      <p>Depending on where you live, you may have the right to ask what personal data is held about you, to have it corrected or deleted, and to object to its processing. In practice the only personal data this site could hold is an email you chose to send. Write to <a href={`mailto:${site.email}`}>{site.email}</a> and the request will be handled directly.</p>
+
+      <h2>Children</h2>
+      <p>This site is about an alcoholic drink and is written for adults of legal drinking age. It is not directed at children, and no information is knowingly collected from them.</p>
+
+      <h2>Outbound links</h2>
+      <p>Some pages link to producers, retailers or reference sources. Once you follow a link you are on someone else's site, under their privacy policy, not this one.</p>
+
+      <h2>Changes</h2>
+      <p>If analytics, advertising or a newsletter is ever added, this page will be rewritten before that change goes live, not after. The date at the top of the page is the date of the last substantive change.</p>
+
+      <div class="next-links">
+        <a href="/terms/">Terms of use</a>
+        <a href="/editorial-policy/">Editorial policy</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </article>
+  </section>
 </BaseLayout>

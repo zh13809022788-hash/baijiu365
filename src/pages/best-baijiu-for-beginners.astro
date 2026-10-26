@@ -1,66 +1,162 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Best Baijiu for Beginners: How to Choose Your First Bottle';
-const description = 'Choose a beginner-friendly baijiu by aroma type, alcohol strength, occasion, budget, and buying channel instead of brand fame alone.';
+const title = 'Best Baijiu for Beginners: A Three-Bottle Ladder';
+const description = 'Which baijiu to buy first, second, and third — specific bottles, real prices, ABV guidance, and the ones to avoid. Built from a database of 16 varieties.';
+const keywords = ['best baijiu for beginners', 'first baijiu bottle', 'beginner baijiu', 'baijiu recommendations', 'easy drinking baijiu'];
 ---
-<BaseLayout title={title} description={description}>
+
+<BaseLayout title={title} description={description} keywords={keywords}>
   <header class="article-header">
     <div class="narrow">
       <p class="eyebrow">Buying Guide</p>
       <h1>Best Baijiu for Beginners</h1>
-      <p class="lede">The best first baijiu is not always the most famous bottle. It is the bottle that matches your tolerance, food, budget, and reason for buying.</p>
+      <p class="lede">The best first bottle is not the most famous one. It is the one that teaches you something without punishing you for being new — and three bottles will teach you more than one expensive one.</p>
+      <div class="article-meta">
+        <span>Reading time <b>10 min</b></span>
+        <span>Budget <b>$60 for the full ladder</b></span>
+        <span>Based on <b>16 varieties</b></span>
+      </div>
     </div>
   </header>
+
   <section class="content">
     <article>
-      <p>A beginner-friendly baijiu should teach you something without punishing you for being new. That usually means avoiding the two common extremes: buying the cheapest harsh bottle because "it is only for shots," or buying an expensive prestige bottle before you know whether you enjoy that aroma type.</p>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>Buy a <strong>ladder, not a bottle</strong>: light aroma → soft strong aroma → sauce aroma. Three bottles, about $60 total.</li>
+          <li>Start at 42–45% ABV if you are new. 52–53% is the standard strength but it is a harder introduction.</li>
+          <li>Skip Moutai for now. It is the worst value in the category as a first purchase — expensive, intense, and heavily counterfeited.</li>
+          <li>Buy from a licensed retailer or importer, not a marketplace listing with a dramatic story.</li>
+          <li>If you only buy one bottle for a Chinese host, buy recognition and reliability, not novelty.</li>
+        </ul>
+      </div>
 
-      <h2>Start With the Occasion</h2>
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#ladder">The three-bottle ladder</a></li>
+          <li><a href="#one">If you only buy one</a></li>
+          <li><a href="#abv">Choosing an ABV</a></li>
+          <li><a href="#occasion">Choosing by occasion</a></li>
+          <li><a href="#avoid">What to avoid</a></li>
+          <li><a href="#taste">How to run the tasting</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="ladder">The three-bottle ladder</h2>
+      <p>Baijiu is a category, not a product. Buying one bottle and deciding you do or do not like baijiu is like buying one IPA and deciding about beer. The efficient approach is three bottles across three aroma types, tasted side by side. Total cost is roughly $60, which is less than one mid-tier Moutai.</p>
+
+      <h3>Bottle 1 — Light aroma: <a href="/db/variety/fenjiu/">Fenjiu</a></h3>
+      <p><strong>Around $15–40 · 42% or 53% · Shanxi · GB/T 10781.2</strong></p>
+      <p>This is the cleanest expression of baijiu and the easiest to read for a palate trained on Western spirits. Expect steamed rice, pear, a faint floral lift, and a dry finish that stops rather than lingers. Nothing here is challenging, which is the point: it establishes the baseline of what grain spirit tastes like before fermentation character is layered on.</p>
+      <p>Choose the 42% if you are completely new to high-proof spirits. Choose the 53% if you drink cask-strength whisky or overproof rum and want the standard expression. Either way, Fenjiu is one of the best-value bottles in the entire category — its flagship costs less than a mid-range wine and outperforms bottles at three times the price.</p>
+      <p><em>What it teaches:</em> what clean grain distillation tastes like, and how much aroma comes from fermentation rather than the still.</p>
+
+      <h3>Bottle 2 — Soft strong aroma: <a href="/db/variety/yanghe/">Yanghe</a></h3>
+      <p><strong>Around $30–50 · 40.8% · Jiangsu · GB/T 10781.1</strong></p>
+      <p>Strong aroma is roughly half of all baijiu sold, so you cannot skip it. But the Sichuan versions at 52% are a lot to handle on a second bottle. Yanghe solves this: it is a deliberate soft style — the industry calls it <em>mianrou</em> (绵柔, "soft and supple") — at 40.8%, which is low for the category.</p>
+      <p>You get the characteristic strong-aroma fruit and honey, plus a rounder, gentler body. It is also the most food-friendly baijiu made: it was designed for the long, delicate Huaiyang meals of Jiangsu, and it works with seafood and light dishes where a 52% Sichuan bottle would dominate.</p>
+      <p><em>What it teaches:</em> the strong-aroma signature — fruit, honey, cellar — at a strength you can evaluate calmly. Once you know it, a 52% Wuliangye makes sense as the louder version of the same idea.</p>
+
+      <h3>Bottle 3 — Sauce aroma: <a href="/db/variety/xijiu/">Xijiu</a> or <a href="/db/variety/langjiu/">Langjiu</a></h3>
+      <p><strong>Around $30–60 · 53% · Guizhou / Sichuan · GB/T 26760</strong></p>
+      <p>Sauce aroma is the style everyone has heard of, and you should try it — just not through a $150 Moutai bottle. Xijiu and Langjiu are serious sauce-aroma producers with decades of history, and both cost a fraction of Moutai while showing the style honestly.</p>
+      <p>Expect fermented soybean, roasted grain, dried mushroom, toasted nuts, and a long savoury finish. This is the bottle that divides people. If you love peated Islay whisky, mezcal, or funky rum, you may find it immediately compelling. If you prefer clean spirits, you may find it medicinal — and that is a legitimate reaction, not a failure of palate.</p>
+      <p><em>What it teaches:</em> whether sauce aroma is for you. That answer is worth $40, not $150.</p>
+
+      <div class="stat-row">
+        <div><strong>3</strong><span>Bottles</span></div>
+        <div><strong>~$60</strong><span>Total cost</span></div>
+        <div><strong>3</strong><span>Aroma types</span></div>
+        <div><strong>1 evening</strong><span>Tasting time</span></div>
+      </div>
+
+      <h2 id="one">If you only buy one</h2>
+      <p>Sometimes the ladder is not practical. Match the single bottle to the job:</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Occasion</th><th>Better choice</th><th>Why</th></tr></thead>
+          <thead><tr><th>Your situation</th><th>Buy this</th><th>Price</th><th>Why</th></tr></thead>
           <tbody>
-            <tr><td>Learning at home</td><td>Small-format bottle or moderate-priced light/strong aroma</td><td>Lower risk and easier comparison</td></tr>
-            <tr><td>Dinner with spicy or rich food</td><td>Approachable strong aroma</td><td>Fruit and cellar notes can handle powerful dishes</td></tr>
-            <tr><td>Gift for a serious Chinese host</td><td>Recognizable brand from a trusted seller</td><td>Authenticity and face value matter more than novelty</td></tr>
-            <tr><td>Cocktails</td><td>Rice aroma, light aroma, or carefully measured strong aroma</td><td>These styles are easier to balance than intense sauce aroma</td></tr>
-            <tr><td>Prestige tasting</td><td>Sauce aroma from a reliable channel</td><td>Good for reference, but not always easy</td></tr>
+            <tr><td>Learning at home, alone</td><td>Fenjiu 42%</td><td>$15–30</td><td>Cheapest honest introduction; low risk if you dislike it</td></tr>
+            <tr><td>Dinner party with rich food</td><td>Luzhou Laojiao or Gujinggong</td><td>$20–40</td><td>Classic strong aroma, works with almost any cuisine</td></tr>
+            <tr><td>Gift for a Chinese business contact</td><td>Wuliangye Puwu</td><td>$120+</td><td>Universally recognised, strong-aroma flagship, correct gift register</td></tr>
+            <tr><td>Gift for a Chinese family host</td><td>Yanghe or Gujinggong gift box</td><td>$30–60</td><td>Familiar names, softer style, appropriate without being showy</td></tr>
+            <tr><td>Cocktails</td><td>Niulanshan or a rice aroma</td><td>$10–25</td><td>Cheap, clean, and does not waste complexity in a mixer</td></tr>
+            <tr><td>Curiosity about the famous one</td><td>Xijiu</td><td>$30–50</td><td>Real sauce aroma without the counterfeit risk or the price</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Beginner Rules</h2>
+      <h2 id="abv">Choosing an ABV</h2>
+      <p>Chinese shelves are dominated by 52% and 53%, but that is convention rather than necessity. The full range in our database runs from 38% to 56%.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>ABV</th><th>Who it suits</th><th>Trade-off</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td>38–42%</td><td>New drinkers, long meals, warm weather</td><td>Less aromatic intensity, lighter body</td><td>Yanghe 40.8%, Luzhou Laojiao 38%, Fenjiu 42%</td></tr>
+            <tr><td>45–50%</td><td>Middle ground; most versatile</td><td>Neither extreme; a compromise</td><td>Gujinggong 50%, Xifeng 45%</td></tr>
+            <tr><td>52–53%</td><td>Experienced drinkers, traditional service</td><td>Alcohol heat on first contact</td><td>Wuliangye, Moutai, Fenjiu 53%</td></tr>
+            <tr><td>54%+</td><td>Regional styles and specific products</td><td>Demanding; needs food</td><td>Dongjiu 54%, Shuijingfang 54%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Note that lower ABV is not "watered down" in a pejorative sense — it is a deliberate style choice, and the soft strong-aroma category built around 40.8% is one of the most commercially successful in China. But at the very bottom of the market, low ABV combined with liquid fermentation (GB/T 20821) is a cost-saving measure, not a style. The standard code tells you which you are looking at.</p>
+
+      <h2 id="occasion">Choosing by occasion</h2>
+      <h3>For yourself</h3>
+      <p>Buy the ladder. If you must buy one, buy the cheapest style you are curious about and accept that you are running an experiment, not making a statement.</p>
+      <h3>For a Chinese host</h3>
+      <p>Recognition beats novelty every time. A host receiving baijiu is receiving a social object as much as a drink, and an unfamiliar craft bottle — however good — creates the awkwardness of not knowing how to place it. Wuliangye, Yanghe, Gujinggong, and Fenjiu are all safe. Bring it in its box, and present it with both hands.</p>
+      <h3>For a Western dinner party</h3>
+      <p>Serve it as a tasting, not as a drinks option. Three small glasses per person, with food, and a two-minute explanation of what aroma types are. This framing turns baijiu from a dare into an experience, and it is how most sceptics get converted.</p>
+      <h3>For cocktails</h3>
+      <p>Buy cheap and buy light. Niulanshan at $10–20 is the correct answer. Do not put a $60 sauce aroma into a mixed drink — the complexity is wasted and the fermented notes fight most ingredients.</p>
+
+      <h2 id="avoid">What to avoid</h2>
       <ul>
-        <li>Buy from a channel you trust more than a box you admire.</li>
-        <li>Do not treat packaging weight as proof of quality.</li>
-        <li>Check alcohol strength before serving it to new drinkers.</li>
-        <li>Expect aroma intensity. Strong smell is not automatically a flaw.</li>
-        <li>If possible, taste smaller bottles before buying premium full bottles.</li>
+        <li><strong>Moutai as a first bottle.</strong> Intense, expensive, and the most counterfeited baijiu in existence. Try sauce aroma through Xijiu first; if you love it, Moutai becomes a justified purchase rather than a gamble.</li>
+        <li><strong>Anything priced far below market.</strong> A premium bottle at 40% off from an unknown seller is the single most common fraud pattern. See <a href="/how-to-spot-fake-maotai/">the fake-bottle guide</a>.</li>
+        <li><strong>"Collector" and "limited edition" bottles with no verifiable producer.</strong> In baijiu, these words are marketing, not provenance.</li>
+        <li><strong>Heavy gift boxes as a quality signal.</strong> Packaging weight correlates with gift positioning, not liquid quality. Some excellent bottles come in plain cardboard.</li>
+        <li><strong>Liquid-fermented bottles sold as traditional.</strong> Check for GB/T 20821 or 20822 on the back label. These are legal products, but they are not solid-state baijiu and they will not show you what the category tastes like.</li>
+        <li><strong>Bottles with no Chinese label at all.</strong> Outside China, a legal import needs an importer label. Its absence usually means a grey-market route with unknown storage.</li>
       </ul>
 
-      <h2>What To Buy First</h2>
-      <p>For many beginners, the safest path is a tasting ladder. Start with a cleaner light-aroma or rice-aroma baijiu, then try an approachable strong-aroma bottle, then move into sauce aroma when you are ready for more savory fermentation. This path teaches contrast instead of forcing you to judge the whole category from one extreme bottle.</p>
+      <h2 id="taste">How to run the tasting</h2>
+      <p>If you bought the ladder, taste it properly. One session, three bottles, forty minutes.</p>
+      <ol>
+        <li><strong>Same glass for all three.</strong> Small tulip glasses if you have them, small cups if not. Identical vessels matter more than expensive ones.</li>
+        <li><strong>Same temperature.</strong> All three at room temperature, all three poured at the same time.</li>
+        <li><strong>Lightest first.</strong> Fenjiu, then Yanghe, then Xijiu. Going the other direction will flatten the light aroma entirely.</li>
+        <li><strong>Two sips each, then move on.</strong> Do not finish any glass. You are comparing, not drinking.</li>
+        <li><strong>Write three words per bottle.</strong> Not "good" or "bad" — a smell, a texture, a length. This is the entire skill of tasting, and it develops fast.</li>
+        <li><strong>Then eat.</strong> Repeat the comparison with food. The ranking often changes, and that is the most useful thing you will learn.</li>
+      </ol>
+      <div class="callout"><strong>Expect the ranking to surprise you.</strong> A significant share of first-time tasters prefer the $20 Fenjiu to the $60 sauce aroma. That is not a beginner failing to appreciate complexity — it is an honest palate reporting what it enjoys. Trust it, and revisit the sauce aroma in six months.</div>
 
-      <h2>What To Avoid First</h2>
-      <p>Avoid unknown "collector" bottles, suspiciously cheap premium bottles, vague vintage claims, and gift sets that say more about packaging than liquid. Also avoid buying Maotai-style bottles only because they look important. Prestige is useful when the occasion needs it; it is wasteful when the drinker only needs a clear introduction.</p>
-
-      <div class="decision-box">
-        <h2>Simple First-Bottle Formula</h2>
-        <p>If you are buying for yourself, choose a moderate-priced, authentic bottle in a style you can compare. If you are buying for a Chinese host, choose reliability and recognition. If you are buying for cocktails, choose balance and lower intensity. The best bottle changes with the job.</p>
-      </div>
-
-      <section class="faq">
-        <h2>FAQ</h2>
-        <h3>Should beginners start with Maotai?</h3>
-        <p>Not usually. Maotai is important, but it is expensive, intense, and often surrounded by counterfeit risk. It is better as a reference bottle than a casual first experiment. See the <a href="/db/variety/maotai/">Maotai parameter card</a> for ABV, GB/T standard, and production details.</p>
+      <section class="faq" id="faq">
+        <h2>Frequently asked</h2>
+        <h3>Should beginners start with Moutai?</h3>
+        <p>No. Moutai is intense, expensive, and counterfeited at scale. It is a reference bottle, not an introduction. Try sauce aroma through Xijiu or Langjiu at $30–60 first, and buy Moutai only once you know you like the style.</p>
         <h3>Is expensive baijiu always better?</h3>
-        <p>No. Price can reflect scarcity, gifting demand, brand power, packaging, channel markup, or speculation. It does not automatically mean the bottle is right for your occasion.</p>
-        <h3>Can I use baijiu in cocktails?</h3>
-        <p>Yes, but do not treat every bottle like vodka. Rice aroma and light aroma are easier to mix; strong aroma can work in small measures; sauce aroma needs careful handling.</p>
+        <p>No, and the correlation is weaker than in most spirit categories. Price reflects scarcity, gifting demand, brand power, packaging, channel markup, and speculation. A $40 bottle from a serious regional house frequently drinks better than a $200 gift box.</p>
+        <h3>What is the mildest baijiu?</h3>
+        <p>Rice aroma, followed by soft strong aroma at around 40%. Rice aroma is gentle, lightly sweet, and floral, and it is the least confrontational introduction to the category. Yanghe at 40.8% is the mildest of the major strong-aroma bottles.</p>
+        <h3>How much should I spend on a first bottle?</h3>
+        <p>$15–40. Above that you are paying for prestige or packaging that a beginner cannot yet evaluate, and below $10 you are likely in liquid-fermented territory that does not represent the category.</p>
+        <h3>Can I buy baijiu in small bottles?</h3>
+        <p>Sometimes — 100 ml and 250 ml formats exist for several brands, mostly in travel retail and gift sets. They are ideal for tasting but poorly distributed outside China. If you cannot find them, buy full bottles and share.</p>
+        <h3>Which baijiu is easiest to find outside China?</h3>
+        <p>Wuliangye, Fenjiu, Yanghe, Luzhou Laojiao, and Moutai have the widest international distribution. Xifeng, Dongjiu, and the rarer aroma types are harder to find and usually require a specialist importer.</p>
       </section>
-      <div class="decision-box">
-        <h2>Still Not Sure? Use the Database</h2>
-        <p>Filter 16 varieties by <a href="/db/aroma/light/">aroma type</a>, <a href="/db/region/sichuan/">region</a>, beginner-friendliness, and price range. <a href="/db/">Open the baijiu database &rarr;</a></p>
+
+      <div class="next-links">
+        <a href="/types-of-baijiu/">Understand the aroma types first</a>
+        <a href="/how-to-drink-baijiu/">How to serve and taste it</a>
+        <a href="/how-to-buy-baijiu-outside-china/">Buy safely outside China</a>
+        <a href="/db/">Compare all 16 varieties</a>
       </div>
     </article>
   </section>

@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import fs from 'fs';
 import path from 'path';
+import { aromaEditorial } from '../../../data/aromaEditorial';
 
 const aromaLabels = {
   sauce: 'Sauce Aroma', strong: 'Strong Aroma', light: 'Light Aroma',
@@ -16,12 +17,12 @@ const aromaCn = {
 };
 
 const aromaDescriptions = {
-  sauce: 'Savory, complex, umami-driven. The most intense and polarizing baijiu style, made famous by Maotai. Production involves multiple fermentation cycles over a full year.',
-  strong: 'Fruity, cellar-influenced, rich. The most widely consumed baijiu style in China. Fermented in mud pits, producing ethyl hexanoate-driven aromas.',
-  light: 'Clean, grain-forward, approachable. The easiest entry point for new baijiu drinkers. Fermented in ceramic jars, lighter body and shorter finish.',
-  phoenix: 'Unique to Shaanxi. A hybrid style with both strong and light characteristics, with a distinctive sweet-sour finish.',
-  herbal: 'Medicinal herbs infused during production. Rare and acquired taste, with Dongjiu as the primary example.',
-  mixed: 'Fuyu-aroma style from Hunan. Combines multiple fermentation techniques for a layered, complex profile.',
+  sauce: 'Savory, complex, umami-driven. The most intense and polarizing baijiu style, made famous by Maotai.',
+  strong: 'Fruity, cellar-influenced, rich. The most widely consumed baijiu style in China.',
+  light: 'Clean, grain-forward, approachable. The easiest entry point for new baijiu drinkers.',
+  phoenix: 'Unique to Shaanxi. A hybrid style with both strong and light characteristics.',
+  herbal: 'Medicinal herbs infused during production. Rare and acquired taste.',
+  mixed: 'Layered style combining multiple fermentation techniques for a complex profile.',
 };
 
 export function getStaticPaths() {
@@ -40,25 +41,139 @@ export function getStaticPaths() {
 }
 
 const { varieties } = Astro.props;
-const label = aromaLabels[Astro.params.type] || Astro.params.type;
-const description = aromaDescriptions[Astro.params.type] || '';
+const type = Astro.params.type;
+const label = aromaLabels[type] || type;
+const ed = aromaEditorial[type];
+const fallbackDescription = aromaDescriptions[type] || '';
 
-const title = `${label} Baijiu — ${varieties.length} Varieties | Baijiu365`;
-const metaDesc = `${label} baijiu database: ${varieties.length} varieties with GB/T standards, ABV, tasting notes, and buying guides. ${description.slice(0, 100)}`;
-const keywords = [`${Astro.params.type} aroma baijiu`, `${label.toLowerCase()}`, ...varieties.map(v => v.name)];
+const title = `${label} Baijiu — ${varieties.length} Varieties, Production and Taste | Baijiu365`;
+const metaDesc = ed
+  ? `${label} baijiu explained: ${ed.lede.slice(0, 110)} Plus ${varieties.length} bottles with GB/T codes, ABV and price guidance.`
+  : `${label} baijiu database: ${varieties.length} varieties with GB/T standards, ABV, tasting notes. ${fallbackDescription}`;
+const keywords = [`${type} aroma baijiu`, `${label.toLowerCase()}`, `${label.toLowerCase()} production`, ...varieties.map(v => v.name)];
+
+// Price ladder from the bottles actually in this style.
+const prices = varieties.map(v => v.price_range_usd).filter(Boolean);
+const minPrice = prices.length ? Math.min(...prices.map(p => p.min)) : null;
+const maxPrice = prices.length ? Math.max(...prices.map(p => p.max)) : null;
+const beginnerCount = varieties.filter(v => v.beginner_friendly).length;
+const brands = [...new Set(varieties.map(v => v.brand?.name).filter(Boolean))];
+const styles = [...new Set(varieties.map(v => v.production?.fermentation).filter(Boolean))];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `${label} Baijiu`,
+  description: metaDesc,
+  url: `https://baijiu365.com/db/aroma/${type}/`,
+  isPartOf: { '@type': 'WebSite', name: 'Baijiu365', url: 'https://baijiu365.com/' },
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: varieties.length,
+    itemListElement: varieties.map((v, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: v.name,
+      url: `https://baijiu365.com/db/variety/${v.id}/`,
+    })),
+  },
+};
 ---
 
-<BaseLayout title={title} description={metaDesc} keywords={keywords} type="WebSite">
+<BaseLayout title={title} description={metaDesc} keywords={keywords} type="WebSite" jsonLd={jsonLd} image={`/images/aroma-${type}.webp`}>
   <section class="aroma-hero">
     <div class="aroma-hero-bg" aria-hidden="true">
-      <img src={`/images/aroma-${Astro.params.type}.webp`} alt="" width="900" height="900" />
+      <img src={`/images/aroma-${type}.webp`} alt="" width="900" height="900" />
     </div>
     <div class="wrap">
       <p class="eyebrow"><a href="/db/">Database</a> &rsaquo; Aroma Type</p>
-      <h1>{label} <span class="aroma-cn">{aromaCn[Astro.params.type] || ''}</span></h1>
-      <p class="lede">{varieties.length} {varieties.length === 1 ? 'variety' : 'varieties'} &middot; {description}</p>
+      <h1>{label} <span class="aroma-cn">{ed?.cn || aromaCn[type] || ''}</span></h1>
+      <p class="lede">{ed ? ed.lede : `${varieties.length} varieties in this style. ${fallbackDescription}`}</p>
+      <ul class="aroma-chips">
+        <li><b>{varieties.length}</b> bottles</li>
+        {minPrice !== null && <li><b>US${minPrice}–{maxPrice}</b> range</li>}
+        <li><b>{beginnerCount}/{varieties.length}</b> beginner friendly</li>
+        {ed?.facts?.[1] && <li>{ed.facts[1].value}</li>}
+      </ul>
     </div>
   </section>
+
+  {ed && (
+    <section class="section aroma-section">
+      <div class="wrap aroma-layout">
+        <article class="aroma-prose">
+          <h2>What makes it {label.toLowerCase()}</h2>
+          {ed.definition.map(p => <p>{p}</p>)}
+
+          <h2>How it is made</h2>
+          {ed.method.map(p => <p>{p}</p>)}
+
+          <h2>In the glass</h2>
+          <div class="sensory-grid">
+            <div class="sensory-card">
+              <p class="sensory-label">Nose</p>
+              <p>{ed.nose}</p>
+            </div>
+            <div class="sensory-card">
+              <p class="sensory-label">Palate</p>
+              <p>{ed.palate}</p>
+            </div>
+            <div class="sensory-card">
+              <p class="sensory-label">Finish</p>
+              <p>{ed.finish}</p>
+            </div>
+          </div>
+
+          <h2>How to serve it</h2>
+          <div class="table-wrap">
+            <table class="serve-table">
+              <tbody>
+                {ed.serving.map(s => (
+                  <tr><th scope="row">{s.label}</th><td>{s.value}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <h2>What people get wrong</h2>
+          <dl class="myth-list">
+            {ed.misconceptions.map(m => (
+              <div class="myth">
+                <dt>{m.claim}</dt>
+                <dd>{m.reality}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
+
+        <aside class="aroma-aside">
+          <div class="aside-card">
+            <h2>At a glance</h2>
+            <dl class="fact-list">
+              {ed.facts.map(f => (
+                <div><dt>{f.label}</dt><dd>{f.value}</dd></div>
+              ))}
+            </dl>
+          </div>
+
+          <div class="aside-card">
+            <h2>Price ladder</h2>
+            <p class="aside-note">Entry to top of the range, from the bottles below.</p>
+            <p class="price-range"><strong>US${minPrice}</strong><span>to</span><strong>US${maxPrice}</strong></p>
+            <dl class="fact-list">
+              <div><dt>Houses covered</dt><dd>{brands.length}</dd></div>
+              <div><dt>Beginner friendly</dt><dd>{beginnerCount} of {varieties.length}</dd></div>
+            </dl>
+          </div>
+
+          <div class="aside-card aside-links">
+            <h2>Read next</h2>
+            {ed.related.map(l => <a href={l.href}>{l.label}</a>)}
+          </div>
+        </aside>
+      </div>
+    </section>
+  )}
 
   <section class="section">
     <div class="wrap">
@@ -102,6 +217,15 @@ const keywords = [`${Astro.params.type} aroma baijiu`, `${label.toLowerCase()}`,
           </tbody>
         </table>
       </div>
+
+      {styles.length > 0 && (
+        <div class="ferment-note reveal">
+          <p class="eyebrow">Fermentation in this style</p>
+          <ul>
+            {styles.map(s => <li>{s}</li>)}
+          </ul>
+        </div>
+      )}
     </div>
   </section>
 </BaseLayout>
@@ -125,6 +249,7 @@ const keywords = [`${Astro.params.type} aroma baijiu`, `${label.toLowerCase()}`,
   }
   .aroma-hero .wrap { position: relative; z-index: 1; }
   .aroma-hero h1 { max-width: 800px; }
+  .aroma-hero .lede { max-width: 62ch; }
   .aroma-cn {
     display: inline-block;
     margin-left: 12px;
@@ -134,6 +259,173 @@ const keywords = [`${Astro.params.type} aroma baijiu`, `${label.toLowerCase()}`,
     color: var(--gold-400);
     vertical-align: 0.12em;
   }
+
+  .aroma-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .aroma-chips li {
+    padding: 7px 14px;
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 999px;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: var(--muted-on-dark);
+    background: rgba(255, 253, 247, 0.03);
+  }
+  .aroma-chips b { color: var(--gold-300); font-weight: 600; }
+
+  /* ---------- editorial block ---------- */
+  .aroma-section {
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .aroma-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.85fr);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+  }
+  .aroma-prose h2 {
+    margin: 44px 0 14px;
+    font-family: var(--serif);
+    font-size: clamp(23px, 2.6vw, 30px);
+    font-weight: 500;
+    color: var(--text-on-dark);
+  }
+  .aroma-prose h2:first-child { margin-top: 0; }
+  .aroma-prose p {
+    margin: 0 0 16px;
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: rgba(242, 236, 221, 0.82);
+  }
+
+  .sensory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 22px 0 8px;
+  }
+  .sensory-card {
+    padding: 18px 18px 16px;
+    border: 1px solid var(--line-dark);
+    border-radius: 10px;
+    background: linear-gradient(170deg, rgba(255, 253, 247, 0.05), rgba(255, 253, 247, 0.015));
+  }
+  .sensory-label {
+    margin: 0 0 8px !important;
+    font-family: var(--sans);
+    font-size: 11px !important;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-300) !important;
+  }
+  .sensory-card p:last-child { margin: 0; font-size: 14.5px !important; line-height: 1.6 !important; }
+
+  .serve-table { min-width: 0; }
+  .serve-table th {
+    width: 34%;
+    text-align: left;
+    font-weight: 500;
+    color: var(--gold-300);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    background: rgba(211, 172, 104, 0.05);
+  }
+  .serve-table td { font-size: 14.5px; }
+
+  .myth-list { margin: 22px 0 0; }
+  .myth {
+    padding: 16px 0;
+    border-top: 1px solid var(--line-dark);
+  }
+  .myth dt {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--text-on-dark);
+    margin-bottom: 6px;
+  }
+  .myth dd {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(242, 236, 221, 0.74);
+  }
+
+  /* ---------- aside ---------- */
+  .aroma-aside {
+    position: sticky;
+    top: 96px;
+    display: grid;
+    gap: 14px;
+  }
+  .aside-card {
+    padding: 20px 20px 18px;
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    background: linear-gradient(170deg, rgba(255, 253, 247, 0.045), rgba(255, 253, 247, 0.012));
+  }
+  .aside-card h2 {
+    margin: 0 0 14px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-300);
+  }
+  .fact-list { margin: 0; display: grid; gap: 10px; }
+  .fact-list div { display: grid; gap: 2px; }
+  .fact-list dt {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-on-dark);
+  }
+  .fact-list dd { margin: 0; font-size: 14px; color: var(--text-on-dark); line-height: 1.45; }
+
+  .aside-note { margin: 0 0 10px; font-size: 12.5px; color: var(--muted-on-dark); }
+  .price-range {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0 0 14px;
+  }
+  .price-range strong {
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--gold-300);
+    font-weight: 500;
+  }
+  .price-range span { font-size: 12px; color: var(--muted-on-dark); }
+
+  .aside-links { display: grid; gap: 0; }
+  .aside-links a {
+    display: block;
+    padding: 9px 0;
+    font-size: 14px;
+    color: rgba(242, 236, 221, 0.82);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(211, 172, 104, 0.18);
+  }
+  .aside-links a:last-child { border-bottom: 0; }
+  .aside-links a:hover { color: var(--gold-300); }
+
+  .ferment-note {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line-dark);
+  }
+  .ferment-note ul {
+    margin: 10px 0 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 6px;
+  }
+  .ferment-note li { font-size: 14px; color: var(--muted-on-dark); line-height: 1.6; }
 
   .nose {
     display: -webkit-box;
@@ -155,4 +447,14 @@ const keywords = [`${Astro.params.type} aroma baijiu`, `${label.toLowerCase()}`,
   .badge.ok { border-color: rgba(120, 160, 100, 0.4); color: #a8c79a; }
 
   table code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--gold-300); font-size: 13px; }
+
+  @media (max-width: 1024px) {
+    .aroma-layout { grid-template-columns: 1fr; }
+    .aroma-aside { position: static; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .sensory-grid { grid-template-columns: 1fr; }
+    .aroma-aside { grid-template-columns: 1fr; }
+    .aroma-prose p { font-size: 15.5px; }
+  }
 </style>

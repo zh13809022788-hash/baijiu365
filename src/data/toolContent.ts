@@ -25,24 +25,28 @@ export const toolsHome = {
     h1: 'Tools for choosing, checking, and understanding baijiu.',
     lede: 'Five practical tools for selecting a first bottle, checking high-price risk, identifying aroma type, comparing profiles, and reading GB/T standards.',
     introTitle: 'Use tools when the decision is practical.', introText: 'Guides explain the category. Tools help narrow a bottle, risk, style, or standard quickly.', openTool: 'Open tool',
+    dbCta: { label: 'Browse the database', text: 'Sixteen bottles with standards, ABV, tasting notes and buying risk.', action: 'Open database' },
   },
   'zh-hant': {
     title: '白酒工具', description: '用於選酒、比較、判斷香型與檢查購買風險的白酒工具。', eyebrow: 'Baijiu365 工具',
     h1: '用工具選酒、避險、理解白酒。',
     lede: '五個實用工具：第一瓶推薦、高價酒風險檢查、香型判別、酒款對比，以及 GB/T 標準查詢。',
     introTitle: '問題很具體時，用工具。', introText: '文章建立知識，工具負責快速縮小選擇、風險、風格與標準。', openTool: '使用工具',
+    dbCta: { label: '瀏覽資料庫', text: '十六款酒的標準、酒精度、品飲筆記與購買風險。', action: '開啟資料庫' },
   },
   ja: {
     title: '白酒ツール', description: '中国白酒を選ぶ、比較する、香型を推測する、購入リスクを確認するための実用ツール。', eyebrow: 'Baijiu365 tools',
     h1: '白酒を選び、確認し、理解するためのツール。',
     lede: '最初の一本、購入リスク、香型判定、比較、GB/T 規格確認のための実用ツールです。',
     introTitle: '具体的な判断にはツールを使う。', introText: 'ガイドは知識を整理し、ツールは選択・リスク・スタイル・規格を素早く絞ります。', openTool: 'ツールを開く',
+    dbCta: { label: 'データベースを見る', text: '16 本の規格・度数・テイスティングノート・購入リスク。', action: 'データベースを開く' },
   },
   ru: {
     title: 'Инструменты байцзю', description: 'Инструменты для выбора, сравнения, определения стиля и проверки рисков покупки китайского байцзю.', eyebrow: 'Инструменты Baijiu365',
     h1: 'Инструменты для выбора, проверки и понимания байцзю.',
     lede: 'Пять инструментов: первая бутылка, риск дорогой покупки, определение аромата, сравнение профилей и поиск стандартов GB/T.',
     introTitle: 'Когда вопрос практический, используйте инструмент.', introText: 'Гайды объясняют категорию, инструменты быстро сужают выбор бутылки, риска, стиля или стандарта.', openTool: 'Открыть инструмент',
+    dbCta: { label: 'Открыть базу', text: 'Шестнадцать бутылок со стандартами, крепостью, заметками и рисками покупки.', action: 'Открыть базу' },
   },
 } as const;
 

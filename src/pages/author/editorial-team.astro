@@ -1,23 +1,49 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const title = 'Baijiu365 Editorial Team';
-const description = 'Author profile for the Baijiu365 Editorial Team.';
+import { site } from '../../data/site';
+const title = 'Baijiu365 Editorial Team — Author Profile';
+const description = 'Author profile for the Baijiu365 Editorial Team: what the desk writes, how it sources claims, and what it does not claim to be.';
 ---
+
 <BaseLayout title={title} description={description} type="AboutPage">
   <header class="article-header">
     <div class="narrow">
       <p class="eyebrow">Author</p>
       <h1>Baijiu365 Editorial Team</h1>
-      <p class="lede">The team profile used for Baijiu365 guides, updates, and corrections.</p>
+      <p class="lede">The byline used for guides written and maintained by the site's editorial desk.</p>
+      <div class="article-meta">
+        <span>Writes <b>guides, database records, policies</b></span>
+        <span>Based <b>China</b></span>
+      </div>
     </div>
   </header>
+
   <section class="content">
     <article>
-      <p>The Baijiu365 Editorial Team writes and maintains practical baijiu guides for global readers. The team's work focuses on aroma type, beginner buying decisions, overseas retail risk, drinking context, and plain-English explanations of Chinese spirits terminology.</p>
-      <div class="callout"><strong>Disclosure:</strong> Baijiu365 does not currently sell baijiu, run affiliate links, publish sponsored reviews, or authenticate individual bottles.</div>
+      <p>The Baijiu365 Editorial Team is the collective byline for material produced by the site's editorial desk. It covers the explainers, the sixteen-bottle database, the buying-risk pages, the policy pages and the house-label documentation. A collective byline is used deliberately: where no single named person is responsible for a page, inventing one would be a fiction.</p>
+
+      <h2>What the desk writes about</h2>
+      <ul>
+        <li><strong>Aroma types</strong> — what defines each of the recognised styles, how it is fermented, and how to tell them apart in the glass.</li>
+        <li><strong>Buying decisions</strong> — first bottles, price bands, overseas retail routes, and the risk patterns behind counterfeit baijiu.</li>
+        <li><strong>Drinking practice</strong> — temperature, glassware, pacing, food pairing, and the etiquette that surrounds a shared bottle.</li>
+        <li><strong>Reference data</strong> — standards, ABV, raw materials and origin, transcribed from producer labels.</li>
+      </ul>
+
+      <h2>How the work is sourced</h2>
+      <p>Facts come from primary sources first: back labels, national and provincial standards, producer documentation. Prices come from published retail listings and are given as dated ranges. Tasting language describes the published profile of a style rather than a single session. Where a claim cannot be verified, the page says so — the <a href="/editorial-policy/">editorial policy</a> sets out the full standard, including how the publisher's own bottle is handled.</p>
+
+      <div class="callout">
+        <p><strong>Disclosure:</strong> Baijiu365 does not sell alcohol, carries no affiliate links or paid placements, and does not authenticate individual bottles. It does publish a house label, which is excluded from the database and from all rankings. See the <a href="/affiliate-disclosure/">disclosure page</a>.</p>
+      </div>
+
+      <h2>What this byline is not</h2>
+      <p>It is not a tasting panel, a critic with a score sheet, or an authentication authority. There are no awards claimed here, no invented credentials, and no suggestion that an editorial read can substitute for the producer's own verification of a bottle.</p>
+
       <div class="next-links">
         <a href="/editorial-team/">Editorial team</a>
         <a href="/editorial-policy/">Editorial policy</a>
+        <a href={`mailto:${site.email}`}>Contact the desk</a>
       </div>
     </article>
   </section>

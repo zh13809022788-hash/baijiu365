@@ -94,6 +94,55 @@ const keywords = [
       </div>
     </div>
   </section>
+
+  <section class="section compare-guide">
+    <div class="wrap compare-guide-grid">
+      <article class="guide-prose">
+        <h2>How to read a comparison</h2>
+        <p>A comparison table is easy to read badly. Twelve rows of differences look like twelve independent facts, when in practice three of them decide most purchases and the rest explain the gap.</p>
+
+        <h3>Compare inside one aroma family first</h3>
+        <p>A sauce aroma and a light aroma differ so completely that the numbers stop being comparable. A 40.8% Jiangsu strong aroma is not “weaker” than a 53% Guizhou sauce aroma — it is a different drink built for a different table. Put two houses from the same family side by side and the differences start to mean something: pit age, grain bill, fermentation length, and how much the house is willing to let the alcohol show.</p>
+
+        <h3>The three rows that matter most</h3>
+        <ul>
+          <li><strong>The standard code.</strong> It tells you which style the bottle claims to be, and whether it is a style standard or a narrower geographical one. A bottle whose code does not match its marketing is the first thing to check.</li>
+          <li><strong>Raw materials.</strong> Single-grain and multi-grain houses taste different at the same strength. Five grains give a rounder, sweeter middle; sorghum alone gives a tighter, more savoury line.</li>
+          <li><strong>ABV.</strong> Not a quality signal, but a serving signal. 52% needs food and time; 40.8% is built for a long banquet where the bottle keeps going around.</li>
+        </ul>
+
+        <h3>Price is a tier, not a score</h3>
+        <p>The price band tells you which tier a bottle is competing in, not how good it is. The most useful comparison in this database is usually two bottles in the same tier from different provinces, because that is where a house's choices — rather than its budget — become visible.</p>
+
+        <h3>What a table cannot tell you</h3>
+        <p>Whether you like it. How the bottle was stored before it reached you. Whether the seller is legitimate. Those three questions sit outside any comparison and are the reason the site has separate pages on <a href="/how-to-drink-baijiu/">tasting</a>, <a href="/how-to-buy-baijiu-outside-china/">buying overseas</a> and <a href="/how-to-spot-fake-maotai/">counterfeit risk</a>.</p>
+      </article>
+
+      <aside class="guide-aside">
+        <h2>Comparisons worth running</h2>
+        <a class="preset" href="/db/compare/#maotai,xijiu,langjiu">
+          <strong>One style, three prices</strong>
+          <span>Moutai · Xijiu · Langjiu — same valley and method, three tiers of price</span>
+        </a>
+        <a class="preset" href="/db/compare/#wuliangye,luzhou-laojiao">
+          <strong>Five grains vs one</strong>
+          <span>Wuliangye · Luzhou Laojiao — multi-grain against single-grain strong aroma</span>
+        </a>
+        <a class="preset" href="/db/compare/#fenjiu,hongxing,niulanshan">
+          <strong>Daqu vs bran qu</strong>
+          <span>Fenjiu · Hongxing · Niulanshan — one aroma family, two production methods</span>
+        </a>
+        <a class="preset" href="/db/compare/#yanghe,gujinggong">
+          <strong>Two soft schools</strong>
+          <span>Yanghe · Gujinggong — Jiangsu and Anhui takes on restrained strong aroma</span>
+        </a>
+        <a class="preset" href="/db/compare/#maotai,dongjiu">
+          <strong>Two extremes</strong>
+          <span>Moutai · Dongjiu — the most conventional and the most polarising style</span>
+        </a>
+      </aside>
+    </div>
+  </section>
 </BaseLayout>
 
 <script define:vars={{ varietyData: Object.fromEntries(allVarieties.map(v => [v.id, v])), aromaLabels, tierLabels }}>
@@ -226,10 +275,11 @@ const keywords = [
 
 <style>
   .compare-hero {
-    padding: clamp(34px, 5vw, 58px) clamp(18px, 4vw, 44px) clamp(24px, 4vw, 36px);
-    border-bottom: 1px solid var(--line);
-    background: #181412;
-    color: #fffdf8;
+    padding: clamp(122px, 16vh, 170px) 0 clamp(38px, 5vw, 56px);
+    border-bottom: 1px solid var(--line-dark);
+    background:
+      radial-gradient(120% 90% at 78% 0%, rgba(211, 172, 104, 0.14), transparent 62%),
+      linear-gradient(180deg, var(--ink-950), var(--ink-900));
   }
 
   .compare-hero-grid {
@@ -252,10 +302,10 @@ const keywords = [
   .tool-summary {
     display: grid;
     gap: 1px;
-    border: 1px solid rgba(255, 253, 248, 0.16);
-    border-radius: 8px;
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 10px;
     overflow: hidden;
-    background: rgba(255, 253, 248, 0.16);
+    background: var(--line-dark);
   }
 
   .tool-summary span {
@@ -264,14 +314,14 @@ const keywords = [
     flex-direction: column;
     justify-content: space-between;
     padding: 16px;
-    background: rgba(255, 253, 248, 0.08);
-    color: rgba(255, 253, 248, 0.72);
+    background: rgba(13, 10, 7, 0.55);
+    color: var(--muted-on-dark);
     font-size: 13px;
   }
 
   .tool-summary strong {
-    color: #fffdf8;
-    font-family: Georgia, "Times New Roman", serif;
+    color: var(--gold-300);
+    font-family: var(--serif);
     font-size: 24px;
     line-height: 1;
   }
@@ -288,10 +338,9 @@ const keywords = [
   .picker-panel,
   .empty-state,
   .compare-output {
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 2px 0 rgba(32, 29, 26, 0.03);
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    background: linear-gradient(170deg, rgba(255, 253, 247, 0.045), rgba(255, 253, 247, 0.012));
   }
 
   .picker-panel {
@@ -299,15 +348,13 @@ const keywords = [
   }
 
   .picker-heading {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 20px;
+    display: grid;
+    gap: 4px;
     margin-bottom: 20px;
   }
 
   .picker-heading .eyebrow {
-    color: var(--red);
+    color: var(--gold-400);
   }
 
   .picker-heading h2 {
@@ -340,11 +387,12 @@ const keywords = [
     width: 100%;
     min-height: 46px;
     padding: 10px 12px;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    background: #fffaf1;
-    color: var(--ink);
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 8px;
+    background: rgba(13, 10, 7, 0.62);
+    color: var(--text-on-dark);
     font: inherit;
+    font-size: 14.5px;
   }
 
   .quick-compares {
@@ -365,10 +413,10 @@ const keywords = [
   .back-link {
     min-height: 34px;
     padding: 7px 11px;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    background: #fff;
-    color: var(--red);
+    border: 1px solid var(--line-dark-strong);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--gold-300);
     cursor: pointer;
     font: inherit;
     font-size: 13px;
@@ -378,8 +426,8 @@ const keywords = [
 
   .quick-compares button:hover,
   .back-link:hover {
-    border-color: rgba(159, 47, 36, 0.46);
-    background: #fff7ef;
+    border-color: var(--gold-400);
+    background: rgba(211, 172, 104, 0.12);
   }
 
   .empty-state {
@@ -388,7 +436,7 @@ const keywords = [
   }
 
   .empty-state .eyebrow {
-    color: var(--red);
+    color: var(--gold-400);
   }
 
   .empty-state h2 {
@@ -412,12 +460,12 @@ const keywords = [
     justify-content: space-between;
     gap: 20px;
     padding: clamp(20px, 4vw, 30px);
-    border-bottom: 1px solid var(--line);
-    background: #fffaf1;
+    border-bottom: 1px solid var(--line-dark);
+    background: rgba(13, 10, 7, 0.42);
   }
 
   .compare-output-head .eyebrow {
-    color: var(--red);
+    color: var(--gold-400);
   }
 
   .compare-output-head h2 {
@@ -445,7 +493,7 @@ const keywords = [
 
   .compare-table th {
     text-align: left;
-    background: #fff;
+    background: rgba(255, 253, 247, 0.03);
   }
 
   .compare-table .parameter-head,
@@ -459,15 +507,15 @@ const keywords = [
 
   .compare-table .var-name {
     display: block;
-    color: var(--ink);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
+    color: var(--text-on-dark);
+    font-family: var(--serif);
+    font-size: 21px;
     line-height: 1.1;
     text-decoration: none;
   }
 
   .compare-table .var-name:hover {
-    color: var(--red);
+    color: var(--gold-300);
   }
 
   .compare-table .var-meta {
@@ -487,21 +535,21 @@ const keywords = [
     text-transform: uppercase;
   }
 
-  .tier-high { background: #fff1c8; color: #7a4d0b; }
-  .tier-mid { background: #e9f1f4; color: #244d5f; }
-  .tier-budget { background: #e8f4df; color: #34572d; }
+  .tier-high { background: rgba(211, 172, 104, 0.18); color: var(--gold-300); }
+  .tier-mid { background: rgba(159, 192, 207, 0.16); color: #9fc0cf; }
+  .tier-budget { background: rgba(143, 179, 126, 0.16); color: #a8c79a; }
 
   .compare-table .section-head td {
     padding: 11px 16px;
-    background: #f4ead9;
-    color: var(--red);
+    background: rgba(211, 172, 104, 0.09);
+    color: var(--gold-400);
     font-size: 12px;
     font-weight: 900;
     text-transform: uppercase;
   }
 
   .compare-table td a {
-    color: var(--red);
+    color: var(--gold-400);
     font-weight: 800;
     text-decoration: none;
   }
@@ -534,14 +582,89 @@ const keywords = [
     font-weight: 900;
   }
 
-  .yes { background: #e8f4df; color: #34572d; }
-  .no { background: #f8e7e3; color: #84251d; }
+  .yes { background: rgba(143, 179, 126, 0.16); color: #a8c79a; }
+  .no { background: rgba(176, 58, 42, 0.18); color: #e08c7c; }
+
+  /* ---------- editorial guide below the tool ---------- */
+  .compare-guide { border-top: 1px solid var(--line-dark); }
+  .compare-guide-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.85fr);
+    gap: clamp(32px, 5vw, 64px);
+    align-items: start;
+  }
+  .guide-prose h2 {
+    margin: 0 0 16px;
+    font-family: var(--serif);
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 500;
+  }
+  .guide-prose h3 {
+    margin: 30px 0 10px;
+    font-family: var(--serif);
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--gold-300);
+  }
+  .guide-prose p {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(242, 236, 221, 0.8);
+  }
+  .guide-prose ul { margin: 0 0 18px; padding-left: 20px; }
+  .guide-prose li {
+    margin-bottom: 10px;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: rgba(242, 236, 221, 0.78);
+  }
+  .guide-prose strong { color: var(--text-on-dark); }
+  .guide-prose a { color: var(--gold-300); }
+
+  .guide-aside {
+    position: sticky;
+    top: 96px;
+    padding: 22px 22px 18px;
+    border: 1px solid var(--line-dark);
+    border-radius: 12px;
+    background: linear-gradient(170deg, rgba(255, 253, 247, 0.045), rgba(255, 253, 247, 0.012));
+  }
+  .guide-aside h2 {
+    margin: 0 0 14px;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-300);
+  }
+  .preset {
+    display: block;
+    padding: 13px 0;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(211, 172, 104, 0.2);
+  }
+  .preset:last-child { border-bottom: 0; padding-bottom: 0; }
+  .preset strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 16.5px;
+    font-weight: 500;
+    color: var(--text-on-dark);
+    margin-bottom: 3px;
+  }
+  .preset span { display: block; font-size: 13px; line-height: 1.55; color: var(--muted-on-dark); }
+  .preset:hover strong { color: var(--gold-300); }
+
+  @media (max-width: 900px) {
+    .compare-guide-grid { grid-template-columns: 1fr; }
+    .guide-aside { position: static; }
+  }
 
   @media (max-width: 860px) {
     .compare-hero-grid,
     .picker-grid { grid-template-columns: 1fr; }
-    .compare-output-head,
-    .picker-heading { align-items: flex-start; flex-direction: column; }
+    .compare-output-head { align-items: flex-start; flex-direction: column; }
     .tool-summary { grid-template-columns: 1fr; }
   }
 </style>

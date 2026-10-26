@@ -1,31 +1,144 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Baijiu vs Vodka: Why Clear Does Not Mean Similar';
-const description = 'Baijiu and vodka can both be clear and strong, but they differ in fermentation, aroma, flavor, serving culture, and cocktail behavior.';
+const title = 'Baijiu vs Vodka: Fermentation, Congeners, and Cocktail Logic';
+const description = 'Both are clear and strong, and that is where the similarity ends. How solid-state fermentation, batch distillation, and congener load make baijiu a fundamentally different spirit from vodka.';
+const keywords = ['baijiu vs vodka', 'is baijiu like vodka', 'Chinese vodka', 'baijiu congeners', 'baijiu cocktails'];
 ---
-<BaseLayout title={title} description={description}>
-  <header class="article-header"><div class="narrow"><p class="eyebrow">Comparison</p><h1>Baijiu vs Vodka</h1><p class="lede">The fastest way to misunderstand baijiu is to call it Chinese vodka and stop thinking.</p></div></header>
-  <section class="content"><article>
-    <h2>The Similarity Is Mostly Visual</h2><p>Both spirits can be clear and high proof. After that, the comparison starts to break down. Vodka is usually designed around neutrality. Baijiu is built around aroma.</p>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Question</th><th>Vodka</th><th>Baijiu</th></tr></thead>
-        <tbody>
-          <tr><td>Primary goal</td><td>Often clean, neutral, mixable</td><td>Aroma, fermentation character, style identity</td></tr>
-          <tr><td>Main raw material idea</td><td>Many starch or sugar sources can be distilled neutrally</td><td>Grain plus qu-driven fermentation is central to identity</td></tr>
-          <tr><td>Common service</td><td>Chilled shots or cocktails</td><td>Room-temperature small cups, food, toasts</td></tr>
-          <tr><td>Beginner mistake</td><td>Expecting premium price to mean big flavor</td><td>Expecting clear color to mean neutral flavor</td></tr>
-        </tbody>
-      </table>
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">Comparison</p>
+      <h1>Baijiu vs Vodka</h1>
+      <p class="lede">The two spirits share a colour and a strength. Everything that determines what they taste like — and how you should use them — is opposite.</p>
+      <div class="article-meta">
+        <span>Reading time <b>9 min</b></span>
+        <span>Includes <b>substitution rules</b></span>
+      </div>
     </div>
-    <h2>Fermentation Changes Everything</h2><p>Baijiu fermentation uses qu, grain, pits, jars, and microbial environments that create dense aroma compounds before distillation. That is why baijiu can smell fruity, savory, earthy, floral, or sauce-like.</p>
-    <h2>How They Drink Differently</h2><p>Vodka often disappears into cocktails or is served chilled. Baijiu is usually served at room temperature in small cups, often with food and toasts. Its flavor is meant to be noticed.</p>
-    <div class="callout">If vodka is often about clean structure, baijiu is about fermented aroma and social context.</div>
-    <div class="next-links">
-      <a href="/baijiu-basics/">Read the baijiu beginner guide</a>
-      <a href="/baijiu-flavor-wheel/">Learn baijiu flavor language</a>
-      <a href="/db/aroma/light/">Compare light-aroma varieties</a>
-      <a href="/db/">Browse the full baijiu database</a>
-    </div>
-  </article></section>
+  </header>
+
+  <section class="content">
+    <article>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>Vodka is engineered for <strong>neutrality</strong>. Baijiu is engineered for <strong>aroma</strong>. That single design goal explains every other difference.</li>
+          <li>Baijiu ferments grain in a <strong>solid</strong> state with a microbial starter; vodka ferments a liquid wash and distils it repeatedly.</li>
+          <li>Baijiu carries far higher levels of <strong>congeners</strong> — the aroma compounds that also make hangovers worse.</li>
+          <li>Vodka is served cold and mixed. Baijiu is served at room temperature, in small cups, with food.</li>
+          <li>They are not interchangeable in cocktails, but baijiu substitutes well for gin, aged rum, or peated whisky — not for vodka.</li>
+        </ul>
+      </div>
+
+      <nav class="toc" aria-label="On this page">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#goal">The design goal is the difference</a></li>
+          <li><a href="#process">Two production systems</a></li>
+          <li><a href="#chemistry">What is actually in the glass</a></li>
+          <li><a href="#culture">How each is drunk</a></li>
+          <li><a href="#cocktails">Substitution rules</a></li>
+          <li><a href="#myths">Three myths</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="goal">The design goal is the difference</h2>
+      <p>Every spirit category is built around an intention. Bourbon is built to taste of charred oak and corn. Gin is built to taste of juniper. Vodka is built to taste of as little as possible — the industry phrase is "neutral grain spirit," and the craft is in removing character rather than creating it.</p>
+      <p>Baijiu is built the other way. The entire production chain — the qu starter, the solid-state fermentation, the mud pits or stone pits or earthenware jars, the long ageing — exists to <em>generate</em> and preserve aromatic complexity. A distiller who removed the character from baijiu would have failed.</p>
+      <p>That is why the comparison feels strange to anyone who has tasted both. They are not two versions of the same thing. They are opposite answers to the question "what should a clear spirit be?"</p>
+
+      <h2 id="process">Two production systems</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th></th><th>Vodka</th><th>Baijiu</th></tr></thead>
+          <tbody>
+            <tr><td>Base material</td><td>Wheat, rye, corn, potato, molasses — chosen for starch or sugar yield</td><td>Sorghum above all, with wheat, rice, corn, barley, peas in various bills</td></tr>
+            <tr><td>Fermentation state</td><td>Liquid wash</td><td>Solid grain, 55–65% moisture</td></tr>
+            <tr><td>Starter</td><td>Cultured yeast</td><td>Qu — a mould-colonised grain cake carrying moulds, yeasts, and bacteria</td></tr>
+            <tr><td>Distillation</td><td>Often column stills, multiple passes</td><td>Traditional pot stills, batch, with heads/heart/tails separation</td></tr>
+            <tr><td>Filtration</td><td>Frequently charcoal-filtered to strip character</td><td>None designed to strip character; ageing is used to integrate it</td></tr>
+            <tr><td>Ageing</td><td>Usually none, or brief tank rest</td><td>Three to five years in ceramic jars is typical for premium lines</td></tr>
+            <tr><td>Blending</td><td>Blended for consistency and neutrality</td><td>Blended across pits, rounds, and vintages for a house profile</td></tr>
+            <tr><td>Typical ABV</td><td>40%</td><td>38–53%, with 52–53% as the classic</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The most consequential row is fermentation state. A liquid wash supports yeast and little else. A damp solid grain heap supports moulds, bacteria, and yeast simultaneously — the same conditions that make a cheese rind or a fermented soybean paste complex. Almost every unusual flavour in baijiu traces back to that environment.</p>
+
+      <h2 id="chemistry">What is actually in the glass</h2>
+      <p>Ethanol and water are the bulk of both spirits. The difference is in the trace compounds, and they are not trace in the way most drinkers assume.</p>
+      <p>Baijiu contains high concentrations of <strong>esters</strong> (ethyl acetate, ethyl lactate, ethyl hexanoate — the pineapple and honey notes), <strong>organic acids</strong> (lactic, acetic, hexanoic), <strong>higher alcohols</strong>, <strong>aldehydes</strong>, and <strong>sulphur compounds</strong>. These are collectively called congeners, and they are what you taste. A strong-aroma baijiu's ester load is orders of magnitude above a vodka's, which is why the aroma fills a room.</p>
+      <p>Vodka's production deliberately minimises exactly this set of compounds. That is not a criticism — it is the product. But it has two practical consequences worth knowing:</p>
+      <ul>
+        <li><strong>Flavour intensity:</strong> baijiu delivers far more aromatic information per millilitre. This is why a 20 ml pour feels substantial and a 50 ml vodka shot feels like nothing much.</li>
+        <li><strong>Hangover profile:</strong> congener load is associated with worse hangover severity, independent of alcohol quantity. Baijiu's congener levels are high by design. Drinking it at the same pace as vodka is the most common way visitors get into trouble.</li>
+      </ul>
+      <div class="callout warning"><strong>Practical consequence:</strong> treat 52% baijiu as roughly 1.5× the effective drink of 40% vodka, not 1.3×. The arithmetic difference is 30%; the perceived difference, driven by aroma and congener load, is larger.</div>
+
+      <h2 id="culture">How each is drunk</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th></th><th>Vodka</th><th>Baijiu</th></tr></thead>
+          <tbody>
+            <tr><td>Temperature</td><td>Frozen or heavily chilled</td><td>Room temperature, always</td></tr>
+            <tr><td>Vessel</td><td>Shot glass, tumbler, cocktail glass</td><td>15–25 ml ceramic or glass cup</td></tr>
+            <tr><td>Setting</td><td>Bar, nightclub, standing reception</td><td>Dining table, banquet, family meal</td></tr>
+            <tr><td>Food</td><td>Optional, often absent</td><td>Central — the spirit is designed around food</td></tr>
+            <tr><td>Pace</td><td>Fast, in rounds</td><td>Slow, across a two-hour meal</td></tr>
+            <tr><td>Social meaning</td><td>Celebration, intensity</td><td>Respect, hierarchy, hospitality</td></tr>
+            <tr><td>Role of the spirit</td><td>The intoxicant</td><td>The accompaniment</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Note the last row. Vodka's cultural role is largely functional — it is the alcohol in the glass. Baijiu's role is relational: who toasts whom, in what order, with what words, is the actual content of a Chinese banquet, and the spirit is the medium. This is why serving baijiu like vodka — chilled, in shots, without food — fails twice: it tastes wrong and it violates the social grammar.</p>
+
+      <h2 id="cocktails">Substitution rules</h2>
+      <p>Baijiu works in cocktails, but not as a vodka substitute. The useful mapping is different:</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>If a recipe calls for…</th><th>Use this baijiu</th><th>Because</th></tr></thead>
+          <tbody>
+            <tr><td>Gin (in a sour or collins)</td><td>Light aroma, 45 ml</td><td>Clean grain and a dry finish behave like a high-proof London dry</td></tr>
+            <tr><td>Vodka (in a highball)</td><td>Rice aroma, 45 ml</td><td>The softest profile; it will not fight soda or citrus</td></tr>
+            <tr><td>Aged rum (in an old fashioned)</td><td>Strong aroma, 45 ml</td><td>Fruit and honey esters map onto the rum register</td></tr>
+            <tr><td>Peated whisky (in a penicillin variant)</td><td>Sauce aroma, 30–40 ml</td><td>Savoury, smoky-adjacent depth; use less than the recipe states</td></tr>
+            <tr><td>Vodka (in a martini)</td><td>Nothing</td><td>A dry martini needs neutrality. Baijiu has none. Use gin instead.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Two technique notes. First, <strong>reduce the quantity</strong> when substituting sauce or strong aroma — the flavour is roughly twice as loud as the spirit being replaced, so 40 ml does the work of 60. Second, <strong>do not add sugar</strong> to a sauce-aroma drink; the spirit already carries a perceived sweetness, and syrup tips it into cloying.</p>
+      <p>If you want a single drink to convert a sceptic, make a highball with rice aroma: 45 ml baijiu, 90 ml soda, a wide lemon peel, one large ice cube. It is refreshing, recognisably a drink, and it does not require the drinker to like fermented soybean.</p>
+
+      <h2 id="myths">Three myths</h2>
+      <h3>"Baijiu is Chinese vodka"</h3>
+      <p>This is the most damaging misconception in the category, because it sets the wrong expectation and produces the wrong serve. Vodka is defined by the absence of character. Baijiu is defined by its presence. A drinker who expects neutrality will read baijiu's aroma as a defect.</p>
+      <h3>"Clear means unaged and simple"</h3>
+      <p>Colour in spirits comes from barrel contact. Baijiu ages in ceramic jars, which impart no colour, so a clear baijiu may have spent five years ageing. Clarity tells you nothing about age or complexity in this category — unlike whisky, where it tells you a great deal.</p>
+      <h3>"Higher ABV means harsher"</h3>
+      <p>Not reliably. A well-made 52% strong aroma often feels softer than a poorly made 40% spirit, because the ester and glycerol content gives it body and the alcohol is integrated. ABV predicts strength, not smoothness.</p>
+
+      <section class="faq" id="faq">
+        <h2>Frequently asked</h2>
+        <h3>Is baijiu stronger than vodka?</h3>
+        <p>Usually. The classic baijiu strengths are 52% and 53% against vodka's standard 40%, though baijiu ranges from 38% to 56%. But the bigger difference is aromatic intensity — a 52% baijiu delivers far more flavour per sip, which makes it feel more powerful than the numbers alone suggest.</p>
+        <h3>Can I substitute baijiu for vodka in a cocktail?</h3>
+        <p>Only in drinks where the base spirit is meant to be a background note. In a highball with rice aroma, yes. In a martini or a vodka soda where neutrality is the point, no — the baijiu's aroma will dominate. Substitute for gin or aged spirits instead.</p>
+        <h3>Why is baijiu not filtered like vodka?</h3>
+        <p>Because filtration would remove the compounds the producer spent a year creating. Vodka filters to achieve neutrality; baijiu ages in ceramic to integrate its character without stripping it. The two processes serve opposite goals.</p>
+        <h3>Does baijiu give a worse hangover than vodka?</h3>
+        <p>Congener content is associated with hangover severity, and baijiu's congener load is much higher than vodka's. Combined with a higher ABV and a social setting that encourages frequent toasts, the practical answer is yes — pace it more slowly than you would vodka.</p>
+        <h3>Can I drink baijiu cold?</h3>
+        <p>You can, but you lose the reason to drink it. Chilling suppresses the aromatic compounds that define the spirit. If the alcohol heat bothers you, choose a lower-ABV expression rather than lowering the temperature.</p>
+      </section>
+
+      <div class="next-links">
+        <a href="/baijiu-basics/">The full beginner guide</a>
+        <a href="/how-to-drink-baijiu/">Serving and cocktail recipes</a>
+        <a href="/baijiu-flavor-wheel/">Learn the flavour vocabulary</a>
+        <a href="/db/">Compare 16 varieties</a>
+      </div>
+    </article>
+  </section>
 </BaseLayout>

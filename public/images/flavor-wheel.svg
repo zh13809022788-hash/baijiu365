@@ -1,0 +1,64 @@
+<svg viewBox="0 0 760 760" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fwtitle" class="flavor-wheel">
+<title id="fwtitle">Baijiu flavour wheel: six aroma types and their core flavour families</title>
+<defs><radialGradient id="fwcore" cx="50%" cy="38%" r="72%"><stop offset="0%" stop-color="#332616"/><stop offset="100%" stop-color="#171009"/></radialGradient><radialGradient id="fwbg" cx="50%" cy="46%" r="62%"><stop offset="0%" stop-color="#1d1610"/><stop offset="100%" stop-color="#100c08"/></radialGradient></defs>
+<rect width="760" height="760" rx="18" fill="url(#fwbg)"/>
+<circle cx="380" cy="380" r="340" fill="none" stroke="rgba(211,172,104,0.2)" stroke-width="1"/>
+<circle cx="380" cy="380" r="358" fill="none" stroke="rgba(211,172,104,0.08)" stroke-width="1"/>
+<path d="M384.97,202.07 A178,178 0 0 1 531.61,286.73 L453.25,334.94 A86,86 0 0 0 382.40,294.03 Z" fill="#d4713c" opacity="0.95"/>
+<path d="M392.28,74.25 A306,306 0 0 1 483.82,92.15 L443.11,205.03 A186,186 0 0 0 387.46,194.15 Z" fill="#d4713c" opacity="0.46"/>
+<text x="427.22" y="138.57" transform="rotate(11.07 427.22 138.57)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Fruity</text>
+<path d="M490.82,94.77 A306,306 0 0 1 571.60,141.41 L496.46,234.98 A186,186 0 0 0 447.36,206.63 Z" fill="#d4713c" opacity="0.35"/>
+<text x="503.00" y="166.96" transform="rotate(30.00 503.00 166.96)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Honeyed</text>
+<path d="M577.37,146.16 A306,306 0 0 1 638.65,216.49 L537.22,280.61 A186,186 0 0 0 499.97,237.86 Z" fill="#d4713c" opacity="0.24"/>
+<text x="565.47" y="218.39" transform="rotate(48.93 565.47 218.39)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Cellar</text>
+<text x="446.00" y="265.68" transform="rotate(30.00 446.00 265.68)" text-anchor="middle" dominant-baseline="middle" font-size="15" font-weight="700" letter-spacing="0.08em" fill="#160f08" font-family="Inter, Helvetica, Arial, sans-serif">STRONG</text>
+<text x="555.50" y="76.03" transform="rotate(30.00 555.50 76.03)" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#d4713c" font-family="Noto Serif SC, Songti SC, serif" letter-spacing="0.10em">浓香</text>
+<path d="M536.58,295.34 A178,178 0 0 1 536.58,464.66 L455.65,420.90 A86,86 0 0 0 455.65,339.10 Z" fill="#b08a3f" opacity="0.95"/>
+<path d="M650.93,237.76 A306,306 0 0 1 681.20,325.99 L563.08,347.17 A186,186 0 0 0 544.68,293.54 Z" fill="#b08a3f" opacity="0.46"/>
+<text x="612.69" y="300.18" transform="rotate(71.07 612.69 300.18)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Fermented</text>
+<path d="M682.43,333.36 A306,306 0 0 1 682.43,426.64 L563.83,408.35 A186,186 0 0 0 563.83,351.65 Z" fill="#b08a3f" opacity="0.35"/>
+<text x="626.00" y="380.00" transform="rotate(90.00 626.00 380.00)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Roasted</text>
+<path d="M681.20,434.01 A306,306 0 0 1 650.93,522.24 L544.68,466.46 A186,186 0 0 0 563.08,412.83 Z" fill="#b08a3f" opacity="0.24"/>
+<text x="612.69" y="459.82" transform="rotate(288.93 612.69 459.82)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Umami</text>
+<text x="512.00" y="380.00" transform="rotate(90.00 512.00 380.00)" text-anchor="middle" dominant-baseline="middle" font-size="15" font-weight="700" letter-spacing="0.08em" fill="#160f08" font-family="Inter, Helvetica, Arial, sans-serif">SAUCE</text>
+<text x="731.00" y="380.00" transform="rotate(90.00 731.00 380.00)" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#b08a3f" font-family="Noto Serif SC, Songti SC, serif" letter-spacing="0.10em">酱香</text>
+<path d="M531.61,473.27 A178,178 0 0 1 384.97,557.93 L382.40,465.97 A86,86 0 0 0 453.25,425.06 Z" fill="#7fb3a0" opacity="0.95"/>
+<path d="M638.65,543.51 A306,306 0 0 1 577.37,613.84 L499.97,522.14 A186,186 0 0 0 537.22,479.39 Z" fill="#7fb3a0" opacity="0.46"/>
+<text x="565.47" y="541.61" transform="rotate(311.07 565.47 541.61)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Grain</text>
+<path d="M571.60,618.59 A306,306 0 0 1 490.82,665.23 L447.36,553.37 A186,186 0 0 0 496.46,525.02 Z" fill="#7fb3a0" opacity="0.35"/>
+<text x="503.00" y="593.04" transform="rotate(330.00 503.00 593.04)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Floral</text>
+<path d="M483.82,667.85 A306,306 0 0 1 392.28,685.75 L387.46,565.85 A186,186 0 0 0 443.11,554.97 Z" fill="#7fb3a0" opacity="0.24"/>
+<text x="427.22" y="621.43" transform="rotate(348.93 427.22 621.43)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Dry</text>
+<text x="446.00" y="494.32" transform="rotate(330.00 446.00 494.32)" text-anchor="middle" dominant-baseline="middle" font-size="15" font-weight="700" letter-spacing="0.08em" fill="#160f08" font-family="Inter, Helvetica, Arial, sans-serif">LIGHT</text>
+<text x="555.50" y="683.97" transform="rotate(330.00 555.50 683.97)" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#7fb3a0" font-family="Noto Serif SC, Songti SC, serif" letter-spacing="0.10em">清香</text>
+<path d="M375.03,557.93 A178,178 0 0 1 228.39,473.27 L306.75,425.06 A86,86 0 0 0 377.60,465.97 Z" fill="#d3bb8c" opacity="0.95"/>
+<path d="M367.72,685.75 A306,306 0 0 1 276.18,667.85 L316.89,554.97 A186,186 0 0 0 372.54,565.85 Z" fill="#d3bb8c" opacity="0.46"/>
+<text x="332.78" y="621.43" transform="rotate(371.07 332.78 621.43)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Rice</text>
+<path d="M269.18,665.23 A306,306 0 0 1 188.40,618.59 L263.54,525.02 A186,186 0 0 0 312.64,553.37 Z" fill="#d3bb8c" opacity="0.35"/>
+<text x="257.00" y="593.04" transform="rotate(390.00 257.00 593.04)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Sweet</text>
+<path d="M182.63,613.84 A306,306 0 0 1 121.35,543.51 L222.78,479.39 A186,186 0 0 0 260.03,522.14 Z" fill="#d3bb8c" opacity="0.24"/>
+<text x="194.53" y="541.61" transform="rotate(408.93 194.53 541.61)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Gentle</text>
+<text x="314.00" y="494.32" transform="rotate(390.00 314.00 494.32)" text-anchor="middle" dominant-baseline="middle" font-size="15" font-weight="700" letter-spacing="0.08em" fill="#160f08" font-family="Inter, Helvetica, Arial, sans-serif">RICE</text>
+<text x="204.50" y="683.97" transform="rotate(390.00 204.50 683.97)" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#d3bb8c" font-family="Noto Serif SC, Songti SC, serif" letter-spacing="0.10em">米香</text>
+<path d="M223.42,464.66 A178,178 0 0 1 223.42,295.34 L304.35,339.10 A86,86 0 0 0 304.35,420.90 Z" fill="#bd6248" opacity="0.95"/>
+<path d="M109.07,522.24 A306,306 0 0 1 78.80,434.01 L196.92,412.83 A186,186 0 0 0 215.32,466.46 Z" fill="#bd6248" opacity="0.46"/>
+<text x="147.31" y="459.82" transform="rotate(431.07 147.31 459.82)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Smoky</text>
+<path d="M77.57,426.64 A306,306 0 0 1 77.57,333.36 L196.17,351.65 A186,186 0 0 0 196.17,408.35 Z" fill="#bd6248" opacity="0.35"/>
+<text x="134.00" y="380.00" transform="rotate(450.00 134.00 380.00)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Grain</text>
+<path d="M78.80,325.99 A306,306 0 0 1 109.07,237.76 L215.32,293.54 A186,186 0 0 0 196.92,347.17 Z" fill="#bd6248" opacity="0.24"/>
+<text x="147.31" y="300.18" transform="rotate(288.93 147.31 300.18)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Mineral</text>
+<text x="248.00" y="380.00" transform="rotate(450.00 248.00 380.00)" text-anchor="middle" dominant-baseline="middle" font-size="15" font-weight="700" letter-spacing="0.08em" fill="#160f08" font-family="Inter, Helvetica, Arial, sans-serif">PHOENIX</text>
+<text x="29.00" y="380.00" transform="rotate(450.00 29.00 380.00)" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#bd6248" font-family="Noto Serif SC, Songti SC, serif" letter-spacing="0.10em">凤香</text>
+<path d="M228.39,286.73 A178,178 0 0 1 375.03,202.07 L377.60,294.03 A86,86 0 0 0 306.75,334.94 Z" fill="#7f9061" opacity="0.95"/>
+<path d="M121.35,216.49 A306,306 0 0 1 182.63,146.16 L260.03,237.86 A186,186 0 0 0 222.78,280.61 Z" fill="#7f9061" opacity="0.46"/>
+<text x="194.53" y="218.39" transform="rotate(311.07 194.53 218.39)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Herbal</text>
+<path d="M188.40,141.41 A306,306 0 0 1 269.18,94.77 L312.64,206.63 A186,186 0 0 0 263.54,234.98 Z" fill="#7f9061" opacity="0.35"/>
+<text x="257.00" y="166.96" transform="rotate(330.00 257.00 166.96)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Medicinal</text>
+<path d="M276.18,92.15 A306,306 0 0 1 367.72,74.25 L372.54,194.15 A186,186 0 0 0 316.89,205.03 Z" fill="#7f9061" opacity="0.24"/>
+<text x="332.78" y="138.57" transform="rotate(348.93 332.78 138.57)" text-anchor="middle" dominant-baseline="middle" font-size="12.5" letter-spacing="0.04em" fill="rgba(246,241,230,0.94)" font-family="Inter, Helvetica, Arial, sans-serif">Bitter</text>
+<text x="314.00" y="265.68" transform="rotate(330.00 314.00 265.68)" text-anchor="middle" dominant-baseline="middle" font-size="15" font-weight="700" letter-spacing="0.08em" fill="#160f08" font-family="Inter, Helvetica, Arial, sans-serif">HERBAL</text>
+<text x="204.50" y="76.03" transform="rotate(330.00 204.50 76.03)" text-anchor="middle" dominant-baseline="middle" font-size="20" fill="#7f9061" font-family="Noto Serif SC, Songti SC, serif" letter-spacing="0.10em">董香</text>
+<circle cx="380" cy="380" r="74" fill="url(#fwcore)" stroke="rgba(211,172,104,0.5)" stroke-width="1.2"/>
+<text x="380" y="371" text-anchor="middle" font-size="15.5" letter-spacing="0.24em" fill="#d9b478" font-family="Inter, Helvetica, Arial, sans-serif">BAIJIU</text>
+<text x="380" y="403" text-anchor="middle" font-size="22" fill="rgba(246,241,230,0.94)" font-family="Noto Serif SC, Songti SC, serif" letter-spacing="0.18em">白酒</text>
+</svg>

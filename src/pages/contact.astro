@@ -1,19 +1,88 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Contact Baijiu365';
-const description = 'Contact Baijiu365 about corrections, baijiu questions, editorial suggestions, and future partnerships.';
+import { site } from '../data/site';
+const title = 'Contact | Baijiu365';
+const description = 'Report a correction, suggest a topic, or ask a practical baijiu question. One address, and a list of what this site cannot do.';
 ---
+
 <BaseLayout title={title} description={description}>
-  <header class="article-header"><div class="narrow"><p class="eyebrow">Contact</p><h1>Contact</h1><p class="lede">Send corrections, topic suggestions, and practical baijiu questions.</p></div></header>
-  <section class="content"><article>
-    <p>For now, use the public project contact route through ChinaTripBox or future Baijiu365 contact channels. Please include the page URL, what you believe should change, and any source or first-hand context that helps verify the issue.</p>
-    <h2>Good Reasons To Get In Touch</h2>
-    <ul>
-      <li>A correction to a factual, brand, label, or buying-risk detail.</li>
-      <li>A beginner question that would make a useful guide.</li>
-      <li>A source suggestion for overseas retail, label reading, or food pairing context.</li>
-      <li>A disclosure question before any commercial relationship is introduced.</li>
-    </ul>
-    <div class="callout"><strong>Note:</strong> Baijiu365 does not currently sell baijiu, appraise bottles, or authenticate individual purchases.</div>
-  </article></section>
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">Contact</p>
+      <h1>Contact</h1>
+      <p class="lede">One address, read by the person who writes the pages. Corrections get priority over everything else.</p>
+      <div class="article-meta">
+        <span>Email <b>{site.email}</b></span>
+        <span>Replies <b>best effort, no guarantee</b></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="content">
+    <article>
+      <div class="callout">
+        <p><strong><a href={`mailto:${site.email}`}>{site.email}</a></strong> — the only contact route. There is no phone number and no contact form, because both would collect more than this site needs.</p>
+      </div>
+
+      <h2>What to send</h2>
+      <p>For a correction, three things make the difference between a message that gets acted on and one that gets read and set aside:</p>
+      <ul>
+        <li>The page URL.</li>
+        <li>The sentence you believe is wrong, quoted.</li>
+        <li>Whatever you have that shows otherwise — a photograph of a back label is the single most useful thing you can send, because the label is the primary source for most of the facts on this site.</li>
+      </ul>
+      <p>For a question, say what you are actually trying to decide. “Is this bottle worth US$180?” is answerable. “Tell me about baijiu” is not, in an email.</p>
+
+      <h2>What happens to a correction</h2>
+      <p>If the evidence holds, the page is changed and its revision date updated. If it does not, you get a reply explaining why the current text stands. Either way you get an answer, which is more than most sites manage.</p>
+
+      <h2>What this site cannot do</h2>
+      <p>Worth stating before you write, so the reply is not a disappointment:</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Request</th><th>Answer</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>“Is my bottle genuine?”</td>
+              <td>Cannot be answered from a photo. Ask the producer's verification channel.</td>
+            </tr>
+            <tr>
+              <td>“What is this bottle worth?”</td>
+              <td>No appraisals. Auction results and retail listings are the reference, not this site.</td>
+            </tr>
+            <tr>
+              <td>“Can I buy from you?”</td>
+              <td>No. Baijiu365 does not sell alcohol.</td>
+            </tr>
+            <tr>
+              <td>“Will you review my product?”</td>
+              <td>No paid reviews and no guaranteed coverage. See the <a href="/affiliate-disclosure/">disclosure</a>.</td>
+            </tr>
+            <tr>
+              <td>“Is it safe to drink with my medication?”</td>
+              <td>Ask a doctor. This site gives no medical advice.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Questions that do get answered</h2>
+      <ul>
+        <li>A label detail that contradicts what a page says.</li>
+        <li>A standard number, ABV or ingredient list that looks wrong.</li>
+        <li>A bottle that is missing from the database and should not be.</li>
+        <li>A retail or import route in a country the site does not yet cover.</li>
+        <li>A Chinese term that is translated badly or explained unclearly.</li>
+        <li>A correction to the house-label page, especially about its own label.</li>
+      </ul>
+
+      <div class="next-links">
+        <a href="/editorial-policy/">How corrections work</a>
+        <a href="/about/">About the site</a>
+        <a href="/affiliate-disclosure/">Disclosure</a>
+      </div>
+    </article>
+  </section>
 </BaseLayout>

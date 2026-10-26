@@ -1,29 +1,108 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Editorial Policy - Baijiu365';
-const description = 'How Baijiu365 writes, reviews, and updates baijiu guidance for global readers.';
+import { site } from '../data/site';
+const title = 'Editorial Policy | Baijiu365';
+const description = 'How Baijiu365 sources claims, handles prices and tasting notes, discloses its own label, labels illustrations, and corrects errors.';
 ---
+
 <BaseLayout title={title} description={description}>
-  <header class="article-header"><div class="narrow"><p class="eyebrow">Trust</p><h1>Editorial Policy</h1><p class="lede">Baijiu365 is built as a practical field guide, not a bottle sales page.</p></div></header>
-  <section class="content"><article>
-    <div class="decision-box">
-      <h2>Short version</h2>
-      <p>We prioritize useful guidance, clear limits, and reader safety over hype. When a claim needs market verification or hands-on tasting evidence, we say so instead of pretending certainty.</p>
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">Trust</p>
+      <h1>Editorial Policy</h1>
+      <p class="lede">A field guide is only useful if the reader knows where each claim came from and what it cannot tell them. This page sets out how the material here is sourced, reviewed and corrected.</p>
+      <div class="article-meta">
+        <span>Last updated <b>{site.updated}</b></span>
+        <span>Applies to <b>all editorial pages</b></span>
+      </div>
     </div>
-    <h2>How We Decide What To Publish</h2>
-    <p>Articles are chosen around real reader decisions: learning baijiu basics, comparing aroma types, choosing a first bottle, avoiding fake or risky purchases, serving baijiu with food, and understanding brand context.</p>
-    <h2>Review Standards</h2>
-    <ul>
-      <li>Guides should answer the reader's main question near the top.</li>
-      <li>Buying advice should separate taste, occasion, budget, and authenticity risk.</li>
-      <li>Tasting language should be descriptive rather than absolute.</li>
-      <li>We avoid unverifiable prestige claims, fake vintage certainty, and pressure to buy.</li>
-    </ul>
-    <h2>Corrections</h2>
-    <p>If a factual issue is found, we update the article and, when meaningful, note the change in the development log or related planning docs.</p>
-    <div class="next-links">
-      <a href="/about/">About Baijiu365</a>
-      <a href="/contact/">Contact</a>
-    </div>
-  </article></section>
+  </header>
+
+  <section class="content">
+    <article>
+      <div class="key-points">
+        <h2>Four commitments</h2>
+        <ul>
+          <li>Every factual claim has a source that is named on the page or in the record behind it.</li>
+          <li>Where a claim cannot be verified, the page says so instead of smoothing it over.</li>
+          <li>The publisher's own bottle is disclosed wherever it appears, and excluded from the database and from any ranking.</li>
+          <li>Illustrations are labelled as illustrations. Product photography is real photography.</li>
+        </ul>
+      </div>
+
+      <h2>Who this is for</h2>
+      <p>The site is written for a reader outside China who has decided to understand baijiu properly: a bartender building a list, a buyer for a restaurant, a traveller who was served something extraordinary and wants to know what it was, or a curious drinker who has been told that baijiu is “the world's most consumed spirit” and wants to know what that actually tastes like. The register assumes no prior knowledge but does not talk down.</p>
+
+      <h2>How claims are sourced</h2>
+      <p>Sources are ranked, and the rank decides how a claim is phrased.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Level</th><th>Source</th><th>How it is used</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Primary</td>
+              <td>Producer labels, back labels, national and provincial standards (GB/T, DB), producer technical documentation</td>
+              <td>Stated as fact: ABV, raw materials, standard number, origin, licence number</td>
+            </tr>
+            <tr>
+              <td>Secondary</td>
+              <td>Published retail listings, trade reporting, regional histories</td>
+              <td>Used for price bands and market context, always as a range with a date</td>
+            </tr>
+            <tr>
+              <td>Descriptive</td>
+              <td>The published style profile of an aroma family</td>
+              <td>Used for tasting language, phrased as what the style does rather than what a bottle will do to you</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>If a claim does not fit one of those three, it does not go on the page. That is why you will find fewer superlatives here than on a retailer's listing.</p>
+
+      <h2>About the tasting notes</h2>
+      <p>Tasting notes on database pages describe the published profile of the style and the house, not a single session with a single bottle. They are written to be useful before you buy, which means they describe a direction — savoury and roasted, fruity and cellared — rather than promising a specific aroma at a specific intensity.</p>
+      <p>Where a note is a judgement rather than a description, it is phrased as one. “Most drinkers find the first glass difficult” is a judgement and is marked as such. “The style is fermented at 60–65°C” is a fact and is not.</p>
+
+      <h2>Prices</h2>
+      <p>Prices are ranges, they are dated, and they describe what a bottle has been seen selling for rather than what it costs today. Baijiu is heavily taxed, inconsistently distributed and widely counterfeited; the same bottle can differ by a factor of three between two countries. No price on this site is an offer, and none should be used as the basis of a transaction without checking a live listing.</p>
+
+      <h2>The publisher's own bottle</h2>
+      <p>Baijiu365 publishes a house label, <a href="/jinlingnian-30/">Jinling Nian 30</a>, made in the Suqian belt of Jiangsu. This is a commercial interest and it is disclosed rather than buried:</p>
+      <ul>
+        <li>The product page is marked as house content, in the navigation and at the top of the page.</li>
+        <li>The bottle does <strong>not</strong> appear in the database, in comparison tables, or in any “best of” list, because a publisher cannot credibly rank its own product against others.</li>
+        <li>Claims about it are limited to what is printed on its own back label — standard number, licence, ingredients, origin — plus the tasting vocabulary used for its style.</li>
+        <li>No health claim is made for it, and no age claim beyond the product name, which is a line name rather than a statement about years in cask.</li>
+      </ul>
+
+      <h2>Images and video</h2>
+      <p>Two kinds of image appear on this site and they are not the same thing.</p>
+      <ul>
+        <li><strong>Product photography</strong> — the bottles, boxes and labels of the house label, photographed by the publisher. These are real objects.</li>
+        <li><strong>Illustrations</strong> — the category images used for aroma types, regions and the bottle images in the database are generated or composited illustrations. They show what a style tends to look like; they are not photographs of the specific product, and a real bottle will not match the picture.</li>
+      </ul>
+      <p>The short product film on the house-label page is assembled from the publisher's own product photographs with camera moves and dissolves. It is not footage of a distillery at work, and it does not pretend to be.</p>
+
+      <h2>What we do not do</h2>
+      <ul>
+        <li>We do not invent critics, awards, scores, or a tasting panel that does not exist.</li>
+        <li>We do not publish a named contributor without their consent and a verifiable role.</li>
+        <li>We do not accept payment for a favourable description, a placement, or a removal of a risk warning.</li>
+        <li>We do not authenticate bottles or appraise collections, and we say so on every page where a reader might expect it.</li>
+      </ul>
+
+      <h2>Corrections</h2>
+      <p>Errors are corrected on the page, not quietly deleted. A correction is made when a primary source contradicts the text, when a reader supplies evidence that does, or when the publisher's own product changes. Where a correction changes the substance of a page — an ingredient list, a standard number, a price band — the page's revision date is updated.</p>
+      <p>To report one, write to <a href={`mailto:${site.email}`}>{site.email}</a> with the page URL, the sentence you believe is wrong, and whatever you have that shows otherwise. A photograph of a back label is the most useful thing you can send.</p>
+
+      <div class="next-links">
+        <a href="/about/">About Baijiu365</a>
+        <a href="/editorial-team/">Editorial team</a>
+        <a href="/affiliate-disclosure/">Disclosure</a>
+        <a href="/contact/">Report a correction</a>
+      </div>
+    </article>
+  </section>
 </BaseLayout>

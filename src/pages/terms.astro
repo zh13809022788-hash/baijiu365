@@ -1,16 +1,77 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Terms - Baijiu365';
-const description = 'Terms of use for Baijiu365, an independent baijiu information site.';
+import { site } from '../data/site';
+const title = 'Terms of Use | Baijiu365';
+const description = 'Terms of use for Baijiu365: what the site is, what it is not, how prices and claims should be read, and the limits of the guidance.';
 ---
+
 <BaseLayout title={title} description={description}>
-  <header class="article-header"><div class="narrow"><p class="eyebrow">Policy</p><h1>Terms</h1><p class="lede">Use Baijiu365 as general information, not professional legal, medical, or authentication advice.</p></div></header>
-  <section class="content"><article>
-    <h2>General Information</h2>
-    <p>Baijiu365 provides educational content about Chinese baijiu, drinking context, flavor, brands, and buying risks. Content may be incomplete or change as the market changes.</p>
-    <h2>Responsible Drinking</h2>
-    <p>Alcohol should be consumed only by adults of legal drinking age in their location. Do not drink and drive, and avoid pressure-based drinking situations.</p>
-    <h2>No Bottle Authentication</h2>
-    <p>Guides about fake bottles and buying risk are general risk frameworks. They do not authenticate a specific bottle or guarantee a purchase is genuine.</p>
-  </article></section>
+  <header class="article-header">
+    <div class="narrow">
+      <p class="eyebrow">Policy</p>
+      <h1>Terms of Use</h1>
+      <p class="lede">Baijiu365 is a reference work about a drink. It is not a shop, not an authentication service, and not professional advice. These terms say so plainly.</p>
+      <div class="article-meta">
+        <span>Last updated <b>{site.updated}</b></span>
+        <span>Applies to <b>baijiu365.com</b></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="content">
+    <article>
+      <div class="key-points">
+        <h2>The short version</h2>
+        <ul>
+          <li>Use the site for general information. It is not legal, medical or professional buying advice.</li>
+          <li>Prices are indicative ranges with dates, not offers, and they go out of date.</li>
+          <li>Nothing here authenticates a bottle. A guide can tell you what to check; it cannot tell you whether your bottle is genuine.</li>
+          <li>Baijiu365 does not sell alcohol.</li>
+        </ul>
+      </div>
+
+      <h2>What this site is</h2>
+      <p>Baijiu365 publishes explanatory material about Chinese baijiu: aroma types, production methods, producing regions, brands, tasting vocabulary, serving practice and buying risk. Content is written for readers outside China who want to understand the category rather than be sold a bottle.</p>
+      <p>By using the site you accept these terms. If you do not accept them, the remedy is simple: do not use the site.</p>
+
+      <h2>Not professional advice</h2>
+      <p>Nothing on this site is legal, medical, dietary, customs, tax or investment advice. Decisions about importing alcohol, declaring goods, drinking while taking medication, or spending money on a bottle are yours, and where the stakes are real you should consult someone qualified in your own jurisdiction rather than a website.</p>
+
+      <h2>Prices and availability</h2>
+      <p>Price figures are ranges assembled from published retail data and are marked with the month they were checked. They are not quotes, not offers, and not a promise that a bottle can be bought at that price. Baijiu pricing moves quickly, varies enormously by country, and is affected by duty and by channel. Treat every figure as an order of magnitude.</p>
+
+      <h2>No authentication, no appraisal</h2>
+      <p>Pages on counterfeit risk, label reading and buying channels describe patterns. They do not authenticate a specific bottle, value a collection, or guarantee that a purchase is genuine. Only the producer's own verification — a cap chip, a batch code checked with the producer, an authorised channel — can do that. If you need certainty about a bottle, ask the producer, not this site.</p>
+
+      <h2>No sale of alcohol</h2>
+      <p>Baijiu365 does not sell baijiu and does not take orders. Where a page discusses a bottle that the publisher makes, that relationship is disclosed on the page itself and on the <a href="/affiliate-disclosure/">disclosure page</a>.</p>
+
+      <h2>Accuracy and changes</h2>
+      <p>Content is checked against producer labels, national standards and published sources, and pages carry the date they were last revised. The category changes: standards are revised, products are reformulated, brands change hands. Material may be incomplete, and it may become wrong. Corrections are welcome and are handled as described in the <a href="/editorial-policy/">editorial policy</a>.</p>
+
+      <h2>Intellectual property</h2>
+      <p>The text, layout and original illustrations on this site belong to Baijiu365. You may quote short passages with attribution and a link. You may not republish substantial parts of the site, mirror it, or use it to train a commercial product without written permission. Brand names and product names remain the property of their owners and are used descriptively.</p>
+
+      <h2>Acceptable use</h2>
+      <p>Do not attempt to disrupt the site, probe it for vulnerabilities, or scrape it at a rate that degrades service for others. Reasonable automated access — a search engine indexing the site, an archive, a researcher collecting a few pages — is fine. The site publishes an <a href="/llms.txt">llms.txt</a> file precisely so that machine readers can find the structure without crawling everything.</p>
+
+      <h2>Third-party links</h2>
+      <p>Links to producers, retailers and reference sources are provided for convenience. Their content, prices and policies are theirs, and linking to a site is not an endorsement of everything on it.</p>
+
+      <h2>Liability</h2>
+      <p>The site is provided as it is. To the extent permitted by law, Baijiu365 is not liable for losses arising from reliance on the content — including a purchase that turned out badly, a bottle that turned out to be counterfeit, or a price that had changed. Nothing in these terms limits liability that cannot lawfully be limited.</p>
+
+      <h2>Alcohol and age</h2>
+      <p>This site concerns an alcoholic drink and is intended for adults of legal drinking age where they live. Drink responsibly, do not drive after drinking, and treat pressure to drink as something you are allowed to refuse.</p>
+
+      <h2>Questions</h2>
+      <p>If something here is unclear or looks wrong, write to <a href={`mailto:${site.email}`}>{site.email}</a>. Disagreements should start there rather than anywhere else.</p>
+
+      <div class="next-links">
+        <a href="/privacy/">Privacy policy</a>
+        <a href="/editorial-policy/">Editorial policy</a>
+        <a href="/affiliate-disclosure/">Disclosure</a>
+      </div>
+    </article>
+  </section>
 </BaseLayout>
