@@ -1,20 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = 'Jinling Nian 30 — 52% Pure-Grain Strong-Aroma Baijiu | Baijiu365';
-const description = 'Jinling Nian 30 (金陵年30): a 52% ABV pure-grain strong-aroma baijiu from the Suqian mianrou belt. Solid-state fermented from water, sorghum, wheat, barley and peas, with old-cellar fermentation, clay-jar rest, and a deliberately soft finish. 500ml, GB/T 10781.1.';
+const title = 'Jinling Nian 30 — 42% & 52% Pure-Grain Strong-Aroma Baijiu | Baijiu365';
+const description = 'Jinling Nian 30 (金陵年30): a pure-grain strong-aroma baijiu from the Suqian mianrou belt, bottled at 42% and 52% ABV. Solid-state fermented from sorghum, wheat, barley and peas, with old-cellar fermentation, clay-jar rest, and a deliberately soft finish. 500ml, GB/T 10781.1, grade 优级.';
 const keywords = [
   'Jinling Nian 30', '金陵年30', 'mianrou baijiu', 'soft strong aroma baijiu',
   '52% baijiu', 'pure grain baijiu', 'Suqian baijiu', 'Chinese baijiu gift',
-  'GB/T 10781.1', 'five grain baijiu',
+  'GB/T 10781.1', 'four grain baijiu', '42% baijiu',
 ];
 
 const specs = [
-  { k: 'ABV', v: '52% vol', cn: '52度' },
+  { k: 'ABV', v: '42% / 52% vol', cn: '42度 · 52度' },
   { k: 'Volume', v: '500 ml', cn: '净含量' },
   { k: 'Aroma type', v: 'Strong aroma', cn: '浓香型' },
   { k: 'Style', v: 'Mianrou · soft', cn: '绵柔' },
-  { k: 'Grain bill', v: 'Sorghum · wheat · barley · peas', cn: '原料' },
+  { k: 'Grain bill', v: 'Sorghum · wheat · barley · peas', cn: '四粮' },
   { k: 'Standard', v: 'GB/T 10781.1', cn: '国标' },
 ];
 
@@ -27,8 +27,8 @@ const notes = [
 
 const pillars = [
   {
-    cn: '五粮', title: 'Five grains, one body',
-    text: 'The back label lists water, sorghum, wheat, barley and peas — the Suqian "five-grain" formula, with water counted as one of the five. Sorghum carries the body, wheat and barley build the qu, peas round the texture.',
+    cn: '四粮', title: 'Four grains, no filler',
+    text: 'The back label lists sorghum, wheat, barley and peas — four grains and water, nothing else. No rice, no corn, no edible-alcohol top-up. Sorghum carries the body, wheat and barley build the qu, peas round the texture.',
   },
   {
     cn: '老窖', title: 'Old-cellar fermentation',
@@ -72,14 +72,14 @@ const labelFacts = [
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: 'Jinling Nian 30 (金陵年30)',
+  name: 'Jinling Nian 30 (金陵年30) — 42% / 52%',
   brand: { '@type': 'Brand', name: 'Jinling Nian' },
   category: 'Baijiu',
   description,
   image: 'https://baijiu365.com/images/jinling/hero-scene.jpg',
   countryOfOrigin: 'CN',
   additionalProperty: [
-    { '@type': 'PropertyValue', name: 'ABV', value: '52% vol' },
+    { '@type': 'PropertyValue', name: 'ABV', value: '42% vol / 52% vol' },
     { '@type': 'PropertyValue', name: 'Volume', value: '500 ml' },
     { '@type': 'PropertyValue', name: 'Aroma Type', value: 'Strong aroma (浓香型)' },
     { '@type': 'PropertyValue', name: 'Style', value: 'Mianrou (绵柔)' },
@@ -102,25 +102,25 @@ const faqLd = {
 
 <BaseLayout title={title} description={description} keywords={keywords} type="Article" image="https://baijiu365.com/images/jinling/hero-scene.jpg" jsonLd={false}>
   <section class="product-hero">
-    <div class="product-hero-bg" aria-hidden="true">
-      <picture>
-        <source media="(max-width: 860px)" srcset="/images/jinling/bottle-scene.jpg" />
-        <img src="/images/jinling/hero-scene.jpg" alt="" width="1600" height="1000" />
-      </picture>
-    </div>
-    <div class="wrap product-hero-inner">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
       <p class="eyebrow">The house bottle &middot; 金陵年30</p>
       <h1 class="product-title">Jinling Nian 30</h1>
-      <p class="product-cn">金陵年三十 &middot; 52度 &middot; 纯粮酿造 &middot; 绵柔浓香</p>
-      <p class="lede">A 52% pure-grain strong-aroma baijiu from the Suqian mianrou belt — five grains, old-cellar fermentation, and a finish built to be soft, not sharp.</p>
+      <p class="product-cn">金陵年三十 &middot; 42度 / 52度 &middot; 纯粮酿造 &middot; 绵柔浓香</p>
+      <p class="lede">A pure-grain strong-aroma baijiu from the Suqian mianrou belt, bottled at 42% and 52% — four grains, old-cellar fermentation, and a finish built to be soft, not sharp.</p>
       <div class="hero-chips">
-        <span>52% ABV</span><span>500 ml</span><span>浓香型 Strong aroma</span><span>固态法 Solid-state</span><span>GB/T 10781.1</span><span>宿迁 Suqian</span>
+        <span>42% &middot; 52% ABV</span><span>500 ml</span><span>浓香型 Strong aroma</span><span>固态法 Solid-state</span><span>GB/T 10781.1 优级</span><span>双沟镇 Shuangou</span>
       </div>
       <div class="actions">
         <a class="button" href="#enquire">Where to buy</a>
         <a class="button secondary" href="#tasting">Tasting notes</a>
       </div>
       <p class="house-disclosure">Full disclosure: this is our own label. Read this page as a product sheet, not as an independent review — the same standards we apply to every bottle in <a href="/db/">the database</a> are stated below, including what we will not claim.</p>
+      </div>
+      <figure class="hero-visual">
+        <img src="/images/jinling/box-bottle.jpg" alt="Jinling Nian 30 gift box and bottle, photographed on a table" width="800" height="640" fetchpriority="high" />
+        <figcaption>金陵年30 &middot; gift box and bottle &middot; 42% / 52% vol &middot; 500 ml</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -155,28 +155,32 @@ const faqLd = {
         </div>
       </div>
       <figure class="soft-media reveal">
-        <img src="/images/jinling/bottle-scene.jpg" alt="Jinling Nian 30 bottle in warm studio light" width="1000" height="1350" loading="lazy" />
-        <figcaption>金陵年30 &middot; 52% vol &middot; 500 ml</figcaption>
+        <img src="/images/jinling/bottle-portrait.jpg" alt="Jinling Nian 30 52% bottle photographed against its own gift box" width="1000" height="1250" loading="lazy" />
+        <figcaption>金陵年30 &middot; 52% vol &middot; 500 ml &middot; photographed, not rendered</figcaption>
       </figure>
     </div>
   </section>
 
   <section class="section film-section">
-    <div class="wrap">
-      <div class="section-heading reveal">
-        <div>
-          <p class="eyebrow">The bottle, in motion</p>
-          <h2>Seventeen seconds, no music.</h2>
-        </div>
-        <p>A short film cut from the product photography: the bottle, the seal, the back label, the box, the print sheet. Nothing appears here that is not on the shelf.</p>
-      </div>
+    <div class="wrap film-split">
       <figure class="film reveal">
-        <video data-autoplay autoplay muted loop playsinline preload="metadata" poster="/images/jinling/film-poster.jpg">
-          <source src="/video/jinling-film.mp4" type="video/mp4" />
-          <img src="/images/jinling/film-poster.jpg" alt="Jinling Nian 30 product film still" />
+        <video autoplay muted loop playsinline controls preload="metadata" poster="/images/jinling/film-poster.jpg">
+          <source src="/video/jinling-42-film.mp4" type="video/mp4" />
+          <img src="/images/jinling/film-poster.jpg" alt="Jinling Nian 30 42% product film still" />
         </video>
-        <figcaption>Jinling Nian 30 &middot; 52% vol &middot; 500 ml</figcaption>
+        <figcaption>金陵年三十 &middot; 42% vol &middot; 41 seconds &middot; Mandarin voiceover, English below</figcaption>
       </figure>
+      <div class="reveal">
+        <p class="eyebrow">The 42% case</p>
+        <h2>Lowering the proof is the harder job.</h2>
+        <p class="lede">Anyone can bottle at 52. Take a strong aroma down to 42 and it turns hazy, then thin &mdash; the esters fall out of solution and the aroma goes with them. Holding the nose at 42% takes a better base spirit and a slower adjustment, not a weaker one.</p>
+        <ul class="film-points">
+          <li><strong>Same base spirit, two proofs</strong><span>42% is the same fermented lot as 52%, brought down in stages. It is not a separate, cheaper batch.</span></li>
+          <li><strong>42% for the table</strong><span>Softer on the throat, easier across a long banquet where the glass keeps getting refilled.</span></li>
+          <li><strong>52% for the cellar</strong><span>Fuller body, longer finish, the pour an experienced drinker reaches for at the end of the night.</span></li>
+        </ul>
+        <p class="film-note">Shot on retail stock, not a studio set — every frame is a bottle off the same line as the case you would order. The voiceover is Mandarin because that is the language it ships in; the three points above are what it says.</p>
+      </div>
     </div>
   </section>
 
@@ -203,16 +207,19 @@ const faqLd = {
 
   <section class="section craft-section">
     <div class="wrap craft-split">
-      <div class="craft-media reveal">
-        <video data-autoplay autoplay muted loop playsinline preload="metadata" poster="/images/craft-aging.webp">
-          <source src="/video/craft-cellar.mp4" type="video/mp4" />
-          <img src="/images/craft-aging.webp" alt="Clay jars resting in a baijiu cellar" />
-        </video>
+      <div class="reveal">
+        <div class="craft-media">
+          <video data-autoplay autoplay muted loop playsinline preload="metadata" poster="/images/craft-aging.webp">
+            <source src="/video/craft-cellar.mp4" type="video/mp4" />
+            <img src="/images/craft-aging.webp" alt="Clay jars resting in a baijiu cellar" />
+          </video>
+        </div>
+        <p class="craft-note">Illustration &mdash; the clay-jar stage as a category, not our own cellar. We do not have publishable distillery-floor footage.</p>
       </div>
       <div class="reveal">
         <p class="eyebrow">From Suqian, Jiangsu</p>
         <h2>The mianrou belt.</h2>
-        <p class="lede">Northern Jiangsu is the core production area for mianrou-style strong aroma: warm, humid, and built around long fermentation cycles. Jinling Nian 30 is made there, under the strong-aroma national standard, from a five-grain formula — water, sorghum, wheat, barley, peas.</p>
+        <p class="lede">Northern Jiangsu is the core production area for mianrou-style strong aroma: warm, humid, and built around long fermentation cycles. Jinling Nian 30 is made there, under the strong-aroma national standard, from four grains and water — sorghum, wheat, barley and peas, and nothing else.</p>
         <ul class="process-steps">
           <li><span class="step-num">1</span><div><strong>Grain and qu</strong><p>Sorghum, wheat, barley and peas, fermented with a solid qu starter — solid-state throughout.</p></div></li>
           <li><span class="step-num">2</span><div><strong>Mud-pit fermentation</strong><p>Aged pits supply the microbial community behind the fruity, cellar-led nose.</p></div></li>
@@ -230,20 +237,24 @@ const faqLd = {
           <p class="eyebrow">Packaging</p>
           <h2>Built for the table and the gift table.</h2>
         </div>
-        <p>Deep green and gold, with the 金陵年30 calligraphy seal. Bottle, rigid gift box, and carry bag are designed as one set.</p>
+        <p>Deep green and gold, with the 金陵年30 calligraphy seal. Bottle, rigid gift box and carry bag are designed as one set; the corrugated outer case is what actually ships, six boxes to a carton.</p>
       </div>
       <div class="pack-board reveal">
         <figure class="board-item">
-          <img src="/images/jinling/box.jpg" alt="Jinling Nian 30 gift box front" loading="lazy" width="1260" height="2460" />
-          <figcaption>Gift box &middot; front</figcaption>
+          <img src="/images/jinling/box.jpg" alt="Jinling Nian 30 rigid gift box, front panel" loading="lazy" width="800" height="640" />
+          <figcaption>Rigid gift box &middot; front</figcaption>
         </figure>
         <figure class="board-item">
-          <img src="/images/jinling/bag.jpg" alt="Jinling Nian 30 carry bag" loading="lazy" width="1260" height="2460" />
-          <figcaption>Carry bag</figcaption>
+          <img src="/images/jinling/unboxing.jpg" alt="Jinling Nian 30 case opened to show six individual gift boxes" loading="lazy" width="800" height="640" />
+          <figcaption>Opened case &middot; six boxes</figcaption>
         </figure>
-        <figure class="board-item wide">
-          <img src="/images/jinling/packaging.jpg" alt="Jinling Nian 30 packaging print artwork" loading="lazy" width="2155" height="1143" />
-          <figcaption>Box wrap &mdash; print artwork, four panels</figcaption>
+        <figure class="board-item">
+          <img src="/images/jinling/bag.jpg" alt="Jinling Nian 30 carry bag, two bags on a table" loading="lazy" width="800" height="640" />
+          <figcaption>Carry bag &middot; two per carton</figcaption>
+        </figure>
+        <figure class="board-item">
+          <img src="/images/jinling/packaging.jpg" alt="Jinling Nian 30 corrugated shipping case with the six-bottle spec printed on the front" loading="lazy" width="800" height="640" />
+          <figcaption>Shipping case &middot; 500 ml &times; 6</figcaption>
         </figure>
       </div>
     </div>
@@ -270,11 +281,11 @@ const faqLd = {
         </div>
         <div class="label-media reveal">
           <figure>
-            <img src="/images/jinling/label-back.jpg" alt="Jinling Nian 30 back label with product type, ingredients, licence and standard numbers" width="780" height="670" loading="lazy" />
+            <img src="/images/jinling/label-back.jpg" alt="Jinling Nian 30 back label: product type, aroma, ingredients, food production licence SC number, standard GB/T 10781.1 and barcode" width="1100" height="944" loading="lazy" />
             <figcaption>Back label &middot; retail box</figcaption>
           </figure>
           <figure class="seal-fig">
-            <img src="/images/jinling/seal.jpg" alt="Jinling Nian 30 calligraphy cartouche" width="435" height="938" loading="lazy" />
+            <img src="/images/jinling/seal.jpg" alt="Jinling Nian 30 calligraphy cartouche from the gift box" width="435" height="820" loading="lazy" />
             <figcaption>The 金陵年30 cartouche</figcaption>
           </figure>
         </div>
@@ -287,7 +298,7 @@ const faqLd = {
       <div class="reveal">
         <p class="eyebrow">At the table</p>
         <h2>Serve it with food.</h2>
-        <p class="lede">A soft 52% strong aroma is a banquet spirit. Small cups, room temperature, and dishes with salt, soy, and fat.</p>
+        <p class="lede">A soft strong aroma is a banquet spirit, and this is the pairing that suits both proofs. Small cups, room temperature, dishes with salt, soy, and fat. Take the 42% if the table will keep pouring; take the 52% if the food is heavier than the conversation.</p>
       </div>
       <ul class="pairing-list reveal">
         <li><strong>Braised pork belly</strong><span>Fat and soy soften the alcohol further.</span></li>
@@ -335,25 +346,49 @@ const faqLd = {
 <style>
   .product-hero {
     position: relative;
-    min-height: 88vh;
     display: flex;
     align-items: center;
-    padding: clamp(130px, 17vh, 190px) 0 clamp(48px, 6vh, 80px);
+    padding: clamp(120px, 15vh, 168px) 0 clamp(56px, 7vh, 92px);
     overflow: hidden;
-    background: var(--ink-950);
+    background:
+      radial-gradient(115% 95% at 82% 26%, #1c2c21 0%, #101a14 42%, #080d0a 100%);
+    border-bottom: 1px solid var(--line-dark);
   }
-  .product-hero-bg { position: absolute; inset: 0; }
-  .product-hero-bg picture { display: block; width: 100%; height: 100%; }
-  .product-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 72% center; }
-  .product-hero::after {
+  .product-hero::before {
     content: "";
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(90deg, rgba(9, 15, 11, 0.95) 30%, rgba(9, 15, 11, 0.6) 62%, rgba(9, 15, 11, 0.25) 100%),
-      linear-gradient(180deg, rgba(9, 15, 11, 0.5), rgba(9, 15, 11, 0.15) 45%, rgba(9, 15, 11, 0.9));
+      radial-gradient(60% 50% at 20% 0%, rgba(211, 172, 104, 0.07), transparent 70%);
+    pointer-events: none;
   }
-  .product-hero-inner { position: relative; z-index: 1; }
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+    gap: clamp(32px, 4.6vw, 68px);
+    align-items: center;
+    width: 100%;
+  }
+  .hero-copy { min-width: 0; }
+  .hero-visual { margin: 0; }
+  .hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid var(--line-dark-strong);
+    box-shadow: 0 32px 74px rgba(0, 0, 0, 0.58);
+  }
+  .hero-visual figcaption {
+    margin-top: 12px;
+    color: var(--muted-on-dark);
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: center;
+  }
   .product-title { font-size: clamp(44px, 6.6vw, 84px); max-width: 720px; }
   .product-cn {
     margin: 10px 0 0;
@@ -479,6 +514,14 @@ const faqLd = {
   .note-card p { margin: 0; color: var(--muted-on-dark); font-size: 14px; }
 
   .craft-section { background: var(--ink-950); }
+  .craft-note {
+    margin: 12px 0 0;
+    color: var(--muted-on-dark);
+    font-size: 11.5px;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    font-style: italic;
+  }
 
   .pack-board {
     display: grid;
@@ -486,8 +529,8 @@ const faqLd = {
     gap: clamp(16px, 2.2vw, 30px);
     padding: clamp(20px, 2.8vw, 40px);
     background:
-      linear-gradient(160deg, #fbf7ee, #efe6d3);
-    border: 1px solid rgba(211, 172, 104, 0.45);
+      linear-gradient(160deg, #141a16, #0c100d);
+    border: 1px solid var(--line-dark-strong);
     border-radius: 16px;
     box-shadow: 0 34px 80px rgba(0, 0, 0, 0.55);
   }
@@ -496,13 +539,14 @@ const faqLd = {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 6px;
-    mix-blend-mode: multiply;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    border: 1px solid var(--line-dark);
   }
-  .board-item:not(.wide) img { aspect-ratio: 3 / 4; object-fit: cover; object-position: center top; }
-  .board-item.wide { grid-column: 1 / -1; }
   .board-item figcaption {
-    color: #6a5c45;
+    color: var(--muted-on-dark);
     font-size: 11.5px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -514,16 +558,29 @@ const faqLd = {
     border-top: 1px solid var(--line-dark);
     border-bottom: 1px solid var(--line-dark);
   }
-  .film { margin: 0; }
+  .film-split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+  }
+  .film { margin: 0; width: 100%; max-width: 400px; justify-self: center; }
   .film video {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 14px;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+    border-radius: 16px;
     border: 1px solid var(--line-dark-strong);
-    box-shadow: var(--shadow-dark);
+    box-shadow: 0 26px 64px rgba(0, 0, 0, 0.6);
     background: #0b0906;
   }
+  .film-points { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 16px; }
+  .film-points li { display: grid; gap: 4px; padding-left: 16px; border-left: 1px solid var(--line-dark-strong); }
+  .film-points strong { color: var(--text-on-dark); font-size: 15px; font-weight: 600; }
+  .film-points span { color: var(--muted-on-dark); font-size: 13.5px; line-height: 1.62; }
+  .film-note { margin-top: 24px; color: var(--muted-on-dark); font-size: 12.5px; line-height: 1.6; font-style: italic; }
   .film figcaption {
     margin-top: 14px;
     color: var(--muted-on-dark);
@@ -614,18 +671,15 @@ const faqLd = {
     .spec-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
   @media (max-width: 860px) {
+    .film-split { grid-template-columns: 1fr; }
+    .film { max-width: 330px; }
     .soft-split, .pairing-wrap, .faq-wrap, .label-layout { grid-template-columns: 1fr; }
     .soft-media { order: -1; }
-    .product-hero { min-height: 78vh; }
-    .product-hero-bg img { object-position: center 32%; }
-    .product-hero::after {
-      background:
-        linear-gradient(180deg, rgba(9, 15, 11, 0.86), rgba(9, 15, 11, 0.72) 55%, rgba(9, 15, 11, 0.96)),
-        radial-gradient(120% 60% at 50% 30%, transparent, rgba(9, 15, 11, 0.5));
-    }
+    .hero-grid { grid-template-columns: 1fr; gap: 30px; }
+    .hero-visual { order: -1; }
     .spec-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .spec { padding: 18px 16px; }
-    .board-item:not(.wide) img { aspect-ratio: 4 / 5; }
+    .board-item img { aspect-ratio: 4 / 3; }
   }
   @media (max-width: 520px) {
     .notes-grid { grid-template-columns: 1fr; }
